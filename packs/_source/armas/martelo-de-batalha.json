@@ -1,0 +1,35 @@
+{
+  "_id": "X4sqw2rjhYQLUoeQ",
+  "_key": "!items!X4sqw2rjhYQLUoeQ",
+  "name": "Martelo de Batalha",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/martelo-de-batalha.png",
+  "system": {
+    "tipoAtaque": "corpoACorpo",
+    "dano": 6,
+    "propriedade": "Quebrar",
+    "preco": 130,
+    "forcaMinima": 12,
+    "alcance": "Adjacente",
+    "maos": "2 mãos",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857865,
+    "modifiedTime": 1785939857865,
+    "lastModifiedBy": null
+  }
+}

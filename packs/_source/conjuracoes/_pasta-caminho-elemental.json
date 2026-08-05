@@ -1,0 +1,19 @@
+{
+  "_id": "8iWl7uUQo2rNqpJO",
+  "_key": "!folders!8iWl7uUQo2rNqpJO",
+  "name": "Caminho Elemental",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663648,
+    "modifiedTime": 1785965663648,
+    "lastModifiedBy": null
+  }
+}

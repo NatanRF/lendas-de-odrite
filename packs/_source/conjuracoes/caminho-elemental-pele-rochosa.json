@@ -1,0 +1,28 @@
+{
+  "_id": "Ein2EGyeVRpZNzHU",
+  "_key": "!items!Ein2EGyeVRpZNzHU",
+  "name": "Pele Rochosa",
+  "type": "magia",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "caminho": "Caminho Elemental",
+    "duracao": "Manutenção",
+    "alcance": "Pessoal",
+    "descricao": "Você invoca uma barreira de pedra ao seu redor. Reduza todo dano sofrido em 1."
+  },
+  "effects": [],
+  "folder": "8iWl7uUQo2rNqpJO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663650,
+    "modifiedTime": 1785965663650,
+    "lastModifiedBy": null
+  }
+}

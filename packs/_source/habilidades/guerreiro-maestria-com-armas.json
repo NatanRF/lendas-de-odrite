@@ -1,0 +1,28 @@
+{
+  "_id": "NASepy6iWor0B6hG",
+  "_key": "!items!NASepy6iWor0B6hG",
+  "name": "Maestria com Armas",
+  "type": "habilidade",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tipo": "passiva",
+    "classe": "Guerreiro",
+    "categoria": "basica",
+    "descricao": "Pode escolher uma categoria de arma. Ao atacar com uma arma dessa categoria pode adicionar +1 no valor alvo dos seus testes de acerto. Pode gastar 2 pontos de experiência para adicionar uma nova categoria de arma à sua maestria."
+  },
+  "effects": [],
+  "folder": "fES7U14FHbNpQJeR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174962,
+    "modifiedTime": 1785898174962,
+    "lastModifiedBy": null
+  }
+}

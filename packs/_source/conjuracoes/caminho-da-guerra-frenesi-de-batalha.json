@@ -1,0 +1,28 @@
+{
+  "_id": "7MTZST4xytJMw7Li",
+  "_key": "!items!7MTZST4xytJMw7Li",
+  "name": "Frenesi de Batalha",
+  "type": "magia",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "caminho": "Caminho da Guerra",
+    "duracao": "Rodada",
+    "alcance": "Pessoal",
+    "descricao": "Você entra em um estado de frenesi. Até o final da rodada, adicione d4 de dano aos seus ataques corpo a corpo."
+  },
+  "effects": [],
+  "folder": "xjwxZw3U7f99g88k",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663644,
+    "modifiedTime": 1785965663644,
+    "lastModifiedBy": null
+  }
+}

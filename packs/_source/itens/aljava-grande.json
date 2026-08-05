@@ -1,0 +1,27 @@
+{
+  "_id": "0ME5cad8NOlEByIh",
+  "_key": "!items!0ME5cad8NOlEByIh",
+  "name": "Aljava Grande",
+  "type": "item",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 10,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955652,
+    "modifiedTime": 1785946955652,
+    "lastModifiedBy": null
+  }
+}

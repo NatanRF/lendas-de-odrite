@@ -1,0 +1,28 @@
+{
+  "_id": "QfpXw6K1b7pFGaup",
+  "_key": "!items!QfpXw6K1b7pFGaup",
+  "name": "Fonte de Cura",
+  "type": "magia",
+  "img": "icons/svg/heal.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Manutenção",
+    "alcance": "Pessoal",
+    "descricao": "Você emana energia vital. Aliados em um raio de 3 metros ao redor de você podem usar uma Manobra de Combate para recuperar 2 pontos de vitalidade."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663642,
+    "modifiedTime": 1785965663642,
+    "lastModifiedBy": null
+  }
+}

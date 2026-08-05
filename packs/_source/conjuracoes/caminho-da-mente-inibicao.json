@@ -1,0 +1,28 @@
+{
+  "_id": "cKwB0847LlgTJHAY",
+  "_key": "!items!cKwB0847LlgTJHAY",
+  "name": "Inibição",
+  "type": "magia",
+  "img": "icons/svg/silenced.svg",
+  "system": {
+    "caminho": "Caminho da Mente",
+    "duracao": "Instantâneo",
+    "alcance": "6 metros",
+    "descricao": "O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, o alvo não pode usar nenhuma de suas habilidades até o fim da próxima rodada."
+  },
+  "effects": [],
+  "folder": "Haf764WEalUR6Ird",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663663,
+    "modifiedTime": 1785965663663,
+    "lastModifiedBy": null
+  }
+}

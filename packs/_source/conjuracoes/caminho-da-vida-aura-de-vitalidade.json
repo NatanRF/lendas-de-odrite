@@ -1,0 +1,28 @@
+{
+  "_id": "zXirsMiVpabx1zu0",
+  "_key": "!items!zXirsMiVpabx1zu0",
+  "name": "Aura de Vitalidade",
+  "type": "magia",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Manutenção",
+    "alcance": "Pessoal",
+    "descricao": "Seu corpo é envolto por uma aura de vitalidade. Um aliado que iniciar o turno adjacente a você recupera 1 Ponto de Vitalidade."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663639,
+    "modifiedTime": 1785965663639,
+    "lastModifiedBy": null
+  }
+}

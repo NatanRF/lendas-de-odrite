@@ -1,0 +1,28 @@
+{
+  "_id": "aKt8f6YXJDHV4eyT",
+  "_key": "!items!aKt8f6YXJDHV4eyT",
+  "name": "Duplicar Conjuração",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "conjuracao",
+    "classe": "Canalisador",
+    "categoria": "lista",
+    "descricao": "Você pode afetar 2 alvos com a mesma conjuração."
+  },
+  "effects": [],
+  "folder": "JySd74O6Nusu8IOs",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174976,
+    "modifiedTime": 1785898174976,
+    "lastModifiedBy": null
+  }
+}

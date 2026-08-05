@@ -1,0 +1,28 @@
+{
+  "_id": "4TyjMBbChW6dUMOW",
+  "_key": "!items!4TyjMBbChW6dUMOW",
+  "name": "Afastar do Perigo",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "classe": "Caçador",
+    "categoria": "lista",
+    "descricao": "Uma vez por rodada, pode usar Desvencilhar uma vez sem contabilizar em suas Manobras de Combate."
+  },
+  "effects": [],
+  "folder": "CxwP508nxjwOa5yz",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174967,
+    "modifiedTime": 1785898174967,
+    "lastModifiedBy": null
+  }
+}

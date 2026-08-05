@@ -1,0 +1,169 @@
+<div class="odrite-sheet-body">
+<header class="sheet-header item-header">
+  <img class="perfil" src="{{item.img}}" data-action="editImage" data-edit="img" title="{{item.name}}">
+  <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'ODRITE.Nome'}}">
+</header>
+
+<section class="corpo-item">
+
+  {{#if (eq tipo "arma")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.TipoAtaque.Titulo"}}</label>
+    <select name="system.tipoAtaque">
+      <option value="corpoACorpo" {{#if (eq system.tipoAtaque "corpoACorpo")}}selected{{/if}}>{{localize "ODRITE.TipoAtaque.CorpoACorpo"}}</option>
+      <option value="distancia" {{#if (eq system.tipoAtaque "distancia")}}selected{{/if}}>{{localize "ODRITE.TipoAtaque.Distancia"}}</option>
+    </select>
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Dano"}}</label>
+    <input type="number" name="system.dano" value="{{system.dano}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Propriedade"}}</label>
+    <input type="text" name="system.propriedade" value="{{system.propriedade}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Preco"}}</label>
+    <input type="number" name="system.preco" value="{{system.preco}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.ForcaMinima"}}</label>
+    <input type="number" name="system.forcaMinima" value="{{system.forcaMinima}}" placeholder="0 = sem requisito">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Alcance"}}</label>
+    <input type="text" name="system.alcance" value="{{system.alcance}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Empunhadura"}}</label>
+    <select name="system.maos">
+      {{#each empunhaduras as |opcao|}}
+      <option value="{{opcao}}" {{#if (eq ../system.maos opcao)}}selected{{/if}}>{{opcao}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Durabilidade"}}</label>
+    <input type="number" name="system.durabilidade.value" value="{{system.durabilidade.value}}">
+    <span>/</span>
+    <input type="number" name="system.durabilidade.max" value="{{system.durabilidade.max}}">
+  </div>
+  {{/if}}
+
+  {{#if (eq tipo "armadura")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Tipo"}}</label>
+    <input type="text" name="system.tipo" value="{{system.tipo}}" placeholder="Armadura Leve / Média / Pesada">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Preco"}}</label>
+    <input type="number" name="system.preco" value="{{system.preco}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.ForcaMinima"}}</label>
+    <input type="number" name="system.forcaMinima" value="{{system.forcaMinima}}" placeholder="0 = sem requisito">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Penalidade"}}</label>
+    <input type="number" name="system.penalidade" value="{{system.penalidade}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Durabilidade"}}</label>
+    <input type="number" name="system.durabilidade.value" value="{{system.durabilidade.value}}">
+    <span>/</span>
+    <input type="number" name="system.durabilidade.max" value="{{system.durabilidade.max}}">
+  </div>
+  {{/if}}
+
+  {{#if (eq tipo "escudo")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Tipo"}}</label>
+    <input type="text" name="system.tipo" value="{{system.tipo}}" placeholder="Escudo Leve / Médio / Pesado">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Preco"}}</label>
+    <input type="number" name="system.preco" value="{{system.preco}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.ForcaMinima"}}</label>
+    <input type="number" name="system.forcaMinima" value="{{system.forcaMinima}}" placeholder="0 = sem requisito">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Penalidade"}}</label>
+    <input type="number" name="system.penalidade" value="{{system.penalidade}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Durabilidade"}}</label>
+    <input type="number" name="system.durabilidade.value" value="{{system.durabilidade.value}}">
+    <span>/</span>
+    <input type="number" name="system.durabilidade.max" value="{{system.durabilidade.max}}">
+  </div>
+  {{/if}}
+
+  {{#if (eq tipo "magia")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Magia.Caminho"}}</label>
+    <input type="text" name="system.caminho" value="{{system.caminho}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Magia.Duracao"}}</label>
+    <input type="text" name="system.duracao" value="{{system.duracao}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Magia.Alcance"}}</label>
+    <input type="text" name="system.alcance" value="{{system.alcance}}">
+  </div>
+  <div class="campo campo-descricao">
+    <label>{{localize "ODRITE.Descricao"}}</label>
+    <textarea name="system.descricao">{{system.descricao}}</textarea>
+  </div>
+  {{/if}}
+
+  {{#if (eq tipo "habilidade")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.TipoHabilidade.Titulo"}}</label>
+    <select name="system.tipo">
+      <option value="passiva" {{#if (eq system.tipo "passiva")}}selected{{/if}}>{{localize "ODRITE.TipoHabilidade.Passiva"}}</option>
+      <option value="ativa" {{#if (eq system.tipo "ativa")}}selected{{/if}}>{{localize "ODRITE.TipoHabilidade.Ativa"}}</option>
+      <option value="conjuracao" {{#if (eq system.tipo "conjuracao")}}selected{{/if}}>{{localize "ODRITE.TipoHabilidade.Conjuracao"}}</option>
+    </select>
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Classe"}}</label>
+    <select name="system.classe">
+      <option value="">—</option>
+      {{#each classes as |classe|}}
+      <option value="{{classe}}" {{#if (eq ../system.classe classe)}}selected{{/if}}>{{classe}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.CategoriaHabilidade.Titulo"}}</label>
+    <select name="system.categoria">
+      <option value="basica" {{#if (eq system.categoria "basica")}}selected{{/if}}>{{localize "ODRITE.CategoriaHabilidade.Basica"}}</option>
+      <option value="lista" {{#if (eq system.categoria "lista")}}selected{{/if}}>{{localize "ODRITE.CategoriaHabilidade.Lista"}}</option>
+    </select>
+  </div>
+  <div class="campo campo-descricao">
+    <label>{{localize "ODRITE.Descricao"}}</label>
+    <textarea name="system.descricao">{{system.descricao}}</textarea>
+  </div>
+  {{/if}}
+
+  {{#if (eq tipo "item")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Quantidade"}}</label>
+    <input type="number" name="system.quantidade" value="{{system.quantidade}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Preco"}}</label>
+    <input type="number" name="system.preco" value="{{system.preco}}">
+  </div>
+  <div class="campo campo-descricao">
+    <label>{{localize "ODRITE.Descricao"}}</label>
+    <textarea name="system.descricao">{{system.descricao}}</textarea>
+  </div>
+  {{/if}}
+
+</section>
+</div>

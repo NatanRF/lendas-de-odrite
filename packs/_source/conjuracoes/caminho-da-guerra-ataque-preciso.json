@@ -1,0 +1,28 @@
+{
+  "_id": "PbCUT8qdsFj7uOgQ",
+  "_key": "!items!PbCUT8qdsFj7uOgQ",
+  "name": "Ataque Preciso",
+  "type": "magia",
+  "img": "icons/svg/target.svg",
+  "system": {
+    "caminho": "Caminho da Guerra",
+    "duracao": "Instantâneo",
+    "alcance": "Pessoal",
+    "descricao": "Você pode rolar seu próximo ataque com +2 no valor alvo."
+  },
+  "effects": [],
+  "folder": "xjwxZw3U7f99g88k",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663643,
+    "modifiedTime": 1785965663643,
+    "lastModifiedBy": null
+  }
+}

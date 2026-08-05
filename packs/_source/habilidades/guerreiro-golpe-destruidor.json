@@ -1,0 +1,28 @@
+{
+  "_id": "LtGXzNeUHZHyEikX",
+  "_key": "!items!LtGXzNeUHZHyEikX",
+  "name": "Golpe Destruidor",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Guerreiro",
+    "categoria": "lista",
+    "descricao": "Se o inimigo iria mitigar o dano do seu ataque, você pode fazer com que o ataque cause o dano total ignorando a mitigação."
+  },
+  "effects": [],
+  "folder": "fES7U14FHbNpQJeR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174965,
+    "modifiedTime": 1785898174965,
+    "lastModifiedBy": null
+  }
+}

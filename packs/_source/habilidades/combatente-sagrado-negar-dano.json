@@ -1,0 +1,28 @@
+{
+  "_id": "wuWIOoQtLrYuxoIl",
+  "_key": "!items!wuWIOoQtLrYuxoIl",
+  "name": "Negar Dano",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Combatente Sagrado",
+    "categoria": "lista",
+    "descricao": "Você pode anular completamente um dano recebido desde que esteja usando uma armadura ou escudo."
+  },
+  "effects": [],
+  "folder": "iWIe853JnJDqtLDV",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174983,
+    "modifiedTime": 1785898174983,
+    "lastModifiedBy": null
+  }
+}

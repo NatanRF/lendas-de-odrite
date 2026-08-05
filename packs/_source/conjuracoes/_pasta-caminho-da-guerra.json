@@ -1,0 +1,19 @@
+{
+  "_id": "xjwxZw3U7f99g88k",
+  "_key": "!folders!xjwxZw3U7f99g88k",
+  "name": "Caminho da Guerra",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663643,
+    "modifiedTime": 1785965663643,
+    "lastModifiedBy": null
+  }
+}

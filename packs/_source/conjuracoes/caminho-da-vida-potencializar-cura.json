@@ -1,0 +1,28 @@
+{
+  "_id": "K5WD7bIrhj5lTYwk",
+  "_key": "!items!K5WD7bIrhj5lTYwk",
+  "name": "Potencializar Cura",
+  "type": "magia",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Manutenção",
+    "alcance": "Pessoal",
+    "descricao": "Enquanto esta conjuração estiver ativa, você pode curar 1 ponto de vitalidade adicional em todas as suas conjurações de cura."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663640,
+    "modifiedTime": 1785965663640,
+    "lastModifiedBy": null
+  }
+}

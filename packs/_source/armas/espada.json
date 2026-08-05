@@ -1,0 +1,35 @@
+{
+  "_id": "ans7YjEtWEkWPCZD",
+  "_key": "!items!ans7YjEtWEkWPCZD",
+  "name": "Espada",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/espada-curta.png",
+  "system": {
+    "tipoAtaque": "corpoACorpo",
+    "dano": 4,
+    "propriedade": "Sangrar",
+    "preco": 25,
+    "forcaMinima": 6,
+    "alcance": "Adjacente",
+    "maos": "1 mão",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857860,
+    "modifiedTime": 1785939857860,
+    "lastModifiedBy": null
+  }
+}

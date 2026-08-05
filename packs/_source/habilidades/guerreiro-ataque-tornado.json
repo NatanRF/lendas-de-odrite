@@ -1,0 +1,28 @@
+{
+  "_id": "bmwWa5OmVSnxjKuI",
+  "_key": "!items!bmwWa5OmVSnxjKuI",
+  "name": "Ataque Tornado",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Guerreiro",
+    "categoria": "lista",
+    "descricao": "Ao realizar um ataque, você pode atacar simultaneamente todos aqueles que estiverem adjacentes a você."
+  },
+  "effects": [],
+  "folder": "fES7U14FHbNpQJeR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174965,
+    "modifiedTime": 1785898174965,
+    "lastModifiedBy": null
+  }
+}

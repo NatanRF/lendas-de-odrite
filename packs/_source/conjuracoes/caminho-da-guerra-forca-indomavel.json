@@ -1,0 +1,28 @@
+{
+  "_id": "fVhD2rJ5HDyA4i3u",
+  "_key": "!items!fVhD2rJ5HDyA4i3u",
+  "name": "Força Indomável",
+  "type": "magia",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "caminho": "Caminho da Guerra",
+    "duracao": "Rodada",
+    "alcance": "Pessoal",
+    "descricao": "Adicione +2 no valor alvo de seus testes de acerto e no dano até o fim da rodada."
+  },
+  "effects": [],
+  "folder": "xjwxZw3U7f99g88k",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663645,
+    "modifiedTime": 1785965663645,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "6lMqKXXTOjUtAaBb",
+  "_key": "!items!6lMqKXXTOjUtAaBb",
+  "name": "Adaga",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/adaga.png",
+  "system": {
+    "tipoAtaque": "corpoACorpo",
+    "dano": 2,
+    "propriedade": "Sangrar",
+    "preco": 2,
+    "forcaMinima": 0,
+    "alcance": "Adjacente/10m",
+    "maos": "1 mão",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857860,
+    "modifiedTime": 1785939857860,
+    "lastModifiedBy": null
+  }
+}

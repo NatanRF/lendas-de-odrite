@@ -1,0 +1,28 @@
+{
+  "_id": "M8X814ULD68ixnaE",
+  "_key": "!items!M8X814ULD68ixnaE",
+  "name": "Espinhos Ascendentes",
+  "type": "magia",
+  "img": "icons/svg/trap.svg",
+  "system": {
+    "caminho": "Caminho da Natureza",
+    "duracao": "Instantâneo",
+    "alcance": "10 Metros",
+    "descricao": "Você faz espinhos crescerem do solo em uma área de 8x8 metros. Criaturas que se moverem na área sofrem 1 de dano a cada 2 metros percorridos na área."
+  },
+  "effects": [],
+  "folder": "IRn6yKpkqRN8IQj8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663654,
+    "modifiedTime": 1785965663654,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "OQFr8MhgWu8Y2X9s",
+  "_key": "!items!OQFr8MhgWu8Y2X9s",
+  "name": "Barreira Defletora",
+  "type": "magia",
+  "img": "icons/svg/fire-shield.svg",
+  "system": {
+    "caminho": "Caminho da Guerra",
+    "duracao": "Manutenção",
+    "alcance": "Pessoal",
+    "descricao": "Ao receber dano de um ataque corpo a corpo, você anula d4 pontos de dano e devolve esse dano ao agressor."
+  },
+  "effects": [],
+  "folder": "xjwxZw3U7f99g88k",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663647,
+    "modifiedTime": 1785965663647,
+    "lastModifiedBy": null
+  }
+}

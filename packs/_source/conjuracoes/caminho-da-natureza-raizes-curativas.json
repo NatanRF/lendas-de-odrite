@@ -1,0 +1,28 @@
+{
+  "_id": "ntGEQXqZLLGU9S8s",
+  "_key": "!items!ntGEQXqZLLGU9S8s",
+  "name": "Raízes Curativas",
+  "type": "magia",
+  "img": "icons/svg/regen.svg",
+  "system": {
+    "caminho": "Caminho da Natureza",
+    "duracao": "Instantâneo",
+    "alcance": "6 Metros",
+    "descricao": "Raízes emergem de um ponto no solo para restaurar 2 pontos de vitalidade a todas as criaturas aliadas adjacentes ao ponto."
+  },
+  "effects": [],
+  "folder": "IRn6yKpkqRN8IQj8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663657,
+    "modifiedTime": 1785965663657,
+    "lastModifiedBy": null
+  }
+}

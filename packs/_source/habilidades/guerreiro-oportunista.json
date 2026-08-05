@@ -1,0 +1,28 @@
+{
+  "_id": "r5sb3oixuu4YRtU6",
+  "_key": "!items!r5sb3oixuu4YRtU6",
+  "name": "Oportunista",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "classe": "Guerreiro",
+    "categoria": "lista",
+    "descricao": "Pode realizar Golpe Oportuno uma vez por rodada sem contabilizar em suas Manobras de Combate realizadas."
+  },
+  "effects": [],
+  "folder": "fES7U14FHbNpQJeR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174963,
+    "modifiedTime": 1785898174963,
+    "lastModifiedBy": null
+  }
+}

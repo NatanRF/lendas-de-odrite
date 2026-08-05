@@ -1,0 +1,27 @@
+{
+  "_id": "rvBuPsQblpEqk7Ma",
+  "_key": "!items!rvBuPsQblpEqk7Ma",
+  "name": "Kit Herbalístico",
+  "type": "item",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 2,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955660,
+    "modifiedTime": 1785946955660,
+    "lastModifiedBy": null
+  }
+}

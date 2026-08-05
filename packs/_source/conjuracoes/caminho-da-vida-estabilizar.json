@@ -1,0 +1,28 @@
+{
+  "_id": "MR3Xt4gKdRJPX33L",
+  "_key": "!items!MR3Xt4gKdRJPX33L",
+  "name": "Estabilizar",
+  "type": "magia",
+  "img": "icons/svg/regen.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Instantâneo",
+    "alcance": "Toque",
+    "descricao": "Toque em uma criatura que esteja morrendo e faça com que ela fique estabilizada."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663638,
+    "modifiedTime": 1785965663638,
+    "lastModifiedBy": null
+  }
+}

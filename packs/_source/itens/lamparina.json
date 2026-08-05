@@ -1,0 +1,27 @@
+{
+  "_id": "Sa59hs0rPE28WRtg",
+  "_key": "!items!Sa59hs0rPE28WRtg",
+  "name": "Lamparina",
+  "type": "item",
+  "img": "icons/svg/light.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 2,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955654,
+    "modifiedTime": 1785946955654,
+    "lastModifiedBy": null
+  }
+}

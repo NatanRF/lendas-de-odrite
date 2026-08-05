@@ -1,0 +1,836 @@
+.odrite {
+  --odrite-bg: #0c0708;
+  --odrite-bg-alt: #16090b;
+  --odrite-panel: rgba(24, 16, 18, 0.72);
+  --odrite-panel-solid: #1c1315;
+  --odrite-border: rgba(200, 162, 74, 0.45);
+  --odrite-border-strong: #c8a24a;
+  --odrite-red: #6e131d;
+  --odrite-red-bright: #b0202c;
+  --odrite-gold: #d4af6a;
+  --odrite-gold-dim: #a9884f;
+  --odrite-text: #e9e0cf;
+  --odrite-text-dim: #b8ab93;
+  --odrite-success: #4caf50;
+  --odrite-fail: #c0392b;
+  --odrite-font-display: "Modesto Condensed", "Signika", serif;
+}
+
+.odrite.sheet {
+  color: var(--odrite-text);
+  background:
+    radial-gradient(ellipse at top, rgba(110, 19, 29, 0.25) 0%, transparent 55%),
+    var(--odrite-bg);
+  font-family: "Signika", sans-serif;
+}
+
+.odrite.sheet input,
+.odrite.sheet select,
+.odrite.sheet textarea {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--odrite-border);
+  border-radius: 4px;
+  color: var(--odrite-text);
+  padding: 3px 6px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.odrite.sheet input:focus,
+.odrite.sheet select:focus,
+.odrite.sheet textarea:focus {
+  outline: none;
+  border-color: var(--odrite-border-strong);
+  box-shadow: 0 0 6px rgba(212, 175, 106, 0.5);
+}
+
+.odrite.sheet button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.odrite.sheet ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.odrite.sheet ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.odrite.sheet ::-webkit-scrollbar-thumb {
+  background: var(--odrite-gold-dim);
+  border-radius: 4px;
+}
+
+/* Header */
+.odrite .sheet-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  background:
+    linear-gradient(180deg, rgba(110, 19, 29, 0.55) 0%, rgba(12, 7, 8, 0.9) 100%);
+  border-bottom: 1px solid var(--odrite-border-strong);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.odrite .sheet-header .perfil {
+  width: 76px;
+  height: 76px;
+  border: 2px solid var(--odrite-border-strong);
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.6), 0 0 14px rgba(212, 175, 106, 0.35);
+  transition: box-shadow 0.2s ease;
+}
+
+.odrite .sheet-header .perfil:hover {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 106, 0.6);
+}
+
+.odrite .cabecalho-central {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.odrite .cabecalho-central > input[name="name"] {
+  font-family: var(--odrite-font-display);
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  color: var(--odrite-gold);
+  text-shadow: 0 0 12px rgba(212, 175, 106, 0.25);
+  padding: 0 0 2px;
+}
+
+.odrite .cabecalho-central > input[name="name"]:focus {
+  outline: none;
+  border-bottom-color: var(--odrite-border-strong);
+  box-shadow: none;
+}
+
+.odrite .detalhes-linha {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.odrite .detalhes-linha label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--odrite-text-dim);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.odrite .detalhes-linha input {
+  width: 50px;
+  text-align: center;
+}
+
+.odrite .detalhes-linha select {
+  max-width: 130px;
+}
+
+.odrite .item-header input[name="name"] {
+  font-family: var(--odrite-font-display);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--odrite-gold);
+}
+
+/* Tabs */
+.odrite .abas {
+  display: flex;
+  gap: 4px;
+  background: var(--odrite-bg-alt);
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(200, 162, 74, 0.25);
+}
+
+.odrite .abas a {
+  padding: 8px 14px;
+  color: var(--odrite-text-dim);
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.odrite .abas a.active,
+.odrite .abas a:hover {
+  color: var(--odrite-gold);
+  border-bottom-color: var(--odrite-gold);
+  text-shadow: 0 0 10px rgba(212, 175, 106, 0.4);
+}
+
+/* Body layout */
+.odrite .corpo-ficha,
+.odrite .corpo-item {
+  display: flex;
+  background: transparent;
+  min-height: 600px;
+}
+
+.odrite .corpo-item {
+  flex-direction: column;
+  padding: 14px;
+  min-height: auto;
+}
+
+.odrite .coluna-atributos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+  border-bottom: 1px solid rgba(200, 162, 74, 0.3);
+}
+
+.odrite .atributo {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.odrite .atributo-rolar {
+  background:
+    radial-gradient(circle at 35% 30%, var(--odrite-red-bright) 0%, var(--odrite-red) 55%, #2a0a0e 100%);
+  color: var(--odrite-gold);
+  border: 1px solid var(--odrite-border-strong);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 0.55rem;
+  font-weight: bold;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 0 2px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6), 0 0 0 3px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.odrite .atributo-rolar:hover {
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(0, 0, 0, 0.4), 0 0 14px rgba(212, 175, 106, 0.6);
+  transform: translateY(-1px);
+}
+
+.odrite .atributo input {
+  width: 40px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.45);
+  font-weight: bold;
+  color: var(--odrite-text);
+}
+
+.odrite .corpo-ficha {
+  flex-direction: column;
+}
+
+.odrite .aba-conteudo {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+}
+
+/* Cards */
+.odrite .cartoes-recurso,
+.odrite .cartoes-protecao {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.odrite .cartao {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  flex: 1;
+  min-width: 140px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.odrite .cartao h3 {
+  margin: 0 0 6px;
+  font-family: var(--odrite-font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--odrite-gold);
+  border-bottom: 1px solid rgba(200, 162, 74, 0.3);
+  padding-bottom: 4px;
+}
+
+.odrite .cartao .par {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.odrite .cartao .par input {
+  width: 48px;
+  font-weight: bold;
+}
+
+/* Vitalidade + Fadiga */
+.odrite .cartao-vital {
+  flex: 2.2;
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  min-width: 320px;
+}
+
+.odrite .cartoes-recurso .proficiencias {
+  flex: 1.1;
+  min-width: 150px;
+  margin: 0;
+}
+
+.odrite .cartao-recursos {
+  flex: 0.7;
+  min-width: 110px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.odrite .cartao-recursos h3 {
+  font-size: 0.82rem;
+}
+
+.odrite .vitalidade-bloco {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 16px;
+  border-right: 1px solid rgba(200, 162, 74, 0.3);
+}
+
+.odrite .vitalidade-bloco h3 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.odrite .par-vitalidade {
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--odrite-gold);
+}
+
+.odrite .par-vitalidade input {
+  width: 62px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--odrite-gold);
+  text-shadow: 0 0 10px rgba(212, 175, 106, 0.35);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.odrite .par-vitalidade span {
+  font-size: 1.4rem;
+  color: var(--odrite-text-dim);
+}
+
+.odrite .fadiga-bloco {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.odrite .fadiga-quadros {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.odrite .fadiga-quadro {
+  display: block;
+  width: 100%;
+  height: 34px;
+  min-height: 34px;
+  border: 1px solid var(--odrite-border);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0;
+  transition: background 0.1s ease, box-shadow 0.1s ease;
+}
+
+.odrite .fadiga-quadro:hover {
+  box-shadow: 0 0 6px rgba(212, 175, 106, 0.5);
+}
+
+.odrite .fadiga-quadro:nth-child(3),
+.odrite .fadiga-quadro:nth-child(9) {
+  margin-right: 10px;
+}
+
+.odrite .fadiga-quadro.grupo-normal.marcado {
+  background: var(--odrite-gold-dim);
+  border-color: var(--odrite-gold-dim);
+  box-shadow: 0 0 6px rgba(169, 136, 79, 0.6);
+}
+
+.odrite .fadiga-quadro.grupo-penalidade2.marcado {
+  background: #d9a441;
+  border-color: #d9a441;
+  box-shadow: 0 0 6px rgba(217, 164, 65, 0.6);
+}
+
+.odrite .fadiga-quadro.grupo-penalidade4.marcado {
+  background: var(--odrite-red-bright);
+  border-color: var(--odrite-red-bright);
+  box-shadow: 0 0 6px rgba(176, 32, 44, 0.7);
+}
+
+.odrite .fadiga-quadro.grupo-exaustao.marcado {
+  background: #ff2b2b;
+  border-color: #ff2b2b;
+  box-shadow: 0 0 8px rgba(255, 43, 43, 0.8);
+}
+
+.odrite .estagio-fadiga {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.odrite .estagio-normal { color: var(--odrite-success); }
+.odrite .estagio-penalidade2 { color: #d9a441; }
+.odrite .estagio-penalidade4 { color: var(--odrite-red-bright); }
+.odrite .estagio-exaustao { color: #ff4d4d; text-shadow: 0 0 8px rgba(255, 0, 0, 0.6); }
+
+.odrite .carga-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  color: var(--odrite-text-dim);
+}
+
+.odrite .carga-info strong {
+  color: var(--odrite-gold);
+}
+
+.odrite .carga-info.sobrecarregado {
+  border-color: var(--odrite-red-bright);
+}
+
+.odrite .carga-info.sobrecarregado strong {
+  color: var(--odrite-red-bright);
+}
+
+/* Weapon / item lists */
+.odrite .lista-armas,
+.odrite .lista-mochila {
+  margin-bottom: 12px;
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+.odrite .lista-armas h3,
+.odrite .lista-mochila h3 {
+  font-family: var(--odrite-font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--odrite-gold);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.odrite .linha-arma,
+.odrite .linha-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 2px;
+  border-bottom: 1px solid rgba(200, 162, 74, 0.15);
+  font-size: 0.85rem;
+}
+
+.odrite .linha-arma:last-child,
+.odrite .linha-item:last-child {
+  border-bottom: none;
+}
+
+.odrite .rolar-ataque,
+.odrite .rolar-magia,
+.odrite .rolar-habilidade {
+  background: linear-gradient(180deg, var(--odrite-red-bright) 0%, var(--odrite-red) 100%);
+  color: var(--odrite-gold);
+  border: 1px solid var(--odrite-border-strong);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-weight: bold;
+  transition: box-shadow 0.15s ease;
+}
+
+.odrite .rolar-ataque:hover,
+.odrite .rolar-magia:hover,
+.odrite .rolar-habilidade:hover {
+  box-shadow: 0 0 10px rgba(212, 175, 106, 0.5);
+}
+
+.odrite .criar-item {
+  background: transparent;
+  border: 1px dashed var(--odrite-border);
+  border-radius: 4px;
+  color: var(--odrite-text-dim);
+  padding: 1px 8px;
+  font-size: 0.8rem;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+/* Equipamento */
+.odrite .secao-equipamento {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.odrite .secao-equipamento > h3 {
+  margin: 0 0 8px;
+  font-family: var(--odrite-font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--odrite-gold);
+  border-bottom: 1px solid rgba(200, 162, 74, 0.3);
+  padding-bottom: 4px;
+}
+
+.odrite .equipamento-linha {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.odrite .equipamento-linha:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.odrite .equipamento-linha .cartao,
+.odrite .equipamento-linha .slot-vazio {
+  flex: 1;
+  min-width: 160px;
+}
+
+.odrite .arma-slot {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.odrite .slot-vazio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.odrite .slot-lista {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.odrite .arma-detalhes {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: var(--odrite-text-dim);
+  line-height: 1.5;
+}
+
+.odrite .criar-item:hover {
+  border-color: var(--odrite-border-strong);
+  color: var(--odrite-gold);
+}
+
+.odrite .proficiencias {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+}
+
+.odrite .proficiencias h3 {
+  margin: 0 0 4px;
+  font-family: var(--odrite-font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--odrite-gold);
+  border-bottom: 1px solid rgba(200, 162, 74, 0.3);
+  padding-bottom: 3px;
+}
+
+.odrite .proficiencias label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--odrite-text-dim);
+}
+
+.odrite .proficiencias input {
+  flex: 1;
+  padding: 1px 5px;
+  font-size: 0.78rem;
+}
+
+/* Nível de treinamento */
+.odrite .nivel-treinamento {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+}
+
+.odrite .nivel-treinamento-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--odrite-text-dim);
+}
+
+.odrite .nivel-treinamento-pips {
+  display: flex;
+  gap: 5px;
+}
+
+.odrite .pip-treinamento {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--odrite-border);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0;
+  transition: background 0.1s ease, box-shadow 0.1s ease;
+}
+
+.odrite .pip-treinamento:hover {
+  box-shadow: 0 0 6px rgba(212, 175, 106, 0.5);
+}
+
+.odrite .pip-treinamento.marcado {
+  background: var(--odrite-gold);
+  border-color: var(--odrite-gold);
+  box-shadow: 0 0 6px rgba(212, 175, 106, 0.6);
+}
+
+.odrite .nivel-treinamento-dado {
+  margin-left: auto;
+  font-weight: bold;
+  color: var(--odrite-gold);
+}
+
+.odrite .cartao.magia h4,
+.odrite .cartao.habilidade h4,
+.odrite .cartao.protecao h4,
+.odrite .arma-slot h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--odrite-font-display);
+  color: var(--odrite-gold);
+  letter-spacing: 0.3px;
+}
+
+.odrite .linha-fonte-arcana {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.odrite .campo-fonte-arcana,
+.odrite .campo-caminhos-conjuracao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+}
+
+.odrite .campo-caminhos-conjuracao {
+  flex: 1;
+}
+
+.odrite .campo-fonte-arcana label,
+.odrite .campo-caminhos-conjuracao label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--odrite-text-dim);
+  white-space: nowrap;
+}
+
+.odrite .campo-fonte-arcana select {
+  flex: 1;
+  max-width: 220px;
+}
+
+.odrite .caminhos-conjuracao-selects {
+  display: flex;
+  flex: 1;
+  gap: 6px;
+}
+
+.odrite .caminhos-conjuracao-selects select {
+  flex: 1;
+  min-width: 0;
+}
+
+.odrite .cartao.magia,
+.odrite .cartao.habilidade {
+  margin-bottom: 10px;
+  min-width: unset;
+}
+
+.odrite .cartao .meta {
+  font-size: 0.75rem;
+  color: var(--odrite-text-dim);
+}
+
+.odrite .cartao .descricao {
+  font-size: 0.85rem;
+  color: var(--odrite-text);
+}
+
+.odrite .tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: var(--odrite-gold);
+  color: #241813;
+  white-space: nowrap;
+}
+
+textarea[name="system.detalhes.biografia"],
+textarea[name="system.descricao"] {
+  width: 100%;
+  min-height: 200px;
+}
+
+/* Item sheet fields */
+.odrite .odrite-sheet-body.item-sheet-body,
+.odrite.sheet.item {
+  background: var(--odrite-bg);
+}
+
+.odrite .campo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.odrite .campo label {
+  min-width: 140px;
+  font-weight: bold;
+  color: var(--odrite-text-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.odrite .campo-descricao {
+  align-items: flex-start;
+}
+
+.odrite .campo-descricao textarea {
+  flex: 1;
+  min-height: 120px;
+}
+
+.odrite .dica {
+  font-size: 0.75rem;
+  color: var(--odrite-text-dim);
+}
+
+/* Chat card */
+.odrite.chat-card {
+  border: 1px solid var(--odrite-border-strong);
+  border-left: 3px solid var(--odrite-gold);
+  border-radius: 5px;
+  background: linear-gradient(180deg, #1c1315 0%, #120c0d 100%);
+  color: var(--odrite-text);
+  padding: 8px 10px;
+}
+
+.odrite.chat-card .chat-card-titulo {
+  margin: 0 0 6px;
+  font-family: var(--odrite-font-display);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--odrite-gold);
+  border-bottom: 1px solid rgba(200, 162, 74, 0.3);
+  padding-bottom: 4px;
+}
+
+.odrite.chat-card .chat-card-linha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 3px 0;
+}
+
+.odrite.chat-card .tag.sucesso { background: var(--odrite-success); color: #0d1f0e; }
+.odrite.chat-card .tag.falha { background: var(--odrite-fail); color: #2a0a06; }
+.odrite.chat-card .tag.beneficio { background: var(--odrite-gold); color: #241813; }
+.odrite.chat-card .tag.acerto-absoluto { background: #2e7d32; color: #fff; box-shadow: 0 0 6px rgba(46, 125, 50, 0.7); }
+.odrite.chat-card .tag.falha-absoluta { background: #000; color: #ff4d4d; border: 1px solid #ff4d4d; }
+
+.odrite.chat-card.falha { opacity: 0.94; }

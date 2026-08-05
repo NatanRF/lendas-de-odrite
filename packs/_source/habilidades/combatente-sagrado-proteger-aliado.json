@@ -1,0 +1,28 @@
+{
+  "_id": "DYac87WWAIhQeGSQ",
+  "_key": "!items!DYac87WWAIhQeGSQ",
+  "name": "Proteger Aliado",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Combatente Sagrado",
+    "categoria": "lista",
+    "descricao": "Um ataque feito contra um aliado adjacente a você é considerado Muito Difícil (-4)."
+  },
+  "effects": [],
+  "folder": "iWIe853JnJDqtLDV",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174984,
+    "modifiedTime": 1785898174984,
+    "lastModifiedBy": null
+  }
+}

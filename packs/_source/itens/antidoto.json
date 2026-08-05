@@ -1,0 +1,27 @@
+{
+  "_id": "Xa19qaFPHy2oLucA",
+  "_key": "!items!Xa19qaFPHy2oLucA",
+  "name": "Antídoto",
+  "type": "item",
+  "img": "icons/svg/poison.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 5,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955660,
+    "modifiedTime": 1785946955660,
+    "lastModifiedBy": null
+  }
+}

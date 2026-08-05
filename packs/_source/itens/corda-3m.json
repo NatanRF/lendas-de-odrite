@@ -1,0 +1,27 @@
+{
+  "_id": "g25RXz0oUxbcelza",
+  "_key": "!items!g25RXz0oUxbcelza",
+  "name": "Corda (3m)",
+  "type": "item",
+  "img": "icons/svg/net.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 1,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955653,
+    "modifiedTime": 1785946955653,
+    "lastModifiedBy": null
+  }
+}

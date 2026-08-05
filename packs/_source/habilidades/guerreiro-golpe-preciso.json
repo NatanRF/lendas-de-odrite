@@ -1,0 +1,28 @@
+{
+  "_id": "z2lMxFpQlrbv4dLK",
+  "_key": "!items!z2lMxFpQlrbv4dLK",
+  "name": "Golpe Preciso",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Guerreiro",
+    "categoria": "lista",
+    "descricao": "Pode rolar novamente 1 dos dados em um teste de ataque."
+  },
+  "effects": [],
+  "folder": "fES7U14FHbNpQJeR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174962,
+    "modifiedTime": 1785898174962,
+    "lastModifiedBy": null
+  }
+}

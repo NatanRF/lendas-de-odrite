@@ -1,0 +1,28 @@
+{
+  "_id": "YrssMiX5UmQ5CYT1",
+  "_key": "!items!YrssMiX5UmQ5CYT1",
+  "name": "Disparo Perfurante",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "classe": "Caçador",
+    "categoria": "lista",
+    "descricao": "O dano dos seus ataques a distância não pode ser mitigado."
+  },
+  "effects": [],
+  "folder": "CxwP508nxjwOa5yz",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174969,
+    "modifiedTime": 1785898174969,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "_id": "KK4QPb4PF2XSZRzO",
+  "_key": "!items!KK4QPb4PF2XSZRzO",
+  "name": "Refeição Especial",
+  "type": "item",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 10,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955729,
+    "modifiedTime": 1785946955729,
+    "lastModifiedBy": null
+  }
+}

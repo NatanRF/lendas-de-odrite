@@ -1,0 +1,27 @@
+{
+  "_id": "t4wD6parHP2BU69W",
+  "_key": "!items!t4wD6parHP2BU69W",
+  "name": "Elixir de Vigor Refinado",
+  "type": "item",
+  "img": "icons/svg/regen.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 150,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955658,
+    "modifiedTime": 1785946955658,
+    "lastModifiedBy": null
+  }
+}

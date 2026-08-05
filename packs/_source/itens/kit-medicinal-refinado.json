@@ -1,0 +1,27 @@
+{
+  "_id": "fzgpwAgcrnE0isdC",
+  "_key": "!items!fzgpwAgcrnE0isdC",
+  "name": "Kit Medicinal Refinado",
+  "type": "item",
+  "img": "icons/svg/heal.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 50,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955659,
+    "modifiedTime": 1785946955659,
+    "lastModifiedBy": null
+  }
+}

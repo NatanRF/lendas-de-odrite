@@ -1,0 +1,28 @@
+{
+  "_id": "9iHYBpuWL0dB67ha",
+  "_key": "!items!9iHYBpuWL0dB67ha",
+  "name": "Lança de Fogo",
+  "type": "magia",
+  "img": "icons/svg/fire.svg",
+  "system": {
+    "caminho": "Caminho Elemental",
+    "duracao": "Instantâneo",
+    "alcance": "20 Metros",
+    "descricao": "Você arremessa uma lança de fogo contra um inimigo. O alvo sofre d4 de dano de fogo."
+  },
+  "effects": [],
+  "folder": "8iWl7uUQo2rNqpJO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663649,
+    "modifiedTime": 1785965663649,
+    "lastModifiedBy": null
+  }
+}

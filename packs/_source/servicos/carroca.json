@@ -1,0 +1,27 @@
+{
+  "_id": "tPEuMTfl2sKfxoBR",
+  "_key": "!items!tPEuMTfl2sKfxoBR",
+  "name": "Carroça",
+  "type": "item",
+  "img": "icons/svg/barrel.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 500,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955729,
+    "modifiedTime": 1785946955729,
+    "lastModifiedBy": null
+  }
+}

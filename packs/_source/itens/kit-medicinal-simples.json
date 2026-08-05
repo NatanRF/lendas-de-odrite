@@ -1,0 +1,27 @@
+{
+  "_id": "bj3eTopBhbPrtH3T",
+  "_key": "!items!bj3eTopBhbPrtH3T",
+  "name": "Kit Medicinal Simples",
+  "type": "item",
+  "img": "icons/svg/heal.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 20,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955659,
+    "modifiedTime": 1785946955659,
+    "lastModifiedBy": null
+  }
+}

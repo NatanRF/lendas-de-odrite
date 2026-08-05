@@ -1,0 +1,32 @@
+{
+  "_id": "v9g6jn7gasiRCkyV",
+  "_key": "!items!v9g6jn7gasiRCkyV",
+  "name": "Armadura Leve",
+  "type": "armadura",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "tipo": "Armadura Leve",
+    "preco": 50,
+    "forcaMinima": 0,
+    "penalidade": 0,
+    "durabilidade": {
+      "value": 5,
+      "max": 5
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785894675599,
+    "modifiedTime": 1785894675599,
+    "lastModifiedBy": null
+  }
+}

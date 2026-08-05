@@ -1,0 +1,28 @@
+{
+  "_id": "iSgC6Z3wvK4Oeqsy",
+  "_key": "!items!iSgC6Z3wvK4Oeqsy",
+  "name": "Escudo de Raízes",
+  "type": "magia",
+  "img": "icons/svg/mage-shield.svg",
+  "system": {
+    "caminho": "Caminho da Natureza",
+    "duracao": "Manutenção",
+    "alcance": "Pessoal",
+    "descricao": "Você conjura um escudo feito de raízes magicas com o qual você se torna proficiente e pode ser usado mesmo que empunhado armas de 2 mãos. O escudo possui 4 de Durabilidade."
+  },
+  "effects": [],
+  "folder": "IRn6yKpkqRN8IQj8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663658,
+    "modifiedTime": 1785965663658,
+    "lastModifiedBy": null
+  }
+}

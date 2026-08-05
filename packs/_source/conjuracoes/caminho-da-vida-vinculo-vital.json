@@ -1,0 +1,28 @@
+{
+  "_id": "pM2uJP89IkzyNryr",
+  "_key": "!items!pM2uJP89IkzyNryr",
+  "name": "Vínculo Vital",
+  "type": "magia",
+  "img": "icons/svg/anchor.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Manutenção",
+    "alcance": "Toque",
+    "descricao": "Conecte sua Essência com a de um aliado. Se ele sofreria dano, você sofre no lugar. E se você cura outro individuo, ele também recebe o mesmo valor de cura."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663641,
+    "modifiedTime": 1785965663641,
+    "lastModifiedBy": null
+  }
+}

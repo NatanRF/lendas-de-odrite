@@ -1,0 +1,28 @@
+{
+  "_id": "3zOLbr99Vx8B0oqW",
+  "_key": "!items!3zOLbr99Vx8B0oqW",
+  "name": "Bloqueio da Mente",
+  "type": "magia",
+  "img": "icons/svg/paralysis.svg",
+  "system": {
+    "caminho": "Caminho da Mente",
+    "duracao": "Instantâneo",
+    "alcance": "6 metros",
+    "descricao": "O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, sua mente fica totalmente bloqueada, o impedindo de realizar qualquer tipo de ação. O alvo fica com a condição de Imobilizado e apenas pode usar suas manobras de combate apenas para fazer testes de Mente e tentar interromper o efeito."
+  },
+  "effects": [],
+  "folder": "Haf764WEalUR6Ird",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663665,
+    "modifiedTime": 1785965663665,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "uYih3Z3B2nBK0JPC",
+  "_key": "!items!uYih3Z3B2nBK0JPC",
+  "name": "Chamado da Tempestade",
+  "type": "magia",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "caminho": "Caminho Elemental",
+    "duracao": "Instantâneo",
+    "alcance": "10 Metros",
+    "descricao": "Você invoca relâmpagos em um ponto dentro do alcance. Todas as criaturas adjacentes ao ponto sofrem 1d4 de dano."
+  },
+  "effects": [],
+  "folder": "8iWl7uUQo2rNqpJO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663651,
+    "modifiedTime": 1785965663651,
+    "lastModifiedBy": null
+  }
+}

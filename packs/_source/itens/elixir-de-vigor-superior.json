@@ -1,0 +1,27 @@
+{
+  "_id": "2w9Sl8gthiwfHGR7",
+  "_key": "!items!2w9Sl8gthiwfHGR7",
+  "name": "Elixir de Vigor Superior",
+  "type": "item",
+  "img": "icons/svg/regen.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 300,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955658,
+    "modifiedTime": 1785946955658,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "BjupyAVFVO7YBQfg",
+  "_key": "!items!BjupyAVFVO7YBQfg",
+  "name": "Sementes da Decadência",
+  "type": "magia",
+  "img": "icons/svg/poison.svg",
+  "system": {
+    "caminho": "Caminho da Natureza",
+    "duracao": "Instantâneo",
+    "alcance": "6 Metros",
+    "descricao": "Escolha uma criatura. Esporos venenosos a envolvem. Cause 2 de dano e o alvo tem todas as suas rolagens consideradas Difíceis até o final dessa rodada."
+  },
+  "effects": [],
+  "folder": "IRn6yKpkqRN8IQj8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663656,
+    "modifiedTime": 1785965663656,
+    "lastModifiedBy": null
+  }
+}

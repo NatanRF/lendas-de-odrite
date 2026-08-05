@@ -1,0 +1,35 @@
+{
+  "_id": "Lo3klIWxHK82BKtA",
+  "_key": "!items!Lo3klIWxHK82BKtA",
+  "name": "Espada Longa",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/espada-longa.png",
+  "system": {
+    "tipoAtaque": "corpoACorpo",
+    "dano": 6,
+    "propriedade": "Sangrar",
+    "preco": 150,
+    "forcaMinima": 10,
+    "alcance": "Adjacente",
+    "maos": "2 mãos",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857861,
+    "modifiedTime": 1785939857861,
+    "lastModifiedBy": null
+  }
+}

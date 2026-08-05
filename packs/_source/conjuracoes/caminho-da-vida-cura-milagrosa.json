@@ -1,0 +1,28 @@
+{
+  "_id": "V69QTNYs1z8AD3bJ",
+  "_key": "!items!V69QTNYs1z8AD3bJ",
+  "name": "Cura Milagrosa",
+  "type": "magia",
+  "img": "icons/svg/heal.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Instantâneo",
+    "alcance": "Toque",
+    "descricao": "Você pode restaurar os d4 Pontos de Vitalidade do alvo."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663638,
+    "modifiedTime": 1785965663638,
+    "lastModifiedBy": null
+  }
+}

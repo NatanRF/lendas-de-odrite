@@ -1,0 +1,27 @@
+{
+  "_id": "FTf66gtdcx0Z5DIf",
+  "_key": "!items!FTf66gtdcx0Z5DIf",
+  "name": "Óleo (1 hora)",
+  "type": "item",
+  "img": "icons/svg/fire.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 1,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955654,
+    "modifiedTime": 1785946955654,
+    "lastModifiedBy": null
+  }
+}

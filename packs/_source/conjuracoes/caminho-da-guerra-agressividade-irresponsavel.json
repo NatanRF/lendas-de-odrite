@@ -1,0 +1,28 @@
+{
+  "_id": "GmLr8ajV3IOMhoaE",
+  "_key": "!items!GmLr8ajV3IOMhoaE",
+  "name": "Agressividade Irresponsável",
+  "type": "magia",
+  "img": "icons/svg/thrust.svg",
+  "system": {
+    "caminho": "Caminho da Guerra",
+    "duracao": "Rodada",
+    "alcance": "Pessoal",
+    "descricao": "Você não recebe Pontos de Fadiga por Atacar múltiplas vezes. Todos os ataques contra você até o fim da rodada são considerados Fáceis (+2)."
+  },
+  "effects": [],
+  "folder": "xjwxZw3U7f99g88k",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663646,
+    "modifiedTime": 1785965663646,
+    "lastModifiedBy": null
+  }
+}

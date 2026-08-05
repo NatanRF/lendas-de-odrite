@@ -1,0 +1,131 @@
+{
+  "ODRITE": {
+    "SheetPersonagem": "Ficha de Personagem - Lendas de Odrite",
+    "SheetItem": "Item - Lendas de Odrite",
+
+    "Nome": "Nome",
+    "Raca": "Raça",
+    "Classe": "Classe",
+    "Nivel": "Nível",
+    "Experiencia": "Experiência",
+    "Deslocamento": "Deslocamento",
+    "Vitalidade": "Vitalidade",
+    "Fadiga": "Fadiga",
+    "FonteArcana": "Fonte Arcana",
+    "CaminhosConjuracao": "Caminhos de Conjuração",
+    "Editar": "Editar",
+    "Remover": "Remover",
+    "Rolar": "Rolar",
+    "Tipo": "Tipo",
+    "Descricao": "Descrição",
+    "Quantidade": "Quantidade",
+    "Dano": "Dano",
+    "Propriedade": "Propriedade",
+    "Preco": "Preço",
+    "ForcaMinima": "Força Mínima",
+    "Alcance": "Alcance",
+    "Empunhadura": "Empunhadura",
+    "Durabilidade": "Durabilidade",
+    "Penalidade": "Penalidade",
+    "NivelTreinamento": "Nível de Treinamento",
+    "DadoTreinamento": "Dado de Treinamento",
+    "Armadura": "Armadura",
+    "Escudo": "Escudo",
+    "Armas": "Armas",
+    "Equipamento": "Equipamento",
+    "ArmaPrincipal": "Arma Principal",
+    "ArmaSecundaria": "Arma Secundária",
+    "Magias": "Magias",
+    "Habilidades": "Habilidades",
+    "Mochila": "Mochila",
+    "Carga": "Carga",
+    "Sobrecarregado": "Sobrecarregado",
+
+    "Atributo": {
+      "Forca": "Força",
+      "Agilidade": "Agilidade",
+      "Resistencia": "Resistência",
+      "Influencia": "Influência",
+      "Mente": "Mente",
+      "Sentidos": "Sentidos",
+      "Habilidade": "Habilidade",
+      "Conjuracao": "Conjuração"
+    },
+
+    "TipoAtaque": {
+      "Titulo": "Tipo de Ataque",
+      "CorpoACorpo": "Corpo a Corpo",
+      "Distancia": "À Distância"
+    },
+
+    "TipoHabilidade": {
+      "Titulo": "Tipo",
+      "Passiva": "Passiva",
+      "Ativa": "Ativa",
+      "Conjuracao": "Conjuração"
+    },
+
+    "CategoriaHabilidade": {
+      "Titulo": "Categoria",
+      "Basica": "Básica",
+      "Lista": "Lista de Habilidades"
+    },
+
+    "EstagioFadiga": {
+      "normal": "Normal",
+      "penalidade2": "Penalidade -2",
+      "penalidade4": "Penalidade -4",
+      "exaustao": "Liminar de Exaustão"
+    },
+
+    "Magia": {
+      "Caminho": "Caminho de Conjuração",
+      "Duracao": "Duração",
+      "Alcance": "Alcance"
+    },
+
+    "Proficiencias": {
+      "Titulo": "Proficiências",
+      "Idiomas": "Idiomas",
+      "Armas": "Armas",
+      "Armaduras": "Armaduras",
+      "Escudos": "Escudos"
+    },
+
+    "Recursos": {
+      "Titulo": "Recursos",
+      "Drakeons": "Drakeons",
+      "Aljava": "Aljava",
+      "Cantil": "Cantil"
+    },
+
+    "Aba": {
+      "Principal": "Principal",
+      "Magias": "Conjurações",
+      "Habilidades": "Habilidades",
+      "Biografia": "Anotações"
+    },
+
+    "NovoItem": {
+      "arma": "Nova Arma",
+      "armadura": "Nova Armadura",
+      "escudo": "Novo Escudo",
+      "magia": "Nova Magia",
+      "habilidade": "Nova Habilidade",
+      "item": "Novo Item"
+    },
+
+    "Aviso": {
+      "MaximoArmas": "O personagem já está portando o máximo de 2 armas."
+    },
+
+    "Rolagem": {
+      "TesteAtributo": "Teste de {atributo}",
+      "TesteAtaque": "Ataque: {arma}",
+      "TesteMagia": "Conjuração: {magia}",
+      "TesteHabilidade": "Habilidade: {habilidade}",
+      "DadoTreinamento": "Dado de Treinamento",
+      "DadoRefinamento": "Dado de Refinamento"
+    }
+  }
+}

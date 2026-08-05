@@ -1,0 +1,27 @@
+{
+  "_id": "pxXNnvy0TqCB1KYq",
+  "_key": "!items!pxXNnvy0TqCB1KYq",
+  "name": "Algibeira",
+  "type": "item",
+  "img": "icons/svg/coins.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 1,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955651,
+    "modifiedTime": 1785946955651,
+    "lastModifiedBy": null
+  }
+}

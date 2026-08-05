@@ -1,0 +1,19 @@
+{
+  "_id": "fES7U14FHbNpQJeR",
+  "_key": "!folders!fES7U14FHbNpQJeR",
+  "name": "Guerreiro",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174961,
+    "modifiedTime": 1785898174961,
+    "lastModifiedBy": null
+  }
+}

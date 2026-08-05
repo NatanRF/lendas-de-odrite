@@ -1,0 +1,28 @@
+{
+  "_id": "JIlbWtfZFhF6viGe",
+  "_key": "!items!JIlbWtfZFhF6viGe",
+  "name": "Falha Forçada",
+  "type": "magia",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "caminho": "Caminho da Mente",
+    "duracao": "Instantâneo",
+    "alcance": "9 metros",
+    "descricao": "Se um alvo que você possa ver dentro do alcance iria realizar um teste de atributo, você pode força-lo a fazer um teste de Mente ao invés do atributo original que era exigido no teste em questão."
+  },
+  "effects": [],
+  "folder": "Haf764WEalUR6Ird",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663665,
+    "modifiedTime": 1785965663665,
+    "lastModifiedBy": null
+  }
+}

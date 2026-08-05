@@ -1,0 +1,32 @@
+{
+  "_id": "dtfp8zDGtR6AckPX",
+  "_key": "!items!dtfp8zDGtR6AckPX",
+  "name": "Armadura Pesada",
+  "type": "armadura",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "tipo": "Armadura Pesada",
+    "preco": 500,
+    "forcaMinima": 10,
+    "penalidade": 4,
+    "durabilidade": {
+      "value": 10,
+      "max": 10
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785894675600,
+    "modifiedTime": 1785894675600,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "r5MwDlGQGOtX7r3H",
+  "_key": "!items!r5MwDlGQGOtX7r3H",
+  "name": "Resistência Arcana",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "classe": "Combatente Sagrado",
+    "categoria": "lista",
+    "descricao": "Ao realizar um teste de Resistência, ele é considerado Fácil (+2)."
+  },
+  "effects": [],
+  "folder": "iWIe853JnJDqtLDV",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174982,
+    "modifiedTime": 1785898174982,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "kPfIlt7BXGX8Sgnr",
+  "_key": "!items!kPfIlt7BXGX8Sgnr",
+  "name": "Perseguir a Presa",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Caçador",
+    "categoria": "lista",
+    "descricao": "Após atingir um alvo com um ataque a distância, pode Movimentar uma vez sem contabilizar em suas Manobras de Combate realizadas."
+  },
+  "effects": [],
+  "folder": "CxwP508nxjwOa5yz",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174970,
+    "modifiedTime": 1785898174970,
+    "lastModifiedBy": null
+  }
+}

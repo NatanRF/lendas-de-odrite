@@ -1,0 +1,28 @@
+{
+  "_id": "CUUORtt0QGRwl3mn",
+  "_key": "!items!CUUORtt0QGRwl3mn",
+  "name": "Toque Revigorante",
+  "type": "magia",
+  "img": "icons/svg/regen.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Instantâneo",
+    "alcance": "Toque",
+    "descricao": "Toque em uma criatura e remova dela até 2 pontos de Fadiga."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663642,
+    "modifiedTime": 1785965663642,
+    "lastModifiedBy": null
+  }
+}

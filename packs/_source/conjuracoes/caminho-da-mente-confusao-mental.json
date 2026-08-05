@@ -1,0 +1,28 @@
+{
+  "_id": "spbFfeVa73jIWnED",
+  "_key": "!items!spbFfeVa73jIWnED",
+  "name": "Confusão Mental",
+  "type": "magia",
+  "img": "icons/svg/stoned.svg",
+  "system": {
+    "caminho": "Caminho da Mente",
+    "duracao": "Instantâneo",
+    "alcance": "6 metros",
+    "descricao": "Você lança uma onda de confusão na mente do inimigo. O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, o alvo perde 1 manobra de combate nessa rodada."
+  },
+  "effects": [],
+  "folder": "Haf764WEalUR6Ird",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663663,
+    "modifiedTime": 1785965663663,
+    "lastModifiedBy": null
+  }
+}

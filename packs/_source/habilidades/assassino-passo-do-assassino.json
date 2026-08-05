@@ -1,0 +1,28 @@
+{
+  "_id": "NJi9hFeYKy8IuCDZ",
+  "_key": "!items!NJi9hFeYKy8IuCDZ",
+  "name": "Passo do Assassino",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Assassino",
+    "categoria": "lista",
+    "descricao": "Em uma mesma manobra, você pode avançar até 4 metros na direção de um alvo a vista. Caso termine o movimento adjacente a ele, pode realizar um ataque corpo a corpo imediatamente."
+  },
+  "effects": [],
+  "folder": "vBvshF8qFAo1VEqW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174974,
+    "modifiedTime": 1785898174974,
+    "lastModifiedBy": null
+  }
+}

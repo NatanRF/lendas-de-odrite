@@ -1,0 +1,28 @@
+{
+  "_id": "Kkos8z1pHTi0n2Jl",
+  "_key": "!items!Kkos8z1pHTi0n2Jl",
+  "name": "Flecha da Natureza",
+  "type": "magia",
+  "img": "icons/svg/target.svg",
+  "system": {
+    "caminho": "Caminho da Natureza",
+    "duracao": "Instantânea",
+    "alcance": "Pessoal",
+    "descricao": "Você pode envolver um projetil com energia natural. Ao atingir um inimigo, causa 1d4 de dano adicional."
+  },
+  "effects": [],
+  "folder": "IRn6yKpkqRN8IQj8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663659,
+    "modifiedTime": 1785965663659,
+    "lastModifiedBy": null
+  }
+}

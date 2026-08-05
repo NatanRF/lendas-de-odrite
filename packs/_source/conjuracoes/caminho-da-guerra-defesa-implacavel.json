@@ -1,0 +1,28 @@
+{
+  "_id": "QSu4oKeQoh4vsN8W",
+  "_key": "!items!QSu4oKeQoh4vsN8W",
+  "name": "Defesa Implacável",
+  "type": "magia",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "caminho": "Caminho da Guerra",
+    "duracao": "Rodada",
+    "alcance": "Pessoal",
+    "descricao": "Até o final da rodada, se for atingido por um ataque, reduza pela metade todo o dano recebido arredondado para baixo."
+  },
+  "effects": [],
+  "folder": "xjwxZw3U7f99g88k",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663646,
+    "modifiedTime": 1785965663646,
+    "lastModifiedBy": null
+  }
+}

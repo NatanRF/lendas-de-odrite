@@ -1,0 +1,120 @@
+{
+  "id": "odrite",
+  "title": "Lendas de Odrite",
+  "description": "Sistema de RPG autoral Lendas de Odrite para Foundry Virtual Tabletop.",
+  "authors": [
+    {
+      "name": "Natanael"
+    }
+  ],
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": 13,
+    "verified": "14"
+  },
+  "esmodules": [
+    "module/odrite.mjs"
+  ],
+  "styles": [
+    "styles/odrite.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {}
+    },
+    "Item": {
+      "arma": {},
+      "armadura": {},
+      "escudo": {},
+      "magia": {},
+      "habilidade": {},
+      "item": {}
+    }
+  },
+  "packs": [
+    {
+      "name": "armas",
+      "label": "Armas",
+      "path": "packs/armas",
+      "type": "Item",
+      "system": "odrite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "protecao",
+      "label": "Escudos e Armaduras",
+      "path": "packs/protecao",
+      "type": "Item",
+      "system": "odrite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "habilidades",
+      "label": "Habilidades",
+      "path": "packs/habilidades",
+      "type": "Item",
+      "system": "odrite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "itens",
+      "label": "Itens",
+      "path": "packs/itens",
+      "type": "Item",
+      "system": "odrite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "servicos",
+      "label": "Serviços",
+      "path": "packs/servicos",
+      "type": "Item",
+      "system": "odrite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "conjuracoes",
+      "label": "Conjurações",
+      "path": "packs/conjuracoes",
+      "type": "Item",
+      "system": "odrite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "socket": false,
+  "grid": {
+    "distance": 1,
+    "units": "m"
+  },
+  "primaryTokenAttribute": "vitalidade"
+}

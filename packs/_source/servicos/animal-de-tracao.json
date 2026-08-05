@@ -1,0 +1,27 @@
+{
+  "_id": "asoHU9dvGOr2Doay",
+  "_key": "!items!asoHU9dvGOr2Doay",
+  "name": "Animal de Tração",
+  "type": "item",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 200,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955731,
+    "modifiedTime": 1785946955731,
+    "lastModifiedBy": null
+  }
+}

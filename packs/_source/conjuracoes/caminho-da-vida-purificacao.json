@@ -1,0 +1,28 @@
+{
+  "_id": "m14hc3SOLExcFCTo",
+  "_key": "!items!m14hc3SOLExcFCTo",
+  "name": "Purificação",
+  "type": "magia",
+  "img": "icons/svg/poison.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Instantâneo",
+    "alcance": "Toque",
+    "descricao": "Toque em uma criatura para remover um efeito de veneno."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663641,
+    "modifiedTime": 1785965663641,
+    "lastModifiedBy": null
+  }
+}

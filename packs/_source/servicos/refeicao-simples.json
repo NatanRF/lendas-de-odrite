@@ -1,0 +1,27 @@
+{
+  "_id": "jzyg6ixmABFWCpI9",
+  "_key": "!items!jzyg6ixmABFWCpI9",
+  "name": "Refeição Simples",
+  "type": "item",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 1,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955728,
+    "modifiedTime": 1785946955728,
+    "lastModifiedBy": null
+  }
+}

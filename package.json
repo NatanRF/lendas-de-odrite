@@ -1,0 +1,11 @@
+{
+  "name": "odrite",
+  "private": true,
+  "description": "Ferramentas de build do sistema Lendas de Odrite (compilação de compêndios).",
+  "scripts": {
+    "packs:compile": "node scripts/compile-packs.mjs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^3.0.4"
+  }
+}

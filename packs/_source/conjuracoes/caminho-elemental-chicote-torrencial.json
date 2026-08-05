@@ -1,0 +1,28 @@
+{
+  "_id": "8dYRnrI3SpAKDBo4",
+  "_key": "!items!8dYRnrI3SpAKDBo4",
+  "name": "Chicote Torrencial",
+  "type": "magia",
+  "img": "icons/svg/waterfall.svg",
+  "system": {
+    "caminho": "Caminho Elemental",
+    "duracao": "Instantânea",
+    "alcance": "6 Metros",
+    "descricao": "Ataque com um chicote feito de água em alta pressão. Cause 1d4 de dano e puxe o alvo 4 metros em sua direção."
+  },
+  "effects": [],
+  "folder": "8iWl7uUQo2rNqpJO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663652,
+    "modifiedTime": 1785965663652,
+    "lastModifiedBy": null
+  }
+}

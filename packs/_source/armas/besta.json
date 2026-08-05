@@ -1,0 +1,35 @@
+{
+  "_id": "ROJDj8h5MkHQpEM6",
+  "_key": "!items!ROJDj8h5MkHQpEM6",
+  "name": "Besta",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/besta.png",
+  "system": {
+    "tipoAtaque": "distancia",
+    "dano": 6,
+    "propriedade": "Sangrar",
+    "preco": 200,
+    "forcaMinima": 8,
+    "alcance": "Até 60 metros",
+    "maos": "2 mãos",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857866,
+    "modifiedTime": 1785939857866,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "_id": "Q2qHfKFhHizKVVIc",
+  "_key": "!items!Q2qHfKFhHizKVVIc",
+  "name": "Hospedagem Modesta",
+  "type": "item",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 10,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955727,
+    "modifiedTime": 1785946955727,
+    "lastModifiedBy": null
+  }
+}

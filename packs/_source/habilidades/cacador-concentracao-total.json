@@ -1,0 +1,28 @@
+{
+  "_id": "v3an1fg1bztpCDXF",
+  "_key": "!items!v3an1fg1bztpCDXF",
+  "name": "Concentração Total",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "classe": "Caçador",
+    "categoria": "lista",
+    "descricao": "Seu primeiro teste de Acerto da rodada é considerado Fácil (+2)."
+  },
+  "effects": [],
+  "folder": "CxwP508nxjwOa5yz",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174968,
+    "modifiedTime": 1785898174968,
+    "lastModifiedBy": null
+  }
+}

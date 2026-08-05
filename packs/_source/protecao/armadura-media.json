@@ -1,0 +1,32 @@
+{
+  "_id": "9CC98QZKDvsNVdI9",
+  "_key": "!items!9CC98QZKDvsNVdI9",
+  "name": "Armadura Média",
+  "type": "armadura",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "tipo": "Armadura Média",
+    "preco": 200,
+    "forcaMinima": 6,
+    "penalidade": 2,
+    "durabilidade": {
+      "value": 8,
+      "max": 8
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785894675599,
+    "modifiedTime": 1785894675599,
+    "lastModifiedBy": null
+  }
+}

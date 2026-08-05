@@ -1,0 +1,28 @@
+{
+  "_id": "OGyNu48eenamfde7",
+  "_key": "!items!OGyNu48eenamfde7",
+  "name": "Terra Movediça",
+  "type": "magia",
+  "img": "icons/svg/trap.svg",
+  "system": {
+    "caminho": "Caminho Elemental",
+    "duracao": "Instantâneo",
+    "alcance": "10 Metros",
+    "descricao": "Você transforma o terreno em uma área de 6x6m em uma área movediça. Qualquer que esteja na área fica Imobilizado. Cada indivíduo afetado pode, no seu respectivo turno, usar 1 manobra de combate para fazer um teste de Força para tentar sair da condição."
+  },
+  "effects": [],
+  "folder": "8iWl7uUQo2rNqpJO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663651,
+    "modifiedTime": 1785965663651,
+    "lastModifiedBy": null
+  }
+}

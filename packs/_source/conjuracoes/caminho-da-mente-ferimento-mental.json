@@ -1,0 +1,28 @@
+{
+  "_id": "YfjzGm8cSnedhRPg",
+  "_key": "!items!YfjzGm8cSnedhRPg",
+  "name": "Ferimento Mental",
+  "type": "magia",
+  "img": "icons/svg/daze.svg",
+  "system": {
+    "caminho": "Caminho da Mente",
+    "duracao": "Instantâneo",
+    "alcance": "6 metros",
+    "descricao": "Uma onda de energia invade a mente de uma criatura. O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, o alvo perde d4 pontos de vitalidade."
+  },
+  "effects": [],
+  "folder": "Haf764WEalUR6Ird",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663661,
+    "modifiedTime": 1785965663661,
+    "lastModifiedBy": null
+  }
+}

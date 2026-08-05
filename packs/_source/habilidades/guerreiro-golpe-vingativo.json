@@ -1,0 +1,28 @@
+{
+  "_id": "KAHfqYI1NAZdxUxp",
+  "_key": "!items!KAHfqYI1NAZdxUxp",
+  "name": "Golpe Vingativo",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "classe": "Guerreiro",
+    "categoria": "lista",
+    "descricao": "Ao sofrer dano de um ataque, você pode realizar seu próximo ataque como Fácil (+2) contra seu agressor."
+  },
+  "effects": [],
+  "folder": "fES7U14FHbNpQJeR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174964,
+    "modifiedTime": 1785898174964,
+    "lastModifiedBy": null
+  }
+}

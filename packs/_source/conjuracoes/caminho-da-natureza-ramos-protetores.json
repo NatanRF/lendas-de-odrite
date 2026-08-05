@@ -1,0 +1,28 @@
+{
+  "_id": "W926V4jvMkMBOxdF",
+  "_key": "!items!W926V4jvMkMBOxdF",
+  "name": "Ramos Protetores",
+  "type": "magia",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "caminho": "Caminho da Natureza",
+    "duracao": "Manutenção",
+    "alcance": "6 Metros",
+    "descricao": "Escolha como alvo você ou uma criatura aliada. Ramos envolvem o alvo. Ataques contra o alvo são Difíceis (-2) enquanto a conjuração for mantida."
+  },
+  "effects": [],
+  "folder": "IRn6yKpkqRN8IQj8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663655,
+    "modifiedTime": 1785965663655,
+    "lastModifiedBy": null
+  }
+}

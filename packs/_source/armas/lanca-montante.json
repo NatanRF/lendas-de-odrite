@@ -1,0 +1,35 @@
+{
+  "_id": "mrS1EYK5f0xf97a5",
+  "_key": "!items!mrS1EYK5f0xf97a5",
+  "name": "Lança Montante",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/lanca-montante.png",
+  "system": {
+    "tipoAtaque": "corpoACorpo",
+    "dano": 5,
+    "propriedade": "Debilitar",
+    "preco": 120,
+    "forcaMinima": 10,
+    "alcance": "Até 4 metros",
+    "maos": "2 mãos",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857864,
+    "modifiedTime": 1785939857864,
+    "lastModifiedBy": null
+  }
+}

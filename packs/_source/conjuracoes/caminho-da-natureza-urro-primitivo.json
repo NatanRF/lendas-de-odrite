@@ -1,0 +1,28 @@
+{
+  "_id": "DzOtbG0yWr57aal4",
+  "_key": "!items!DzOtbG0yWr57aal4",
+  "name": "Urro Primitivo",
+  "type": "magia",
+  "img": "icons/svg/terror.svg",
+  "system": {
+    "caminho": "Caminho da Natureza",
+    "duracao": "Rodada",
+    "alcance": "6 Metros",
+    "descricao": "Você invoca um urro de uma fera ancestral. Todas as criaturas inimigas em alcance não podem se aproximar de você voluntariamente até o fim dessa rodada."
+  },
+  "effects": [],
+  "folder": "IRn6yKpkqRN8IQj8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663659,
+    "modifiedTime": 1785965663659,
+    "lastModifiedBy": null
+  }
+}

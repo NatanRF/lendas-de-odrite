@@ -1,0 +1,27 @@
+{
+  "_id": "ju3UcWTBNIy7hUTp",
+  "_key": "!items!ju3UcWTBNIy7hUTp",
+  "name": "Ração de Viagem (1 dia)",
+  "type": "item",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 1,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955655,
+    "modifiedTime": 1785946955655,
+    "lastModifiedBy": null
+  }
+}

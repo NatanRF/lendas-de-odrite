@@ -1,0 +1,27 @@
+{
+  "_id": "vyLHwqF4V5tbAl6w",
+  "_key": "!items!vyLHwqF4V5tbAl6w",
+  "name": "Mochila",
+  "type": "item",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 3,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955654,
+    "modifiedTime": 1785946955654,
+    "lastModifiedBy": null
+  }
+}

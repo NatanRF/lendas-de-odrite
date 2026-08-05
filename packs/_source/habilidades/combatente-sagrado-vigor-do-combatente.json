@@ -1,0 +1,28 @@
+{
+  "_id": "HXlNLSfJxMbG4ASM",
+  "_key": "!items!HXlNLSfJxMbG4ASM",
+  "name": "Vigor do Combatente",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Combatente Sagrado",
+    "categoria": "lista",
+    "descricao": "Apenas durante um combate, no início do seu turno pode reduzir em 1 seus Pontos de Fadiga."
+  },
+  "effects": [],
+  "folder": "iWIe853JnJDqtLDV",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174983,
+    "modifiedTime": 1785898174983,
+    "lastModifiedBy": null
+  }
+}

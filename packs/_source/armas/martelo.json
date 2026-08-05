@@ -1,0 +1,35 @@
+{
+  "_id": "XXGe6SGzzJo0l4vH",
+  "_key": "!items!XXGe6SGzzJo0l4vH",
+  "name": "Martelo",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/martelo.png",
+  "system": {
+    "tipoAtaque": "corpoACorpo",
+    "dano": 4,
+    "propriedade": "Quebrar",
+    "preco": 5,
+    "forcaMinima": 4,
+    "alcance": "Adjacente",
+    "maos": "1 mão",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857865,
+    "modifiedTime": 1785939857865,
+    "lastModifiedBy": null
+  }
+}

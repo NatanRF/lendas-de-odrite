@@ -1,0 +1,32 @@
+{
+  "_id": "JH59RPzVByjasAX7",
+  "_key": "!items!JH59RPzVByjasAX7",
+  "name": "Escudo Médio",
+  "type": "escudo",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "tipo": "Escudo Médio",
+    "preco": 120,
+    "forcaMinima": 6,
+    "penalidade": 2,
+    "durabilidade": {
+      "value": 10,
+      "max": 10
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785894675601,
+    "modifiedTime": 1785894675601,
+    "lastModifiedBy": null
+  }
+}

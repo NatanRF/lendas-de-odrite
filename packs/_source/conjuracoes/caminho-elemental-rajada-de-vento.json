@@ -1,0 +1,28 @@
+{
+  "_id": "z8K4qa1GRASd6XlS",
+  "_key": "!items!z8K4qa1GRASd6XlS",
+  "name": "Rajada de Vento",
+  "type": "magia",
+  "img": "icons/svg/wingfoot.svg",
+  "system": {
+    "caminho": "Caminho Elemental",
+    "duracao": "Instantâneo",
+    "alcance": "Pessoal",
+    "descricao": "Uma rajada de vento forte empurra criaturas adjacentes. Cada alvo sofre 1 de dano e é empurrado 4 metros."
+  },
+  "effects": [],
+  "folder": "8iWl7uUQo2rNqpJO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663650,
+    "modifiedTime": 1785965663650,
+    "lastModifiedBy": null
+  }
+}

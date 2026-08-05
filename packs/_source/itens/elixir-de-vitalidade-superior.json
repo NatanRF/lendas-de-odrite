@@ -1,0 +1,27 @@
+{
+  "_id": "C9CAw9JktU3pmsLl",
+  "_key": "!items!C9CAw9JktU3pmsLl",
+  "name": "Elixir de Vitalidade Superior",
+  "type": "item",
+  "img": "icons/svg/heal.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 300,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955657,
+    "modifiedTime": 1785946955657,
+    "lastModifiedBy": null
+  }
+}

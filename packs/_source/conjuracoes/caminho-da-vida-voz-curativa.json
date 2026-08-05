@@ -1,0 +1,28 @@
+{
+  "_id": "wyy5PL2E5zf3dCPV",
+  "_key": "!items!wyy5PL2E5zf3dCPV",
+  "name": "Voz Curativa",
+  "type": "magia",
+  "img": "icons/svg/heal.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Instantâneo",
+    "alcance": "10 metros",
+    "descricao": "Você pode restaurar em 2 os Pontos de Vitalidade do alvo."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663640,
+    "modifiedTime": 1785965663640,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "KOx7bon529WfXzk3",
+  "_key": "!items!KOx7bon529WfXzk3",
+  "name": "Golpe Perfeito",
+  "type": "magia",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "caminho": "Caminho da Guerra",
+    "duracao": "Rodada",
+    "alcance": "Pessoal",
+    "descricao": "Até o final da rodada, aplique a propriedade da sua arma ao acertar qualquer um de seus ataques."
+  },
+  "effects": [],
+  "folder": "xjwxZw3U7f99g88k",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663645,
+    "modifiedTime": 1785965663645,
+    "lastModifiedBy": null
+  }
+}

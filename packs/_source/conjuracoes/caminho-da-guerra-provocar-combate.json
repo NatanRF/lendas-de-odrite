@@ -1,0 +1,28 @@
+{
+  "_id": "3xwvoVfkTndO2jfl",
+  "_key": "!items!3xwvoVfkTndO2jfl",
+  "name": "Provocar Combate",
+  "type": "magia",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "caminho": "Caminho da Guerra",
+    "duracao": "Instantâneo",
+    "alcance": "10 Metros",
+    "descricao": "Você incita um alvo. No próximo turno ele será obrigado a desferir seus ataques contra você. Se não for possível lhe atacar, o alvo não pode usar uma manobra de combate para atacar outro personagem."
+  },
+  "effects": [],
+  "folder": "xjwxZw3U7f99g88k",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663643,
+    "modifiedTime": 1785965663643,
+    "lastModifiedBy": null
+  }
+}

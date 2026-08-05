@@ -1,0 +1,28 @@
+{
+  "_id": "lsZ6srxW0O5tBw3N",
+  "_key": "!items!lsZ6srxW0O5tBw3N",
+  "name": "Golpe Limitante",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Guerreiro",
+    "categoria": "lista",
+    "descricao": "Ao acertar um ataque, tira 1 Manobra de Combate do alvo atingido, que se já tiver gasto todas as suas manobras, tira em seu próximo turno."
+  },
+  "effects": [],
+  "folder": "fES7U14FHbNpQJeR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174964,
+    "modifiedTime": 1785898174964,
+    "lastModifiedBy": null
+  }
+}

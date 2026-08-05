@@ -1,0 +1,19 @@
+{
+  "_id": "JySd74O6Nusu8IOs",
+  "_key": "!folders!JySd74O6Nusu8IOs",
+  "name": "Canalisador",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174975,
+    "modifiedTime": 1785898174975,
+    "lastModifiedBy": null
+  }
+}

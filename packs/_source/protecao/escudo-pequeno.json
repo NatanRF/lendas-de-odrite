@@ -1,0 +1,32 @@
+{
+  "_id": "erNNwhg2VIBKTlh1",
+  "_key": "!items!erNNwhg2VIBKTlh1",
+  "name": "Escudo Pequeno",
+  "type": "escudo",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "tipo": "Escudo Pequeno",
+    "preco": 30,
+    "forcaMinima": 4,
+    "penalidade": 0,
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785894675600,
+    "modifiedTime": 1785894675600,
+    "lastModifiedBy": null
+  }
+}

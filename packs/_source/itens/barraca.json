@@ -1,0 +1,27 @@
+{
+  "_id": "KNUJlEwYZy1QBwCC",
+  "_key": "!items!KNUJlEwYZy1QBwCC",
+  "name": "Barraca",
+  "type": "item",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 20,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955653,
+    "modifiedTime": 1785946955653,
+    "lastModifiedBy": null
+  }
+}

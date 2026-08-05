@@ -1,0 +1,28 @@
+{
+  "_id": "ZRk5vvJBISPHYkT1",
+  "_key": "!items!ZRk5vvJBISPHYkT1",
+  "name": "Golpe de Essência",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "conjuracao",
+    "classe": "Combatente Sagrado",
+    "categoria": "lista",
+    "descricao": "Ao acertar um ataque, você pode adicionar d4 de dano."
+  },
+  "effects": [],
+  "folder": "iWIe853JnJDqtLDV",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174982,
+    "modifiedTime": 1785898174982,
+    "lastModifiedBy": null
+  }
+}

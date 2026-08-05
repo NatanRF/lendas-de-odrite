@@ -1,0 +1,27 @@
+{
+  "_id": "ofOtvVwHPGAWpisU",
+  "_key": "!items!ofOtvVwHPGAWpisU",
+  "name": "Elixir de Vigor",
+  "type": "item",
+  "img": "icons/svg/regen.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 50,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955657,
+    "modifiedTime": 1785946955657,
+    "lastModifiedBy": null
+  }
+}

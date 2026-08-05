@@ -1,0 +1,28 @@
+{
+  "_id": "gIpElUlxJ9Gz7BYA",
+  "_key": "!items!gIpElUlxJ9Gz7BYA",
+  "name": "Abençoar Escudo",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "conjuracao",
+    "classe": "Combatente Sagrado",
+    "categoria": "lista",
+    "descricao": "Se seu escudo perderia pontos de durabilidade, sofre apenas metade do dano, arredondado para baixo se necessário."
+  },
+  "effects": [],
+  "folder": "iWIe853JnJDqtLDV",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174981,
+    "modifiedTime": 1785898174981,
+    "lastModifiedBy": null
+  }
+}

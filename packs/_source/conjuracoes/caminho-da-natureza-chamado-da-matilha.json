@@ -1,0 +1,28 @@
+{
+  "_id": "vkcRlsIVlM0GvyYY",
+  "_key": "!items!vkcRlsIVlM0GvyYY",
+  "name": "Chamado da Matilha",
+  "type": "magia",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+    "caminho": "Caminho da Natureza",
+    "duracao": "Manutenção",
+    "alcance": "Pessoal",
+    "descricao": "Você invoca espíritos de lobos que atacam qualquer alvo que inicie seu turno adjacente a você. O alvo sofre d4 de dano automaticamente."
+  },
+  "effects": [],
+  "folder": "IRn6yKpkqRN8IQj8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663657,
+    "modifiedTime": 1785965663658,
+    "lastModifiedBy": null
+  }
+}

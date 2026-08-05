@@ -1,0 +1,28 @@
+{
+  "_id": "hmDJHLRCBrZRKXBd",
+  "_key": "!items!hmDJHLRCBrZRKXBd",
+  "name": "Chama Vital",
+  "type": "magia",
+  "img": "icons/svg/fire.svg",
+  "system": {
+    "caminho": "Caminho da Vida",
+    "duracao": "Instantâneo",
+    "alcance": "20 metros",
+    "descricao": "Libere uma energia vital em forma de chamas contra um alvo. O alvo sofre 3 de dano e todos os aliados adjacentes ao alvo atingido recebem 1 de cura em sua vitalidade."
+  },
+  "effects": [],
+  "folder": "hz3tLW8bVOOaofQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663642,
+    "modifiedTime": 1785965663642,
+    "lastModifiedBy": null
+  }
+}

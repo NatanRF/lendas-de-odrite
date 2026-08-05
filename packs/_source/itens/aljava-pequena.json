@@ -1,0 +1,27 @@
+{
+  "_id": "teoqlGTrHl45kA2V",
+  "_key": "!items!teoqlGTrHl45kA2V",
+  "name": "Aljava Pequena",
+  "type": "item",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 1,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955651,
+    "modifiedTime": 1785946955651,
+    "lastModifiedBy": null
+  }
+}

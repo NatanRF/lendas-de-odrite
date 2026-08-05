@@ -1,0 +1,28 @@
+{
+  "_id": "lvvupQAWX9oeQ5Gd",
+  "_key": "!items!lvvupQAWX9oeQ5Gd",
+  "name": "Protetor",
+  "type": "habilidade",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tipo": "passiva",
+    "classe": "Combatente Sagrado",
+    "categoria": "basica",
+    "descricao": "Todos os ataques realizados contra os aliados adjacentes a você são considerados Difíceis (-2)."
+  },
+  "effects": [],
+  "folder": "iWIe853JnJDqtLDV",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174979,
+    "modifiedTime": 1785898174979,
+    "lastModifiedBy": null
+  }
+}

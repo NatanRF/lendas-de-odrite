@@ -1,0 +1,19 @@
+{
+  "_id": "CxwP508nxjwOa5yz",
+  "_key": "!folders!CxwP508nxjwOa5yz",
+  "name": "Caçador",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174966,
+    "modifiedTime": 1785898174966,
+    "lastModifiedBy": null
+  }
+}

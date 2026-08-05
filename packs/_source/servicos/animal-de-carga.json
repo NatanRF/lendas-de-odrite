@@ -1,0 +1,27 @@
+{
+  "_id": "2Mc89KNSBWTCzyRw",
+  "_key": "!items!2Mc89KNSBWTCzyRw",
+  "name": "Animal de Carga",
+  "type": "item",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 150,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955730,
+    "modifiedTime": 1785946955730,
+    "lastModifiedBy": null
+  }
+}

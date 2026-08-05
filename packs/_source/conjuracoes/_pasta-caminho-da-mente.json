@@ -1,0 +1,19 @@
+{
+  "_id": "Haf764WEalUR6Ird",
+  "_key": "!folders!Haf764WEalUR6Ird",
+  "name": "Caminho da Mente",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663660,
+    "modifiedTime": 1785965663660,
+    "lastModifiedBy": null
+  }
+}

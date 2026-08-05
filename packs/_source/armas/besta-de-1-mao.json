@@ -1,0 +1,35 @@
+{
+  "_id": "qqZ9crmQfHu9TLF5",
+  "_key": "!items!qqZ9crmQfHu9TLF5",
+  "name": "Besta de 1 mão",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/besta-de-1-mao.png",
+  "system": {
+    "tipoAtaque": "distancia",
+    "dano": 4,
+    "propriedade": "Atrasar",
+    "preco": 120,
+    "forcaMinima": 6,
+    "alcance": "Até 30 metros",
+    "maos": "1 mão",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857866,
+    "modifiedTime": 1785939857866,
+    "lastModifiedBy": null
+  }
+}

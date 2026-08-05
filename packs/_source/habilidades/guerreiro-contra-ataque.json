@@ -1,0 +1,28 @@
+{
+  "_id": "YdHJ9ugto0FrMdT9",
+  "_key": "!items!YdHJ9ugto0FrMdT9",
+  "name": "Contra Ataque",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Guerreiro",
+    "categoria": "lista",
+    "descricao": "Após receber um ataque corpo a corpo, pode realizar imediatamente um ataque contra o inimigo que lhe alvejou."
+  },
+  "effects": [],
+  "folder": "fES7U14FHbNpQJeR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174963,
+    "modifiedTime": 1785898174963,
+    "lastModifiedBy": null
+  }
+}

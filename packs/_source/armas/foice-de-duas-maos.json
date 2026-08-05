@@ -1,0 +1,35 @@
+{
+  "_id": "qeLMM7brXKtcQPY8",
+  "_key": "!items!qeLMM7brXKtcQPY8",
+  "name": "Foice de Duas Mãos",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/foice-de-duas-maos.png",
+  "system": {
+    "tipoAtaque": "corpoACorpo",
+    "dano": 5,
+    "propriedade": "Mutilar",
+    "preco": 50,
+    "forcaMinima": 8,
+    "alcance": "Até 4 metros",
+    "maos": "2 mãos",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857863,
+    "modifiedTime": 1785939857863,
+    "lastModifiedBy": null
+  }
+}

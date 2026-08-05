@@ -1,0 +1,28 @@
+{
+  "_id": "RZ8MaRIaqSel32Be",
+  "_key": "!items!RZ8MaRIaqSel32Be",
+  "name": "Chamado da Vida",
+  "type": "magia",
+  "img": "icons/svg/heal.svg",
+  "system": {
+    "caminho": "Caminho da Natureza",
+    "duracao": "Instantâneo",
+    "alcance": "Toque",
+    "descricao": "Você invoca a energia vital da natureza para curar uma criatura. Restaure 3 pontos de vitalidade."
+  },
+  "effects": [],
+  "folder": "IRn6yKpkqRN8IQj8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663655,
+    "modifiedTime": 1785965663655,
+    "lastModifiedBy": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "b9LF37IDPs9673Sa",
+  "_key": "!items!b9LF37IDPs9673Sa",
+  "name": "Rugido de Batalha",
+  "type": "magia",
+  "img": "icons/svg/terror.svg",
+  "system": {
+    "caminho": "Caminho da Guerra",
+    "duracao": "Rodada",
+    "alcance": "4 metros",
+    "descricao": "Solte um rugido poderoso. Os ataques de criaturas inimigas dentro do alcance contra você são considerados Muito Difíceis (-4) até o fim dessa rodada."
+  },
+  "effects": [],
+  "folder": "xjwxZw3U7f99g88k",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663644,
+    "modifiedTime": 1785965663644,
+    "lastModifiedBy": null
+  }
+}

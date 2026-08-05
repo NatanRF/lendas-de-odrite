@@ -1,0 +1,35 @@
+{
+  "_id": "Bbm7jBjyGbz5LpHl",
+  "_key": "!items!Bbm7jBjyGbz5LpHl",
+  "name": "Machado de Guerra",
+  "type": "arma",
+  "img": "systems/odrite/assets/icons/machado-de-guerra.png",
+  "system": {
+    "tipoAtaque": "corpoACorpo",
+    "dano": 6,
+    "propriedade": "Mutilar",
+    "preco": 100,
+    "forcaMinima": 12,
+    "alcance": "Adjacente",
+    "maos": "2 mãos",
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785939857862,
+    "modifiedTime": 1785939857862,
+    "lastModifiedBy": null
+  }
+}

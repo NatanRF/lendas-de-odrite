@@ -1,0 +1,19 @@
+{
+  "_id": "IRn6yKpkqRN8IQj8",
+  "_key": "!folders!IRn6yKpkqRN8IQj8",
+  "name": "Caminho da Natureza",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785965663653,
+    "modifiedTime": 1785965663653,
+    "lastModifiedBy": null
+  }
+}

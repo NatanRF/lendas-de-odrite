@@ -1,0 +1,28 @@
+{
+  "_id": "kGINitjhcNmYvvgy",
+  "_key": "!items!kGINitjhcNmYvvgy",
+  "name": "Desvencilhar Aprimorado",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "classe": "Assassino",
+    "categoria": "lista",
+    "descricao": "Caso você realize a ação Desvencilhar, pode se mover até seu movimento máximo ao invés de apenas metade."
+  },
+  "effects": [],
+  "folder": "vBvshF8qFAo1VEqW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174973,
+    "modifiedTime": 1785898174973,
+    "lastModifiedBy": null
+  }
+}

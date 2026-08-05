@@ -1,0 +1,28 @@
+{
+  "_id": "eufDy7km0C9dAu8Z",
+  "_key": "!items!eufDy7km0C9dAu8Z",
+  "name": "Disparo Duplo",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "classe": "Caçador",
+    "categoria": "lista",
+    "descricao": "Você dispara 2 projéteis no mesmo ataque, dobrando o dano causado em caso de acerto."
+  },
+  "effects": [],
+  "folder": "CxwP508nxjwOa5yz",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174969,
+    "modifiedTime": 1785898174969,
+    "lastModifiedBy": null
+  }
+}

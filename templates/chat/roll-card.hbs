@@ -1,0 +1,33 @@
+<div class="odrite chat-card {{#if sucesso}}sucesso{{else}}falha{{/if}}">
+  <h3 class="chat-card-titulo">{{titulo}}</h3>
+
+  <div class="chat-card-linha">
+    <span class="chat-card-label">
+      {{#if atributoLabel}}
+        {{#if penalidade}}{{atributoLabel}} ({{alvo}} {{penalidade}} = {{alvoEfetivo}}){{else}}{{atributoLabel}} ({{alvo}}){{/if}}
+      {{/if}}
+    </span>
+    <span class="chat-card-resultado">
+      d20: <strong>{{resultadoPrincipal}}</strong>
+      {{#if acertoAbsoluto}}
+        <span class="tag acerto-absoluto">Acerto Absoluto!</span>
+      {{else if falhaAbsoluta}}
+        <span class="tag falha-absoluta">Falha Absoluta!</span>
+      {{else if sucesso}}
+        <span class="tag sucesso">Sucesso</span>
+      {{else}}
+        <span class="tag falha">Falha</span>
+      {{/if}}
+    </span>
+  </div>
+
+  {{#if dadoSecundarioLabel}}
+  <div class="chat-card-linha">
+    <span class="chat-card-label">{{dadoSecundarioLabel}}</span>
+    <span class="chat-card-resultado">
+      <strong>{{resultadoSecundario}}</strong>
+      {{#if beneficio}}<span class="tag beneficio">Benefício!</span>{{/if}}
+    </span>
+  </div>
+  {{/if}}
+</div>

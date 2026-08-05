@@ -1,0 +1,28 @@
+{
+  "_id": "vJYZ583A6kB7XXkj",
+  "_key": "!items!vJYZ583A6kB7XXkj",
+  "name": "Conjuração Potencializada",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "conjuracao",
+    "classe": "Canalisador",
+    "categoria": "lista",
+    "descricao": "Seu próximo teste de conjuração é considerado Fácil (+2)."
+  },
+  "effects": [],
+  "folder": "JySd74O6Nusu8IOs",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785898174977,
+    "modifiedTime": 1785898174977,
+    "lastModifiedBy": null
+  }
+}
