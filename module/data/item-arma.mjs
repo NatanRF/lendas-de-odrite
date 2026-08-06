@@ -10,6 +10,11 @@ export default class OdriteArmaData extends foundry.abstract.TypeDataModel {
         choices: Object.keys(ODRITE.tiposAtaque),
         initial: "corpoACorpo"
       }),
+      categoria: new StringField({
+        required: true,
+        choices: ODRITE.categoriasArma,
+        initial: ODRITE.categoriasArma[0]
+      }),
       dano: new NumberField({ required: true, integer: true, min: 0, initial: 1 }),
       propriedade: new StringField({ initial: "" }),
       preco: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),

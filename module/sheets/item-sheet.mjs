@@ -26,6 +26,8 @@ export default class OdriteItemSheet extends HandlebarsApplicationMixin(ItemShee
     context.tipo = this.item.type;
     context.empunhaduras = ODRITE.empunhaduras;
     context.classes = ODRITE.classes;
+    context.racas = ODRITE.racas;
+    context.categoriasArma = ODRITE.categoriasArma;
     return context;
   }
 

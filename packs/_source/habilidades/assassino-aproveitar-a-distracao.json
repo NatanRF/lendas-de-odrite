@@ -1,17 +1,19 @@
 {
-  "_id": "hX1Tzs88shY2gaMU",
-  "_key": "!items!hX1Tzs88shY2gaMU",
+  "_id": "gx8dUZs9LRY4DJ5n",
+  "_key": "!items!gx8dUZs9LRY4DJ5n",
   "name": "Aproveitar a Distração",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
     "classe": "Assassino",
     "categoria": "lista",
     "descricao": "Você recebe +1 no Valor Alvo do seu teste de Acerto em um ataque corpo a corpo para cada um de seus aliados adjacente ao seu alvo."
   },
   "effects": [],
-  "folder": "vBvshF8qFAo1VEqW",
+  "folder": "3F1898zrztt9XlX1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174974,
-    "modifiedTime": 1785898174974,
+    "createdTime": 1785970464177,
+    "modifiedTime": 1785970464177,
     "lastModifiedBy": null
   }
 }

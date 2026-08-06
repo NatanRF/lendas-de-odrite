@@ -1,11 +1,12 @@
 {
-  "_id": "mrS1EYK5f0xf97a5",
-  "_key": "!items!mrS1EYK5f0xf97a5",
+  "_id": "JQG2YuSzsAPTfr52",
+  "_key": "!items!JQG2YuSzsAPTfr52",
   "name": "Lança Montante",
   "type": "arma",
   "img": "systems/odrite/assets/icons/lanca-montante.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Lanças",
     "dano": 5,
     "propriedade": "Debilitar",
     "preco": 120,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857864,
-    "modifiedTime": 1785939857864,
+    "createdTime": 1785970113777,
+    "modifiedTime": 1785970113777,
     "lastModifiedBy": null
   }
 }

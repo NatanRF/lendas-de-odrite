@@ -1,17 +1,19 @@
 {
-  "_id": "04cbhzhz7aCMkDL5",
-  "_key": "!items!04cbhzhz7aCMkDL5",
+  "_id": "Z3nK79sBxr5LvikD",
+  "_key": "!items!Z3nK79sBxr5LvikD",
   "name": "Lâmina Protetora",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
     "classe": "Assassino",
     "categoria": "lista",
     "descricao": "Você pode usar sua arma empunhada ao invés de um escudo para Bloquear."
   },
   "effects": [],
-  "folder": "vBvshF8qFAo1VEqW",
+  "folder": "3F1898zrztt9XlX1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174974,
-    "modifiedTime": 1785898174974,
+    "createdTime": 1785970464177,
+    "modifiedTime": 1785970464177,
     "lastModifiedBy": null
   }
 }

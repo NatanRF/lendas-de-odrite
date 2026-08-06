@@ -1,17 +1,19 @@
 {
-  "_id": "oDcf7LnbbwQ5lDnD",
-  "_key": "!items!oDcf7LnbbwQ5lDnD",
+  "_id": "7VSzvpwFqyqu6cex",
+  "_key": "!items!7VSzvpwFqyqu6cex",
   "name": "Precisão Apurada",
   "type": "habilidade",
   "img": "icons/svg/upgrade.svg",
   "system": {
     "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
     "classe": "Caçador",
     "categoria": "basica",
     "descricao": "Você não sofre penalidade ao atacar um alvo adjacente a 1 ou mais aliados."
   },
   "effects": [],
-  "folder": "CxwP508nxjwOa5yz",
+  "folder": "t7TsmrjjYbKTD10f",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174967,
-    "modifiedTime": 1785898174967,
+    "createdTime": 1785970464168,
+    "modifiedTime": 1785970464168,
     "lastModifiedBy": null
   }
 }

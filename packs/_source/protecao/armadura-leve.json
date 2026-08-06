@@ -1,6 +1,6 @@
 {
-  "_id": "v9g6jn7gasiRCkyV",
-  "_key": "!items!v9g6jn7gasiRCkyV",
+  "_id": "jvl6wF2hz2iurgtL",
+  "_key": "!items!jvl6wF2hz2iurgtL",
   "name": "Armadura Leve",
   "type": "armadura",
   "img": "icons/svg/statue.svg",
@@ -25,8 +25,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785894675599,
-    "modifiedTime": 1785894675599,
+    "createdTime": 1785970116463,
+    "modifiedTime": 1785970116463,
     "lastModifiedBy": null
   }
 }

@@ -1,0 +1,32 @@
+{
+  "_id": "zIrLsY4jrpZqQEvc",
+  "_key": "!items!zIrLsY4jrpZqQEvc",
+  "name": "Escudo Leve",
+  "type": "escudo",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "tipo": "Escudo Leve",
+    "preco": 30,
+    "forcaMinima": 4,
+    "penalidade": 0,
+    "durabilidade": {
+      "value": 6,
+      "max": 6
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970116464,
+    "modifiedTime": 1785970116464,
+    "lastModifiedBy": null
+  }
+}

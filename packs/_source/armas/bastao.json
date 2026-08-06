@@ -1,11 +1,12 @@
 {
-  "_id": "oyXlLCtfCnqaDYhl",
-  "_key": "!items!oyXlLCtfCnqaDYhl",
+  "_id": "45TkMmxUaPAwyNDo",
+  "_key": "!items!45TkMmxUaPAwyNDo",
   "name": "Bastão",
   "type": "arma",
   "img": "systems/odrite/assets/icons/bastao.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Bastões",
     "dano": 1,
     "propriedade": "Derrubar",
     "preco": 1,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857864,
-    "modifiedTime": 1785939857864,
+    "createdTime": 1785970113777,
+    "modifiedTime": 1785970113777,
     "lastModifiedBy": null
   }
 }

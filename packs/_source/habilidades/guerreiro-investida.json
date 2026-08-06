@@ -1,17 +1,19 @@
 {
-  "_id": "yxvV85Wu9drbO44k",
-  "_key": "!items!yxvV85Wu9drbO44k",
+  "_id": "aqvyyiv6MQLNq2s8",
+  "_key": "!items!aqvyyiv6MQLNq2s8",
   "name": "Investida",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "ativa",
+    "origem": "classe",
+    "raca": "",
     "classe": "Guerreiro",
     "categoria": "lista",
     "descricao": "Uma vez por rodada, em uma só ação pode se mover até seu deslocamento máximo na direção de um alvo e, ao encerrar o movimento adjacente a ele, pode realizar um ataque imediatamente."
   },
   "effects": [],
-  "folder": "fES7U14FHbNpQJeR",
+  "folder": "Ddrfjmbj7GRxPlmY",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174964,
-    "modifiedTime": 1785898174964,
+    "createdTime": 1785970464165,
+    "modifiedTime": 1785970464165,
     "lastModifiedBy": null
   }
 }

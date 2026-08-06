@@ -1,6 +1,6 @@
 {
-  "_id": "JH59RPzVByjasAX7",
-  "_key": "!items!JH59RPzVByjasAX7",
+  "_id": "7cqXff6I1GRCRhxe",
+  "_key": "!items!7cqXff6I1GRCRhxe",
   "name": "Escudo Médio",
   "type": "escudo",
   "img": "icons/svg/shield.svg",
@@ -25,8 +25,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785894675601,
-    "modifiedTime": 1785894675601,
+    "createdTime": 1785970116464,
+    "modifiedTime": 1785970116464,
     "lastModifiedBy": null
   }
 }

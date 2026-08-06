@@ -1,0 +1,19 @@
+{
+  "_id": "zMBPjPBHik9q7H9W",
+  "_key": "!folders!zMBPjPBHik9q7H9W",
+  "name": "Canalizador",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464178,
+    "modifiedTime": 1785970464178,
+    "lastModifiedBy": null
+  }
+}

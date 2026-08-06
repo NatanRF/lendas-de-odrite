@@ -1,0 +1,30 @@
+{
+  "_id": "m9Y4rIJJHfscLlqw",
+  "_key": "!items!m9Y4rIJJHfscLlqw",
+  "name": "Explosão de Velocidade",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "raca",
+    "raca": "Rhundrak",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Uma vez por rodada, você pode Movimentar uma vez sem contabilizar em suas Manobras de Combate."
+  },
+  "effects": [],
+  "folder": "ME7LrI2K7bvPBe6V",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464267,
+    "modifiedTime": 1785970464267,
+    "lastModifiedBy": null
+  }
+}

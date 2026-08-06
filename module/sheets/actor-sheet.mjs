@@ -1,4 +1,5 @@
 import { ODRITE } from "../config.mjs";
+import OdriteCharacterAdvancement from "../apps/character-advancement.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -21,7 +22,8 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
       itemEdit: OdriteCharacterSheet.#itemEdit,
       itemDelete: OdriteCharacterSheet.#itemDelete,
       toggleFadiga: OdriteCharacterSheet.#toggleFadiga,
-      setNivelTreinamento: OdriteCharacterSheet.#setNivelTreinamento
+      setNivelTreinamento: OdriteCharacterSheet.#setNivelTreinamento,
+      abrirEvolucao: OdriteCharacterSheet.#abrirEvolucao
     }
   };
 
@@ -138,5 +140,9 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
   static #setNivelTreinamento(event, target) {
     const indice = Number(target.dataset.indice);
     return this.actor.update({ "system.nivelTreinamento": indice });
+  }
+
+  static #abrirEvolucao(event, target) {
+    new OdriteCharacterAdvancement(this.actor).render(true);
   }
 }

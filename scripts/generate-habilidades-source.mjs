@@ -89,7 +89,7 @@ const HABILIDADES_POR_CLASSE = {
     ]
   },
 
-  Canalisador: {
+  Canalizador: {
     basica: {
       nome: "Concentração Avançada",
       tipo: "passiva",
@@ -170,6 +170,8 @@ function escrever(classe, categoria, dados, pastaId) {
     img: categoria === "basica" ? "icons/svg/upgrade.svg" : "icons/svg/book.svg",
     system: {
       tipo: dados.tipo,
+      origem: "classe",
+      raca: "",
       classe,
       categoria,
       descricao: dados.descricao

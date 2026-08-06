@@ -1,17 +1,19 @@
 {
-  "_id": "uxMFO3rq8tv0rNFU",
-  "_key": "!items!uxMFO3rq8tv0rNFU",
+  "_id": "u3NKAknxZLM0pL8F",
+  "_key": "!items!u3NKAknxZLM0pL8F",
   "name": "Adaptação Ágil",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
     "classe": "Assassino",
     "categoria": "lista",
     "descricao": "Ao usar uma arma corpo a corpo em que é proficiente, você pode escolher usar o atributo de Agilidade ao invés de Força para o valor alvo do teste de acerto."
   },
   "effects": [],
-  "folder": "vBvshF8qFAo1VEqW",
+  "folder": "3F1898zrztt9XlX1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174971,
-    "modifiedTime": 1785898174971,
+    "createdTime": 1785970464174,
+    "modifiedTime": 1785970464174,
     "lastModifiedBy": null
   }
 }

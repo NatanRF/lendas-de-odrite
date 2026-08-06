@@ -1,6 +1,6 @@
 {
-  "_id": "dtfp8zDGtR6AckPX",
-  "_key": "!items!dtfp8zDGtR6AckPX",
+  "_id": "piOzMpRvmsa5MMGs",
+  "_key": "!items!piOzMpRvmsa5MMGs",
   "name": "Armadura Pesada",
   "type": "armadura",
   "img": "icons/svg/statue.svg",
@@ -25,8 +25,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785894675600,
-    "modifiedTime": 1785894675600,
+    "createdTime": 1785970116464,
+    "modifiedTime": 1785970116464,
     "lastModifiedBy": null
   }
 }

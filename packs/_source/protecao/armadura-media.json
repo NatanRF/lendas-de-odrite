@@ -1,6 +1,6 @@
 {
-  "_id": "9CC98QZKDvsNVdI9",
-  "_key": "!items!9CC98QZKDvsNVdI9",
+  "_id": "FWhptmP1UzaBiQT7",
+  "_key": "!items!FWhptmP1UzaBiQT7",
   "name": "Armadura Média",
   "type": "armadura",
   "img": "icons/svg/statue.svg",
@@ -25,8 +25,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785894675599,
-    "modifiedTime": 1785894675599,
+    "createdTime": 1785970116463,
+    "modifiedTime": 1785970116463,
     "lastModifiedBy": null
   }
 }

@@ -1,11 +1,12 @@
 {
-  "_id": "X4sqw2rjhYQLUoeQ",
-  "_key": "!items!X4sqw2rjhYQLUoeQ",
+  "_id": "SiOlKm5Y7UPob20w",
+  "_key": "!items!SiOlKm5Y7UPob20w",
   "name": "Martelo de Batalha",
   "type": "arma",
   "img": "systems/odrite/assets/icons/martelo-de-batalha.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Martelos",
     "dano": 6,
     "propriedade": "Quebrar",
     "preco": 130,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857865,
-    "modifiedTime": 1785939857865,
+    "createdTime": 1785970113778,
+    "modifiedTime": 1785970113778,
     "lastModifiedBy": null
   }
 }

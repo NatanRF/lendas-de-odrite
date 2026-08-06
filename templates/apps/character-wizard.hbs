@@ -1,0 +1,304 @@
+<div class="odrite-wizard-body">
+  <header class="wizard-header">
+    <h2>{{localize "ODRITE.Assistente.Titulo"}}</h2>
+    <nav class="wizard-passos">
+      <span class="passo {{#if (eq etapa "raca")}}ativo{{/if}}">{{localize "ODRITE.Assistente.Etapa.Raca"}}</span>
+      <span class="passo {{#if (eq etapa "classe")}}ativo{{/if}}">{{localize "ODRITE.Assistente.Etapa.Classe"}}</span>
+      <span class="passo {{#if (eq etapa "atributos")}}ativo{{/if}}">{{localize "ODRITE.Assistente.Etapa.Atributos"}}</span>
+      {{#if (eq etapa "conjuracao")}}<span class="passo ativo">{{localize "ODRITE.Assistente.Etapa.Conjuracao"}}</span>{{/if}}
+      <span class="passo {{#if (eq etapa "equipamento")}}ativo{{/if}}">{{localize "ODRITE.Assistente.Etapa.Equipamento"}}</span>
+      <span class="passo {{#if (eq etapa "revisao")}}ativo{{/if}}">{{localize "ODRITE.Assistente.Etapa.Revisao"}}</span>
+    </nav>
+  </header>
+
+  <section class="wizard-conteudo">
+
+    {{#if (eq etapa "raca")}}
+    <div class="wizard-etapa etapa-raca">
+      <div class="opcoes-raca">
+        {{#each racas as |raca|}}
+        <button type="button" class="opcao-raca {{#if (eq ../dados.raca raca)}}selecionado{{/if}}" data-action="escolherRaca" data-raca="{{raca}}">{{raca}}</button>
+        {{/each}}
+      </div>
+
+      {{#if racaAtual}}
+      <div class="detalhes-raca">
+        <p>
+          <strong>{{localize "ODRITE.Tamanho"}}:</strong> {{racaAtual.tamanho}} &nbsp;
+          <strong>{{localize "ODRITE.Vitalidade"}}:</strong> {{racaAtual.vitalidade}} &nbsp;
+          <strong>{{localize "ODRITE.Deslocamento"}}:</strong> {{racaAtual.deslocamento}}m
+        </p>
+        <p>
+          <strong>{{localize "ODRITE.Proficiencias.Idiomas"}}:</strong>
+          Comum{{#if racaAtual.idiomaRacial}}, {{racaAtual.idiomaRacial}}{{/if}}
+          ({{localize "ODRITE.Assistente.MaisIdiomaPorMente"}} {{racaAtual.idiomaLimiarMente}})
+        </p>
+
+        <div class="campo-bonus-atributo">
+          <label>{{localize "ODRITE.Assistente.BonusAtributo"}}</label>
+          <div class="opcoes-bonus-atributo">
+            {{#each bonusAtributoOpcoes as |chaveAtrib|}}
+            <button type="button" class="opcao-bonus {{#if (eq ../dados.bonusAtributoAlvo chaveAtrib)}}selecionado{{/if}}"
+              data-action="escolherBonusAtributo" data-atributo="{{chaveAtrib}}">
+              {{localize (concat "ODRITE.Atributo." (capitalize chaveAtrib))}}
+            </button>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{#if (eq etapa "classe")}}
+    <div class="wizard-etapa etapa-classe">
+      <div class="opcoes-classe">
+        {{#each classes as |classe|}}
+        <button type="button" class="opcao-classe {{#if (eq ../dados.classe classe)}}selecionado{{/if}}" data-action="escolherClasse" data-classe="{{classe}}">{{classe}}</button>
+        {{/each}}
+      </div>
+
+      {{#if classeAtual}}
+      <div class="detalhes-classe">
+        <p>
+          <strong>{{localize "ODRITE.Vitalidade"}}:</strong> +{{classeAtual.vitalidade}} &nbsp;
+          <strong>{{localize "ODRITE.Armadura"}}:</strong> {{classeAtual.armaduras}} &nbsp;
+          <strong>{{localize "ODRITE.Escudo"}}:</strong> {{classeAtual.escudos}}
+        </p>
+
+        <div class="campo-atributo-principal">
+          <label>{{localize "ODRITE.Assistente.AtributoPrincipal"}}</label>
+          <div class="opcoes-atributo-principal">
+            {{#each atributoPrincipalOpcoes as |chaveAtrib|}}
+            <button type="button" class="opcao-atributo-principal {{#if (eq ../dados.atributoPrincipal chaveAtrib)}}selecionado{{/if}}"
+              data-action="escolherAtributoPrincipal" data-atributo="{{chaveAtrib}}">
+              {{localize (concat "ODRITE.Atributo." (capitalize chaveAtrib))}}
+            </button>
+            {{/each}}
+          </div>
+        </div>
+
+        <div class="campo-categorias-arma">
+          <label>{{localize "ODRITE.Assistente.EscolhaCategorias"}} ({{dados.categoriasArmaEscolhidas.length}}/{{classeAtual.categoriasArma}})</label>
+          <div class="opcoes-categoria-arma">
+            {{#each categoriasArma as |cat|}}
+            <button type="button" class="opcao-categoria {{#if (includes ../dados.categoriasArmaEscolhidas cat)}}selecionado{{/if}}"
+              data-action="toggleCategoriaArma" data-categoria="{{cat}}">{{cat}}</button>
+            {{/each}}
+          </div>
+        </div>
+
+        <div class="campo-habilidades-lista">
+          <label>{{localize "ODRITE.Assistente.EscolhaHabilidadeLista"}} ({{dados.habilidadesListaEscolhidas.length}}/{{qtdHabilidadesListaNecessarias}})</label>
+          {{#each habilidadesListaOpcoes as |hab|}}
+          <div class="card-selecao {{#if (includes ../dados.habilidadesListaEscolhidas hab._id)}}selecionado{{/if}}">
+            <div class="card-selecao-cabecalho">
+              <button type="button" class="opcao-habilidade" data-action="toggleHabilidadeLista" data-id="{{hab._id}}">{{hab.name}}</button>
+              <a class="botao-expandir {{#if hab.expandido}}aberto{{/if}}" data-action="toggleDescricao" data-id="{{hab._id}}" title="{{localize 'ODRITE.Assistente.VerDescricao'}}">▾</a>
+            </div>
+            {{#if hab.expandido}}
+            <div class="card-selecao-descricao">{{{hab.system.descricao}}}</div>
+            {{/if}}
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{#if (eq etapa "atributos")}}
+    <div class="wizard-etapa etapa-atributos">
+      <p class="dica">{{localize "ODRITE.Assistente.DicaAtributos"}}</p>
+      {{#each atributosLinhas as |linha|}}
+      <div class="linha-atributo-wizard">
+        <span class="nome-atributo">
+          {{linha.label}}
+          {{#if linha.ehPrincipal}}<span class="tag-principal">{{localize "ODRITE.Assistente.Principal"}}</span>{{/if}}
+          {{#if (eq linha.chave ../dados.bonusAtributoAlvo)}}<span class="tag-bonus">+1</span>{{/if}}
+        </span>
+        <span class="valor-atual">{{#if linha.atribuido}}{{linha.valor}}{{else}}—{{/if}}</span>
+        {{#if linha.ehPrincipal}}
+        <div class="opcoes-valor opcoes-valor-travado">
+          <span class="valor-travado">{{localize "ODRITE.Assistente.ValorTravado"}}</span>
+        </div>
+        {{else}}
+        <div class="opcoes-valor">
+          {{#each linha.opcoesValor as |vf|}}
+          <button type="button"
+            class="opcao-valor {{#if (eq linha.slot vf.indice)}}selecionado{{/if}} {{#if vf.ocupadoPor}}ocupado{{/if}}"
+            data-action="atribuirValor" data-atributo="{{linha.chave}}" data-indice="{{vf.indice}}">
+            {{vf.valor}}
+          </button>
+          {{/each}}
+        </div>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if (eq etapa "conjuracao")}}
+    <div class="wizard-etapa etapa-conjuracao">
+      {{#if (eq dados.classe "Combatente Sagrado")}}
+      <div class="campo-devocao">
+        <label>{{localize "ODRITE.Assistente.Devocao"}}</label>
+        <div class="opcoes-devocao">
+          {{#each devocoes as |deus|}}
+          <button type="button" class="opcao-devocao {{#if (eq ../dados.devocao deus)}}selecionado{{/if}}" data-action="escolherDevocao" data-devocao="{{deus}}">{{deus}}</button>
+          {{/each}}
+        </div>
+        {{#if (eq dados.devocao "Kaerys")}}
+        <div class="opcoes-caminho">
+          {{#each caminhosConjuracao as |caminho|}}
+          <button type="button" class="opcao-caminho {{#if (includes dados.caminhosEscolhidos caminho)}}selecionado{{/if}}" data-action="escolherCaminhoDevocao" data-caminho="{{caminho}}">{{caminho}}</button>
+          {{/each}}
+        </div>
+        {{/if}}
+      </div>
+      {{else}}
+      <div class="campo-caminhos">
+        <label>{{localize "ODRITE.Assistente.EscolhaCaminhos"}} ({{dados.caminhosEscolhidos.length}}/3)</label>
+        <div class="opcoes-caminho">
+          {{#each caminhosConjuracao as |caminho|}}
+          <button type="button" class="opcao-caminho {{#if (includes dados.caminhosEscolhidos caminho)}}selecionado{{/if}}" data-action="toggleCaminho" data-caminho="{{caminho}}">{{caminho}}</button>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#each caminhosComOpcoes as |grupo|}}
+      <div class="grupo-conjuracoes">
+        <h4>{{grupo.caminho}} ({{grupo.escolhidas.length}}/{{grupo.limite}})</h4>
+        {{#each grupo.opcoes as |conj|}}
+        <div class="card-selecao {{#if (includes grupo.escolhidas conj._id)}}selecionado{{/if}}">
+          <div class="card-selecao-cabecalho">
+            <button type="button" class="opcao-conjuracao" data-action="toggleConjuracao" data-caminho="{{grupo.caminho}}" data-id="{{conj._id}}">{{conj.name}}</button>
+            <a class="botao-expandir {{#if conj.expandido}}aberto{{/if}}" data-action="toggleDescricao" data-id="{{conj._id}}" title="{{localize 'ODRITE.Assistente.VerDescricao'}}">▾</a>
+          </div>
+          {{#if conj.expandido}}
+          <div class="card-selecao-descricao">
+            <p class="meta">{{localize "ODRITE.Magia.Duracao"}}: {{conj.system.duracao}} | {{localize "ODRITE.Magia.Alcance"}}: {{conj.system.alcance}}</p>
+            {{{conj.system.descricao}}}
+          </div>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if (eq etapa "equipamento")}}
+    <div class="wizard-etapa etapa-equipamento">
+      <div class="campo-dinheiro">
+        <label>{{localize "ODRITE.Assistente.DinheiroInicial"}}</label>
+        <div class="opcoes-dinheiro">
+          <button type="button" class="botao-rolar-dinheiro" data-action="rolarDinheiro">
+            {{localize "ODRITE.Assistente.RolarDinheiro"}}
+          </button>
+          <label class="campo-dinheiro-mestre">
+            {{localize "ODRITE.Assistente.DefinidoPeloMestre"}}
+            <input type="number" class="input-dinheiro-mestre" min="0" step="1" value="{{dinheiro.valor}}">
+          </label>
+        </div>
+        {{#if dinheiro.definido}}
+        <p class="resumo-dinheiro {{#if (lt dinheiro.restante 0)}}saldo-negativo{{/if}}">
+          <strong>{{localize "ODRITE.Recursos.Drakeons"}}:</strong> {{dinheiro.valor}} —
+          <strong>{{localize "ODRITE.Assistente.Gasto"}}:</strong> {{dinheiro.gasto}} —
+          <strong>{{localize "ODRITE.Assistente.Restante"}}:</strong> {{dinheiro.restante}}
+        </p>
+        {{/if}}
+      </div>
+
+      <p class="limites-equipamento">
+        <span class="{{#if (eq limiteArmas.atual limiteArmas.maximo)}}limite-atingido{{/if}}">
+          <strong>{{localize "ODRITE.Armas"}}:</strong> {{limiteArmas.atual}}/{{limiteArmas.maximo}}
+        </span>
+        &nbsp;·&nbsp;
+        <span class="{{#if (eq limiteCarga.atual limiteCarga.maximo)}}limite-atingido{{/if}}">
+          <strong>{{localize "ODRITE.Carga"}}:</strong> {{limiteCarga.atual}}/{{limiteCarga.maximo}}
+        </span>
+      </p>
+
+      {{#unless dinheiro.definido}}
+      <p class="aviso-dinheiro-nao-definido">{{localize "ODRITE.Assistente.Aviso.DefinaDinheiro"}}</p>
+      {{/unless}}
+
+      <div class="colunas-equipamento {{#unless dinheiro.definido}}desabilitado{{/unless}}">
+        {{#each equipamentoOpcoes as |grupo|}}
+        <div class="coluna-equipamento">
+          <h4>{{localize grupo.label}}</h4>
+          {{#each grupo.itens as |item|}}
+          <button type="button" class="opcao-equipamento {{#if item.quantidadeEscolhida}}selecionado{{/if}} {{#if item.semSaldo}}sem-saldo{{/if}}" data-action="adicionarEquipamento"
+            {{#if (or (not ../../dinheiro.definido) item.semSaldo)}}disabled{{/if}}
+            data-pack="{{grupo.packId}}" data-id="{{item._id}}" data-nome="{{item.name}}" data-preco="{{item.preco}}" data-tipo="{{item.tipo}}">
+            + {{item.name}} ({{item.preco}})
+            {{#if item.quantidadeEscolhida}}<span class="badge-qtd">x{{item.quantidadeEscolhida}}</span>{{/if}}
+          </button>
+          {{/each}}
+        </div>
+        {{/each}}
+      </div>
+
+      <div class="lista-equipamento-escolhido">
+        <h4>{{localize "ODRITE.Assistente.EquipamentoEscolhido"}}</h4>
+        {{#each dados.equipamentoEscolhido as |item indice|}}
+        <div class="linha-equipamento-escolhido">
+          <span class="nome-equipamento-escolhido">{{item.nome}}</span>
+          <span class="preco-equipamento-escolhido">{{item.preco}} {{localize "ODRITE.Recursos.Drakeons"}}</span>
+          <div class="stepper-qtd">
+            <a data-action="decrementarEquipamento" data-indice="{{indice}}">−</a>
+            <span>{{item.quantidade}}</span>
+            <a data-action="adicionarEquipamento" data-pack="{{item.packId}}" data-id="{{item.id}}" data-nome="{{item.nome}}" data-preco="{{item.preco}}" data-tipo="{{item.tipo}}">+</a>
+          </div>
+          <span class="subtotal-equipamento-escolhido">{{multiply item.preco item.quantidade}}</span>
+          <a class="remover-equipamento" data-action="removerEquipamento" data-indice="{{indice}}">✕</a>
+        </div>
+        {{else}}
+        <p class="vazio">{{localize "ODRITE.Assistente.NenhumEquipamento"}}</p>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+
+    {{#if (eq etapa "revisao")}}
+    <div class="wizard-etapa etapa-revisao">
+      <p><strong>{{localize "ODRITE.Raca"}}:</strong> {{resumo.raca}} &nbsp; <strong>{{localize "ODRITE.Classe"}}:</strong> {{resumo.classe}}</p>
+      <p><strong>{{localize "ODRITE.Tamanho"}}:</strong> {{resumo.tamanho}} &nbsp; <strong>{{localize "ODRITE.Deslocamento"}}:</strong> {{resumo.deslocamento}}m</p>
+      <p><strong>{{localize "ODRITE.Vitalidade"}}:</strong> {{resumo.vitalidade}}</p>
+      <p>
+        <strong>{{localize "ODRITE.Atributo.Forca"}}:</strong> {{resumo.atributos.forca}} &nbsp;
+        <strong>{{localize "ODRITE.Atributo.Agilidade"}}:</strong> {{resumo.atributos.agilidade}} &nbsp;
+        <strong>{{localize "ODRITE.Atributo.Resistencia"}}:</strong> {{resumo.atributos.resistencia}} &nbsp;
+        <strong>{{localize "ODRITE.Atributo.Influencia"}}:</strong> {{resumo.atributos.influencia}}<br>
+        <strong>{{localize "ODRITE.Atributo.Mente"}}:</strong> {{resumo.atributos.mente}} &nbsp;
+        <strong>{{localize "ODRITE.Atributo.Sentidos"}}:</strong> {{resumo.atributos.sentidos}} &nbsp;
+        <strong>{{localize "ODRITE.Atributo.Habilidade"}}:</strong> {{resumo.atributos.habilidade}} &nbsp;
+        <strong>{{localize "ODRITE.Atributo.Conjuracao"}}:</strong> {{resumo.atributos.conjuracao}}
+      </p>
+      <p><strong>{{localize "ODRITE.Proficiencias.Idiomas"}}:</strong> {{resumo.idiomas}}</p>
+      <p><strong>{{localize "ODRITE.Proficiencias.Armas"}}:</strong> {{resumo.categoriasArma}}</p>
+      <p><strong>{{localize "ODRITE.Proficiencias.Armaduras"}}:</strong> {{resumo.armaduras}} &nbsp; <strong>{{localize "ODRITE.Proficiencias.Escudos"}}:</strong> {{resumo.escudos}}</p>
+      <p><strong>{{localize "ODRITE.Equipamento"}}:</strong>
+        {{#each resumo.equipamento as |item|}}{{item.nome}} (x{{item.quantidade}}){{#unless @last}}, {{/unless}}{{else}}—{{/each}}
+      </p>
+      <p>
+        <strong>{{localize "ODRITE.Recursos.Drakeons"}}:</strong> {{resumo.dinheiroInicial}} —
+        <strong>{{localize "ODRITE.Assistente.Gasto"}}:</strong> {{resumo.dinheiroGasto}} —
+        <strong>{{localize "ODRITE.Assistente.Restante"}}:</strong> {{resumo.dinheiroRestante}}
+      </p>
+    </div>
+    {{/if}}
+
+  </section>
+
+  <footer class="wizard-rodape">
+    <button type="button" class="wizard-cancelar" data-action="cancelar">{{localize "ODRITE.Assistente.Cancelar"}}</button>
+    <div class="wizard-navegacao">
+      {{#unless (eq etapa "raca")}}<button type="button" data-action="voltar">{{localize "ODRITE.Assistente.Voltar"}}</button>{{/unless}}
+      {{#unless (eq etapa "revisao")}}<button type="button" class="wizard-avancar" data-action="avancar">{{localize "ODRITE.Assistente.Avancar"}}</button>{{/unless}}
+      {{#if (eq etapa "revisao")}}<button type="button" class="wizard-confirmar" data-action="confirmar">{{localize "ODRITE.Assistente.Confirmar"}}</button>{{/if}}
+    </div>
+  </footer>
+</div>

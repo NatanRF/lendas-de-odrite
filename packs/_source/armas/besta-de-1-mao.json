@@ -1,11 +1,12 @@
 {
-  "_id": "qqZ9crmQfHu9TLF5",
-  "_key": "!items!qqZ9crmQfHu9TLF5",
+  "_id": "WljSTKemkwuXPH6r",
+  "_key": "!items!WljSTKemkwuXPH6r",
   "name": "Besta de 1 mão",
   "type": "arma",
   "img": "systems/odrite/assets/icons/besta-de-1-mao.png",
   "system": {
     "tipoAtaque": "distancia",
+    "categoria": "Bestas",
     "dano": 4,
     "propriedade": "Atrasar",
     "preco": 120,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857866,
-    "modifiedTime": 1785939857866,
+    "createdTime": 1785970113779,
+    "modifiedTime": 1785970113779,
     "lastModifiedBy": null
   }
 }

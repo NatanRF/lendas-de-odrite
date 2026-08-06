@@ -1,0 +1,19 @@
+{
+  "_id": "nQcVw4VzjGs7ib5V",
+  "_key": "!folders!nQcVw4VzjGs7ib5V",
+  "name": "Raça: Humano",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464264,
+    "modifiedTime": 1785970464264,
+    "lastModifiedBy": null
+  }
+}

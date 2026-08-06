@@ -1,0 +1,19 @@
+{
+  "_id": "dyVn50zoEtLwID6X",
+  "_key": "!folders!dyVn50zoEtLwID6X",
+  "name": "Raça: Elster",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464269,
+    "modifiedTime": 1785970464269,
+    "lastModifiedBy": null
+  }
+}

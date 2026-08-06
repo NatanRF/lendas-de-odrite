@@ -1,0 +1,30 @@
+{
+  "_id": "uGjHrBMCvKgMV0wC",
+  "_key": "!items!uGjHrBMCvKgMV0wC",
+  "name": "Vínculo",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
+    "classe": "Canalizador",
+    "categoria": "lista",
+    "descricao": "Uma vez por dia você pode criar um vínculo com outro indivíduo através de um toque. Você pode usar no alvo conjurações com alcance de toque, mesmo que ele esteja até 20 metros de você. O efeito se aplica até o final do dia."
+  },
+  "effects": [],
+  "folder": "zMBPjPBHik9q7H9W",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464181,
+    "modifiedTime": 1785970464181,
+    "lastModifiedBy": null
+  }
+}

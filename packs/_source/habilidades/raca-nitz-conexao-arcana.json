@@ -1,0 +1,30 @@
+{
+  "_id": "Oe14ac8G6aXHmi4z",
+  "_key": "!items!Oe14ac8G6aXHmi4z",
+  "name": "Conexão Arcana",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "raca",
+    "raca": "Nitz",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Uma vez por rodada pode optar por ter sucesso automático em um teste de Conjuração ou Manutenção."
+  },
+  "effects": [],
+  "folder": "6tgMOjE2juPHCwBg",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464266,
+    "modifiedTime": 1785970464266,
+    "lastModifiedBy": null
+  }
+}

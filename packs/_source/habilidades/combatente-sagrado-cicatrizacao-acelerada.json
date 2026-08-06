@@ -1,17 +1,19 @@
 {
-  "_id": "KhNs5jv39Q9r8KFw",
-  "_key": "!items!KhNs5jv39Q9r8KFw",
+  "_id": "8a7n6P0TuJWBDp9f",
+  "_key": "!items!8a7n6P0TuJWBDp9f",
   "name": "Cicatrização Acelerada",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
     "classe": "Combatente Sagrado",
     "categoria": "lista",
     "descricao": "Você pode recuperar d4 a mais de Pontos de Vitalidade durante um Descanso Completo."
   },
   "effects": [],
-  "folder": "iWIe853JnJDqtLDV",
+  "folder": "jYqtJRgpaYAPGQ6H",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174984,
-    "modifiedTime": 1785898174984,
+    "createdTime": 1785970464187,
+    "modifiedTime": 1785970464187,
     "lastModifiedBy": null
   }
 }

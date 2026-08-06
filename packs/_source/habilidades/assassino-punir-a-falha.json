@@ -1,17 +1,19 @@
 {
-  "_id": "hhukQverERJuQlXx",
-  "_key": "!items!hhukQverERJuQlXx",
+  "_id": "9lk56WNqiGg3ino8",
+  "_key": "!items!9lk56WNqiGg3ino8",
   "name": "Punir a Falha",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "ativa",
+    "origem": "classe",
+    "raca": "",
     "classe": "Assassino",
     "categoria": "lista",
     "descricao": "Quando um inimigo falhar em um Teste de Acerto contra você, pode realizar imediatamente um ataque contra ele, desde que esteja no alcance da sua arma, uma vez sem contabilizar em suas Manobras de Combate realizadas."
   },
   "effects": [],
-  "folder": "vBvshF8qFAo1VEqW",
+  "folder": "3F1898zrztt9XlX1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174971,
-    "modifiedTime": 1785898174971,
+    "createdTime": 1785970464174,
+    "modifiedTime": 1785970464174,
     "lastModifiedBy": null
   }
 }

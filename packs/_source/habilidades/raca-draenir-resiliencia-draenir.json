@@ -1,0 +1,30 @@
+{
+  "_id": "vjbGA9iwHRxNK6pY",
+  "_key": "!items!vjbGA9iwHRxNK6pY",
+  "name": "Resiliência Draenir",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "raca",
+    "raca": "Draenir",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Uma vez por combate, se o personagem cairia para 0 pontos de Vitalidade, o jogador pode rolar um teste de Resistência. Se for bem sucedido, permanece com 1 ponto de vitalidade."
+  },
+  "effects": [],
+  "folder": "QeZLJwMdAz19bzfr",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464268,
+    "modifiedTime": 1785970464268,
+    "lastModifiedBy": null
+  }
+}

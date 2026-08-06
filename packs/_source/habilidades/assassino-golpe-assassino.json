@@ -1,17 +1,19 @@
 {
-  "_id": "k2cnDJ4U1BJlxG8C",
-  "_key": "!items!k2cnDJ4U1BJlxG8C",
+  "_id": "4phomhejmTiTVM5g",
+  "_key": "!items!4phomhejmTiTVM5g",
   "name": "Golpe Assassino",
   "type": "habilidade",
   "img": "icons/svg/upgrade.svg",
   "system": {
     "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
     "classe": "Assassino",
     "categoria": "basica",
     "descricao": "Ao atacar um alvo que não possui ninguém adjacente a ele exceto você, o ataque causa 1d4 pontos de dano a mais no alvo em todos os seus acertos contra ele."
   },
   "effects": [],
-  "folder": "vBvshF8qFAo1VEqW",
+  "folder": "3F1898zrztt9XlX1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174971,
-    "modifiedTime": 1785898174971,
+    "createdTime": 1785970464173,
+    "modifiedTime": 1785970464173,
     "lastModifiedBy": null
   }
 }

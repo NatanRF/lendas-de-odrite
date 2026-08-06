@@ -1,0 +1,32 @@
+{
+  "_id": "Ji9bYNcJoX2un0Gy",
+  "_key": "!items!Ji9bYNcJoX2un0Gy",
+  "name": "Escudo Pesado",
+  "type": "escudo",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "tipo": "Escudo Pesado",
+    "preco": 300,
+    "forcaMinima": 8,
+    "penalidade": 4,
+    "durabilidade": {
+      "value": 12,
+      "max": 12
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970116465,
+    "modifiedTime": 1785970116465,
+    "lastModifiedBy": null
+  }
+}

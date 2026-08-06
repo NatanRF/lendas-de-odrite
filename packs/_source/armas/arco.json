@@ -1,11 +1,12 @@
 {
-  "_id": "6ixsIszMGqNTxKY6",
-  "_key": "!items!6ixsIszMGqNTxKY6",
+  "_id": "9RszYG9DSLrGLZzV",
+  "_key": "!items!9RszYG9DSLrGLZzV",
   "name": "Arco",
   "type": "arma",
   "img": "systems/odrite/assets/icons/arco.png",
   "system": {
     "tipoAtaque": "distancia",
+    "categoria": "Arcos",
     "dano": 2,
     "propriedade": "Atrasar",
     "preco": 10,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857866,
-    "modifiedTime": 1785939857866,
+    "createdTime": 1785970113779,
+    "modifiedTime": 1785970113779,
     "lastModifiedBy": null
   }
 }

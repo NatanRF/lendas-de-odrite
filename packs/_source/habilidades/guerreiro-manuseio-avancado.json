@@ -1,17 +1,19 @@
 {
-  "_id": "a6VdVb1jKxN0UmKT",
-  "_key": "!items!a6VdVb1jKxN0UmKT",
+  "_id": "J0pVKUzh6tnvkSJr",
+  "_key": "!items!J0pVKUzh6tnvkSJr",
   "name": "Manuseio Avançado",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
     "classe": "Guerreiro",
     "categoria": "lista",
     "descricao": "Pode sacar ou trocar armas uma vez por rodada sem custo em Manobras de Combate."
   },
   "effects": [],
-  "folder": "fES7U14FHbNpQJeR",
+  "folder": "Ddrfjmbj7GRxPlmY",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174963,
-    "modifiedTime": 1785898174963,
+    "createdTime": 1785970464164,
+    "modifiedTime": 1785970464164,
     "lastModifiedBy": null
   }
 }

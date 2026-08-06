@@ -1,17 +1,19 @@
 {
-  "_id": "TUc1KganwNjtrwVN",
-  "_key": "!items!TUc1KganwNjtrwVN",
+  "_id": "C8LTM7QVOE75Yzbt",
+  "_key": "!items!C8LTM7QVOE75Yzbt",
   "name": "Esquiva Perfeita",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
     "classe": "Assassino",
     "categoria": "lista",
     "descricao": "Ao realizar um teste de Agilidade para Esquivar, ele é considerado Fácil (+2)."
   },
   "effects": [],
-  "folder": "vBvshF8qFAo1VEqW",
+  "folder": "3F1898zrztt9XlX1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174973,
-    "modifiedTime": 1785898174973,
+    "createdTime": 1785970464176,
+    "modifiedTime": 1785970464176,
     "lastModifiedBy": null
   }
 }

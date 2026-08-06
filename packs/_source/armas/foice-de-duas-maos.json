@@ -1,11 +1,12 @@
 {
-  "_id": "qeLMM7brXKtcQPY8",
-  "_key": "!items!qeLMM7brXKtcQPY8",
+  "_id": "nlC9t4FMPQ99DqFs",
+  "_key": "!items!nlC9t4FMPQ99DqFs",
   "name": "Foice de Duas Mãos",
   "type": "arma",
   "img": "systems/odrite/assets/icons/foice-de-duas-maos.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Foices",
     "dano": 5,
     "propriedade": "Mutilar",
     "preco": 50,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857863,
-    "modifiedTime": 1785939857863,
+    "createdTime": 1785970113776,
+    "modifiedTime": 1785970113776,
     "lastModifiedBy": null
   }
 }

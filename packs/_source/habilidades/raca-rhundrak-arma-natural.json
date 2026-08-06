@@ -1,0 +1,30 @@
+{
+  "_id": "gZrqY7trbSfhQ2c4",
+  "_key": "!items!gZrqY7trbSfhQ2c4",
+  "name": "Arma Natural",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "raca",
+    "raca": "Rhundrak",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Você pode usar suas garras como armas causando 4 de dano."
+  },
+  "effects": [],
+  "folder": "ME7LrI2K7bvPBe6V",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464268,
+    "modifiedTime": 1785970464268,
+    "lastModifiedBy": null
+  }
+}

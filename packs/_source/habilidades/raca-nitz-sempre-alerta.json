@@ -1,0 +1,30 @@
+{
+  "_id": "VUAYzx6cUQmjzziV",
+  "_key": "!items!VUAYzx6cUQmjzziV",
+  "name": "Sempre Alerta",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "raca",
+    "raca": "Nitz",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Uma vez por rodada pode Esquivar sem contabilizar em suas Manobras de Combate."
+  },
+  "effects": [],
+  "folder": "6tgMOjE2juPHCwBg",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464266,
+    "modifiedTime": 1785970464266,
+    "lastModifiedBy": null
+  }
+}

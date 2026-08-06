@@ -1,17 +1,19 @@
 {
-  "_id": "phmW7vzbQN4TH5Lt",
-  "_key": "!items!phmW7vzbQN4TH5Lt",
+  "_id": "1mqpsp6cXaCunLvr",
+  "_key": "!items!1mqpsp6cXaCunLvr",
   "name": "Assassino Voraz",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "ativa",
+    "origem": "classe",
+    "raca": "",
     "classe": "Assassino",
     "categoria": "lista",
     "descricao": "Ao reduzir os pontos de Vitalidade de um alvo a 0, pelo restante da rodada você não recebe Pontos de Fadiga provenientes do uso de Manobras de Combate."
   },
   "effects": [],
-  "folder": "vBvshF8qFAo1VEqW",
+  "folder": "3F1898zrztt9XlX1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174973,
-    "modifiedTime": 1785898174973,
+    "createdTime": 1785970464176,
+    "modifiedTime": 1785970464176,
     "lastModifiedBy": null
   }
 }

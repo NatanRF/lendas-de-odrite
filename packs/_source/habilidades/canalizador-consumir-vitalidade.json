@@ -1,0 +1,30 @@
+{
+  "_id": "s5ExeXypVKCf6nnW",
+  "_key": "!items!s5ExeXypVKCf6nnW",
+  "name": "Consumir Vitalidade",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
+    "classe": "Canalizador",
+    "categoria": "lista",
+    "descricao": "Uma vez por manobra, você pode reduzir em 1 seus Pontos de Vitalidade para rolar novamente um teste de conjuração."
+  },
+  "effects": [],
+  "folder": "zMBPjPBHik9q7H9W",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464180,
+    "modifiedTime": 1785970464180,
+    "lastModifiedBy": null
+  }
+}

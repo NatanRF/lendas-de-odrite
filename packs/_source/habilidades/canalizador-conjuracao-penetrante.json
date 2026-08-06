@@ -1,0 +1,30 @@
+{
+  "_id": "hWaax122oO2npdTo",
+  "_key": "!items!hWaax122oO2npdTo",
+  "name": "Conjuração Penetrante",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "conjuracao",
+    "origem": "classe",
+    "raca": "",
+    "classe": "Canalizador",
+    "categoria": "lista",
+    "descricao": "O dano da sua próxima conjuração não pode ser mitigado até o final do combate."
+  },
+  "effects": [],
+  "folder": "zMBPjPBHik9q7H9W",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464181,
+    "modifiedTime": 1785970464181,
+    "lastModifiedBy": null
+  }
+}

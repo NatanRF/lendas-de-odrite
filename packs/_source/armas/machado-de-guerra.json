@@ -1,11 +1,12 @@
 {
-  "_id": "Bbm7jBjyGbz5LpHl",
-  "_key": "!items!Bbm7jBjyGbz5LpHl",
+  "_id": "YaFd6lm0cXt0znLm",
+  "_key": "!items!YaFd6lm0cXt0znLm",
   "name": "Machado de Guerra",
   "type": "arma",
   "img": "systems/odrite/assets/icons/machado-de-guerra.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Machados",
     "dano": 6,
     "propriedade": "Mutilar",
     "preco": 100,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857862,
-    "modifiedTime": 1785939857862,
+    "createdTime": 1785970113775,
+    "modifiedTime": 1785970113775,
     "lastModifiedBy": null
   }
 }

@@ -1,11 +1,12 @@
 {
-  "_id": "79vAlmLggSKhW5mw",
-  "_key": "!items!79vAlmLggSKhW5mw",
+  "_id": "IseQ0AltdAY7cwOX",
+  "_key": "!items!IseQ0AltdAY7cwOX",
   "name": "Maça",
   "type": "arma",
   "img": "systems/odrite/assets/icons/maca.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Maças",
     "dano": 4,
     "propriedade": "Derrubar",
     "preco": 15,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857864,
-    "modifiedTime": 1785939857864,
+    "createdTime": 1785970113777,
+    "modifiedTime": 1785970113777,
     "lastModifiedBy": null
   }
 }

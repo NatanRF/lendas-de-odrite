@@ -1,11 +1,12 @@
 {
-  "_id": "h5VhEn6kXp3fApLZ",
-  "_key": "!items!h5VhEn6kXp3fApLZ",
+  "_id": "m7z0MCjmiqpP6Rkx",
+  "_key": "!items!m7z0MCjmiqpP6Rkx",
   "name": "Machado",
   "type": "arma",
   "img": "systems/odrite/assets/icons/machado.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Machados",
     "dano": 4,
     "propriedade": "Mutilar",
     "preco": 20,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857862,
-    "modifiedTime": 1785939857862,
+    "createdTime": 1785970113775,
+    "modifiedTime": 1785970113775,
     "lastModifiedBy": null
   }
 }

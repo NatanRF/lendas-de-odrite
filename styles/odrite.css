@@ -833,4 +833,544 @@ textarea[name="system.descricao"] {
 .odrite.chat-card .tag.acerto-absoluto { background: #2e7d32; color: #fff; box-shadow: 0 0 6px rgba(46, 125, 50, 0.7); }
 .odrite.chat-card .tag.falha-absoluta { background: #000; color: #ff4d4d; border: 1px solid #ff4d4d; }
 
+/* Assistente de criação de personagem */
+.odrite-wizard-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+  gap: 10px;
+  color: var(--odrite-text);
+}
+
+.odrite.wizard .wizard-header h2 {
+  margin: 0 0 6px;
+  font-family: var(--odrite-font-display);
+  color: var(--odrite-gold);
+  text-align: center;
+}
+
+.odrite.wizard .wizard-passos {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--odrite-border);
+}
+
+.odrite.wizard .wizard-passos .passo {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  color: var(--odrite-text-dim);
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+}
+
+.odrite.wizard .wizard-passos .passo.ativo {
+  color: var(--odrite-bg);
+  background: var(--odrite-gold);
+  border-color: var(--odrite-gold);
+  font-weight: bold;
+}
+
+.odrite.wizard .wizard-conteudo {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.odrite.wizard .opcoes-raca,
+.odrite.wizard .opcoes-classe,
+.odrite.wizard .opcoes-bonus-atributo,
+.odrite.wizard .opcoes-categoria-arma,
+.odrite.wizard .opcoes-caminho,
+.odrite.wizard .opcoes-devocao,
+.odrite.wizard .opcoes-valor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.odrite.wizard button.opcao-raca,
+.odrite.wizard button.opcao-classe,
+.odrite.wizard button.opcao-bonus,
+.odrite.wizard button.opcao-atributo-principal,
+.odrite.wizard button.opcao-categoria,
+.odrite.wizard button.opcao-caminho,
+.odrite.wizard button.opcao-devocao,
+.odrite.wizard button.opcao-valor,
+.odrite.wizard button.opcao-equipamento {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  color: var(--odrite-text);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.odrite.wizard button.opcao-raca.selecionado,
+.odrite.wizard button.opcao-classe.selecionado,
+.odrite.wizard button.opcao-bonus.selecionado,
+.odrite.wizard button.opcao-atributo-principal.selecionado,
+.odrite.wizard button.opcao-categoria.selecionado,
+.odrite.wizard button.opcao-caminho.selecionado,
+.odrite.wizard button.opcao-devocao.selecionado,
+.odrite.wizard button.opcao-valor.selecionado {
+  background: var(--odrite-gold);
+  color: var(--odrite-bg);
+  border-color: var(--odrite-gold);
+  font-weight: bold;
+}
+
+.odrite.wizard button.opcao-valor.ocupado:not(.selecionado) {
+  opacity: 0.4;
+}
+
+.odrite.wizard .detalhes-raca,
+.odrite.wizard .detalhes-classe {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+}
+
+.odrite.wizard .linha-atributo-wizard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(200, 162, 74, 0.2);
+}
+
+.odrite.wizard .nome-atributo {
+  min-width: 110px;
+  font-weight: bold;
+  color: var(--odrite-gold);
+}
+
+.odrite.wizard .tag-bonus,
+.odrite.wizard .tag-principal {
+  background: var(--odrite-red);
+  color: var(--odrite-text);
+  border-radius: 8px;
+  padding: 1px 6px;
+  font-size: 0.65rem;
+  margin-left: 4px;
+  text-transform: uppercase;
+}
+
+.odrite.wizard .tag-principal {
+  background: var(--odrite-gold);
+  color: var(--odrite-bg);
+}
+
+.odrite.wizard .valor-travado {
+  font-size: 0.7rem;
+  color: var(--odrite-text-dim);
+  font-style: italic;
+}
+
+.odrite.wizard .valor-atual {
+  min-width: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.odrite.wizard .grupo-conjuracoes {
+  margin-top: 10px;
+}
+
+.odrite.wizard .grupo-conjuracoes h4 {
+  color: var(--odrite-gold);
+  margin: 6px 0 4px;
+}
+
+.odrite.wizard .colunas-equipamento {
+  display: flex;
+  gap: 12px;
+}
+
+.odrite.wizard .coluna-equipamento {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.odrite.wizard .coluna-equipamento h4 {
+  color: var(--odrite-gold);
+  margin: 0 0 4px;
+}
+
+.odrite.wizard .campo-dinheiro {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.odrite.wizard .opcoes-dinheiro {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.odrite.wizard .botao-rolar-dinheiro {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  color: var(--odrite-text);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.odrite.wizard .campo-dinheiro-mestre {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--odrite-text-dim);
+}
+
+.odrite.wizard .input-dinheiro-mestre {
+  width: 80px;
+}
+
+.odrite.wizard .resumo-dinheiro {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+}
+
+.odrite.wizard .resumo-dinheiro.saldo-negativo {
+  color: var(--odrite-fail);
+  font-weight: bold;
+}
+
+.odrite.wizard .aviso-dinheiro-nao-definido {
+  color: var(--odrite-fail);
+  font-size: 0.8rem;
+  margin: 0 0 8px;
+}
+
+.odrite.wizard .colunas-equipamento.desabilitado {
+  opacity: 0.5;
+}
+
+.odrite.wizard button.opcao-equipamento:disabled {
+  cursor: not-allowed;
+}
+
+.odrite.wizard button.opcao-equipamento.sem-saldo {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+.odrite.wizard .card-selecao {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 5px;
+  margin-bottom: 4px;
+  overflow: hidden;
+}
+
+.odrite.wizard .card-selecao.selecionado {
+  border-color: var(--odrite-gold);
+}
+
+.odrite.wizard .card-selecao-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.odrite.wizard .card-selecao-cabecalho .opcao-habilidade,
+.odrite.wizard .card-selecao-cabecalho .opcao-conjuracao {
+  flex: 1;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--odrite-text);
+  cursor: pointer;
+  padding: 5px 8px;
+  font-size: 0.8rem;
+}
+
+.odrite.wizard .card-selecao.selecionado .opcao-habilidade,
+.odrite.wizard .card-selecao.selecionado .opcao-conjuracao {
+  color: var(--odrite-gold);
+  font-weight: bold;
+}
+
+.odrite.wizard .botao-expandir {
+  cursor: pointer;
+  color: var(--odrite-text-dim);
+  padding: 5px 10px;
+  transition: transform 0.15s;
+}
+
+.odrite.wizard .botao-expandir.aberto {
+  transform: rotate(180deg);
+  color: var(--odrite-gold);
+}
+
+.odrite.wizard .card-selecao-descricao {
+  padding: 6px 10px 8px;
+  border-top: 1px solid var(--odrite-border);
+  font-size: 0.78rem;
+  color: var(--odrite-text-dim);
+}
+
+.odrite.wizard .card-selecao-descricao .meta {
+  margin: 0 0 4px;
+  font-style: italic;
+}
+
+.odrite.wizard .limites-equipamento {
+  font-size: 0.8rem;
+  color: var(--odrite-text-dim);
+  margin: 0 0 8px;
+}
+
+.odrite.wizard .limites-equipamento .limite-atingido {
+  color: var(--odrite-fail);
+  font-weight: bold;
+}
+
+.odrite.wizard button.opcao-equipamento.selecionado {
+  background: var(--odrite-gold);
+  color: var(--odrite-bg);
+  border-color: var(--odrite-gold);
+  font-weight: bold;
+}
+
+.odrite.wizard .badge-qtd {
+  background: var(--odrite-red);
+  color: var(--odrite-text);
+  border-radius: 8px;
+  padding: 0 6px;
+  font-size: 0.7rem;
+  margin-left: 4px;
+}
+
+.odrite.wizard .lista-equipamento-escolhido {
+  margin-top: 12px;
+  border-top: 1px solid var(--odrite-border);
+  padding-top: 8px;
+}
+
+.odrite.wizard .linha-equipamento-escolhido {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 3px 0;
+}
+
+.odrite.wizard .nome-equipamento-escolhido {
+  flex: 1;
+}
+
+.odrite.wizard .preco-equipamento-escolhido,
+.odrite.wizard .subtotal-equipamento-escolhido {
+  font-size: 0.75rem;
+  color: var(--odrite-text-dim);
+  min-width: 70px;
+  text-align: right;
+}
+
+.odrite.wizard .stepper-qtd {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--odrite-bg-alt);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.odrite.wizard .stepper-qtd a {
+  cursor: pointer;
+  color: var(--odrite-gold);
+  font-weight: bold;
+}
+
+.odrite.wizard .remover-equipamento {
+  cursor: pointer;
+  color: var(--odrite-fail);
+}
+
+.odrite.wizard .etapa-revisao p {
+  margin: 4px 0;
+}
+
+.odrite.wizard .wizard-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--odrite-border);
+  padding-top: 8px;
+}
+
+.odrite.wizard .wizard-navegacao {
+  display: flex;
+  gap: 8px;
+}
+
+.odrite.wizard .wizard-confirmar {
+  background: var(--odrite-gold);
+  color: var(--odrite-bg);
+  font-weight: bold;
+}
+
 .odrite.chat-card.falha { opacity: 0.94; }
+
+/* Evolução de personagem (loja de XP) */
+.odrite .botao-evolucao {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border-strong);
+  color: var(--odrite-gold);
+  border-radius: 5px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  align-self: center;
+}
+
+.odrite.wizard .painel-experiencia {
+  text-align: center;
+  color: var(--odrite-gold);
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.odrite.wizard .wizard-conteudo h3 {
+  color: var(--odrite-gold);
+  font-family: var(--odrite-font-display);
+  border-bottom: 1px solid var(--odrite-border);
+  padding-bottom: 4px;
+  margin: 14px 0 8px;
+}
+
+.odrite.wizard .wizard-conteudo h3:first-child {
+  margin-top: 0;
+}
+
+.odrite.wizard .wizard-conteudo h4 {
+  color: var(--odrite-text-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin: 8px 0 4px;
+}
+
+.odrite.wizard .linha-compra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+}
+
+.odrite.wizard .linha-compra-coluna {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.odrite.wizard .nome-compra {
+  font-weight: bold;
+  color: var(--odrite-text);
+  font-size: 0.85rem;
+}
+
+.odrite.wizard .linha-compra button {
+  background: var(--odrite-gold);
+  color: var(--odrite-bg);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.odrite.wizard .linha-compra button:disabled,
+.odrite.wizard .opcao-atributo-compra:disabled,
+.odrite.wizard .opcao-categoria:disabled,
+.odrite.wizard .opcao-habilidade:disabled,
+.odrite.wizard .opcao-conjuracao:disabled {
+  background: var(--odrite-panel);
+  color: var(--odrite-text-dim);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.odrite.wizard .linha-compra input[type="text"] {
+  flex: 1;
+}
+
+.odrite.wizard .opcoes-atributo-compra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.odrite.wizard button.opcao-atributo-compra {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  color: var(--odrite-text);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.odrite.wizard .opcoes-tipo-protecao {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.odrite.wizard button.opcao-tipo-protecao {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  color: var(--odrite-text);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.odrite.wizard button.opcao-tipo-protecao.selecionado {
+  background: var(--odrite-gold);
+  color: var(--odrite-bg);
+  border-color: var(--odrite-gold);
+  font-weight: bold;
+}
+
+.odrite.wizard .opcoes-tier-protecao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.odrite.wizard .opcoes-tier-protecao button:disabled {
+  background: var(--odrite-panel);
+  color: var(--odrite-text-dim);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
