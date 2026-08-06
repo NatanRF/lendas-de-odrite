@@ -1,17 +1,19 @@
 {
-  "_id": "PLxgugalAjdKgU37",
-  "_key": "!items!PLxgugalAjdKgU37",
+  "_id": "mCfhpnA8QV7VuhXG",
+  "_key": "!items!mCfhpnA8QV7VuhXG",
   "name": "Golpe Letal",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "ativa",
+    "origem": "classe",
+    "raca": "",
     "classe": "Assassino",
     "categoria": "lista",
     "descricao": "Ao atacar um alvo, você pode impedi-lo de usar Reações contra seu ataque."
   },
   "effects": [],
-  "folder": "vBvshF8qFAo1VEqW",
+  "folder": "3F1898zrztt9XlX1",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174972,
-    "modifiedTime": 1785898174972,
+    "createdTime": 1785970464175,
+    "modifiedTime": 1785970464175,
     "lastModifiedBy": null
   }
 }

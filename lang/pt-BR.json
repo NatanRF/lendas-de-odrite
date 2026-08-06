@@ -9,6 +9,8 @@
     "Nivel": "Nível",
     "Experiencia": "Experiência",
     "Deslocamento": "Deslocamento",
+    "Tamanho": "Tamanho",
+    "CategoriaArma": "Categoria de Arma",
     "Vitalidade": "Vitalidade",
     "Fadiga": "Fadiga",
     "FonteArcana": "Fonte Arcana",
@@ -71,6 +73,12 @@
       "Lista": "Lista de Habilidades"
     },
 
+    "OrigemHabilidade": {
+      "Titulo": "Origem",
+      "Classe": "Classe",
+      "Raca": "Raça"
+    },
+
     "EstagioFadiga": {
       "normal": "Normal",
       "penalidade2": "Penalidade -2",
@@ -126,6 +134,94 @@
       "TesteHabilidade": "Habilidade: {habilidade}",
       "DadoTreinamento": "Dado de Treinamento",
       "DadoRefinamento": "Dado de Refinamento"
+    },
+
+    "Assistente": {
+      "Titulo": "Criação de Personagem",
+      "Pergunta": "Como você quer preencher a ficha deste personagem?",
+      "Manual": "Preencher Manualmente",
+      "Guiada": "Criação Guiada",
+      "Cancelar": "Cancelar",
+      "Voltar": "Voltar",
+      "Avancar": "Avançar",
+      "Confirmar": "Confirmar e Criar Personagem",
+      "Concluido": "Personagem criado com sucesso!",
+      "BonusAtributo": "Bônus de Atributo (+1)",
+      "Racial": "racial",
+      "AtributoPrincipal": "Atributo Principal",
+      "Principal": "principal",
+      "ValorTravado": "14 (travado pelo Atributo Principal)",
+      "DicaAtributos": "Distribua os valores 12, 10, 10, 8, 8, 6, 4 entre os demais atributos — o Atributo Principal da classe já recebe 14 automaticamente.",
+      "MaisIdiomaPorMente": "+1 idioma à escolha para cada ponto de Mente acima de",
+      "EscolhaCategorias": "Escolha as categorias de arma",
+      "EscolhaHabilidadeLista": "Escolha da lista de habilidades da classe",
+      "Devocao": "Devoção",
+      "EscolhaCaminhos": "Escolha os Caminhos de Conjuração",
+      "EquipamentoEscolhido": "Equipamento escolhido",
+      "NenhumEquipamento": "Nenhum item adicionado ainda.",
+      "VerDescricao": "Ver descrição",
+      "DinheiroInicial": "Dinheiro Inicial",
+      "RolarDinheiro": "Rolar (3 + 1d6) x100",
+      "DefinidoPeloMestre": "Ou valor definido pelo mestre:",
+      "DinheiroRolado": "Dinheiro inicial: {valor} drakeons.",
+      "Gasto": "Gasto",
+      "Restante": "Restante",
+      "LimiteCategorias": "Você já escolheu o máximo de {limite} categorias de arma.",
+      "LimiteHabilidades": "Você já escolheu o máximo de {limite} habilidade(s) da lista.",
+      "LimiteCaminhos": "Você pode escolher no máximo 3 Caminhos de Conjuração.",
+      "LimiteConjuracoes": "Você já escolheu o máximo de {limite} conjuração(ões) para este caminho.",
+
+      "Etapa": {
+        "Raca": "Raça",
+        "Atributos": "Atributos",
+        "Classe": "Classe",
+        "Conjuracao": "Conjuração",
+        "Equipamento": "Equipamento",
+        "Revisao": "Revisão"
+      },
+
+      "Aviso": {
+        "EscolhaRaca": "Escolha uma raça antes de continuar.",
+        "EscolhaBonus": "Escolha o atributo que recebe o bônus racial antes de continuar.",
+        "AtributosIncompletos": "Distribua todos os 8 valores entre os atributos antes de continuar.",
+        "EscolhaClasse": "Escolha uma classe antes de continuar.",
+        "EscolhaAtributoPrincipal": "Escolha o Atributo Principal da classe antes de continuar.",
+        "CategoriasIncompletas": "Escolha todas as categorias de arma exigidas pela classe.",
+        "HabilidadesIncompletas": "Escolha a(s) habilidade(s) da lista antes de continuar.",
+        "EscolhaCaminho": "Escolha ao menos 1 Caminho de Conjuração antes de continuar.",
+        "ConjuracoesIncompletas": "Escolha todas as conjurações exigidas para os caminhos escolhidos.",
+        "LimiteArmas": "O personagem já pode portar no máximo 2 armas.",
+        "LimiteCarga": "O personagem já atingiu sua capacidade de carga (baseada em Força).",
+        "DefinaDinheiro": "Defina o dinheiro inicial antes de comprar equipamento.",
+        "DinheiroInsuficiente": "Você não tem Drakeons suficientes para comprar esse item."
+      }
+    },
+
+    "Evolucao": {
+      "Titulo": "Evolução",
+      "Comprar": "Comprar",
+      "Secao1": "1 Ponto de Experiência",
+      "Secao2": "2 Pontos de Experiência",
+      "Secao3": "3 Pontos de Experiência",
+      "Vitalidade": "+1 Ponto de Vitalidade",
+      "Atributo": "+1 Ponto de Atributo (máximo 14)",
+      "Conjuracao": "1 Conjuração Adicional",
+      "Habilidade": "1 Habilidade de Especialização Adicional",
+      "CategoriaArma": "Proficiência com 1 Categoria de Arma Adicional",
+      "Treinamento": "+1 Nível de Treinamento",
+      "Idioma": "+1 Idioma (após 6 meses de estudo)",
+      "NomeIdioma": "Nome do idioma",
+      "NotaIdioma": "O idioma só pode ser usado após 6 meses de estudo dentro da história (a critério do mestre).",
+      "Protecao": "Proficiência com 1 Categoria de Escudo ou Armadura Adicional",
+      "SemCaminhos": "Este personagem ainda não conhece nenhum Caminho de Conjuração.",
+      "TudoComprado": "Nada disponível para comprar aqui no momento.",
+
+      "Aviso": {
+        "SemExperiencia": "Pontos de Experiência insuficientes para essa compra.",
+        "AtributoNoMaximo": "Esse atributo já está no valor máximo (14).",
+        "TreinamentoNoMaximo": "O nível de treinamento já está no máximo (5).",
+        "DigiteIdioma": "Digite o nome do idioma antes de comprar."
+      }
     }
   }
 }

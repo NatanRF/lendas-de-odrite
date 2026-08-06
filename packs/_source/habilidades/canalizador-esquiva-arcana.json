@@ -1,0 +1,30 @@
+{
+  "_id": "UVlGDy7eRsMeqJdp",
+  "_key": "!items!UVlGDy7eRsMeqJdp",
+  "name": "Esquiva Arcana",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "ativa",
+    "origem": "classe",
+    "raca": "",
+    "classe": "Canalizador",
+    "categoria": "lista",
+    "descricao": "Pode Resguardar uma vez sem contabilizar em seus usos de Manobras de Combate realizadas."
+  },
+  "effects": [],
+  "folder": "zMBPjPBHik9q7H9W",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464179,
+    "modifiedTime": 1785970464179,
+    "lastModifiedBy": null
+  }
+}

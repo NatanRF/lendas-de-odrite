@@ -11,6 +11,12 @@ export default class OdriteHabilidadeData extends foundry.abstract.TypeDataModel
         initial: "passiva"
       }),
       classe: new StringField({ initial: "", blank: true, choices: ["", ...ODRITE.classes] }),
+      origem: new StringField({
+        required: true,
+        choices: ["classe", "raca"],
+        initial: "classe"
+      }),
+      raca: new StringField({ initial: "", blank: true, choices: ["", ...ODRITE.racas] }),
       categoria: new StringField({
         required: true,
         choices: Object.keys(ODRITE.categoriasHabilidade),

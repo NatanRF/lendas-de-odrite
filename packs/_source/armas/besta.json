@@ -1,11 +1,12 @@
 {
-  "_id": "ROJDj8h5MkHQpEM6",
-  "_key": "!items!ROJDj8h5MkHQpEM6",
+  "_id": "up2nkWryTylwIeuR",
+  "_key": "!items!up2nkWryTylwIeuR",
   "name": "Besta",
   "type": "arma",
   "img": "systems/odrite/assets/icons/besta.png",
   "system": {
     "tipoAtaque": "distancia",
+    "categoria": "Bestas",
     "dano": 6,
     "propriedade": "Sangrar",
     "preco": 200,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857866,
-    "modifiedTime": 1785939857866,
+    "createdTime": 1785970113779,
+    "modifiedTime": 1785970113779,
     "lastModifiedBy": null
   }
 }

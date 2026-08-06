@@ -15,6 +15,14 @@
     </select>
   </div>
   <div class="campo">
+    <label>{{localize "ODRITE.CategoriaArma"}}</label>
+    <select name="system.categoria">
+      {{#each categoriasArma as |cat|}}
+      <option value="{{cat}}" {{#if (eq ../system.categoria cat)}}selected{{/if}}>{{cat}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="campo">
     <label>{{localize "ODRITE.Dano"}}</label>
     <input type="number" name="system.dano" value="{{system.dano}}">
   </div>
@@ -129,6 +137,24 @@
     </select>
   </div>
   <div class="campo">
+    <label>{{localize "ODRITE.OrigemHabilidade.Titulo"}}</label>
+    <select name="system.origem">
+      <option value="classe" {{#if (eq system.origem "classe")}}selected{{/if}}>{{localize "ODRITE.OrigemHabilidade.Classe"}}</option>
+      <option value="raca" {{#if (eq system.origem "raca")}}selected{{/if}}>{{localize "ODRITE.OrigemHabilidade.Raca"}}</option>
+    </select>
+  </div>
+  {{#if (eq system.origem "raca")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Raca"}}</label>
+    <select name="system.raca">
+      <option value="">—</option>
+      {{#each racas as |raca|}}
+      <option value="{{raca}}" {{#if (eq ../system.raca raca)}}selected{{/if}}>{{raca}}</option>
+      {{/each}}
+    </select>
+  </div>
+  {{else}}
+  <div class="campo">
     <label>{{localize "ODRITE.Classe"}}</label>
     <select name="system.classe">
       <option value="">—</option>
@@ -137,6 +163,7 @@
       {{/each}}
     </select>
   </div>
+  {{/if}}
   <div class="campo">
     <label>{{localize "ODRITE.CategoriaHabilidade.Titulo"}}</label>
     <select name="system.categoria">

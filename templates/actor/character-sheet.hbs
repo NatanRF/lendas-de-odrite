@@ -11,6 +11,7 @@
           {{/each}}
         </select>
       </label>
+      <label>{{localize "ODRITE.Tamanho"}}<input type="text" name="system.detalhes.tamanho" value="{{system.detalhes.tamanho}}"></label>
       <label>{{localize "ODRITE.Classe"}}
         <select name="system.detalhes.classe">
           {{#each classes as |classe|}}
@@ -20,6 +21,7 @@
       </label>
       <label>{{localize "ODRITE.Deslocamento"}}<input type="number" name="system.detalhes.deslocamento" value="{{system.detalhes.deslocamento}}"> m</label>
       <label>{{localize "ODRITE.Experiencia"}}<input type="number" name="system.detalhes.experiencia" value="{{system.detalhes.experiencia}}"></label>
+      <button type="button" class="botao-evolucao" data-action="abrirEvolucao">{{localize "ODRITE.Evolucao.Titulo"}}</button>
     </div>
   </div>
 </header>

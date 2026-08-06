@@ -1,17 +1,19 @@
 {
-  "_id": "S6l4XCexvIwrxVsb",
-  "_key": "!items!S6l4XCexvIwrxVsb",
+  "_id": "C6SbVEtvHJ24U6Q1",
+  "_key": "!items!C6SbVEtvHJ24U6Q1",
   "name": "Abençoar Arma",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "conjuracao",
+    "origem": "classe",
+    "raca": "",
     "classe": "Combatente Sagrado",
     "categoria": "lista",
     "descricao": "Uma vez por combate pode infundir Essência em uma arma que possui proficiência. Essa arma passa a ter +2 no Valor Alvo dos testes de Acerto. No início de cada turno subsequente é necessário ter sucesso em um teste de Conjuração para manter o efeito ativo."
   },
   "effects": [],
-  "folder": "iWIe853JnJDqtLDV",
+  "folder": "jYqtJRgpaYAPGQ6H",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174980,
-    "modifiedTime": 1785898174980,
+    "createdTime": 1785970464183,
+    "modifiedTime": 1785970464183,
     "lastModifiedBy": null
   }
 }

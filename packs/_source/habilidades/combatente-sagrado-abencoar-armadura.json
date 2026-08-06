@@ -1,17 +1,19 @@
 {
-  "_id": "5dc5dhDBCVF5ULQ3",
-  "_key": "!items!5dc5dhDBCVF5ULQ3",
+  "_id": "l8cXAgKfvx05MKpK",
+  "_key": "!items!l8cXAgKfvx05MKpK",
   "name": "Abençoar Armadura",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "conjuracao",
+    "origem": "classe",
+    "raca": "",
     "classe": "Combatente Sagrado",
     "categoria": "lista",
     "descricao": "Se sua armadura perderia pontos de durabilidade, sofre apenas metade do valor, arredondado para baixo se necessário."
   },
   "effects": [],
-  "folder": "iWIe853JnJDqtLDV",
+  "folder": "jYqtJRgpaYAPGQ6H",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174982,
-    "modifiedTime": 1785898174982,
+    "createdTime": 1785970464184,
+    "modifiedTime": 1785970464184,
     "lastModifiedBy": null
   }
 }

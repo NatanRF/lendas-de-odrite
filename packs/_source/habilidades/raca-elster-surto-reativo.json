@@ -1,0 +1,30 @@
+{
+  "_id": "erswdJYUpCWnBwVa",
+  "_key": "!items!erswdJYUpCWnBwVa",
+  "name": "Surto Reativo",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "ativa",
+    "origem": "raca",
+    "raca": "Elster",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Uma vez por combate, durante uma rodada, você não recebe Pontos de Fadiga devido ao uso de Manobras de Combate."
+  },
+  "effects": [],
+  "folder": "dyVn50zoEtLwID6X",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464269,
+    "modifiedTime": 1785970464269,
+    "lastModifiedBy": null
+  }
+}

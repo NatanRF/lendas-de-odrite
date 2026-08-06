@@ -1,17 +1,19 @@
 {
-  "_id": "fe8Vk0EG8tQKnryB",
-  "_key": "!items!fe8Vk0EG8tQKnryB",
+  "_id": "l05UDoUw2yzic2Gj",
+  "_key": "!items!l05UDoUw2yzic2Gj",
   "name": "Disparo Vingativo",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "ativa",
+    "origem": "classe",
+    "raca": "",
     "classe": "Caçador",
     "categoria": "lista",
     "descricao": "Quando um aliado a até 10m sofrer dano de um ataque direto, pode imediatamente realizar um ataque a distância contra o agressor uma vez sem contabilizar em suas Manobras de Combate."
   },
   "effects": [],
-  "folder": "CxwP508nxjwOa5yz",
+  "folder": "t7TsmrjjYbKTD10f",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174968,
-    "modifiedTime": 1785898174968,
+    "createdTime": 1785970464170,
+    "modifiedTime": 1785970464170,
     "lastModifiedBy": null
   }
 }

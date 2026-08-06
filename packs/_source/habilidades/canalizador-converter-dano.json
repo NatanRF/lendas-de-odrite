@@ -1,0 +1,30 @@
+{
+  "_id": "ZiNUfWgrrg0rwZAA",
+  "_key": "!items!ZiNUfWgrrg0rwZAA",
+  "name": "Converter Dano",
+  "type": "habilidade",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
+    "classe": "Canalizador",
+    "categoria": "lista",
+    "descricao": "Ao sofrer dano você pode adicionar +1 de dano em sua próxima conjuração (cumulativo)."
+  },
+  "effects": [],
+  "folder": "zMBPjPBHik9q7H9W",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464179,
+    "modifiedTime": 1785970464179,
+    "lastModifiedBy": null
+  }
+}

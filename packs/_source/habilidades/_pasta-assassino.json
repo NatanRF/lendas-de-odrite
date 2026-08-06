@@ -1,6 +1,6 @@
 {
-  "_id": "vBvshF8qFAo1VEqW",
-  "_key": "!folders!vBvshF8qFAo1VEqW",
+  "_id": "3F1898zrztt9XlX1",
+  "_key": "!folders!3F1898zrztt9XlX1",
   "name": "Assassino",
   "type": "Item",
   "sorting": "m",
@@ -12,8 +12,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174970,
-    "modifiedTime": 1785898174970,
+    "createdTime": 1785970464173,
+    "modifiedTime": 1785970464173,
     "lastModifiedBy": null
   }
 }

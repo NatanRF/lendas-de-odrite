@@ -1,0 +1,126 @@
+<div class="odrite-wizard-body">
+  <header class="wizard-header">
+    <h2>{{localize "ODRITE.Evolucao.Titulo"}}</h2>
+    <p class="painel-experiencia"><strong>{{localize "ODRITE.Experiencia"}}:</strong> {{experiencia}}</p>
+  </header>
+
+  <section class="wizard-conteudo">
+
+    <h3>{{localize "ODRITE.Evolucao.Secao1"}}</h3>
+
+    <div class="linha-compra">
+      <span class="nome-compra">{{localize "ODRITE.Evolucao.Vitalidade"}}</span>
+      <button type="button" data-action="comprarVitalidade" {{#if (lt experiencia custos.vitalidade)}}disabled{{/if}}>
+        {{localize "ODRITE.Evolucao.Comprar"}} ({{custos.vitalidade}} PE)
+      </button>
+    </div>
+
+    <div class="linha-compra linha-compra-coluna">
+      <span class="nome-compra">{{localize "ODRITE.Evolucao.Atributo"}}</span>
+      <div class="opcoes-atributo-compra">
+        {{#each atributos as |atrib|}}
+        <button type="button" class="opcao-atributo-compra" data-action="comprarAtributo" data-atributo="{{atrib.chave}}"
+          {{#if (or atrib.noMaximo (lt ../experiencia ../custos.atributo))}}disabled{{/if}}>
+          {{atrib.label}} ({{atrib.valor}})
+        </button>
+        {{/each}}
+      </div>
+    </div>
+
+    <h3>{{localize "ODRITE.Evolucao.Secao2"}}</h3>
+
+    <div class="linha-compra linha-compra-coluna">
+      <span class="nome-compra">{{localize "ODRITE.Evolucao.CategoriaArma"}}</span>
+      <div class="opcoes-categoria-arma">
+        {{#each categoriasArmaDisponiveis as |cat|}}
+        <button type="button" class="opcao-categoria" data-action="comprarCategoriaArma" data-categoria="{{cat}}"
+          {{#if (lt ../experiencia ../custos.categoriaArma)}}disabled{{/if}}>{{cat}} ({{../custos.categoriaArma}} PE)</button>
+        {{else}}
+        <p class="vazio">{{localize "ODRITE.Evolucao.TudoComprado"}}</p>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="linha-compra linha-compra-coluna">
+      <span class="nome-compra">{{localize "ODRITE.Evolucao.Habilidade"}}</span>
+      {{#each habilidadesDisponiveis as |hab|}}
+      <div class="card-selecao">
+        <div class="card-selecao-cabecalho">
+          <button type="button" class="opcao-habilidade" data-action="comprarHabilidade" data-id="{{hab._id}}"
+            {{#if (lt ../experiencia ../custos.habilidade)}}disabled{{/if}}>{{hab.name}} ({{../custos.habilidade}} PE)</button>
+          <a class="botao-expandir {{#if hab.expandido}}aberto{{/if}}" data-action="toggleDescricao" data-id="{{hab._id}}" title="{{localize 'ODRITE.Assistente.VerDescricao'}}">▾</a>
+        </div>
+        {{#if hab.expandido}}
+        <div class="card-selecao-descricao">{{{hab.system.descricao}}}</div>
+        {{/if}}
+      </div>
+      {{else}}
+      <p class="vazio">{{localize "ODRITE.Evolucao.TudoComprado"}}</p>
+      {{/each}}
+    </div>
+
+    <div class="linha-compra linha-compra-coluna">
+      <span class="nome-compra">{{localize "ODRITE.Evolucao.Conjuracao"}}</span>
+      {{#each conjuracoesDisponiveis as |grupo|}}
+      <h4>{{grupo.caminho}}</h4>
+      {{#each grupo.opcoes as |conj|}}
+      <div class="card-selecao">
+        <div class="card-selecao-cabecalho">
+          <button type="button" class="opcao-conjuracao" data-action="comprarConjuracao" data-id="{{conj._id}}"
+            {{#if (lt ../../experiencia ../../custos.conjuracao)}}disabled{{/if}}>{{conj.name}} ({{../../custos.conjuracao}} PE)</button>
+          <a class="botao-expandir {{#if conj.expandido}}aberto{{/if}}" data-action="toggleDescricao" data-id="{{conj._id}}" title="{{localize 'ODRITE.Assistente.VerDescricao'}}">▾</a>
+        </div>
+        {{#if conj.expandido}}
+        <div class="card-selecao-descricao">
+          <p class="meta">{{localize "ODRITE.Magia.Duracao"}}: {{conj.system.duracao}} | {{localize "ODRITE.Magia.Alcance"}}: {{conj.system.alcance}}</p>
+          {{{conj.system.descricao}}}
+        </div>
+        {{/if}}
+      </div>
+      {{/each}}
+      {{else}}
+      {{#if caminhosConhecidos.length}}
+      <p class="vazio">{{localize "ODRITE.Evolucao.TudoComprado"}}</p>
+      {{else}}
+      <p class="vazio">{{localize "ODRITE.Evolucao.SemCaminhos"}}</p>
+      {{/if}}
+      {{/each}}
+    </div>
+
+    <h3>{{localize "ODRITE.Evolucao.Secao3"}}</h3>
+
+    <div class="linha-compra">
+      <span class="nome-compra">{{localize "ODRITE.Evolucao.Treinamento"}} ({{nivelTreinamento}}/5)</span>
+      <button type="button" data-action="comprarTreinamento" {{#if (or treinamentoNoMaximo (lt experiencia custos.treinamento))}}disabled{{/if}}>
+        {{localize "ODRITE.Evolucao.Comprar"}} ({{custos.treinamento}} PE)
+      </button>
+    </div>
+
+    <div class="linha-compra">
+      <span class="nome-compra">{{localize "ODRITE.Evolucao.Idioma"}}</span>
+      <input type="text" class="input-novo-idioma" placeholder="{{localize 'ODRITE.Evolucao.NomeIdioma'}}">
+      <button type="button" data-action="comprarIdioma" {{#if (lt experiencia custos.idioma)}}disabled{{/if}}>
+        {{localize "ODRITE.Evolucao.Comprar"}} ({{custos.idioma}} PE)
+      </button>
+    </div>
+    <p class="dica">{{localize "ODRITE.Evolucao.NotaIdioma"}}</p>
+
+    <div class="linha-compra linha-compra-coluna">
+      <span class="nome-compra">{{localize "ODRITE.Evolucao.Protecao"}}</span>
+      <div class="opcoes-tipo-protecao">
+        <button type="button" class="opcao-tipo-protecao {{#if (eq protecaoTipo "armadura")}}selecionado{{/if}}" data-action="escolherTipoProtecao" data-tipo="armadura">{{localize "ODRITE.Armadura"}}</button>
+        <button type="button" class="opcao-tipo-protecao {{#if (eq protecaoTipo "escudo")}}selecionado{{/if}}" data-action="escolherTipoProtecao" data-tipo="escudo">{{localize "ODRITE.Escudo"}}</button>
+      </div>
+      {{#if protecaoAtual.completo}}
+      <p class="vazio">{{localize "ODRITE.Evolucao.TudoComprado"}}</p>
+      {{else}}
+      <div class="opcoes-tier-protecao">
+        {{#each protecaoTiersDisponiveis as |tier|}}
+        <button type="button" data-action="comprarProtecao" data-tier="{{tier}}" {{#if (lt ../experiencia ../custos.protecao)}}disabled{{/if}}>{{tier}} ({{../custos.protecao}} PE)</button>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+
+  </section>
+</div>

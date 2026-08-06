@@ -1,11 +1,12 @@
 {
-  "_id": "2A9CT5Z9tDHSkoyy",
-  "_key": "!items!2A9CT5Z9tDHSkoyy",
+  "_id": "3MAVOHOrsRGtXS1i",
+  "_key": "!items!3MAVOHOrsRGtXS1i",
   "name": "Lança",
   "type": "arma",
   "img": "systems/odrite/assets/icons/lanca.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Lanças",
     "dano": 3,
     "propriedade": "Debilitar",
     "preco": 40,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857863,
-    "modifiedTime": 1785939857863,
+    "createdTime": 1785970113776,
+    "modifiedTime": 1785970113776,
     "lastModifiedBy": null
   }
 }

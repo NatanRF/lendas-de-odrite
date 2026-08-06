@@ -1,11 +1,12 @@
 {
-  "_id": "Dh0iSCmGfkKxOSwY",
-  "_key": "!items!Dh0iSCmGfkKxOSwY",
+  "_id": "xuoNia1amkVglv1s",
+  "_key": "!items!xuoNia1amkVglv1s",
   "name": "Maça Pesada",
   "type": "arma",
   "img": "systems/odrite/assets/icons/maca-pesada.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Maças",
     "dano": 6,
     "propriedade": "Derrubar",
     "preco": 90,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857865,
-    "modifiedTime": 1785939857865,
+    "createdTime": 1785970113777,
+    "modifiedTime": 1785970113777,
     "lastModifiedBy": null
   }
 }

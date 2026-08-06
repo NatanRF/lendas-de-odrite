@@ -1,0 +1,30 @@
+{
+  "_id": "TvI1kkaOHRNQPNFE",
+  "_key": "!items!TvI1kkaOHRNQPNFE",
+  "name": "Concentração Avançada",
+  "type": "habilidade",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
+    "classe": "Canalizador",
+    "categoria": "basica",
+    "descricao": "Os testes para manter ativos os efeitos de manutenção são considerados Fáceis (+2)."
+  },
+  "effects": [],
+  "folder": "zMBPjPBHik9q7H9W",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464178,
+    "modifiedTime": 1785970464178,
+    "lastModifiedBy": null
+  }
+}

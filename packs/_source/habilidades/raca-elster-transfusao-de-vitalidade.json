@@ -1,0 +1,30 @@
+{
+  "_id": "Synis68HxuOsjMfN",
+  "_key": "!items!Synis68HxuOsjMfN",
+  "name": "Transfusão de Vitalidade",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "raca",
+    "raca": "Elster",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Uma vez por dia pode tocar numa criatura e transferir qualquer quantidade de seus próprios pontos de Vitalidade para o alvo até chegar a 0, quando cai inconsciente."
+  },
+  "effects": [],
+  "folder": "dyVn50zoEtLwID6X",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464270,
+    "modifiedTime": 1785970464270,
+    "lastModifiedBy": null
+  }
+}

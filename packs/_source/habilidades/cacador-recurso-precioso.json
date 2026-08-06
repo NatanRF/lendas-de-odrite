@@ -1,17 +1,19 @@
 {
-  "_id": "jZJvW48ZgT8HGMQ7",
-  "_key": "!items!jZJvW48ZgT8HGMQ7",
+  "_id": "mcderZvFbUhD6zdj",
+  "_key": "!items!mcderZvFbUhD6zdj",
   "name": "Recurso Precioso",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "passiva",
+    "origem": "classe",
+    "raca": "",
     "classe": "Caçador",
     "categoria": "lista",
     "descricao": "Ao final do combate você pode recuperar d6 projéteis disparados."
   },
   "effects": [],
-  "folder": "CxwP508nxjwOa5yz",
+  "folder": "t7TsmrjjYbKTD10f",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174970,
-    "modifiedTime": 1785898174970,
+    "createdTime": 1785970464172,
+    "modifiedTime": 1785970464172,
     "lastModifiedBy": null
   }
 }

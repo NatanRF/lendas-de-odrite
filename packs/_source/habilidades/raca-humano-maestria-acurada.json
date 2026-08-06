@@ -1,0 +1,30 @@
+{
+  "_id": "FflQFGKoEyRN7eR9",
+  "_key": "!items!FflQFGKoEyRN7eR9",
+  "name": "Maestria Acurada",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "raca",
+    "raca": "Humano",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Seu nível de treinamento começa em 2."
+  },
+  "effects": [],
+  "folder": "nQcVw4VzjGs7ib5V",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464265,
+    "modifiedTime": 1785970464265,
+    "lastModifiedBy": null
+  }
+}

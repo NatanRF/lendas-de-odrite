@@ -1,17 +1,19 @@
 {
-  "_id": "QQoGe4WIi6buC5Os",
-  "_key": "!items!QQoGe4WIi6buC5Os",
+  "_id": "QzzFtLUrlt6DxVqV",
+  "_key": "!items!QzzFtLUrlt6DxVqV",
   "name": "Reflexo Avançado",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "ativa",
+    "origem": "classe",
+    "raca": "",
     "classe": "Caçador",
     "categoria": "lista",
     "descricao": "Se um inimigo rola uma falha absoluta durante um ataque em que o alvo seja você ou um aliado, pode realizar um ataque contra esse inimigo uma vez sem contabilizar em suas Manobras de Combate realizadas."
   },
   "effects": [],
-  "folder": "CxwP508nxjwOa5yz",
+  "folder": "t7TsmrjjYbKTD10f",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174969,
-    "modifiedTime": 1785898174969,
+    "createdTime": 1785970464171,
+    "modifiedTime": 1785970464171,
     "lastModifiedBy": null
   }
 }

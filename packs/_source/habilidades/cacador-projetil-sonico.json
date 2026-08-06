@@ -1,17 +1,19 @@
 {
-  "_id": "mYyVVF5scHFSvWcD",
-  "_key": "!items!mYyVVF5scHFSvWcD",
+  "_id": "scABCcJEcBac6Ona",
+  "_key": "!items!scABCcJEcBac6Ona",
   "name": "Projétil Sônico",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "ativa",
+    "origem": "classe",
+    "raca": "",
     "classe": "Caçador",
     "categoria": "lista",
     "descricao": "Você dispara um projétil com velocidade altíssima o que faz com que seja impossível ao alvo usar Manobras de Combate em reação a esse ataque."
   },
   "effects": [],
-  "folder": "CxwP508nxjwOa5yz",
+  "folder": "t7TsmrjjYbKTD10f",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174969,
-    "modifiedTime": 1785898174969,
+    "createdTime": 1785970464171,
+    "modifiedTime": 1785970464171,
     "lastModifiedBy": null
   }
 }

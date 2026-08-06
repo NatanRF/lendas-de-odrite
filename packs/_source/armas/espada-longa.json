@@ -1,11 +1,12 @@
 {
-  "_id": "Lo3klIWxHK82BKtA",
-  "_key": "!items!Lo3klIWxHK82BKtA",
+  "_id": "plts5Ymnspeekkfl",
+  "_key": "!items!plts5Ymnspeekkfl",
   "name": "Espada Longa",
   "type": "arma",
   "img": "systems/odrite/assets/icons/espada-longa.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Espadas",
     "dano": 6,
     "propriedade": "Sangrar",
     "preco": 150,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857861,
-    "modifiedTime": 1785939857861,
+    "createdTime": 1785970113775,
+    "modifiedTime": 1785970113775,
     "lastModifiedBy": null
   }
 }

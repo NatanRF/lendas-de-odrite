@@ -21,6 +21,7 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
         nivel: new NumberField({ required: true, integer: true, min: 0, initial: 1 }),
         experiencia: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
         deslocamento: new NumberField({ required: true, integer: true, min: 0, initial: 10 }),
+        tamanho: new StringField({ initial: "" }),
         biografia: new HTMLField()
       }),
 

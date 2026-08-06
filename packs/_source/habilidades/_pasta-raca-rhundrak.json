@@ -1,0 +1,19 @@
+{
+  "_id": "ME7LrI2K7bvPBe6V",
+  "_key": "!folders!ME7LrI2K7bvPBe6V",
+  "name": "Raça: Rhundrak",
+  "type": "Item",
+  "sorting": "m",
+  "color": null,
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464267,
+    "modifiedTime": 1785970464267,
+    "lastModifiedBy": null
+  }
+}

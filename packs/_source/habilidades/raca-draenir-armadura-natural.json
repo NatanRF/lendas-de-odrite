@@ -1,0 +1,30 @@
+{
+  "_id": "uNXx38oaZCtbwCPc",
+  "_key": "!items!uNXx38oaZCtbwCPc",
+  "name": "Armadura Natural",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "raca",
+    "raca": "Draenir",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Devido as suas escamas resistentes, ataques realizados contra o personagem são considerados Difíceis (-2)."
+  },
+  "effects": [],
+  "folder": "QeZLJwMdAz19bzfr",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464269,
+    "modifiedTime": 1785970464269,
+    "lastModifiedBy": null
+  }
+}

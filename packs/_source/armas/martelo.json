@@ -1,11 +1,12 @@
 {
-  "_id": "XXGe6SGzzJo0l4vH",
-  "_key": "!items!XXGe6SGzzJo0l4vH",
+  "_id": "QeaJyqzkloBATjyv",
+  "_key": "!items!QeaJyqzkloBATjyv",
   "name": "Martelo",
   "type": "arma",
   "img": "systems/odrite/assets/icons/martelo.png",
   "system": {
     "tipoAtaque": "corpoACorpo",
+    "categoria": "Martelos",
     "dano": 4,
     "propriedade": "Quebrar",
     "preco": 5,
@@ -28,8 +29,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785939857865,
-    "modifiedTime": 1785939857865,
+    "createdTime": 1785970113778,
+    "modifiedTime": 1785970113778,
     "lastModifiedBy": null
   }
 }

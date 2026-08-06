@@ -1,0 +1,30 @@
+{
+  "_id": "fWGe1jX2kq7VawY3",
+  "_key": "!items!fWGe1jX2kq7VawY3",
+  "name": "Aprendizado Acelerado",
+  "type": "habilidade",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "tipo": "passiva",
+    "origem": "raca",
+    "raca": "Humano",
+    "classe": "",
+    "categoria": "basica",
+    "descricao": "Você pode selecionar 1 habilidade de especialização adicional."
+  },
+  "effects": [],
+  "folder": "nQcVw4VzjGs7ib5V",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785970464264,
+    "modifiedTime": 1785970464264,
+    "lastModifiedBy": null
+  }
+}

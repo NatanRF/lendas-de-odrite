@@ -1,17 +1,19 @@
 {
-  "_id": "n2qOG4d3Ric0x9eI",
-  "_key": "!items!n2qOG4d3Ric0x9eI",
+  "_id": "rrWiPeNTvvwH8oJE",
+  "_key": "!items!rrWiPeNTvvwH8oJE",
   "name": "Desestabilizar",
   "type": "habilidade",
   "img": "icons/svg/book.svg",
   "system": {
     "tipo": "ativa",
+    "origem": "classe",
+    "raca": "",
     "classe": "Guerreiro",
     "categoria": "lista",
     "descricao": "Ao causar dano com um ataque, você pode fazer com que todos os ataques realizados contra esse alvo sejam considerados Fáceis (+2) até o fim da Rodada."
   },
   "effects": [],
-  "folder": "fES7U14FHbNpQJeR",
+  "folder": "Ddrfjmbj7GRxPlmY",
   "sort": 0,
   "ownership": {
     "default": 0
@@ -21,8 +23,8 @@
     "systemId": "odrite",
     "systemVersion": "0.1.0",
     "coreVersion": "14",
-    "createdTime": 1785898174966,
-    "modifiedTime": 1785898174966,
+    "createdTime": 1785970464167,
+    "modifiedTime": 1785970464167,
     "lastModifiedBy": null
   }
 }
