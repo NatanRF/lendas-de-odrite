@@ -4,7 +4,7 @@
   <div class="chat-card-linha">
     <span class="chat-card-label">
       {{#if atributoLabel}}
-        {{#if penalidade}}{{atributoLabel}} ({{alvo}} {{penalidade}} = {{alvoEfetivo}}){{else}}{{atributoLabel}} ({{alvo}}){{/if}}
+        {{#if modificadores.length}}{{atributoLabel}} ({{alvoEfetivo}}){{else}}{{atributoLabel}} ({{alvo}}){{/if}}
       {{/if}}
     </span>
     <span class="chat-card-resultado">
@@ -20,6 +20,16 @@
       {{/if}}
     </span>
   </div>
+
+  {{#if modificadores.length}}
+  <ul class="chat-card-modificadores">
+    <li><span>{{localize "ODRITE.Rolagem.ValorBase"}}</span><span>{{alvo}}</span></li>
+    {{#each modificadores as |mod|}}
+    <li><span>{{mod.label}}</span><span>{{mod.sinal}}</span></li>
+    {{/each}}
+    <li class="total"><span>{{localize "ODRITE.Rolagem.TotalEfetivo"}}</span><span>{{alvoEfetivo}}</span></li>
+  </ul>
+  {{/if}}
 
   {{#if dadoSecundarioLabel}}
   <div class="chat-card-linha">

@@ -9,6 +9,7 @@
     "categoria": "Arcos",
     "dano": 2,
     "propriedade": "Atrasar",
+    "usaMunicao": true,
     "preco": 10,
     "forcaMinima": 0,
     "alcance": "Até 30 metros",

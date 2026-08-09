@@ -1,15 +1,25 @@
 import { ODRITE } from "./config.mjs";
 import OdriteActor from "./documents/actor.mjs";
 import OdriteCharacterData from "./data/actor-character.mjs";
+import OdriteInimigoData from "./data/actor-inimigo.mjs";
 import OdriteArmaData from "./data/item-arma.mjs";
 import OdriteArmaduraData from "./data/item-armadura.mjs";
 import OdriteEscudoData from "./data/item-escudo.mjs";
 import OdriteMagiaData from "./data/item-magia.mjs";
 import OdriteHabilidadeData from "./data/item-habilidade.mjs";
 import OdriteItemData from "./data/item-item.mjs";
+import OdriteManobraData from "./data/item-manobra.mjs";
+import OdriteHabilidadeInimigoData from "./data/item-habilidade-inimigo.mjs";
+import OdriteCondicaoData from "./data/item-condicao.mjs";
 import OdriteCharacterSheet from "./sheets/actor-sheet.mjs";
+import OdriteInimigoSheet from "./sheets/inimigo-sheet.mjs";
 import OdriteItemSheet from "./sheets/item-sheet.mjs";
 import OdriteCharacterWizard from "./apps/character-wizard.mjs";
+import "./apps/combat-tracker.mjs";
+import "./apps/quick-actions.mjs";
+import "./apps/combate.mjs";
+import "./apps/conjuracao.mjs";
+import "./apps/condicoes.mjs";
 
 Hooks.once("init", () => {
   console.log("Lendas de Odrite | Inicializando sistema");
@@ -19,8 +29,14 @@ Hooks.once("init", () => {
 
   CONFIG.Actor.documentClass = OdriteActor;
 
+  CONFIG.Combat.initiative = {
+    formula: "@atributos.agilidade.value",
+    decimals: 0
+  };
+
   CONFIG.Actor.dataModels = {
-    character: OdriteCharacterData
+    character: OdriteCharacterData,
+    inimigo: OdriteInimigoData
   };
 
   CONFIG.Item.dataModels = {
@@ -29,7 +45,10 @@ Hooks.once("init", () => {
     escudo: OdriteEscudoData,
     magia: OdriteMagiaData,
     habilidade: OdriteHabilidadeData,
-    item: OdriteItemData
+    item: OdriteItemData,
+    manobra: OdriteManobraData,
+    habilidadeInimigo: OdriteHabilidadeInimigoData,
+    condicao: OdriteCondicaoData
   };
 
   Actors.registerSheet("odrite", OdriteCharacterSheet, {
@@ -38,8 +57,14 @@ Hooks.once("init", () => {
     label: "ODRITE.SheetPersonagem"
   });
 
+  Actors.registerSheet("odrite", OdriteInimigoSheet, {
+    types: ["inimigo"],
+    makeDefault: true,
+    label: "ODRITE.SheetInimigo"
+  });
+
   Items.registerSheet("odrite", OdriteItemSheet, {
-    types: ["arma", "armadura", "escudo", "magia", "habilidade", "item"],
+    types: ["arma", "armadura", "escudo", "magia", "habilidade", "item", "manobra", "habilidadeInimigo", "condicao"],
     makeDefault: true,
     label: "ODRITE.SheetItem"
   });

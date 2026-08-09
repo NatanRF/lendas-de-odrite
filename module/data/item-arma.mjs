@@ -1,6 +1,6 @@
 import { ODRITE } from "../config.mjs";
 
-const { SchemaField, NumberField, StringField } = foundry.data.fields;
+const { SchemaField, NumberField, StringField, BooleanField } = foundry.data.fields;
 
 export default class OdriteArmaData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
@@ -17,6 +17,9 @@ export default class OdriteArmaData extends foundry.abstract.TypeDataModel {
       }),
       dano: new NumberField({ required: true, integer: true, min: 0, initial: 1 }),
       propriedade: new StringField({ initial: "" }),
+      usaMunicao: new BooleanField({ initial: false }),
+      exigeRecarga: new BooleanField({ initial: false }),
+      carregada: new BooleanField({ initial: true }),
       preco: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
       forcaMinima: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
       alcance: new StringField({ initial: "" }),

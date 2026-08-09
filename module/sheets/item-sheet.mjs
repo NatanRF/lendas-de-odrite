@@ -28,6 +28,10 @@ export default class OdriteItemSheet extends HandlebarsApplicationMixin(ItemShee
     context.classes = ODRITE.classes;
     context.racas = ODRITE.racas;
     context.categoriasArma = ODRITE.categoriasArma;
+    context.atributosChaves = Object.entries(ODRITE.atributos).map(([chave, label]) => ({
+      chave,
+      label: game.i18n.localize(label)
+    }));
     return context;
   }
 

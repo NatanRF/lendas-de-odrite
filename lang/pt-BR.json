@@ -1,6 +1,7 @@
 {
   "ODRITE": {
     "SheetPersonagem": "Ficha de Personagem - Lendas de Odrite",
+    "SheetInimigo": "Ficha de Inimigo - Lendas de Odrite",
     "SheetItem": "Item - Lendas de Odrite",
 
     "Nome": "Nome",
@@ -11,6 +12,20 @@
     "Deslocamento": "Deslocamento",
     "Tamanho": "Tamanho",
     "CategoriaArma": "Categoria de Arma",
+    "ManobrasPorRodada": "Manobras por Rodada",
+    "Manobras": "Manobras",
+    "ManobrasDeCombate": "Manobras de Combate",
+    "Ofensiva": "Ofensiva",
+    "Custo": "Custo",
+    "Manobra": {
+      "Defensiva": "Defensiva"
+    },
+    "ManobraDisponivel": "Manobra disponível",
+    "ManobraGasta": "Manobra usada",
+
+    "QuickActions": {
+      "Titulo": "Ações Rápidas"
+    },
     "Vitalidade": "Vitalidade",
     "Fadiga": "Fadiga",
     "FonteArcana": "Fonte Arcana",
@@ -29,8 +44,10 @@
     "Empunhadura": "Empunhadura",
     "Durabilidade": "Durabilidade",
     "Penalidade": "Penalidade",
+    "PenalidadeArmadura": "Penalidade de Armadura",
     "NivelTreinamento": "Nível de Treinamento",
     "DadoTreinamento": "Dado de Treinamento",
+    "Arma": "Arma",
     "Armadura": "Armadura",
     "Escudo": "Escudo",
     "Armas": "Armas",
@@ -42,6 +59,16 @@
     "Mochila": "Mochila",
     "Carga": "Carga",
     "Sobrecarregado": "Sobrecarregado",
+    "UsaMunicao": "Usa Munição",
+    "ExigeRecarga": "Exige Recarga",
+    "Capacidade": "Capacidade",
+    "Aljava": "Aljava",
+    "Cantil": "Cantil",
+    "Algibeira": "Algibeira",
+    "SlotEspecial": {
+      "Titulo": "Slot Especial",
+      "Nenhum": "Nenhum (Mochila)"
+    },
 
     "Atributo": {
       "Forca": "Força",
@@ -89,6 +116,8 @@
     "Magia": {
       "Caminho": "Caminho de Conjuração",
       "Duracao": "Duração",
+      "DuracaoInstantaneo": "Instantâneo",
+      "DuracaoManutencao": "Manutenção",
       "Alcance": "Alcance"
     },
 
@@ -103,8 +132,7 @@
     "Recursos": {
       "Titulo": "Recursos",
       "Drakeons": "Drakeons",
-      "Aljava": "Aljava",
-      "Cantil": "Cantil"
+      "Municao": "Munição"
     },
 
     "Aba": {
@@ -120,11 +148,148 @@
       "escudo": "Novo Escudo",
       "magia": "Nova Magia",
       "habilidade": "Nova Habilidade",
-      "item": "Novo Item"
+      "item": "Novo Item",
+      "manobra": "Nova Manobra",
+      "habilidadeInimigo": "Nova Habilidade",
+      "aljava": "Nova Aljava",
+      "cantil": "Novo Cantil",
+      "algibeira": "Nova Algibeira",
+      "condicao": "Nova Condição"
     },
 
     "Aviso": {
-      "MaximoArmas": "O personagem já está portando o máximo de 2 armas."
+      "MaximoArmas": "O personagem já está portando o máximo de 2 armas.",
+      "SelecioneAlvo": "Selecione um alvo antes de atacar.",
+      "SemRecursoEstancar": "Não há manobras (ou manobras + Kit Medicinal) suficientes para estancar o sangramento agora.",
+      "SemMunicao": "Não há munição disponível para usar esta arma.",
+      "ArmaDescarregada": "{arma} precisa ser recarregada antes de atacar novamente.",
+      "ArmaJaCarregada": "Essa arma já está carregada.",
+      "SemManobraRecarregar": "Não há manobras de combate disponíveis para recarregar."
+    },
+
+    "Defesa": {
+      "Titulo": "Ataque!",
+      "Prompt": "{atacante} ataca {alvo}!",
+      "DanoPendente": "Dano se não for evitado: {dano}",
+      "DanoAplicado": "{alvo} sofre {dano} de dano.",
+      "Confirmar": "Confirmar",
+      "QuantoMitigar": "Quanto mitigar (0 a {max})",
+      "Esquivar": "Esquivar",
+      "Aparar": "Aparar",
+      "Bloquear": "Bloquear",
+      "Mitigar": "Mitigar",
+      "NaoDefender": "Não Defender",
+      "ResultadoBloquear": "{alvo} bloqueia o ataque com o escudo e anula todo o dano (Durabilidade -{durabilidade}).",
+      "ResultadoApararSucesso": "{alvo} apara o ataque e anula todo o dano (Durabilidade da arma -{durabilidade}), contra-atacando imediatamente!",
+      "ResultadoApararFalha": "{alvo} tenta aparar mas falha, sofrendo {dano} de dano.",
+      "ResultadoEsquivarSucesso": "{alvo} esquiva do ataque e não sofre dano.",
+      "ResultadoEsquivarFalha": "{alvo} tenta esquivar mas falha, sofrendo {dano} de dano.",
+      "ResultadoMitigar": "{alvo} mitiga {mitigado} de dano com a armadura, sofrendo {dano} de dano.",
+      "ResultadoManobraDefensiva": "{alvo} usa {manobra} e anula todo o dano.",
+      "ResultadoNenhuma": "{alvo} não se defende e sofre {dano} de dano.",
+      "PenalidadeDistancia": "Distância"
+    },
+
+    "Combate": {
+      "FadigaRepeticao": "{nome} repete a mesma manobra nesta rodada e sofre 1 Ponto de Fadiga.",
+      "FalhaAbsolutaResultado": "{nome} sofre uma Falha Absoluta e não pode usar mais manobras de combate nesta rodada.",
+      "TesteResistenciaFerimento": "Resistência (Ferimento Permanente)",
+      "TesteResistenciaFatal": "Resistência (Acerto Absoluto Fatal)",
+      "FatalSucesso": "{alvo} resiste ao golpe fatal, mas seus pontos de Vitalidade caem para 1!",
+      "FatalMorte": "{alvo} não resiste ao golpe fatal e morre instantaneamente!",
+      "FatalZero": "{alvo} não resiste ao golpe fatal e seus pontos de Vitalidade caem para 0!",
+      "Sangrando": "Sangrando",
+      "EstancarSangramento": "Estancar Sangramento",
+      "EstancarPergunta": "Como deseja estancar o sangramento?",
+      "DuasManobras": "Usar 2 Manobras",
+      "ManobraEKit": "Usar 1 Manobra + Kit Medicinal",
+      "SangramentoEstancado": "{alvo} estanca o sangramento.",
+      "SangramentoTick": "{alvo} sangra e perde 1 ponto de Vitalidade.",
+      "AtrasadoAviso": "{alvo} foi atrasado e não pode usar a manobra Movimentar neste turno.",
+      "Debilitado": "Debilitado",
+      "Recarregar": "Recarregar",
+      "Carregada": "Carregada",
+      "ArmaRecarregada": "{nome} recarrega {arma}.",
+
+      "Propriedade": {
+        "SangrarAplicado": "{alvo} começa a sangrar!",
+        "MutilarAplicado": "O golpe mutila o alvo, causando {dano} de dano adicional!",
+        "DerrubarAplicado": "{alvo} é derrubado e fica Caído!",
+        "Quebrar": "Quebrar",
+        "EscolherItem": "Escolha qual item de {alvo} será danificado:",
+        "QuebrarAplicado": "{item} é danificado e perde {durabilidade} de Durabilidade.",
+        "DebilitarAplicado": "{alvo} fica debilitado: a próxima rolagem será Muito Difícil (-4).",
+        "AtrasarAplicado": "{alvo} fica atrasado: não poderá Movimentar no próximo turno.",
+        "Generica": "Propriedade aplicada: {propriedade} (aplique o efeito manualmente)."
+      }
+    },
+
+    "Ferimento": {
+      "Titulo": "Ferimentos Permanentes",
+      "Leve": "Ferimento permanente leve: limite de Fadiga reduzido em 1.",
+      "Atributo": "Ferimento permanente grave: atributo {atributo} reduzido em 2.",
+      "Anuncio": "{alvo} sofre um ferimento permanente: {descricao}"
+    },
+
+    "Mutilacao": {
+      "TraumaColuna": "Mutilação — Trauma na coluna vertebral: capacidade de carga reduzida pela metade.",
+      "MaoDecepada": "Mutilação — Mão decepada: não pode realizar tarefas que dependem das duas mãos (ainda pode usar um escudo adaptado).",
+      "BracoDecepado": "Mutilação — Braço decepado: não pode realizar tarefas que dependem da mão perdida, das duas mãos, ou de um escudo.",
+      "PeDecepado": "Mutilação — Pé ou perna decepada: precisa de prótese para se mover; Deslocamento reduzido pela metade permanentemente."
+    },
+
+    "Conjuracao": {
+      "ManutencaoAtiva": "Manutenção Ativa",
+      "FacilLabel": "Fácil (Refinamento)",
+      "TransformadoMaldicaoTag": "Transformado em uma Maldição",
+      "SucessoGarantidoUsado": "{nome} conjura sem precisar rolar: o próximo Teste de Conjuração já estava garantido.",
+      "RefinamentoSucessoFuturo": "O Dado de Refinamento veio 1: a próxima conjuração de {nome} terá sucesso garantido, sem necessidade de rolagem.",
+      "FacilConcedido": "Acerto Absoluto! O próximo Teste de Conjuração de {nome} recebe +2 (Fácil).",
+      "FalhaPacto": "{nome} falha na conjuração e perde 1 Ponto de Vitalidade, conforme o Pacto Amaldiçoado.",
+      "FalhaBencao": "{nome} falha na conjuração e recebe 1 Ponto de Fadiga.",
+      "TesteResistenciaBencao": "Resistência (Falha Absoluta — Bênção Divina)",
+      "ResistenciaBencaoSucesso": "{nome} resiste ao castigo divino, mas seus Pontos de Vitalidade caem a 0.",
+      "MorteBencao": "{nome} não resiste ao castigo divino: todos os atributos caem 2 pontos e, com algum deles chegando a 0, {nome} morre.",
+      "AtributosReduzidosBencao": "{nome} não resiste ao castigo divino: todos os atributos caem 2 pontos.",
+      "TesteMentePacto": "Mente (Falha Absoluta — Pacto Amaldiçoado)",
+      "MenteSucessoPacto": "{nome} resiste ao preço do Pacto, mas seus Pontos de Vitalidade caem a 1.",
+      "PerdaPermanentePacto": "{nome} não resiste ao preço do Pacto e perde {perda} Pontos de Vitalidade máxima permanentemente.",
+      "TransformaMaldicao": "{nome} perde totalmente o controle e se transforma em uma Maldição!",
+      "BonusDanoPacto": "O Pacto Amaldiçoado concede +{dano} de dano à conjuração.",
+      "ManutencaoAtivada": "{magia} de {nome} entra em Manutenção.",
+      "ManutencaoFalhou": "{nome} falha no Teste de Manutenção de {magia}, que deixa de estar ativa.",
+      "RefazerTitulo": "Refinamento (1)",
+      "RefazerPrompt": "{nome} falhou na conjuração de {magia}, mas o Dado de Refinamento veio 1: é possível refazer a rolagem inteira.",
+      "Refazer": "Refazer Rolagem",
+      "AceitarFalha": "Aceitar Falha",
+      "RefazerRecusado": "{nome} aceita a falha na conjuração.",
+      "RefezRolagem": "{nome} refaz a rolagem da conjuração.",
+      "ManutencaoTitulo": "Manutenção de Conjurações",
+      "ManutencaoPrompt": "{nome} precisa testar Conjuração para manter cada efeito ativo:",
+      "TesteManutencao": "Manutenção: {magia}"
+    },
+
+    "Condicao": {
+      "Titulo": "Condição",
+      "Concede": "Concede Condição",
+      "Nome": "Nome da Condição",
+      "Valor": "Valor",
+      "Escopo": "Escopo",
+      "EscopoQualquer": "Qualquer",
+      "EscopoAtaque": "Ataque",
+      "EscopoManobra": "Manobra",
+      "EscopoConjuracao": "Conjuração",
+      "EscopoAtributo": "Atributo Específico",
+      "AtributoEspecifico": "Atributo Específico",
+      "Permanente": "Permanente",
+      "DuracaoRodadas": "Duração (rodadas)",
+      "Alvo": {
+        "Titulo": "Aplicar em",
+        "Lancador": "Lançador",
+        "Alvo": "Alvo"
+      },
+      "Aplicada": "{nome} recebe a condição {condicao} ({valor}).",
+      "Expirou": "A condição {condicao} de {nome} expirou."
     },
 
     "Rolagem": {
@@ -132,8 +297,11 @@
       "TesteAtaque": "Ataque: {arma}",
       "TesteMagia": "Conjuração: {magia}",
       "TesteHabilidade": "Habilidade: {habilidade}",
+      "TesteManobra": "Manobra: {manobra}",
       "DadoTreinamento": "Dado de Treinamento",
-      "DadoRefinamento": "Dado de Refinamento"
+      "DadoRefinamento": "Dado de Refinamento",
+      "ValorBase": "Valor Base",
+      "TotalEfetivo": "Total"
     },
 
     "Assistente": {
@@ -222,6 +390,24 @@
         "TreinamentoNoMaximo": "O nível de treinamento já está no máximo (5).",
         "DigiteIdioma": "Digite o nome do idioma antes de comprar."
       }
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Personagem",
+      "inimigo": "Inimigo"
+    },
+    "Item": {
+      "arma": "Arma",
+      "armadura": "Armadura",
+      "escudo": "Escudo",
+      "magia": "Conjuração",
+      "habilidade": "Habilidade",
+      "item": "Item",
+      "manobra": "Manobra",
+      "habilidadeInimigo": "Habilidade de Inimigo",
+      "condicao": "Condição"
     }
   }
 }

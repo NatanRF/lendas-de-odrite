@@ -1,0 +1,9 @@
+<div class="odrite chat-card manutencao-prompt">
+  <h3 class="chat-card-titulo">{{localize "ODRITE.Conjuracao.ManutencaoTitulo"}}</h3>
+  <p>{{localize "ODRITE.Conjuracao.ManutencaoPrompt" nome=nome}}</p>
+  <div class="manutencao-botoes">
+    {{#each ativas as |ativa|}}
+    <button type="button" data-action="manutencao-conjuracao" data-item-id="{{ativa.itemId}}">{{ativa.nome}}</button>
+    {{/each}}
+  </div>
+</div>

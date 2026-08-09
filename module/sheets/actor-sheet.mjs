@@ -1,8 +1,16 @@
 import { ODRITE } from "../config.mjs";
 import OdriteCharacterAdvancement from "../apps/character-advancement.mjs";
+import { estancarSangramento, recarregarArma } from "../helpers/combate.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
+
+const MUTILACAO_LABELS = {
+  traumaColuna: "ODRITE.Mutilacao.TraumaColuna",
+  maoDecepada: "ODRITE.Mutilacao.MaoDecepada",
+  bracoDecepado: "ODRITE.Mutilacao.BracoDecepado",
+  peDecepado: "ODRITE.Mutilacao.PeDecepado"
+};
 
 export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
@@ -23,7 +31,9 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
       itemDelete: OdriteCharacterSheet.#itemDelete,
       toggleFadiga: OdriteCharacterSheet.#toggleFadiga,
       setNivelTreinamento: OdriteCharacterSheet.#setNivelTreinamento,
-      abrirEvolucao: OdriteCharacterSheet.#abrirEvolucao
+      abrirEvolucao: OdriteCharacterSheet.#abrirEvolucao,
+      estancarSangramento: OdriteCharacterSheet.#estancarSangramento,
+      recarregarArma: OdriteCharacterSheet.#recarregarArma
     }
   };
 
@@ -66,7 +76,32 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
     context.escudos = this.actor.items.filter((i) => i.type === "escudo");
     context.magias = this.actor.items.filter((i) => i.type === "magia");
     context.habilidades = this.actor.items.filter((i) => i.type === "habilidade");
-    context.mochila = this.actor.items.filter((i) => i.type === "item");
+    context.mochila = this.actor.items.filter((i) => i.type === "item" && !i.system.slotEspecial);
+    context.aljavas = this.actor.items.filter((i) => i.type === "item" && i.system.slotEspecial === "aljava");
+    context.cantis = this.actor.items.filter((i) => i.type === "item" && i.system.slotEspecial === "cantil");
+    context.algibeiras = this.actor.items.filter((i) => i.type === "item" && i.system.slotEspecial === "algibeira");
+
+    context.ferimentosPermanentes = this.actor.system.ferimentosPermanentes ?? [];
+    context.mutilacoes = (this.actor.system.mutilacoes ?? []).map((chave) =>
+      game.i18n.localize(MUTILACAO_LABELS[chave] ?? chave)
+    );
+
+    context.condicoes = this.actor.items
+      .filter((i) => i.type === "condicao")
+      .map((c) => ({
+        id: c.id,
+        nome: c.name,
+        valorFormatado: c.system.valor >= 0 ? `+${c.system.valor}` : `${c.system.valor}`,
+        negativa: c.system.valor < 0,
+        permanente: c.system.permanente,
+        duracaoRodadas: c.system.duracaoRodadas
+      }));
+
+    const combatant = game.combat?.combatants.find((c) => c.actorId === this.actor.id);
+    context.sangrando = !!combatant?.getFlag("odrite", "sangrando")?.ativo;
+
+    const conjuracoesAtivas = this.actor.getFlag("odrite", "conjuracoesAtivas") ?? [];
+    context.manutencaoAtivaIds = conjuracoesAtivas.map((a) => a.itemId);
 
     return context;
   }
@@ -110,14 +145,16 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
 
   static #itemCreate(event, target) {
     const type = target.dataset.type;
+    const slot = target.dataset.slot;
 
     if (type === "arma" && this.actor.items.filter((i) => i.type === "arma").length >= 2) {
       return ui.notifications.warn(game.i18n.localize("ODRITE.Aviso.MaximoArmas"));
     }
 
-    return this.actor.createEmbeddedDocuments("Item", [
-      { name: game.i18n.localize(`ODRITE.NovoItem.${type}`), type }
-    ]);
+    const data = { name: game.i18n.localize(`ODRITE.NovoItem.${slot ?? type}`), type };
+    if (slot) data.system = { slotEspecial: slot };
+
+    return this.actor.createEmbeddedDocuments("Item", [data]);
   }
 
   static #itemEdit(event, target) {
@@ -144,5 +181,14 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
 
   static #abrirEvolucao(event, target) {
     new OdriteCharacterAdvancement(this.actor).render(true);
+  }
+
+  static #estancarSangramento(event, target) {
+    return estancarSangramento(this.actor);
+  }
+
+  static #recarregarArma(event, target) {
+    const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
+    if (item) return recarregarArma(this.actor, item);
   }
 }
