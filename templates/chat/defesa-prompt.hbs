@@ -1,0 +1,10 @@
+<div class="odrite chat-card defesa-prompt">
+  <h3 class="chat-card-titulo">{{localize "ODRITE.Defesa.Titulo"}}</h3>
+  <p>{{localize "ODRITE.Defesa.Prompt" atacante=atacanteNome alvo=alvoNome}}</p>
+  <p>{{localize "ODRITE.Defesa.DanoPendente" dano=dano}}</p>
+  <div class="defesa-botoes">
+    {{#each opcoes as |op|}}
+    <button type="button" data-action="defender" data-tipo="{{op.tipo}}" data-item-id="{{op.itemId}}">{{op.label}}</button>
+    {{/each}}
+  </div>
+</div>

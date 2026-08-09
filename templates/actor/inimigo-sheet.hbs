@@ -1,0 +1,111 @@
+<div class="odrite-sheet-body">
+<header class="sheet-header">
+  <img class="perfil" src="{{actor.img}}" data-action="editImage" data-edit="img" title="{{actor.name}}">
+  <div class="cabecalho-central">
+    <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'ODRITE.Nome'}}">
+    <div class="detalhes-linha">
+      <label>{{localize "ODRITE.Deslocamento"}}<input type="number" name="system.deslocamento" value="{{system.deslocamento}}"> m</label>
+      <label>{{localize "ODRITE.ManobrasPorRodada"}}<input type="number" name="system.manobrasPorRodada" value="{{system.manobrasPorRodada}}"></label>
+      <label>{{localize "ODRITE.DadoTreinamento"}}<input type="number" name="system.dadoTreinamento" value="{{system.dadoTreinamento}}" min="2"></label>
+    </div>
+    <div class="linha-condicoes">
+      {{#each condicoes as |condicao|}}
+      <span class="tag condicao {{#if condicao.negativa}}negativa{{else}}positiva{{/if}}" data-item-id="{{condicao.id}}">
+        {{condicao.nome}} ({{condicao.valorFormatado}}){{#unless condicao.permanente}} · {{condicao.duracaoRodadas}}r{{/unless}}
+        <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a>
+        <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a>
+      </span>
+      {{/each}}
+      <button type="button" class="criar-item" data-action="itemCreate" data-type="condicao">+ {{localize "ODRITE.Condicao.Titulo"}}</button>
+    </div>
+  </div>
+</header>
+
+<div class="coluna-atributos">
+  {{#each listaAtributos as |atrib|}}
+  <div class="atributo">
+    <button type="button" class="atributo-rolar" data-action="rollAtributo" data-atributo="{{atrib.chave}}" title="{{localize 'ODRITE.Rolar'}}">
+      {{atrib.label}}
+    </button>
+    <input type="number" name="system.atributos.{{atrib.chave}}.value" value="{{atrib.value}}" min="0">
+  </div>
+  {{/each}}
+</div>
+
+<section class="corpo-ficha corpo-ficha-inimigo">
+  <div class="cartao cartao-vital-inimigo">
+    <div class="vitalidade-bloco">
+      <h3>{{localize "ODRITE.Vitalidade"}}</h3>
+      <div class="par par-vitalidade">
+        <input type="number" name="system.vitalidade.value" value="{{system.vitalidade.value}}">
+        <span>/</span>
+        <input type="number" name="system.vitalidade.max" value="{{system.vitalidade.max}}">
+      </div>
+    </div>
+  </div>
+
+  <div class="equipamento-linha">
+    {{#each armaduras as |armadura|}}
+    <div class="cartao protecao" data-item-id="{{armadura.id}}">
+      <h4>{{localize "ODRITE.Armadura"}} <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a> <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a></h4>
+      <p>{{armadura.name}}</p>
+      <label>{{localize "ODRITE.Durabilidade"}} <span>{{armadura.system.durabilidade.value}} / {{armadura.system.durabilidade.max}}</span></label>
+    </div>
+    {{else}}
+    <button type="button" class="criar-item slot-vazio" data-action="itemCreate" data-type="armadura">+ {{localize "ODRITE.Armadura"}}</button>
+    {{/each}}
+
+    {{#each escudos as |escudo|}}
+    <div class="cartao protecao" data-item-id="{{escudo.id}}">
+      <h4>{{localize "ODRITE.Escudo"}} <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a> <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a></h4>
+      <p>{{escudo.name}}</p>
+      <label>{{localize "ODRITE.Durabilidade"}} <span>{{escudo.system.durabilidade.value}} / {{escudo.system.durabilidade.max}}</span></label>
+    </div>
+    {{else}}
+    <button type="button" class="criar-item slot-vazio" data-action="itemCreate" data-type="escudo">+ {{localize "ODRITE.Escudo"}}</button>
+    {{/each}}
+  </div>
+
+  <div class="colunas-inimigo">
+    <div class="secao-manobras">
+      <h3>{{localize "ODRITE.ManobrasDeCombate"}} <button type="button" class="criar-item" data-action="itemCreate" data-type="manobra">+</button></h3>
+      {{#each manobras as |manobra|}}
+      <div class="cartao manobra" data-item-id="{{manobra.id}}">
+        <h4>
+          {{#if manobra.system.ofensiva}}
+          <button type="button" class="rolar-manobra" data-action="rollManobra">{{manobra.name}}</button>
+          {{else}}
+          {{manobra.name}}
+          {{/if}}
+          {{#if manobra.system.defensiva}}
+          <span class="tag">{{localize "ODRITE.Manobra.Defensiva"}}</span>
+          {{/if}}
+          <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a>
+          <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a>
+        </h4>
+        <p class="meta">
+          {{localize "ODRITE.Dano"}}: {{manobra.system.dano}} |
+          {{localize "ODRITE.Custo"}}: {{manobra.system.custo}} |
+          {{localize "ODRITE.Propriedade"}}: {{manobra.system.propriedade}}
+        </p>
+        <div class="descricao">{{{manobra.system.descricao}}}</div>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="secao-habilidades-inimigo">
+      <h3>{{localize "ODRITE.Habilidades"}} <button type="button" class="criar-item" data-action="itemCreate" data-type="habilidadeInimigo">+</button></h3>
+      {{#each habilidadesInimigo as |hab|}}
+      <div class="cartao habilidade" data-item-id="{{hab.id}}">
+        <h4>
+          {{hab.name}}
+          <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a>
+          <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a>
+        </h4>
+        <div class="descricao">{{{hab.system.descricao}}}</div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+</div>

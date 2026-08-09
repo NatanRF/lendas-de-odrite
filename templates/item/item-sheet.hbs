@@ -31,6 +31,20 @@
     <input type="text" name="system.propriedade" value="{{system.propriedade}}">
   </div>
   <div class="campo">
+    <label>{{localize "ODRITE.UsaMunicao"}}</label>
+    <input type="checkbox" name="system.usaMunicao" {{#if system.usaMunicao}}checked{{/if}}>
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.ExigeRecarga"}}</label>
+    <input type="checkbox" name="system.exigeRecarga" {{#if system.exigeRecarga}}checked{{/if}}>
+  </div>
+  {{#if system.exigeRecarga}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Combate.Carregada"}}</label>
+    <input type="checkbox" name="system.carregada" {{#if system.carregada}}checked{{/if}}>
+  </div>
+  {{/if}}
+  <div class="campo">
     <label>{{localize "ODRITE.Preco"}}</label>
     <input type="number" name="system.preco" value="{{system.preco}}">
   </div>
@@ -115,12 +129,71 @@
   </div>
   <div class="campo">
     <label>{{localize "ODRITE.Magia.Duracao"}}</label>
-    <input type="text" name="system.duracao" value="{{system.duracao}}">
+    <select name="system.duracao">
+      <option value="instantaneo" {{#if (eq system.duracao "instantaneo")}}selected{{/if}}>{{localize "ODRITE.Magia.DuracaoInstantaneo"}}</option>
+      <option value="manutencao" {{#if (eq system.duracao "manutencao")}}selected{{/if}}>{{localize "ODRITE.Magia.DuracaoManutencao"}}</option>
+    </select>
   </div>
   <div class="campo">
     <label>{{localize "ODRITE.Magia.Alcance"}}</label>
     <input type="text" name="system.alcance" value="{{system.alcance}}">
   </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Dano"}}</label>
+    <input type="number" name="system.dano" value="{{system.dano}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Concede"}}</label>
+    <input type="checkbox" name="system.concedeCondicao" {{#if system.concedeCondicao}}checked{{/if}}>
+  </div>
+  {{#if system.concedeCondicao}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Alvo.Titulo"}}</label>
+    <select name="system.condicaoAlvo">
+      <option value="lancador" {{#if (eq system.condicaoAlvo "lancador")}}selected{{/if}}>{{localize "ODRITE.Condicao.Alvo.Lancador"}}</option>
+      <option value="alvo" {{#if (eq system.condicaoAlvo "alvo")}}selected{{/if}}>{{localize "ODRITE.Condicao.Alvo.Alvo"}}</option>
+    </select>
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Nome"}}</label>
+    <input type="text" name="system.condicaoNome" value="{{system.condicaoNome}}" placeholder="{{item.name}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Valor"}}</label>
+    <input type="number" name="system.condicaoValor" value="{{system.condicaoValor}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Escopo"}}</label>
+    <select name="system.condicaoEscopo">
+      <option value="qualquer" {{#if (eq system.condicaoEscopo "qualquer")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoQualquer"}}</option>
+      <option value="ataque" {{#if (eq system.condicaoEscopo "ataque")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoAtaque"}}</option>
+      <option value="manobra" {{#if (eq system.condicaoEscopo "manobra")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoManobra"}}</option>
+      <option value="conjuracao" {{#if (eq system.condicaoEscopo "conjuracao")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoConjuracao"}}</option>
+      <option value="atributo" {{#if (eq system.condicaoEscopo "atributo")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoAtributo"}}</option>
+    </select>
+  </div>
+  {{#if (eq system.condicaoEscopo "atributo")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.AtributoEspecifico"}}</label>
+    <select name="system.condicaoAtributoEspecifico">
+      <option value="">—</option>
+      {{#each atributosChaves as |atrib|}}
+      <option value="{{atrib.chave}}" {{#if (eq ../system.condicaoAtributoEspecifico atrib.chave)}}selected{{/if}}>{{atrib.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+  {{/if}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Permanente"}}</label>
+    <input type="checkbox" name="system.condicaoPermanente" {{#if system.condicaoPermanente}}checked{{/if}}>
+  </div>
+  {{#unless system.condicaoPermanente}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.DuracaoRodadas"}}</label>
+    <input type="number" name="system.condicaoDuracaoRodadas" value="{{system.condicaoDuracaoRodadas}}" min="1">
+  </div>
+  {{/unless}}
+  {{/if}}
   <div class="campo campo-descricao">
     <label>{{localize "ODRITE.Descricao"}}</label>
     <textarea name="system.descricao">{{system.descricao}}</textarea>
@@ -171,6 +244,51 @@
       <option value="lista" {{#if (eq system.categoria "lista")}}selected{{/if}}>{{localize "ODRITE.CategoriaHabilidade.Lista"}}</option>
     </select>
   </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Concede"}}</label>
+    <input type="checkbox" name="system.concedeCondicao" {{#if system.concedeCondicao}}checked{{/if}}>
+  </div>
+  {{#if system.concedeCondicao}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Nome"}}</label>
+    <input type="text" name="system.condicaoNome" value="{{system.condicaoNome}}" placeholder="{{item.name}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Valor"}}</label>
+    <input type="number" name="system.condicaoValor" value="{{system.condicaoValor}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Escopo"}}</label>
+    <select name="system.condicaoEscopo">
+      <option value="qualquer" {{#if (eq system.condicaoEscopo "qualquer")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoQualquer"}}</option>
+      <option value="ataque" {{#if (eq system.condicaoEscopo "ataque")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoAtaque"}}</option>
+      <option value="manobra" {{#if (eq system.condicaoEscopo "manobra")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoManobra"}}</option>
+      <option value="conjuracao" {{#if (eq system.condicaoEscopo "conjuracao")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoConjuracao"}}</option>
+      <option value="atributo" {{#if (eq system.condicaoEscopo "atributo")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoAtributo"}}</option>
+    </select>
+  </div>
+  {{#if (eq system.condicaoEscopo "atributo")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.AtributoEspecifico"}}</label>
+    <select name="system.condicaoAtributoEspecifico">
+      <option value="">—</option>
+      {{#each atributosChaves as |atrib|}}
+      <option value="{{atrib.chave}}" {{#if (eq ../system.condicaoAtributoEspecifico atrib.chave)}}selected{{/if}}>{{atrib.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+  {{/if}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Permanente"}}</label>
+    <input type="checkbox" name="system.condicaoPermanente" {{#if system.condicaoPermanente}}checked{{/if}}>
+  </div>
+  {{#unless system.condicaoPermanente}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.DuracaoRodadas"}}</label>
+    <input type="number" name="system.condicaoDuracaoRodadas" value="{{system.condicaoDuracaoRodadas}}" min="1">
+  </div>
+  {{/unless}}
+  {{/if}}
   <div class="campo campo-descricao">
     <label>{{localize "ODRITE.Descricao"}}</label>
     <textarea name="system.descricao">{{system.descricao}}</textarea>
@@ -186,6 +304,106 @@
     <label>{{localize "ODRITE.Preco"}}</label>
     <input type="number" name="system.preco" value="{{system.preco}}">
   </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.SlotEspecial.Titulo"}}</label>
+    <select name="system.slotEspecial">
+      <option value="" {{#if (eq system.slotEspecial "")}}selected{{/if}}>{{localize "ODRITE.SlotEspecial.Nenhum"}}</option>
+      <option value="aljava" {{#if (eq system.slotEspecial "aljava")}}selected{{/if}}>{{localize "ODRITE.Aljava"}}</option>
+      <option value="cantil" {{#if (eq system.slotEspecial "cantil")}}selected{{/if}}>{{localize "ODRITE.Cantil"}}</option>
+      <option value="algibeira" {{#if (eq system.slotEspecial "algibeira")}}selected{{/if}}>{{localize "ODRITE.Algibeira"}}</option>
+    </select>
+  </div>
+  {{#if (eq system.slotEspecial "aljava")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Capacidade"}}</label>
+    <input type="number" name="system.capacidade" value="{{system.capacidade}}">
+  </div>
+  {{/if}}
+  <div class="campo campo-descricao">
+    <label>{{localize "ODRITE.Descricao"}}</label>
+    <textarea name="system.descricao">{{system.descricao}}</textarea>
+  </div>
+  {{/if}}
+
+  {{#if (eq tipo "manobra")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Ofensiva"}}</label>
+    <input type="checkbox" name="system.ofensiva" {{#if system.ofensiva}}checked{{/if}}>
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Manobra.Defensiva"}}</label>
+    <input type="checkbox" name="system.defensiva" {{#if system.defensiva}}checked{{/if}}>
+  </div>
+  {{#if system.ofensiva}}
+  <div class="campo">
+    <label>{{localize "ODRITE.TipoAtaque.Titulo"}}</label>
+    <select name="system.tipoAtaque">
+      <option value="corpoACorpo" {{#if (eq system.tipoAtaque "corpoACorpo")}}selected{{/if}}>{{localize "ODRITE.TipoAtaque.CorpoACorpo"}}</option>
+      <option value="distancia" {{#if (eq system.tipoAtaque "distancia")}}selected{{/if}}>{{localize "ODRITE.TipoAtaque.Distancia"}}</option>
+    </select>
+  </div>
+  {{/if}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Dano"}}</label>
+    <input type="number" name="system.dano" value="{{system.dano}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Custo"}}</label>
+    <input type="number" name="system.custo" value="{{system.custo}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Propriedade"}}</label>
+    <input type="text" name="system.propriedade" value="{{system.propriedade}}">
+  </div>
+  <div class="campo campo-descricao">
+    <label>{{localize "ODRITE.Descricao"}}</label>
+    <textarea name="system.descricao">{{system.descricao}}</textarea>
+  </div>
+  {{/if}}
+
+  {{#if (eq tipo "habilidadeInimigo")}}
+  <div class="campo campo-descricao">
+    <label>{{localize "ODRITE.Descricao"}}</label>
+    <textarea name="system.descricao">{{system.descricao}}</textarea>
+  </div>
+  {{/if}}
+
+  {{#if (eq tipo "condicao")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Valor"}}</label>
+    <input type="number" name="system.valor" value="{{system.valor}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Escopo"}}</label>
+    <select name="system.escopo">
+      <option value="qualquer" {{#if (eq system.escopo "qualquer")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoQualquer"}}</option>
+      <option value="ataque" {{#if (eq system.escopo "ataque")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoAtaque"}}</option>
+      <option value="manobra" {{#if (eq system.escopo "manobra")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoManobra"}}</option>
+      <option value="conjuracao" {{#if (eq system.escopo "conjuracao")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoConjuracao"}}</option>
+      <option value="atributo" {{#if (eq system.escopo "atributo")}}selected{{/if}}>{{localize "ODRITE.Condicao.EscopoAtributo"}}</option>
+    </select>
+  </div>
+  {{#if (eq system.escopo "atributo")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.AtributoEspecifico"}}</label>
+    <select name="system.atributoEspecifico">
+      <option value="">—</option>
+      {{#each atributosChaves as |atrib|}}
+      <option value="{{atrib.chave}}" {{#if (eq ../system.atributoEspecifico atrib.chave)}}selected{{/if}}>{{atrib.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+  {{/if}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Permanente"}}</label>
+    <input type="checkbox" name="system.permanente" {{#if system.permanente}}checked{{/if}}>
+  </div>
+  {{#unless system.permanente}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.DuracaoRodadas"}}</label>
+    <input type="number" name="system.duracaoRodadas" value="{{system.duracaoRodadas}}" min="1">
+  </div>
+  {{/unless}}
   <div class="campo campo-descricao">
     <label>{{localize "ODRITE.Descricao"}}</label>
     <textarea name="system.descricao">{{system.descricao}}</textarea>

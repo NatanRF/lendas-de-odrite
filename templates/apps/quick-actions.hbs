@@ -1,0 +1,23 @@
+<div class="odrite-quick-actions-body">
+  {{#if actor}}
+  <div class="qa-cabecalho">
+    <img src="{{actor.img}}" alt="{{actor.name}}">
+    <span>{{actor.name}}</span>
+  </div>
+
+  {{#each grupos as |grupo|}}
+  {{#if grupo.itens.length}}
+  <div class="qa-grupo">
+    <h4>{{localize grupo.titulo}}</h4>
+    {{#each grupo.itens as |item|}}
+    {{#if item.rolavel}}
+    <button type="button" class="qa-item qa-rolavel" data-action="rolar" data-tipo="{{item.tipo}}" data-item-id="{{item.id}}">{{item.nome}}</button>
+    {{else}}
+    <div class="qa-item qa-nao-rolavel">{{item.nome}}</div>
+    {{/if}}
+    {{/each}}
+  </div>
+  {{/if}}
+  {{/each}}
+  {{/if}}
+</div>

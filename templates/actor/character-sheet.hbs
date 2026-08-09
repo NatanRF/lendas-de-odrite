@@ -20,8 +20,32 @@
         </select>
       </label>
       <label>{{localize "ODRITE.Deslocamento"}}<input type="number" name="system.detalhes.deslocamento" value="{{system.detalhes.deslocamento}}"> m</label>
+    </div>
+    <div class="detalhes-linha">
+      <label>{{localize "ODRITE.Manobras"}}<input type="number" name="system.manobrasPorRodada" value="{{system.manobrasPorRodada}}"></label>
       <label>{{localize "ODRITE.Experiencia"}}<input type="number" name="system.detalhes.experiencia" value="{{system.detalhes.experiencia}}"></label>
       <button type="button" class="botao-evolucao" data-action="abrirEvolucao">{{localize "ODRITE.Evolucao.Titulo"}}</button>
+    </div>
+    {{#if sangrando}}
+    <div class="aviso-sangramento">
+      <span class="tag falha">{{localize "ODRITE.Combate.Sangrando"}}</span>
+      <button type="button" data-action="estancarSangramento">{{localize "ODRITE.Combate.EstancarSangramento"}}</button>
+    </div>
+    {{/if}}
+    {{#if system.transformadoMaldicao}}
+    <div class="aviso-maldicao">
+      <span class="tag falha">{{localize "ODRITE.Conjuracao.TransformadoMaldicaoTag"}}</span>
+    </div>
+    {{/if}}
+    <div class="linha-condicoes">
+      {{#each condicoes as |condicao|}}
+      <span class="tag condicao {{#if condicao.negativa}}negativa{{else}}positiva{{/if}}" data-item-id="{{condicao.id}}">
+        {{condicao.nome}} ({{condicao.valorFormatado}}){{#unless condicao.permanente}} · {{condicao.duracaoRodadas}}r{{/unless}}
+        <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a>
+        <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a>
+      </span>
+      {{/each}}
+      <button type="button" class="criar-item" data-action="itemCreate" data-type="condicao">+ {{localize "ODRITE.Condicao.Titulo"}}</button>
     </div>
   </div>
 </header>
@@ -87,8 +111,12 @@
       <div class="cartao cartao-recursos">
         <h3>{{localize "ODRITE.Recursos.Titulo"}}</h3>
         <label>{{localize "ODRITE.Recursos.Drakeons"}} <input type="number" name="system.recursos.drakeons" value="{{system.recursos.drakeons}}"></label>
-        <label>{{localize "ODRITE.Recursos.Aljava"}} <input type="number" name="system.recursos.aljava" value="{{system.recursos.aljava}}"></label>
-        <label>{{localize "ODRITE.Recursos.Cantil"}} <input type="text" name="system.recursos.cantil" value="{{system.recursos.cantil}}"></label>
+        <label>{{localize "ODRITE.Recursos.Municao"}}
+          <span class="par par-municao">
+            <input type="number" name="system.recursos.municao.value" value="{{system.recursos.municao.value}}" min="0" max="{{system.recursos.municao.max}}">
+            <span>/ {{system.recursos.municao.max}}</span>
+          </span>
+        </label>
       </div>
     </div>
 
@@ -131,6 +159,36 @@
       </div>
 
       <div class="equipamento-linha">
+        {{#each aljavas as |aljava|}}
+        <div class="cartao recurso-equipavel" data-item-id="{{aljava.id}}">
+          <h4>{{localize "ODRITE.Aljava"}} <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a> <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a></h4>
+          <p>{{aljava.name}}</p>
+          <label>{{localize "ODRITE.Capacidade"}} <span>{{aljava.system.capacidade}}</span></label>
+        </div>
+        {{else}}
+        <button type="button" class="criar-item slot-vazio" data-action="itemCreate" data-type="item" data-slot="aljava">+ {{localize "ODRITE.Aljava"}}</button>
+        {{/each}}
+
+        {{#each cantis as |cantil|}}
+        <div class="cartao recurso-equipavel" data-item-id="{{cantil.id}}">
+          <h4>{{localize "ODRITE.Cantil"}} <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a> <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a></h4>
+          <p>{{cantil.name}}</p>
+        </div>
+        {{else}}
+        <button type="button" class="criar-item slot-vazio" data-action="itemCreate" data-type="item" data-slot="cantil">+ {{localize "ODRITE.Cantil"}}</button>
+        {{/each}}
+
+        {{#each algibeiras as |algibeira|}}
+        <div class="cartao recurso-equipavel" data-item-id="{{algibeira.id}}">
+          <h4>{{localize "ODRITE.Algibeira"}} <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a> <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a></h4>
+          <p>{{algibeira.name}}</p>
+        </div>
+        {{else}}
+        <button type="button" class="criar-item slot-vazio" data-action="itemCreate" data-type="item" data-slot="algibeira">+ {{localize "ODRITE.Algibeira"}}</button>
+        {{/each}}
+      </div>
+
+      <div class="equipamento-linha">
         <div class="cartao arma-slot" {{#if armaPrincipal}}data-item-id="{{armaPrincipal.id}}"{{/if}}>
           <h4>{{localize "ODRITE.ArmaPrincipal"}}
             {{#if armaPrincipal}}<a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a> <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a>{{/if}}
@@ -143,6 +201,13 @@
             {{localize "ODRITE.Alcance"}}: {{armaPrincipal.system.alcance}}<br>
             {{localize "ODRITE.Durabilidade"}}: {{armaPrincipal.system.durabilidade.value}}/{{armaPrincipal.system.durabilidade.max}}
           </p>
+          {{#if armaPrincipal.system.exigeRecarga}}
+            {{#unless armaPrincipal.system.carregada}}
+            <button type="button" class="recarregar-arma" data-action="recarregarArma">{{localize "ODRITE.Combate.Recarregar"}}</button>
+            {{else}}
+            <span class="tag sucesso">{{localize "ODRITE.Combate.Carregada"}}</span>
+            {{/unless}}
+          {{/if}}
           {{else}}
           <button type="button" class="criar-item slot-vazio" data-action="itemCreate" data-type="arma">+ {{localize "ODRITE.ArmaPrincipal"}}</button>
           {{/if}}
@@ -160,6 +225,13 @@
             {{localize "ODRITE.Alcance"}}: {{armaSecundaria.system.alcance}}<br>
             {{localize "ODRITE.Durabilidade"}}: {{armaSecundaria.system.durabilidade.value}}/{{armaSecundaria.system.durabilidade.max}}
           </p>
+          {{#if armaSecundaria.system.exigeRecarga}}
+            {{#unless armaSecundaria.system.carregada}}
+            <button type="button" class="recarregar-arma" data-action="recarregarArma">{{localize "ODRITE.Combate.Recarregar"}}</button>
+            {{else}}
+            <span class="tag sucesso">{{localize "ODRITE.Combate.Carregada"}}</span>
+            {{/unless}}
+          {{/if}}
           {{else}}
           <button type="button" class="criar-item slot-vazio" data-action="itemCreate" data-type="arma">+ {{localize "ODRITE.ArmaSecundaria"}}</button>
           {{/if}}
@@ -211,6 +283,9 @@
     <div class="cartao magia" data-item-id="{{magia.id}}">
       <h4>
         <button type="button" class="rolar-magia" data-action="rollMagia">{{magia.name}}</button>
+        {{#if (includes ../manutencaoAtivaIds magia.id)}}
+        <span class="tag tag-manutencao">{{localize "ODRITE.Conjuracao.ManutencaoAtiva"}}</span>
+        {{/if}}
         <a data-action="itemEdit">✎</a>
         <a data-action="itemDelete">✕</a>
       </h4>
@@ -260,6 +335,17 @@
   </div>
 
   <div class="aba-conteudo" data-tab="biografia" {{#unless (eq tabAtiva "biografia")}}hidden{{/unless}}>
+    {{#if (or ferimentosPermanentes.length mutilacoes.length)}}
+    <div class="secao-ferimentos">
+      <h3>{{localize "ODRITE.Ferimento.Titulo"}}</h3>
+      {{#each ferimentosPermanentes as |ferimento|}}
+      <p class="linha-ferimento">{{ferimento}}</p>
+      {{/each}}
+      {{#each mutilacoes as |mutilacao|}}
+      <p class="linha-ferimento linha-mutilacao">{{mutilacao}}</p>
+      {{/each}}
+    </div>
+    {{/if}}
     <textarea name="system.detalhes.biografia">{{system.detalhes.biografia}}</textarea>
   </div>
 

@@ -1,0 +1,30 @@
+{
+  "_id": "ASJk7AfUROt5ZiSD",
+  "_key": "!items!ASJk7AfUROt5ZiSD",
+  "name": "Muito Difícil",
+  "type": "condicao",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valor": -4,
+    "escopo": "qualquer",
+    "atributoEspecifico": "",
+    "duracaoRodadas": 1,
+    "permanente": false,
+    "descricao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.2.0",
+    "coreVersion": "14",
+    "createdTime": 1786233207433,
+    "modifiedTime": 1786233207433,
+    "lastModifiedBy": null
+  }
+}

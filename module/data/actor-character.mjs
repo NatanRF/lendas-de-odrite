@@ -1,6 +1,6 @@
 import { ODRITE } from "../config.mjs";
 
-const { SchemaField, NumberField, StringField, HTMLField } = foundry.data.fields;
+const { SchemaField, NumberField, StringField, HTMLField, ArrayField, BooleanField } = foundry.data.fields;
 
 /**
  * Cria um SchemaField padrão para um atributo, testado via 1d20 <= valor.
@@ -38,12 +38,18 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
 
       vitalidade: new SchemaField({
         value: new NumberField({ required: true, integer: true, min: 0, initial: 10 }),
-        max: new NumberField({ required: true, integer: true, min: 0, initial: 10 })
+        max: new NumberField({ required: true, integer: true, min: 0, initial: 10 }),
+        reducaoMaxima: new NumberField({ required: true, integer: true, min: 0, initial: 0 })
       }),
 
       fadiga: new SchemaField({
-        value: new NumberField({ required: true, integer: true, min: 0, max: 12, initial: 0 })
+        value: new NumberField({ required: true, integer: true, min: 0, max: 12, initial: 0 }),
+        reducaoLimite: new NumberField({ required: true, integer: true, min: 0, initial: 0 })
       }),
+
+      ferimentosPermanentes: new ArrayField(new StringField()),
+      mutilacoes: new ArrayField(new StringField()),
+      transformadoMaldicao: new BooleanField({ initial: false }),
 
       fonteArcana: new StringField({ initial: "", blank: true, choices: ["", ...ODRITE.fontesArcanas] }),
 
@@ -55,6 +61,8 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
 
       nivelTreinamento: new NumberField({ required: true, integer: true, min: 1, max: 5, initial: 1 }),
 
+      manobrasPorRodada: new NumberField({ required: true, integer: true, min: 0, initial: 3 }),
+
       proficiencias: new SchemaField({
         idiomas: new StringField({ initial: "" }),
         armas: new StringField({ initial: "" }),
@@ -64,8 +72,9 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
 
       recursos: new SchemaField({
         drakeons: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
-        aljava: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
-        cantil: new StringField({ initial: "" })
+        municao: new SchemaField({
+          value: new NumberField({ required: true, integer: true, min: 0, initial: 0 })
+        })
       })
     };
   }
@@ -73,12 +82,17 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
   prepareDerivedData() {
     super.prepareDerivedData();
 
-    this.vitalidade.value = Math.min(this.vitalidade.value, this.vitalidade.max);
+    this.vitalidade.maxEfetivo = Math.max(0, this.vitalidade.max - (this.vitalidade.reducaoMaxima ?? 0));
+    this.vitalidade.value = Math.min(this.vitalidade.value, this.vitalidade.maxEfetivo);
+
+    this.fadiga.limite = Math.max(0, 12 - (this.fadiga.reducaoLimite ?? 0));
+    this.fadiga.value = Math.min(this.fadiga.value, this.fadiga.limite);
 
     const fadiga = this.fadiga.value;
-    if (fadiga >= 10) this.fadiga.estagio = "exaustao";
-    else if (fadiga >= 7) this.fadiga.estagio = "penalidade4";
-    else if (fadiga >= 4) this.fadiga.estagio = "penalidade2";
+    const limite = this.fadiga.limite;
+    if (fadiga >= limite - 2) this.fadiga.estagio = "exaustao";
+    else if (fadiga >= limite - 5) this.fadiga.estagio = "penalidade4";
+    else if (fadiga >= limite - 8) this.fadiga.estagio = "penalidade2";
     else this.fadiga.estagio = "normal";
 
     this.fadiga.penalidade =
@@ -96,9 +110,21 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
     this.dadoTreinamento = ODRITE.dadoTreinamentoPorNivel[this.nivelTreinamento] ?? 12;
 
     this.capacidadeCarga = Math.max(this.atributos.forca.value, 10);
+    if (this.mutilacoes?.includes("traumaColuna")) {
+      this.capacidadeCarga = Math.floor(this.capacidadeCarga / 2);
+    }
     this.cargaAtual = itens
-      .filter((item) => item.type === "item")
+      .filter((item) => item.type === "item" && !item.system.slotEspecial)
       .reduce((total, item) => total + (item.system.quantidade ?? 0), 0);
     this.sobrecarregado = this.cargaAtual > this.capacidadeCarga;
+
+    this.recursos.municao.max = itens
+      .filter((item) => item.type === "item" && item.system.slotEspecial === "aljava")
+      .reduce((total, item) => total + (item.system.capacidade ?? 0), 0);
+    this.recursos.municao.value = Math.min(this.recursos.municao.value, this.recursos.municao.max);
+
+    this.deslocamentoEfetivo = this.mutilacoes?.includes("peDecepado")
+      ? Math.floor(this.detalhes.deslocamento / 2)
+      : this.detalhes.deslocamento;
   }
 }

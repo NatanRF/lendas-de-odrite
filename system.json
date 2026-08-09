@@ -34,7 +34,8 @@
   ],
   "documentTypes": {
     "Actor": {
-      "character": {}
+      "character": {},
+      "inimigo": {}
     },
     "Item": {
       "arma": {},
@@ -42,7 +43,10 @@
       "escudo": {},
       "magia": {},
       "habilidade": {},
-      "item": {}
+      "item": {},
+      "manobra": {},
+      "habilidadeInimigo": {},
+      "condicao": {}
     }
   },
   "packs": [
@@ -105,6 +109,17 @@
       "name": "conjuracoes",
       "label": "Conjurações",
       "path": "packs/conjuracoes",
+      "type": "Item",
+      "system": "odrite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "condicoes",
+      "label": "Condições",
+      "path": "packs/condicoes",
       "type": "Item",
       "system": "odrite",
       "ownership": {

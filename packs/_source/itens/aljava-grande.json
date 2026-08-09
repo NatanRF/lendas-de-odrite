@@ -7,7 +7,9 @@
   "system": {
     "quantidade": 1,
     "preco": 10,
-    "descricao": ""
+    "descricao": "",
+    "slotEspecial": "aljava",
+    "capacidade": 30
   },
   "effects": [],
   "folder": null,

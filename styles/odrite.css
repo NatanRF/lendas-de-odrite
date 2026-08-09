@@ -176,17 +176,25 @@
 }
 
 /* Body layout */
+.odrite .odrite-sheet-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
 .odrite .corpo-ficha,
 .odrite .corpo-item {
   display: flex;
   background: transparent;
-  min-height: 600px;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .odrite .corpo-item {
   flex-direction: column;
   padding: 14px;
-  min-height: auto;
+  overflow-y: auto;
 }
 
 .odrite .coluna-atributos {
@@ -244,6 +252,57 @@
   flex-direction: column;
 }
 
+/* Ficha de inimigo */
+.odrite .corpo-ficha-inimigo {
+  flex: 1;
+  min-height: 0;
+  padding: 12px 14px;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.odrite .cartao-vital-inimigo {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 8px 16px;
+}
+
+.odrite .colunas-inimigo {
+  display: flex;
+  flex: 1;
+  gap: 14px;
+  align-items: flex-start;
+  min-height: 0;
+}
+
+.odrite .colunas-inimigo .secao-manobras,
+.odrite .colunas-inimigo .secao-habilidades-inimigo {
+  flex: 1;
+  min-width: 0;
+}
+
+.odrite .secao-manobras > h3,
+.odrite .secao-habilidades-inimigo > h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--odrite-font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--odrite-gold);
+  border-bottom: 1px solid rgba(200, 162, 74, 0.3);
+  padding-bottom: 4px;
+  margin: 0 0 8px;
+}
+
+.odrite .secao-manobras .cartao,
+.odrite .secao-habilidades-inimigo .cartao {
+  margin-bottom: 10px;
+  min-width: unset;
+}
+
 .odrite .aba-conteudo {
   flex: 1;
   padding: 14px;
@@ -288,6 +347,11 @@
 
 .odrite .cartao .par input {
   width: 48px;
+  font-weight: bold;
+}
+
+.odrite .par-municao {
+  color: var(--odrite-gold);
   font-weight: bold;
 }
 
@@ -671,6 +735,7 @@
 .odrite .cartao.magia h4,
 .odrite .cartao.habilidade h4,
 .odrite .cartao.protecao h4,
+.odrite .cartao.recurso-equipavel h4,
 .odrite .arma-slot h4 {
   display: flex;
   align-items: center;
@@ -825,6 +890,34 @@ textarea[name="system.descricao"] {
   justify-content: space-between;
   font-size: 0.9rem;
   padding: 3px 0;
+}
+
+.odrite.chat-card.defesa-prompt .defesa-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.odrite.chat-card.defesa-prompt .defesa-botoes button {
+  background: linear-gradient(180deg, var(--odrite-red-bright) 0%, var(--odrite-red) 100%);
+  color: var(--odrite-gold);
+  border: 1px solid var(--odrite-border-strong);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+}
+
+.odrite.chat-card.defesa-prompt .defesa-botoes button:hover:not(:disabled) {
+  box-shadow: 0 0 10px rgba(212, 175, 106, 0.5);
+}
+
+.odrite.chat-card.defesa-prompt .defesa-botoes button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .odrite.chat-card .tag.sucesso { background: var(--odrite-success); color: #0d1f0e; }
@@ -1247,6 +1340,167 @@ textarea[name="system.descricao"] {
   align-self: center;
 }
 
+/* Sangramento / Ferimentos Permanentes */
+.odrite .aviso-sangramento {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.odrite .aviso-sangramento button {
+  background: linear-gradient(180deg, var(--odrite-red-bright) 0%, var(--odrite-red) 100%);
+  color: var(--odrite-gold);
+  border: 1px solid var(--odrite-border-strong);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.odrite .aviso-sangramento button:hover {
+  box-shadow: 0 0 8px rgba(212, 175, 106, 0.5);
+}
+
+.odrite .secao-ferimentos {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.odrite .secao-ferimentos h3 {
+  margin: 0 0 6px;
+  font-family: var(--odrite-font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--odrite-gold);
+  border-bottom: 1px solid rgba(200, 162, 74, 0.3);
+  padding-bottom: 4px;
+}
+
+.odrite .linha-ferimento {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  color: var(--odrite-text);
+}
+
+.odrite .linha-ferimento.linha-mutilacao {
+  color: var(--odrite-fail);
+  font-style: italic;
+}
+
+/* Conjuração: Maldição / Manutenção */
+.odrite .aviso-maldicao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.odrite .tag-manutencao {
+  background: var(--odrite-success);
+  color: #0d1f0e;
+}
+
+/* Condições ativas */
+.odrite .linha-condicoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.odrite .tag.condicao {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.odrite .tag.condicao.positiva {
+  background: var(--odrite-success);
+  color: #0d1f0e;
+}
+
+.odrite .tag.condicao.negativa {
+  background: var(--odrite-fail);
+  color: #2a0a06;
+}
+
+.odrite .tag.condicao a {
+  color: inherit;
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+.odrite .tag.condicao a:hover {
+  opacity: 1;
+}
+
+.odrite .linha-condicoes .criar-item {
+  align-self: center;
+}
+
+/* Lista de modificadores no card de rolagem */
+.odrite.chat-card .chat-card-modificadores {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 4px 0 0;
+  border-top: 1px solid rgba(200, 162, 74, 0.2);
+  font-size: 0.8rem;
+}
+
+.odrite.chat-card .chat-card-modificadores li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 0;
+  color: var(--odrite-text-dim);
+}
+
+.odrite.chat-card .chat-card-modificadores li.total {
+  margin-top: 2px;
+  padding-top: 3px;
+  border-top: 1px solid rgba(200, 162, 74, 0.2);
+  font-weight: bold;
+  color: var(--odrite-gold);
+}
+
+.odrite.chat-card.refazer-prompt .refazer-botoes,
+.odrite.chat-card.manutencao-prompt .manutencao-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.odrite.chat-card.refazer-prompt .refazer-botoes button,
+.odrite.chat-card.manutencao-prompt .manutencao-botoes button {
+  background: linear-gradient(180deg, var(--odrite-red-bright) 0%, var(--odrite-red) 100%);
+  color: var(--odrite-gold);
+  border: 1px solid var(--odrite-border-strong);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+}
+
+.odrite.chat-card.refazer-prompt .refazer-botoes button:hover:not(:disabled),
+.odrite.chat-card.manutencao-prompt .manutencao-botoes button:hover:not(:disabled) {
+  box-shadow: 0 0 10px rgba(212, 175, 106, 0.5);
+}
+
+.odrite.chat-card.refazer-prompt .refazer-botoes button:disabled,
+.odrite.chat-card.manutencao-prompt .manutencao-botoes button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .odrite.wizard .painel-experiencia {
   text-align: center;
   color: var(--odrite-gold);
@@ -1373,4 +1627,114 @@ textarea[name="system.descricao"] {
   color: var(--odrite-text-dim);
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+/* Contador de manobras no Rastreador de Combate (fora do escopo .odrite,
+   pois o tracker é a sidebar nativa do Foundry, não uma ficha do sistema) */
+.odrite-manobras-pips {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 8px;
+  flex: 0 0 auto;
+}
+
+.odrite-manobra-pip {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  min-width: 0;
+  min-height: 0;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  border: 1.5px solid #f4d999;
+  background: radial-gradient(circle at 35% 28%, #ffe6ab 0%, #eab654 40%, #b9862f 100%);
+  box-shadow: 0 0 5px rgba(255, 197, 87, 0.85), inset 0 0 2px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.odrite-manobra-pip:hover:not(:disabled) {
+  transform: scale(1.18);
+  box-shadow: 0 0 9px rgba(255, 197, 87, 1);
+}
+
+.odrite-manobra-pip.gasta {
+  background: radial-gradient(circle at 35% 28%, #3a2c19 0%, #1c140c 100%);
+  border-color: rgba(169, 136, 79, 0.4);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.85);
+  opacity: 0.6;
+}
+
+.odrite-manobra-pip:disabled {
+  cursor: default;
+}
+
+/* Painel flutuante de ações rápidas (seleção de token) */
+.odrite.quick-actions .odrite-quick-actions-body {
+  padding: 10px;
+}
+
+.odrite.quick-actions .qa-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(200, 162, 74, 0.3);
+  font-weight: bold;
+  color: var(--odrite-gold);
+}
+
+.odrite.quick-actions .qa-cabecalho img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--odrite-border-strong);
+  object-fit: cover;
+}
+
+.odrite.quick-actions .qa-grupo {
+  margin-bottom: 10px;
+}
+
+.odrite.quick-actions .qa-grupo h4 {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--odrite-text-dim);
+}
+
+.odrite.quick-actions .qa-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 5px 8px;
+  margin-bottom: 3px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+}
+
+.odrite.quick-actions button.qa-item.qa-rolavel {
+  cursor: pointer;
+  border: 1px solid var(--odrite-border);
+  background: var(--odrite-panel);
+  color: var(--odrite-text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.odrite.quick-actions button.qa-item.qa-rolavel:hover {
+  border-color: var(--odrite-border-strong);
+  box-shadow: 0 0 6px rgba(212, 175, 106, 0.5);
+}
+
+.odrite.quick-actions .qa-item.qa-nao-rolavel {
+  border: 1px solid transparent;
+  color: var(--odrite-text-dim);
+  font-style: italic;
 }

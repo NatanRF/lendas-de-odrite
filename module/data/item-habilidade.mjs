@@ -1,6 +1,6 @@
 import { ODRITE } from "../config.mjs";
 
-const { StringField, HTMLField } = foundry.data.fields;
+const { StringField, NumberField, BooleanField, HTMLField } = foundry.data.fields;
 
 export default class OdriteHabilidadeData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
@@ -22,7 +22,19 @@ export default class OdriteHabilidadeData extends foundry.abstract.TypeDataModel
         choices: Object.keys(ODRITE.categoriasHabilidade),
         initial: "lista"
       }),
-      descricao: new HTMLField()
+      descricao: new HTMLField(),
+
+      concedeCondicao: new BooleanField({ initial: false }),
+      condicaoNome: new StringField({ initial: "" }),
+      condicaoValor: new NumberField({ required: true, integer: true, initial: 2 }),
+      condicaoEscopo: new StringField({
+        required: true,
+        initial: "qualquer",
+        choices: ["qualquer", "ataque", "manobra", "conjuracao", "atributo"]
+      }),
+      condicaoAtributoEspecifico: new StringField({ initial: "", blank: true, choices: ["", ...Object.keys(ODRITE.atributos)] }),
+      condicaoDuracaoRodadas: new NumberField({ required: true, integer: true, min: 1, initial: 1 }),
+      condicaoPermanente: new BooleanField({ initial: false })
     };
   }
 }

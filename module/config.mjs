@@ -25,6 +25,11 @@ ODRITE.dadoTreinamentoPorNivel = {
 
 ODRITE.dadoRefinamentoMagia = 6;
 
+ODRITE.duracoesMagia = {
+  instantaneo: "ODRITE.Magia.DuracaoInstantaneo",
+  manutencao: "ODRITE.Magia.DuracaoManutencao"
+};
+
 ODRITE.tiposAtaque = {
   corpoACorpo: "ODRITE.TipoAtaque.CorpoACorpo",
   distancia: "ODRITE.TipoAtaque.Distancia"
