@@ -1,0 +1,13 @@
+# Compêndios LevelDB são binários e NÃO podem sofrer conversão de fim de
+# linha. O arquivo CURRENT guarda o nome do MANIFEST ativo; convertido para
+# CRLF, o LevelDB passa a procurar "MANIFEST-000035\r" e o compêndio não
+# abre — foi o que quebrou os pacotes das versões 0.3.0 e 0.4.0.
+packs/**/CURRENT binary
+packs/**/MANIFEST-* binary
+packs/**/*.ldb binary
+packs/**/*.log binary
+packs/**/LOG binary
+packs/**/LOG.old binary
+
+# Os fontes dos compêndios são JSON de verdade e seguem como texto.
+packs/_source/**/*.json text eol=lf
