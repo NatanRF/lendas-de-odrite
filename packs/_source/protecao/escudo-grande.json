@@ -1,11 +1,11 @@
 {
   "_id": "Ji9bYNcJoX2un0Gy",
   "_key": "!items!Ji9bYNcJoX2un0Gy",
-  "name": "Escudo Pesado",
+  "name": "Escudo Grande",
   "type": "escudo",
   "img": "icons/svg/shield.svg",
   "system": {
-    "tipo": "Escudo Pesado",
+    "tipo": "Escudo Grande",
     "preco": 300,
     "forcaMinima": 8,
     "penalidade": 4,

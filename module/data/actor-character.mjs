@@ -50,6 +50,7 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
       ferimentosPermanentes: new ArrayField(new StringField()),
       mutilacoes: new ArrayField(new StringField()),
       transformadoMaldicao: new BooleanField({ initial: false }),
+      morto: new BooleanField({ initial: false }),
 
       fonteArcana: new StringField({ initial: "", blank: true, choices: ["", ...ODRITE.fontesArcanas] }),
 
@@ -84,6 +85,10 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
 
     this.vitalidade.maxEfetivo = Math.max(0, this.vitalidade.max - (this.vitalidade.reducaoMaxima ?? 0));
     this.vitalidade.value = Math.min(this.vitalidade.value, this.vitalidade.maxEfetivo);
+
+    // Estado derivado: a 0 de Vitalidade o personagem está inconsciente e faz
+    // Rolagens de Morte; a morte definitiva é o único estado gravado.
+    this.inconsciente = this.vitalidade.value <= 0 && !this.morto;
 
     this.fadiga.limite = Math.max(0, 12 - (this.fadiga.reducaoLimite ?? 0));
     this.fadiga.value = Math.min(this.fadiga.value, this.fadiga.limite);

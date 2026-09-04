@@ -30,7 +30,7 @@ function formatarSinal(valor) {
  * @param {boolean} [options.testeDeAcerto] Se true, marca resultado natural 1 no d20 como
  *   Acerto Absoluto e resultado natural 20 como Falha Absoluta.
  * @param {Actor} options.actor
- * @returns {Promise<{chatMessage: ChatMessage, sucesso: boolean, acertoAbsoluto: boolean, falhaAbsoluta: boolean, acertou: boolean, resultadoSecundario: number|null}>}
+ * @returns {Promise<{chatMessage: ChatMessage, sucesso: boolean, acertoAbsoluto: boolean, falhaAbsoluta: boolean, acertou: boolean, resultadoPrincipal: number, resultadoSecundario: number|null}>}
  */
 export async function rolarTesteRollUnder({
   titulo,
@@ -61,9 +61,15 @@ export async function rolarTesteRollUnder({
 
   const rollPrincipal = await new Roll("1d20").evaluate();
   const resultadoPrincipal = rollPrincipal.total;
-  const sucesso = resultadoPrincipal <= alvoEfetivo;
+
+  // Sussurros do Pacto (Oferta 10): sucesso automático no próximo teste,
+  // qualquer que seja ele — o dado ainda é rolado e exibido.
+  const garantido = !!actor?.getFlag("odrite", "sucessoAutomaticoProximoTeste");
+  if (garantido) await actor.unsetFlag("odrite", "sucessoAutomaticoProximoTeste");
+
+  const sucesso = garantido || resultadoPrincipal <= alvoEfetivo;
   const acertoAbsoluto = testeDeAcerto && resultadoPrincipal === 1;
-  const falhaAbsoluta = testeDeAcerto && resultadoPrincipal === 20;
+  const falhaAbsoluta = testeDeAcerto && resultadoPrincipal === 20 && !garantido;
 
   const rolls = [rollPrincipal];
   let rollSecundario = null;
@@ -105,6 +111,7 @@ export async function rolarTesteRollUnder({
     acertoAbsoluto,
     falhaAbsoluta,
     acertou,
+    resultadoPrincipal,
     resultadoSecundario: rollSecundario?.total ?? null
   };
 }

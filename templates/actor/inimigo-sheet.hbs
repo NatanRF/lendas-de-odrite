@@ -11,7 +11,7 @@
     <div class="linha-condicoes">
       {{#each condicoes as |condicao|}}
       <span class="tag condicao {{#if condicao.negativa}}negativa{{else}}positiva{{/if}}" data-item-id="{{condicao.id}}">
-        {{condicao.nome}} ({{condicao.valorFormatado}}){{#unless condicao.permanente}} · {{condicao.duracaoRodadas}}r{{/unless}}
+        {{condicao.nome}}{{#if condicao.valor}} ({{condicao.valorFormatado}}){{/if}}{{#unless condicao.permanente}} · {{condicao.duracaoRodadas}}r{{/unless}}
         <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a>
         <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a>
       </span>

@@ -11,7 +11,12 @@ export default class OdriteItemData extends foundry.abstract.TypeDataModel {
         blank: true,
         choices: ["", "aljava", "cantil", "algibeira"]
       }),
-      capacidade: new NumberField({ required: true, integer: true, min: 0, initial: 0 })
+      capacidade: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
+
+      // Kits consumidos por mecânicas específicas. "potencia" é a Vitalidade
+      // adicional que um Kit Medicinal concede num Descanso Completo.
+      funcao: new StringField({ initial: "", blank: true, choices: ["", "kitMedicinal", "kitReparo"] }),
+      potencia: new NumberField({ required: true, integer: true, min: 0, initial: 0 })
     };
   }
 }

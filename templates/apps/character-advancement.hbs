@@ -15,18 +15,6 @@
       </button>
     </div>
 
-    <div class="linha-compra linha-compra-coluna">
-      <span class="nome-compra">{{localize "ODRITE.Evolucao.Atributo"}}</span>
-      <div class="opcoes-atributo-compra">
-        {{#each atributos as |atrib|}}
-        <button type="button" class="opcao-atributo-compra" data-action="comprarAtributo" data-atributo="{{atrib.chave}}"
-          {{#if (or atrib.noMaximo (lt ../experiencia ../custos.atributo))}}disabled{{/if}}>
-          {{atrib.label}} ({{atrib.valor}})
-        </button>
-        {{/each}}
-      </div>
-    </div>
-
     <h3>{{localize "ODRITE.Evolucao.Secao2"}}</h3>
 
     <div class="linha-compra linha-compra-coluna">

@@ -32,6 +32,14 @@ export default class OdriteItemSheet extends HandlebarsApplicationMixin(ItemShee
       chave,
       label: game.i18n.localize(label)
     }));
+    context.condicoesNomeadas = Object.entries(ODRITE.condicoesNomeadas).map(([chave, label]) => ({
+      chave,
+      label: game.i18n.localize(label)
+    }));
+    context.acoesLivres = Object.entries(ODRITE.acoesLivres).map(([chave, label]) => ({
+      chave,
+      label: game.i18n.localize(label)
+    }));
     return context;
   }
 

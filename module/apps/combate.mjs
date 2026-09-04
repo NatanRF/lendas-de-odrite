@@ -1,4 +1,5 @@
 import { aplicarDanoPendente, resolverDefesa } from "../helpers/combate.mjs";
+import { processarFimTurno, processarInicioTurno } from "../helpers/turno.mjs";
 
 Hooks.on("createChatMessage", (mensagem) => {
   if (!game.user.isGM) return;
@@ -6,30 +7,49 @@ Hooks.on("createChatMessage", (mensagem) => {
   aplicarDanoPendente(mensagem);
 });
 
+/**
+ * Dentro dos hooks de virada, o documento ainda não refletiu a mudança:
+ * `combat.combatant` é o combatente cujo turno está TERMINANDO e
+ * `combat.turns[updateData.turn]` é o que está COMEÇANDO.
+ *
+ * `combat.previous` não serve aqui — ele guarda o estado anterior à
+ * atualização passada, ficando um turno inteiro atrasado.
+ */
+function combatentesDaVirada(combat, updateData) {
+  return { encerrando: combat.combatant ?? null, iniciando: combat.turns[updateData?.turn ?? 0] ?? null };
+}
+
 Hooks.on("combatTurn", async (combat, updateData, updateOptions) => {
   if (!game.user.isGM) return;
 
-  const anteriorId = combat.previous?.combatantId;
-  const anterior = anteriorId ? combat.combatants.get(anteriorId) : null;
-  const sangrando = anterior?.getFlag("odrite", "sangrando");
-  if (sangrando?.ativo && anterior.actor) {
-    const alvo = anterior.actor;
-    await alvo.update({ "system.vitalidade.value": Math.max(0, alvo.system.vitalidade.value - 1) });
-    ChatMessage.create({
-      content: `<p>${game.i18n.format("ODRITE.Combate.SangramentoTick", { alvo: alvo.name })}</p>`,
-      speaker: ChatMessage.getSpeaker({ actor: alvo })
-    });
-  }
+  const { encerrando, iniciando: atual } = combatentesDaVirada(combat, updateData);
+  if (encerrando) await processarFimTurno(encerrando);
 
-  // combat.combatant ainda reflete o combatente ANTERIOR neste ponto do
-  // hook — o novo turno é lido via updateData.turn, não pela propriedade.
-  const atual = combat.turns[updateData.turn] ?? combat.combatant;
   if (atual?.getFlag("odrite", "atrasado")) {
     await atual.unsetFlag("odrite", "atrasado");
     ChatMessage.create({
       content: `<p>${game.i18n.format("ODRITE.Combate.AtrasadoAviso", { alvo: atual.actor?.name ?? atual.name })}</p>`
     });
   }
+
+  if (atual) await processarInicioTurno(atual);
+});
+
+// combatTurn, combatRound e combatStart são mutuamente exclusivos no Foundry:
+// a virada de rodada dispara só combatRound, e o início do combate só
+// combatStart. Os dois precisam cobrir o mesmo par fim/início de turno.
+Hooks.on("combatStart", async (combat, updateData) => {
+  if (!game.user.isGM) return;
+  const primeiro = combat.turns[updateData?.turn ?? 0];
+  if (primeiro) await processarInicioTurno(primeiro);
+});
+
+Hooks.on("combatRound", async (combat, updateData) => {
+  if (!game.user.isGM) return;
+
+  const { encerrando, iniciando } = combatentesDaVirada(combat, updateData);
+  if (encerrando) await processarFimTurno(encerrando);
+  if (iniciando) await processarInicioTurno(iniciando);
 });
 
 Hooks.on("renderChatMessageHTML", (mensagem, html) => {

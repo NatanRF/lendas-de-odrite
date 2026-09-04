@@ -1,0 +1,34 @@
+{
+  "_id": "OdrCondSangrando01",
+  "_key": "!items!OdrCondSangrando01",
+  "name": "Sangrando",
+  "type": "condicao",
+  "img": "icons/svg/blood.svg",
+  "system": {
+    "valor": 0,
+    "escopo": "qualquer",
+    "atributoEspecifico": "",
+    "duracaoRodadas": 1,
+    "permanente": true,
+    "chave": "sangrando",
+    "intensidade": 1,
+    "atributoEscape": "",
+    "removeAoSofrerDano": false,
+    "descricao": "<p>Ao final de cada um de seus turnos, o indivíduo perde 1 ponto de Vitalidade. O alvo pode usar 2 Manobras de Combate para estancar o sangramento, ou 1 manobra e 1 Kit Medicinal. Se o efeito for aplicado em um alvo que já está sangrando, o valor perdido aumenta em 1 até o limite de 5 por turno.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.3.0",
+    "coreVersion": "14",
+    "createdTime": 1788485105481,
+    "modifiedTime": 1788485105481,
+    "lastModifiedBy": null
+  }
+}

@@ -15,6 +15,7 @@ import OdriteCharacterSheet from "./sheets/actor-sheet.mjs";
 import OdriteInimigoSheet from "./sheets/inimigo-sheet.mjs";
 import OdriteItemSheet from "./sheets/item-sheet.mjs";
 import OdriteCharacterWizard from "./apps/character-wizard.mjs";
+import { emboscarSelecao } from "./helpers/emboscada.mjs";
 import "./apps/combat-tracker.mjs";
 import "./apps/quick-actions.mjs";
 import "./apps/combate.mjs";
@@ -24,7 +25,9 @@ import "./apps/condicoes.mjs";
 Hooks.once("init", () => {
   console.log("Lendas de Odrite | Inicializando sistema");
 
-  game.odrite = { ODRITE };
+  // emboscarSelecao fica exposta para o mestre chamar por macro: os tokens
+  // selecionados emboscam os tokens marcados como alvo.
+  game.odrite = { ODRITE, emboscarSelecao };
   CONFIG.ODRITE = ODRITE;
 
   CONFIG.Actor.documentClass = OdriteActor;

@@ -3,10 +3,9 @@
     "SheetPersonagem": "Ficha de Personagem - Lendas de Odrite",
     "SheetInimigo": "Ficha de Inimigo - Lendas de Odrite",
     "SheetItem": "Item - Lendas de Odrite",
-
     "Nome": "Nome",
-    "Raca": "Raça",
-    "Classe": "Classe",
+    "Raca": "Povo",
+    "Classe": "Especialização",
     "Nivel": "Nível",
     "Experiencia": "Experiência",
     "Deslocamento": "Deslocamento",
@@ -22,7 +21,6 @@
     },
     "ManobraDisponivel": "Manobra disponível",
     "ManobraGasta": "Manobra usada",
-
     "QuickActions": {
       "Titulo": "Ações Rápidas"
     },
@@ -69,7 +67,6 @@
       "Titulo": "Slot Especial",
       "Nenhum": "Nenhum (Mochila)"
     },
-
     "Atributo": {
       "Forca": "Força",
       "Agilidade": "Agilidade",
@@ -80,47 +77,41 @@
       "Habilidade": "Habilidade",
       "Conjuracao": "Conjuração"
     },
-
     "TipoAtaque": {
       "Titulo": "Tipo de Ataque",
       "CorpoACorpo": "Corpo a Corpo",
       "Distancia": "À Distância"
     },
-
     "TipoHabilidade": {
       "Titulo": "Tipo",
       "Passiva": "Passiva",
       "Ativa": "Ativa",
       "Conjuracao": "Conjuração"
     },
-
     "CategoriaHabilidade": {
       "Titulo": "Categoria",
       "Basica": "Básica",
       "Lista": "Lista de Habilidades"
     },
-
     "OrigemHabilidade": {
       "Titulo": "Origem",
-      "Classe": "Classe",
-      "Raca": "Raça"
+      "Classe": "Especialização",
+      "Raca": "Povo"
     },
-
     "EstagioFadiga": {
       "normal": "Normal",
       "penalidade2": "Penalidade -2",
       "penalidade4": "Penalidade -4",
       "exaustao": "Liminar de Exaustão"
     },
-
     "Magia": {
       "Caminho": "Caminho de Conjuração",
       "Duracao": "Duração",
       "DuracaoInstantaneo": "Instantâneo",
       "DuracaoManutencao": "Manutenção",
-      "Alcance": "Alcance"
+      "Alcance": "Alcance",
+      "DuracaoRodada": "Rodada"
     },
-
     "Proficiencias": {
       "Titulo": "Proficiências",
       "Idiomas": "Idiomas",
@@ -128,20 +119,17 @@
       "Armaduras": "Armaduras",
       "Escudos": "Escudos"
     },
-
     "Recursos": {
       "Titulo": "Recursos",
       "Drakeons": "Drakeons",
       "Municao": "Munição"
     },
-
     "Aba": {
       "Principal": "Principal",
       "Magias": "Conjurações",
       "Habilidades": "Habilidades",
       "Biografia": "Anotações"
     },
-
     "NovoItem": {
       "arma": "Nova Arma",
       "armadura": "Nova Armadura",
@@ -156,7 +144,6 @@
       "algibeira": "Nova Algibeira",
       "condicao": "Nova Condição"
     },
-
     "Aviso": {
       "MaximoArmas": "O personagem já está portando o máximo de 2 armas.",
       "SelecioneAlvo": "Selecione um alvo antes de atacar.",
@@ -164,9 +151,14 @@
       "SemMunicao": "Não há munição disponível para usar esta arma.",
       "ArmaDescarregada": "{arma} precisa ser recarregada antes de atacar novamente.",
       "ArmaJaCarregada": "Essa arma já está carregada.",
-      "SemManobraRecarregar": "Não há manobras de combate disponíveis para recarregar."
+      "SemManobraRecarregar": "Não há manobras de combate disponíveis para recarregar.",
+      "Imobilizado": "{nome} está Imobilizado e só pode usar Manobras de Combate para tentar se libertar.",
+      "SemManobrasDisponiveis": "Não há Manobras de Combate disponíveis nesta rodada.",
+      "ConjurarBloqueado": "O eco da última conjuração impede {nome} de conjurar nesta rodada.",
+      "CaminhoBloqueado": "As conjurações do Caminho {caminho} estão bloqueadas.",
+      "Surpreendido": "{nome} foi surpreendido e não pode usar Manobras de Combate nesta rodada.",
+      "EmboscadaSemLados": "Selecione os tokens que emboscam e marque os alvos da emboscada."
     },
-
     "Defesa": {
       "Titulo": "Ataque!",
       "Prompt": "{atacante} ataca {alvo}!",
@@ -181,17 +173,18 @@
       "NaoDefender": "Não Defender",
       "ResultadoBloquear": "{alvo} bloqueia o ataque com o escudo e anula todo o dano (Durabilidade -{durabilidade}).",
       "ResultadoApararSucesso": "{alvo} apara o ataque e anula todo o dano (Durabilidade da arma -{durabilidade}), contra-atacando imediatamente!",
-      "ResultadoApararFalha": "{alvo} tenta aparar mas falha, sofrendo {dano} de dano.",
+      "ResultadoApararQuebrou": "{alvo} apara o ataque e anula todo o dano, mas {arma} quebra no processo (Durabilidade -{durabilidade}) e não há contra-ataque.",
       "ResultadoEsquivarSucesso": "{alvo} esquiva do ataque e não sofre dano.",
       "ResultadoEsquivarFalha": "{alvo} tenta esquivar mas falha, sofrendo {dano} de dano.",
       "ResultadoMitigar": "{alvo} mitiga {mitigado} de dano com a armadura, sofrendo {dano} de dano.",
+      "ResultadoMitigarSemArmadura": "A armadura de {alvo} não tem Durabilidade para mitigar e {alvo} sofre {dano} de dano.",
       "ResultadoManobraDefensiva": "{alvo} usa {manobra} e anula todo o dano.",
       "ResultadoNenhuma": "{alvo} não se defende e sofre {dano} de dano.",
       "PenalidadeDistancia": "Distância"
     },
-
     "Combate": {
       "FadigaRepeticao": "{nome} repete a mesma manobra nesta rodada e sofre 1 Ponto de Fadiga.",
+      "FadigaHabilidade": "{nome} sofre {fadiga} Ponto(s) de Fadiga pelo uso da habilidade.",
       "FalhaAbsolutaResultado": "{nome} sofre uma Falha Absoluta e não pode usar mais manobras de combate nesta rodada.",
       "TesteResistenciaFerimento": "Resistência (Ferimento Permanente)",
       "TesteResistenciaFatal": "Resistência (Acerto Absoluto Fatal)",
@@ -204,56 +197,56 @@
       "DuasManobras": "Usar 2 Manobras",
       "ManobraEKit": "Usar 1 Manobra + Kit Medicinal",
       "SangramentoEstancado": "{alvo} estanca o sangramento.",
-      "SangramentoTick": "{alvo} sangra e perde 1 ponto de Vitalidade.",
+      "SangramentoTick": "{alvo} sangra e perde {valor} ponto(s) de Vitalidade.",
       "AtrasadoAviso": "{alvo} foi atrasado e não pode usar a manobra Movimentar neste turno.",
       "Debilitado": "Debilitado",
       "Recarregar": "Recarregar",
       "Carregada": "Carregada",
       "ArmaRecarregada": "{nome} recarrega {arma}.",
-
+      "BeneficioTreinamento": "Dado de Treinamento (1)",
+      "BeneficioPergunta": "Você tirou 1 no Dado de Treinamento. Escolha o benefício:",
+      "BeneficioPropriedade": "Aplicar Propriedade ({propriedade})",
+      "BeneficioNegarDefesa": "Impedir Manobras Defensivas do alvo",
+      "RefazerAtaqueTitulo": "Dado de Treinamento (1)",
+      "RefazerAtaquePergunta": "Você falhou no teste de acerto, mas tirou 1 no Dado de Treinamento. Deseja refazer a rolagem?",
+      "RefazerAtaque": "Refazer Rolagem",
+      "AceitarFalhaAtaque": "Aceitar a Falha",
       "Propriedade": {
-        "SangrarAplicado": "{alvo} começa a sangrar!",
         "MutilarAplicado": "O golpe mutila o alvo, causando {dano} de dano adicional!",
-        "DerrubarAplicado": "{alvo} é derrubado e fica Caído!",
         "Quebrar": "Quebrar",
         "EscolherItem": "Escolha qual item de {alvo} será danificado:",
         "QuebrarAplicado": "{item} é danificado e perde {durabilidade} de Durabilidade.",
         "DebilitarAplicado": "{alvo} fica debilitado: a próxima rolagem será Muito Difícil (-4).",
         "AtrasarAplicado": "{alvo} fica atrasado: não poderá Movimentar no próximo turno.",
         "Generica": "Propriedade aplicada: {propriedade} (aplique o efeito manualmente)."
-      }
+      },
+      "AcaoLivreUsada": "{nome} usa {acao} sem contabilizar em suas Manobras de Combate."
     },
-
     "Ferimento": {
       "Titulo": "Ferimentos Permanentes",
       "Leve": "Ferimento permanente leve: limite de Fadiga reduzido em 1.",
       "Atributo": "Ferimento permanente grave: atributo {atributo} reduzido em 2.",
       "Anuncio": "{alvo} sofre um ferimento permanente: {descricao}"
     },
-
     "Mutilacao": {
       "TraumaColuna": "Mutilação — Trauma na coluna vertebral: capacidade de carga reduzida pela metade.",
       "MaoDecepada": "Mutilação — Mão decepada: não pode realizar tarefas que dependem das duas mãos (ainda pode usar um escudo adaptado).",
       "BracoDecepado": "Mutilação — Braço decepado: não pode realizar tarefas que dependem da mão perdida, das duas mãos, ou de um escudo.",
       "PeDecepado": "Mutilação — Pé ou perna decepada: precisa de prótese para se mover; Deslocamento reduzido pela metade permanentemente."
     },
-
     "Conjuracao": {
       "ManutencaoAtiva": "Manutenção Ativa",
       "FacilLabel": "Fácil (Refinamento)",
       "TransformadoMaldicaoTag": "Transformado em uma Maldição",
       "SucessoGarantidoUsado": "{nome} conjura sem precisar rolar: o próximo Teste de Conjuração já estava garantido.",
-      "RefinamentoSucessoFuturo": "O Dado de Refinamento veio 1: a próxima conjuração de {nome} terá sucesso garantido, sem necessidade de rolagem.",
-      "FacilConcedido": "Acerto Absoluto! O próximo Teste de Conjuração de {nome} recebe +2 (Fácil).",
-      "FalhaPacto": "{nome} falha na conjuração e perde 1 Ponto de Vitalidade, conforme o Pacto Amaldiçoado.",
-      "FalhaBencao": "{nome} falha na conjuração e recebe 1 Ponto de Fadiga.",
+      "FalhaPacto": "{nome} falha na conjuração e perde {perda} Pontos de Vitalidade, conforme o Pacto Amaldiçoado.",
+      "FalhaBencao": "{nome} falha na conjuração e recebe {perda} Pontos de Fadiga.",
       "TesteResistenciaBencao": "Resistência (Falha Absoluta — Bênção Divina)",
-      "ResistenciaBencaoSucesso": "{nome} resiste ao castigo divino, mas seus Pontos de Vitalidade caem a 0.",
-      "MorteBencao": "{nome} não resiste ao castigo divino: todos os atributos caem 2 pontos e, com algum deles chegando a 0, {nome} morre.",
-      "AtributosReduzidosBencao": "{nome} não resiste ao castigo divino: todos os atributos caem 2 pontos.",
+      "ResistenciaBencaoSucesso": "{nome} resiste ao castigo divino, mas perde {perda} pontos de Conjuração permanentemente.",
+      "ConjuracaoZeradaBencao": "A Conjuração de {nome} é reduzida a 0 pelo castigo divino e {nome} morre.",
+      "MorteBencao": "{nome} não resiste ao castigo divino: o corpo mortal não suporta a Essência e {nome} morre no processo.",
       "TesteMentePacto": "Mente (Falha Absoluta — Pacto Amaldiçoado)",
-      "MenteSucessoPacto": "{nome} resiste ao preço do Pacto, mas seus Pontos de Vitalidade caem a 1.",
-      "PerdaPermanentePacto": "{nome} não resiste ao preço do Pacto e perde {perda} Pontos de Vitalidade máxima permanentemente.",
+      "MenteSucessoPacto": "{nome} resiste ao preço do Pacto, mas perde {perda} Pontos de Vitalidade.",
       "TransformaMaldicao": "{nome} perde totalmente o controle e se transforma em uma Maldição!",
       "BonusDanoPacto": "O Pacto Amaldiçoado concede +{dano} de dano à conjuração.",
       "ManutencaoAtivada": "{magia} de {nome} entra em Manutenção.",
@@ -266,9 +259,25 @@
       "RefezRolagem": "{nome} refaz a rolagem da conjuração.",
       "ManutencaoTitulo": "Manutenção de Conjurações",
       "ManutencaoPrompt": "{nome} precisa testar Conjuração para manter cada efeito ativo:",
-      "TesteManutencao": "Manutenção: {magia}"
+      "TesteManutencao": "Manutenção: {magia}",
+      "RodadaAtiva": "Rodada",
+      "RodadaAtivada": "{nome} ativa {magia}; o efeito dura até o fim desta rodada.",
+      "RodadaEncerrada": "Os efeitos de duração Rodada de {nome} se encerram: {magias}."
     },
-
+    "Ressonancia": {
+      "1": "Você tem um sucesso garantido, sem necessidade de rolagem, em seu próximo teste de Conjuração.",
+      "2": "Até o fim deste combate, usar a manobra Conjurar não custa Ponto de Fadiga ao ser repetida na mesma rodada.",
+      "3": "O efeito numérico da conjuração, dano ou cura, é dobrado.",
+      "4": "A conjuração se repete automaticamente no início do seu próximo turno, no mesmo alvo, sem novo teste.",
+      "5": "A conjuração também afeta um segundo alvo no alcance.",
+      "6": "Recupera d4 Pontos de Vitalidade.",
+      "7": "Um efeito de Manutenção à sua escolha não precisa de teste ao fim dessa rodada.",
+      "8": "Seu próximo teste de Conjuração é considerado Fácil (+2).",
+      "9": "Pode usar a manobra Conjurar mais uma vez nesta rodada sem gastar uma Manobra de Combate.",
+      "10": "Remove 1 Ponto de Fadiga.",
+      "Titulo": "Ressonância da Conjuração",
+      "DanoDobrado": "A Ressonância dobra o efeito: {dano} de dano no total."
+    },
     "Condicao": {
       "Titulo": "Condição",
       "Concede": "Concede Condição",
@@ -289,9 +298,33 @@
         "Alvo": "Alvo"
       },
       "Aplicada": "{nome} recebe a condição {condicao} ({valor}).",
-      "Expirou": "A condição {condicao} de {nome} expirou."
+      "Expirou": "A condição {condicao} de {nome} expirou.",
+      "Chave": "Condição do Livro",
+      "ChaveNenhuma": "— (modificador comum)",
+      "Intensidade": "Vitalidade perdida por turno",
+      "AtributoEscape": "Atributo para se libertar",
+      "RemoveAoSofrerDano": "Termina ao sofrer dano",
+      "Nomeada": {
+        "Sangrando": "Sangrando",
+        "Caido": "Caído",
+        "Envenenado": "Envenenado",
+        "Imobilizado": "Imobilizado"
+      },
+      "NomeadaAplicada": "{alvo} fica com a condição {condicao}.",
+      "SangramentoAgravado": "O sangramento de {alvo} se agrava: agora perde {valor} pontos de Vitalidade por turno.",
+      "AlvoCaido": "Alvo Caído (Muito Fácil)",
+      "AlvoImobilizado": "Alvo Imobilizado (Fácil)",
+      "AcertoAutomatico": "{atacante} acerta {alvo} automaticamente — um alvo Imobilizado não pode ser errado em combate adjacente.",
+      "ImobilizadoRompido": "{alvo} sofre dano e se liberta da imobilização.",
+      "Levantar": "Levantar-se",
+      "Levantou": "{nome} gasta 1 Manobra de Combate e se reergue.",
+      "Libertar": "Libertar-se",
+      "TesteLibertar": "Teste para se libertar da imobilização",
+      "LibertarSucesso": "{nome} se liberta da imobilização.",
+      "LibertarFalha": "{nome} tenta se libertar, mas continua Imobilizado.",
+      "TesteEnvenenado": "Teste de Resistência contra veneno",
+      "EnvenenadoFadiga": "O veneno consome {nome}, que recebe 1 Ponto de Fadiga."
     },
-
     "Rolagem": {
       "TesteAtributo": "Teste de {atributo}",
       "TesteAtaque": "Ataque: {arma}",
@@ -303,7 +336,6 @@
       "ValorBase": "Valor Base",
       "TotalEfetivo": "Total"
     },
-
     "Assistente": {
       "Titulo": "Criação de Personagem",
       "Pergunta": "Como você quer preencher a ficha deste personagem?",
@@ -319,10 +351,10 @@
       "AtributoPrincipal": "Atributo Principal",
       "Principal": "principal",
       "ValorTravado": "14 (travado pelo Atributo Principal)",
-      "DicaAtributos": "Distribua os valores 12, 10, 10, 8, 8, 6, 4 entre os demais atributos — o Atributo Principal da classe já recebe 14 automaticamente.",
+      "DicaAtributos": "Distribua os valores 12, 10, 10, 8, 8, 6, 4 entre os demais atributos — o Atributo Principal da especialização já recebe 14 automaticamente.",
       "MaisIdiomaPorMente": "+1 idioma à escolha para cada ponto de Mente acima de",
       "EscolhaCategorias": "Escolha as categorias de arma",
-      "EscolhaHabilidadeLista": "Escolha da lista de habilidades da classe",
+      "EscolhaHabilidadeLista": "Escolha da lista de habilidades da especialização",
       "Devocao": "Devoção",
       "EscolhaCaminhos": "Escolha os Caminhos de Conjuração",
       "EquipamentoEscolhido": "Equipamento escolhido",
@@ -338,23 +370,21 @@
       "LimiteHabilidades": "Você já escolheu o máximo de {limite} habilidade(s) da lista.",
       "LimiteCaminhos": "Você pode escolher no máximo 3 Caminhos de Conjuração.",
       "LimiteConjuracoes": "Você já escolheu o máximo de {limite} conjuração(ões) para este caminho.",
-
       "Etapa": {
-        "Raca": "Raça",
+        "Raca": "Povo",
         "Atributos": "Atributos",
-        "Classe": "Classe",
+        "Classe": "Especialização",
         "Conjuracao": "Conjuração",
         "Equipamento": "Equipamento",
         "Revisao": "Revisão"
       },
-
       "Aviso": {
-        "EscolhaRaca": "Escolha uma raça antes de continuar.",
-        "EscolhaBonus": "Escolha o atributo que recebe o bônus racial antes de continuar.",
+        "EscolhaRaca": "Escolha um povo antes de continuar.",
+        "EscolhaBonus": "Escolha o atributo que recebe o bônus do povo antes de continuar.",
         "AtributosIncompletos": "Distribua todos os 8 valores entre os atributos antes de continuar.",
-        "EscolhaClasse": "Escolha uma classe antes de continuar.",
-        "EscolhaAtributoPrincipal": "Escolha o Atributo Principal da classe antes de continuar.",
-        "CategoriasIncompletas": "Escolha todas as categorias de arma exigidas pela classe.",
+        "EscolhaClasse": "Escolha uma especialização antes de continuar.",
+        "EscolhaAtributoPrincipal": "Escolha o Atributo Principal da especialização antes de continuar.",
+        "CategoriasIncompletas": "Escolha todas as categorias de arma exigidas pela especialização.",
         "HabilidadesIncompletas": "Escolha a(s) habilidade(s) da lista antes de continuar.",
         "EscolhaCaminho": "Escolha ao menos 1 Caminho de Conjuração antes de continuar.",
         "ConjuracoesIncompletas": "Escolha todas as conjurações exigidas para os caminhos escolhidos.",
@@ -364,7 +394,6 @@
         "DinheiroInsuficiente": "Você não tem Drakeons suficientes para comprar esse item."
       }
     },
-
     "Evolucao": {
       "Titulo": "Evolução",
       "Comprar": "Comprar",
@@ -372,7 +401,6 @@
       "Secao2": "2 Pontos de Experiência",
       "Secao3": "3 Pontos de Experiência",
       "Vitalidade": "+1 Ponto de Vitalidade",
-      "Atributo": "+1 Ponto de Atributo (máximo 14)",
       "Conjuracao": "1 Conjuração Adicional",
       "Habilidade": "1 Habilidade de Especialização Adicional",
       "CategoriaArma": "Proficiência com 1 Categoria de Arma Adicional",
@@ -383,16 +411,153 @@
       "Protecao": "Proficiência com 1 Categoria de Escudo ou Armadura Adicional",
       "SemCaminhos": "Este personagem ainda não conhece nenhum Caminho de Conjuração.",
       "TudoComprado": "Nada disponível para comprar aqui no momento.",
-
       "Aviso": {
         "SemExperiencia": "Pontos de Experiência insuficientes para essa compra.",
-        "AtributoNoMaximo": "Esse atributo já está no valor máximo (14).",
         "TreinamentoNoMaximo": "O nível de treinamento já está no máximo (5).",
         "DigiteIdioma": "Digite o nome do idioma antes de comprar."
       }
+    },
+    "Morte": {
+      "Tag": "Morto",
+      "InconscienteTag": "Inconsciente",
+      "RolagemTitulo": "Rolagem de Morte",
+      "RolagemSucesso": "{nome} recobra a consciência com 1 Ponto de Vitalidade.",
+      "RolagemBloqueada": "{nome} estabilizaria, mas o Limiar de Exaustão o mantém inconsciente.",
+      "RolagemNada": "{nome} continua inconsciente.",
+      "RolagemFalha": "{nome} morre definitivamente.",
+      "AtributoZerado": "{nome} tem {atributo} reduzido a 0 e morre."
+    },
+    "Exaustao": {
+      "Dreno": "No Limiar de Exaustão, {nome} perde 1 Ponto de Vitalidade.",
+      "DrenoInconsciente": "A exaustão consome {nome}, que cai inconsciente."
+    },
+    "Ecos": {
+      "Titulo": "Ecos da Conjuração",
+      "Limpar": "Encerrar este efeito",
+      "CaminhoDesconhecido": "sem Caminho definido",
+      "TestePatrono": "Teste de Mente diante do patrono",
+      "VeuInsanidade": "Véu da Insanidade (Estágio 1)",
+      "VeuContraido": "{nome} não suporta a voz do patrono e contrai o Véu da Insanidade no Estágio 1.",
+      "EfeitoInvertidoAplicado": "O efeito se aplica ao contrário: {alvo} recupera {valor} pontos de Vitalidade.",
+      "CustoFadigaCobrado": "O eco ainda ressoa: {nome} recebe 1 Ponto de Fadiga por conjurar.",
+      "CustoVitalidadeCobrado": "O eco ainda ressoa: {nome} perde 2 Pontos de Vitalidade por conjurar.",
+      "FalhaAutomaticaAplicada": "A Essência não responde a {nome}: o teste falha automaticamente.",
+      "Ativo": {
+        "conjurarCustaFadiga": "Conjurar custa 1 Fadiga",
+        "conjurarCustaVitalidade": "Conjurar custa 2 Vitalidade",
+        "conjuracaoFalhaAutomatica": "Conjuração falha automaticamente",
+        "semManobrasDefensivas": "Sem Manobras Defensivas",
+        "caminhoBloqueado": "Caminho bloqueado: {caminho}",
+        "descansoSempreDesconfortavel": "Descansos contam como desconfortáveis"
+      },
+      "Bencao": {
+        "1": "Recebe 1 Ponto de Fadiga.",
+        "2": "Não pode usar a manobra Conjurar até o fim da próxima rodada.",
+        "3": "Você age por último na próxima rodada, qualquer que seja sua Agilidade.",
+        "4": "A conjuração atinge a(s) criatura(s) mais próxima(s) do alvo pretendido.",
+        "5": "Todos os seus efeitos de Manutenção se encerram agora.",
+        "6": "O efeito se aplica ao contrário, no mesmo valor: cura vira dano e vice-versa.",
+        "7": "Perde d4 Pontos de Vitalidade e recebe a condição Caído.",
+        "8": "Durante d4 dias, cada uso da manobra Conjurar causa 1 Ponto de Fadiga, com sucesso ou falha.",
+        "9": "Durante d4 dias, não pode usar conjurações desse Caminho.",
+        "10": "Durante d4 dias, todos os seus testes de Conjuração falham automaticamente."
+      },
+      "Pacto": {
+        "1": "Perde 1 Ponto de Vitalidade.",
+        "2": "Perde 2 Pontos de Vitalidade.",
+        "3": "Perde d4 Pontos de Vitalidade.",
+        "4": "A conjuração atinge o seu aliado mais próximo.",
+        "5": "Todos os seus efeitos de Manutenção se encerram, e você perde 1 Ponto de Vitalidade.",
+        "6": "O efeito se aplica ao contrário, no mesmo valor: cura vira dano e vice-versa.",
+        "7": "Durante d4 dias, cada uso da manobra Conjurar faz o personagem perder 2 Pontos de Vitalidade.",
+        "8": "Filhos da Maldição sentiram o eco da sua conjuração. Cultistas atacam no dia seguinte.",
+        "9": "Seu patrono fala com você.",
+        "10": "Sua conjuração abre uma fenda para o Plano Amaldiçoado. Uma Maldição atravessa e ataca você."
+      }
+    },
+    "Sussurros": {
+      "Oferta": "Sussurros do Pacto — A Oferta",
+      "Preco": "Sussurros do Pacto — O Preço",
+      "FavorDoPatrono": "Favor do Patrono",
+      "OfertaTabela": {
+        "1": "O conflito atual se resolve a seu favor. Seja ele qual for.",
+        "2": "+2 permanentes em um atributo à sua escolha.",
+        "3": "Um aliado morto há menos de um dia retorna com 1 Ponto de Vitalidade.",
+        "4": "Uma criatura à vista cai imediatamente a 0 Pontos de Vitalidade.",
+        "5": "Uma pergunta sua é respondida imediatamente.",
+        "6": "Durante d4 dias, enxerga através de paredes, névoa e escuridão.",
+        "7": "+4 no Valor Alvo dos testes de Acerto até o fim deste combate.",
+        "8": "Recupera d6 Pontos de Vitalidade.",
+        "9": "Remove todos os seus Pontos de Fadiga.",
+        "10": "Sucesso automático no seu próximo teste, qualquer que seja."
+      },
+      "PrecoTabela": {
+        "1": "Parte da sua pele é tomada por uma mancha escura permanente. Nenhum efeito mecânico por enquanto.",
+        "2": "Recebe 3 Pontos de Fadiga imediatamente.",
+        "3": "Pelos próximos 4 dias, seus Descansos Completos contam como desconfortáveis.",
+        "4": "Não pode usar Manobras Defensivas durante os combates por d4 dias.",
+        "5": "Perde metade dos seus Pontos de Vitalidade atuais, arredondado para cima.",
+        "6": "O Mestre pode definir que um de seus testes futuros falha automaticamente.",
+        "7": "Pelos próximos 3 dias, role um encontro extra por dia de viagem, com +4.",
+        "8": "−4 permanentes em um atributo, escolhido pelo Mestre.",
+        "9": "Contrai uma enfermidade escolhida pelo Mestre, estágio 2, imediatamente.",
+        "10": "O preço é sua vida, que será cobrada em d4 dias a menos que mate um personagem aliado para quitar a dívida."
+      }
+    },
+    "Descanso": {
+      "Titulo": "Descanso Completo",
+      "Confirmar": "Confirmar",
+      "Conforto": "Conforto do ambiente",
+      "desconfortavel": "Desconfortável",
+      "razoavel": "Razoável",
+      "confortavel": "Confortável",
+      "ForcadoDesconfortavel": "O Preço do Pacto faz todo descanso contar como desconfortável.",
+      "UsarKitMedicinal": "Usar Kit Medicinal",
+      "RepararEquipamento": "Reparar equipamento (Kit de Reparo)",
+      "ResumoBase": "Descanso {conforto}: Vitalidade {vitalidade}/{teto}, Fadiga {fadiga}.",
+      "ResumoKit": "Usou {kit} para recuperar Vitalidade adicional.",
+      "ResumoReparo": "{equipamento} recupera {pontos} de Durabilidade ({durabilidade}/{max})."
+    },
+    "Viagem": {
+      "Titulo": "Viagem e Privação",
+      "LimiteResistencia": "Sua Resistência sustenta {limite} horas de caminhada por dia.",
+      "HorasCaminhadas": "Horas caminhadas hoje",
+      "SemDescanso": "Um dia inteiro sem Descanso Completo",
+      "SemComida": "Um dia inteiro sem comer",
+      "SemAgua": "Um dia inteiro sem beber água",
+      "SemFadiga": "Nada além do limite: nenhum Ponto de Fadiga recebido.",
+      "Resumo": "{nome} recebe {total} Pontos de Fadiga ({horas} por horas extras de viagem, {privacoes} por privação)."
+    },
+    "Emboscada": {
+      "Titulo": "Emboscada",
+      "TesteAtacante": "Teste de Agilidade para emboscar",
+      "TesteAlvo": "Teste de Sentidos contra emboscada",
+      "Sucesso": "Emboscada bem-sucedida ({atacantes} x {alvos} sucessos): {surpreendidos} ficam surpreendidos e não podem usar Manobras de Combate na primeira rodada.",
+      "Falha": "A emboscada falha ({atacantes} x {alvos} sucessos): ninguém é surpreendido."
+    },
+    "AcaoLivre": {
+      "Titulo": "Ações livres",
+      "Concede": "Concede Ação Livre",
+      "Tipo": "Manobra concedida",
+      "PorRodada": "Usos por rodada",
+      "qualquer": "Qualquer manobra",
+      "atacar": "Atacar",
+      "conjurar": "Conjurar",
+      "esquivar": "Esquivar",
+      "aparar": "Aparar",
+      "bloquear": "Bloquear",
+      "mitigar": "Mitigar",
+      "recarregar": "Recarregar",
+      "movimentar": "Movimentar"
+    },
+    "Kit": {
+      "Funcao": "Função de kit",
+      "Nenhuma": "— (item comum)",
+      "Medicinal": "Kit Medicinal",
+      "Reparo": "Kit de Reparo",
+      "Potencia": "Vitalidade adicional no descanso"
     }
   },
-
   "TYPES": {
     "Actor": {
       "character": "Personagem",

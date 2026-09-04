@@ -34,7 +34,17 @@ export default class OdriteHabilidadeData extends foundry.abstract.TypeDataModel
       }),
       condicaoAtributoEspecifico: new StringField({ initial: "", blank: true, choices: ["", ...Object.keys(ODRITE.atributos)] }),
       condicaoDuracaoRodadas: new NumberField({ required: true, integer: true, min: 1, initial: 1 }),
-      condicaoPermanente: new BooleanField({ initial: false })
+      condicaoPermanente: new BooleanField({ initial: false }),
+
+      // Habilidades do tipo "faça X uma vez por rodada sem contabilizar em
+      // suas Manobras de Combate": o saldo é reposto a cada rodada.
+      concedeAcaoLivre: new BooleanField({ initial: false }),
+      acaoLivreTipo: new StringField({
+        required: true,
+        initial: "qualquer",
+        choices: Object.keys(ODRITE.acoesLivres)
+      }),
+      acaoLivrePorRodada: new NumberField({ required: true, integer: true, min: 1, initial: 1 })
     };
   }
 }

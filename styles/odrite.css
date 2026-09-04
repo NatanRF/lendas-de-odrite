@@ -1401,9 +1401,47 @@ textarea[name="system.descricao"] {
   margin-top: 6px;
 }
 
+/* Morto / Inconsciente: mais pesado que os demais avisos, é um estado que
+   interrompe o jogo do personagem. */
+.odrite .aviso-morte {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--odrite-red-bright);
+  border-radius: 4px;
+  background: rgba(120, 20, 20, 0.25);
+}
+
+.odrite .aviso-morte .tag {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .odrite .tag-manutencao {
   background: var(--odrite-success);
   color: #0d1f0e;
+}
+
+/* Ecos da Conjuração persistentes */
+.odrite .linha-ecos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.odrite .rotulo-ecos {
+  font-family: var(--odrite-font-display);
+  font-size: 0.75rem;
+  color: var(--odrite-gold);
+}
+
+.odrite .linha-ecos .tag a {
+  margin-left: 4px;
+  cursor: pointer;
 }
 
 /* Condições ativas */

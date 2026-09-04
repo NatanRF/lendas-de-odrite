@@ -1,3 +1,10 @@
 node_modules/
 .claude/
 *.log
+
+# Grafo de conhecimento gerado pelo /graphify, não faz parte do sistema
+graphify-out/
+
+# Arquivo de trava do LevelDB: recriado pelo Foundry a cada execução e
+# impede checkout/compilação enquanto o servidor está aberto
+packs/*/LOCK

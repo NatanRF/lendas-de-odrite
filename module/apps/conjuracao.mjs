@@ -1,4 +1,9 @@
-import { resolverRefazer, resolverManutencao, postarPromptManutencao } from "../helpers/conjuracao.mjs";
+import {
+  resolverRefazer,
+  resolverManutencao,
+  postarPromptManutencao,
+  encerrarEfeitosDeRodada
+} from "../helpers/conjuracao.mjs";
 
 Hooks.on("combatRound", async (combat) => {
   if (!game.user.isGM) return;
@@ -7,10 +12,27 @@ Hooks.on("combatRound", async (combat) => {
     const actor = combatant.actor;
     if (!actor || actor.type !== "character") continue;
 
-    const ativas = actor.getFlag("odrite", "conjuracoesAtivas") ?? [];
-    if (!ativas.length) continue;
+    // Duração "Rodada": o efeito vale só até o fim da rodada em que entrou.
+    await encerrarEfeitosDeRodada(actor);
 
-    await postarPromptManutencao(actor, ativas);
+    // Eco 2 da Bênção: Conjurar travado pelo resto da rodada atual e por toda
+    // a seguinte — o contador cai a cada virada até liberar.
+    const bloqueio = combatant.getFlag("odrite", "conjurarBloqueado") ?? 0;
+    if (bloqueio > 0) {
+      const restante = bloqueio - 1;
+      if (restante > 0) await combatant.setFlag("odrite", "conjurarBloqueado", restante);
+      else await combatant.unsetFlag("odrite", "conjurarBloqueado");
+    }
+
+    // Eco 3 da Bênção: agir por último vale uma rodada; depois a iniciativa
+    // original é devolvida.
+    const original = combatant.getFlag("odrite", "iniciativaOriginal");
+    if (original !== undefined) {
+      await combatant.update({ initiative: original, "flags.odrite.-=iniciativaOriginal": null });
+    }
+
+    const ativas = actor.getFlag("odrite", "conjuracoesAtivas") ?? [];
+    if (ativas.length) await postarPromptManutencao(actor, ativas);
   }
 });
 

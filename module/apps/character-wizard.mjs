@@ -6,7 +6,14 @@ const { ApplicationV2 } = foundry.applications.api;
 const VALORES_FIXOS = [14, 12, 10, 10, 8, 8, 6, 4];
 const SLOTS_CAMINHO = ["um", "dois", "tres"];
 
-function limitesConjuracaoPorCaminho(qtdCaminhos) {
+/**
+ * Quantas conjurações o personagem novato escolhe em cada Caminho.
+ * O Combatente Sagrado domina 1 único Caminho (definido pela Devoção) e
+ * escolhe 4 conjurações nele; o Canalizador distribui conforme a quantidade
+ * de Caminhos escolhidos.
+ */
+function limitesConjuracaoPorCaminho(qtdCaminhos, classe) {
+  if (classe === "Combatente Sagrado") return [4];
   if (qtdCaminhos === 1) return [3];
   if (qtdCaminhos === 2) return [2, 1];
   if (qtdCaminhos === 3) return [1, 1, 1];
@@ -149,7 +156,7 @@ export default class OdriteCharacterWizard extends HandlebarsApplicationMixin(Ap
 
     if (this._etapa === "conjuracao") {
       if (d.classe === "Canalizador") {
-        context.limitesCaminho = limitesConjuracaoPorCaminho(d.caminhosEscolhidos.length);
+        context.limitesCaminho = limitesConjuracaoPorCaminho(d.caminhosEscolhidos.length, d.classe);
         context.caminhosComOpcoes = [];
         for (let i = 0; i < d.caminhosEscolhidos.length; i++) {
           const caminho = d.caminhosEscolhidos[i];
@@ -164,7 +171,7 @@ export default class OdriteCharacterWizard extends HandlebarsApplicationMixin(Ap
         const caminho = d.caminhosEscolhidos[0];
         context.caminhosComOpcoes = [{
           caminho,
-          limite: 3,
+          limite: limitesConjuracaoPorCaminho(1, d.classe)[0],
           escolhidas: d.conjuracoesPorCaminho[caminho] ?? [],
           opcoes: await this._buscarConjuracoes(caminho)
         }];
@@ -422,7 +429,7 @@ export default class OdriteCharacterWizard extends HandlebarsApplicationMixin(Ap
     const id = target.dataset.id;
     const d = this._dados;
     const indiceCaminho = d.caminhosEscolhidos.indexOf(caminho);
-    const limite = limitesConjuracaoPorCaminho(d.caminhosEscolhidos.length)[indiceCaminho] ?? 0;
+    const limite = limitesConjuracaoPorCaminho(d.caminhosEscolhidos.length, d.classe)[indiceCaminho] ?? 0;
     const lista = d.conjuracoesPorCaminho[caminho] ?? (d.conjuracoesPorCaminho[caminho] = []);
     const indiceExistente = lista.indexOf(id);
     if (indiceExistente >= 0) {
@@ -536,7 +543,7 @@ export default class OdriteCharacterWizard extends HandlebarsApplicationMixin(Ap
     }
     if (this._etapa === "conjuracao") {
       if (!d.caminhosEscolhidos.length) return this._avisar("ODRITE.Assistente.Aviso.EscolhaCaminho");
-      const limites = limitesConjuracaoPorCaminho(d.caminhosEscolhidos.length);
+      const limites = limitesConjuracaoPorCaminho(d.caminhosEscolhidos.length, d.classe);
       for (let i = 0; i < d.caminhosEscolhidos.length; i++) {
         const caminho = d.caminhosEscolhidos[i];
         const escolhidas = d.conjuracoesPorCaminho[caminho] ?? [];

@@ -1,6 +1,14 @@
 import { ODRITE } from "../config.mjs";
 import OdriteCharacterAdvancement from "../apps/character-advancement.mjs";
-import { estancarSangramento, recarregarArma } from "../helpers/combate.mjs";
+import {
+  estancarSangramento,
+  levantarSe,
+  libertarSe,
+  orcamentoAcoesLivres,
+  recarregarArma
+} from "../helpers/combate.mjs";
+import { condicaoNomeada } from "../helpers/condicoes.mjs";
+import { abrirDescansoCompleto, abrirFadigaDeViagem } from "../helpers/descanso.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -33,6 +41,11 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
       setNivelTreinamento: OdriteCharacterSheet.#setNivelTreinamento,
       abrirEvolucao: OdriteCharacterSheet.#abrirEvolucao,
       estancarSangramento: OdriteCharacterSheet.#estancarSangramento,
+      levantarSe: OdriteCharacterSheet.#levantarSe,
+      libertarSe: OdriteCharacterSheet.#libertarSe,
+      limparEco: OdriteCharacterSheet.#limparEco,
+      descansar: OdriteCharacterSheet.#descansar,
+      fadigaViagem: OdriteCharacterSheet.#fadigaViagem,
       recarregarArma: OdriteCharacterSheet.#recarregarArma
     }
   };
@@ -91,19 +104,64 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
       .map((c) => ({
         id: c.id,
         nome: c.name,
+        chave: c.system.chave,
+        valor: c.system.valor,
         valorFormatado: c.system.valor >= 0 ? `+${c.system.valor}` : `${c.system.valor}`,
         negativa: c.system.valor < 0,
         permanente: c.system.permanente,
         duracaoRodadas: c.system.duracaoRodadas
       }));
 
-    const combatant = game.combat?.combatants.find((c) => c.actorId === this.actor.id);
-    context.sangrando = !!combatant?.getFlag("odrite", "sangrando")?.ativo;
+    const sangrando = condicaoNomeada(this.actor, "sangrando");
+    context.sangrando = sangrando ? { intensidade: sangrando.system.intensidade } : null;
+    context.caido = !!condicaoNomeada(this.actor, "caido");
+    context.imobilizado = !!condicaoNomeada(this.actor, "imobilizado");
 
     const conjuracoesAtivas = this.actor.getFlag("odrite", "conjuracoesAtivas") ?? [];
     context.manutencaoAtivaIds = conjuracoesAtivas.map((a) => a.itemId);
+    context.rodadaAtivaIds = (this.actor.getFlag("odrite", "conjuracoesRodada") ?? []).map((a) => a.itemId);
+    context.ecosAtivos = this.#coletarEcosAtivos();
+
+    // Saldo de ações livres da rodada, para o jogador conferir sem abrir cada
+    // habilidade passiva.
+    const orcamento = orcamentoAcoesLivres(this.actor);
+    const usadas = game.combat?.combatants.find((c) => c.actorId === this.actor.id)
+      ?.getFlag("odrite", "acoesLivresUsadas") ?? {};
+    context.acoesLivres = Object.entries(orcamento).map(([tipo, total]) => ({
+      label: game.i18n.localize(ODRITE.acoesLivres[tipo] ?? tipo),
+      restantes: total - (usadas[tipo] ?? 0),
+      total
+    }));
 
     return context;
+  }
+
+  /**
+   * Maldições persistentes dos Ecos da Conjuração. O sistema não rastreia
+   * calendário, então cada uma guarda os dias rolados e o mestre a remove
+   * pela ficha quando o prazo vence.
+   */
+  #coletarEcosAtivos() {
+    const ativos = [];
+
+    const chaves = [
+      "conjurarCustaFadiga", "conjurarCustaVitalidade", "conjuracaoFalhaAutomatica",
+      "semManobrasDefensivas", "descansoSempreDesconfortavel"
+    ];
+    for (const chave of chaves) {
+      const dias = this.actor.getFlag("odrite", chave);
+      if (dias) ativos.push({ chave, label: game.i18n.localize(`ODRITE.Ecos.Ativo.${chave}`), dias });
+    }
+
+    for (const caminho of this.actor.getFlag("odrite", "caminhosBloqueados") ?? []) {
+      ativos.push({
+        chave: "caminhosBloqueados",
+        caminho,
+        label: game.i18n.format("ODRITE.Ecos.Ativo.caminhoBloqueado", { caminho })
+      });
+    }
+
+    return ativos;
   }
 
   static #editImage(event, target) {
@@ -185,6 +243,33 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
 
   static #estancarSangramento(event, target) {
     return estancarSangramento(this.actor);
+  }
+
+  static #levantarSe(event, target) {
+    return levantarSe(this.actor);
+  }
+
+  static #libertarSe(event, target) {
+    return libertarSe(this.actor);
+  }
+
+  static #limparEco(event, target) {
+    const { chave, caminho } = target.dataset;
+
+    if (chave === "caminhosBloqueados") {
+      const restantes = (this.actor.getFlag("odrite", "caminhosBloqueados") ?? []).filter((c) => c !== caminho);
+      return this.actor.setFlag("odrite", "caminhosBloqueados", restantes);
+    }
+
+    return this.actor.unsetFlag("odrite", chave);
+  }
+
+  static #descansar(event, target) {
+    return abrirDescansoCompleto(this.actor);
+  }
+
+  static #fadigaViagem(event, target) {
+    return abrirFadigaDeViagem(this.actor);
   }
 
   static #recarregarArma(event, target) {

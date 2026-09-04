@@ -1,0 +1,34 @@
+{
+  "_id": "OdrCondCaido00001",
+  "_key": "!items!OdrCondCaido00001",
+  "name": "Caído",
+  "type": "condicao",
+  "img": "icons/svg/falling.svg",
+  "system": {
+    "valor": 0,
+    "escopo": "qualquer",
+    "atributoEspecifico": "",
+    "duracaoRodadas": 1,
+    "permanente": true,
+    "chave": "caido",
+    "intensidade": 1,
+    "atributoEscape": "",
+    "removeAoSofrerDano": false,
+    "descricao": "<p>O indivíduo caído precisa usar 1 Manobra de Combate para se reerguer. Ataques corpo a corpo realizados contra um alvo Caído são considerados Muito Fáceis (+4).</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.3.0",
+    "coreVersion": "14",
+    "createdTime": 1788485105481,
+    "modifiedTime": 1788485105481,
+    "lastModifiedBy": null
+  }
+}

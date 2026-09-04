@@ -43,6 +43,7 @@ export default class OdriteInimigoSheet extends HandlebarsApplicationMixin(Actor
       .map((c) => ({
         id: c.id,
         nome: c.name,
+        valor: c.system.valor,
         valorFormatado: c.system.valor >= 0 ? `+${c.system.valor}` : `${c.system.valor}`,
         negativa: c.system.valor < 0,
         permanente: c.system.permanente,

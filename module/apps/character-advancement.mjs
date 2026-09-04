@@ -5,7 +5,6 @@ const { ApplicationV2 } = foundry.applications.api;
 
 const CUSTOS = {
   vitalidade: 1,
-  atributo: 1,
   conjuracao: 2,
   habilidade: 2,
   categoriaArma: 2,
@@ -14,21 +13,26 @@ const CUSTOS = {
   protecao: 3
 };
 
-const TIERS_PROTECAO = ["Leve", "Média", "Pesada"];
+// Armaduras e escudos usam escalas de tamanho diferentes no documento de regras.
+const TIERS_PROTECAO = {
+  armadura: ["Leve", "Média", "Pesada"],
+  escudo: ["Pequeno", "Médio", "Grande"]
+};
 
 function parseListaSimples(texto) {
   return texto ? texto.split(",").map((s) => s.trim()).filter(Boolean) : [];
 }
 
-function parseProtecao(texto) {
-  if (texto === "Todas" || texto === "Todos") return { completo: true, lista: [...TIERS_PROTECAO] };
+function parseProtecao(texto, tipo) {
+  const tiers = TIERS_PROTECAO[tipo];
+  if (texto === "Todas" || texto === "Todos") return { completo: true, lista: [...tiers] };
   if (!texto || texto === "Nenhuma") return { completo: false, lista: [] };
   return { completo: false, lista: texto.split(",").map((s) => s.trim()).filter(Boolean) };
 }
 
-function formatarProtecao(lista, rotuloCompleto) {
+function formatarProtecao(lista, tipo, rotuloCompleto) {
   if (!lista.length) return "Nenhuma";
-  if (lista.length >= TIERS_PROTECAO.length) return rotuloCompleto;
+  if (lista.length >= TIERS_PROTECAO[tipo].length) return rotuloCompleto;
   return lista.join(", ");
 }
 
@@ -49,7 +53,6 @@ export default class OdriteCharacterAdvancement extends HandlebarsApplicationMix
     window: { title: "ODRITE.Evolucao.Titulo", resizable: true },
     actions: {
       comprarVitalidade: OdriteCharacterAdvancement.#comprarVitalidade,
-      comprarAtributo: OdriteCharacterAdvancement.#comprarAtributo,
       comprarConjuracao: OdriteCharacterAdvancement.#comprarConjuracao,
       comprarHabilidade: OdriteCharacterAdvancement.#comprarHabilidade,
       comprarCategoriaArma: OdriteCharacterAdvancement.#comprarCategoriaArma,
@@ -72,13 +75,6 @@ export default class OdriteCharacterAdvancement extends HandlebarsApplicationMix
     context.custos = CUSTOS;
     context.experiencia = s.detalhes.experiencia;
 
-    context.atributos = Object.entries(ODRITE.atributos).map(([chave, label]) => ({
-      chave,
-      label: game.i18n.localize(label),
-      valor: s.atributos[chave].value,
-      noMaximo: s.atributos[chave].value >= 14
-    }));
-
     context.nivelTreinamento = s.nivelTreinamento;
     context.treinamentoNoMaximo = s.nivelTreinamento >= 5;
 
@@ -87,8 +83,9 @@ export default class OdriteCharacterAdvancement extends HandlebarsApplicationMix
 
     context.protecaoTipo = this._protecaoTipo;
     const campoProtecao = this._protecaoTipo === "armadura" ? "armaduras" : "escudos";
-    context.protecaoAtual = parseProtecao(s.proficiencias[campoProtecao]);
-    context.protecaoTiersDisponiveis = TIERS_PROTECAO.filter((t) => !context.protecaoAtual.lista.includes(t));
+    context.protecaoAtual = parseProtecao(s.proficiencias[campoProtecao], this._protecaoTipo);
+    context.protecaoTiersDisponiveis = TIERS_PROTECAO[this._protecaoTipo]
+      .filter((t) => !context.protecaoAtual.lista.includes(t));
 
     context.caminhosConhecidos = [s.caminhosConjuracao.um, s.caminhosConjuracao.dois, s.caminhosConjuracao.tres].filter(Boolean);
     context.conjuracoesDisponiveis = context.caminhosConhecidos.length
@@ -146,15 +143,6 @@ export default class OdriteCharacterAdvancement extends HandlebarsApplicationMix
       "system.vitalidade.max": s.vitalidade.max + 1,
       "system.vitalidade.value": s.vitalidade.value + 1
     });
-    this.render();
-  }
-
-  static async #comprarAtributo(event, target) {
-    const chave = target.dataset.atributo;
-    if (!this._podeComprar(CUSTOS.atributo)) return this._avisar("ODRITE.Evolucao.Aviso.SemExperiencia");
-    const atual = this.actor.system.atributos[chave].value;
-    if (atual >= 14) return this._avisar("ODRITE.Evolucao.Aviso.AtributoNoMaximo");
-    await this._gastarExperiencia(CUSTOS.atributo, { [`system.atributos.${chave}.value`]: atual + 1 });
     this.render();
   }
 
@@ -223,11 +211,11 @@ export default class OdriteCharacterAdvancement extends HandlebarsApplicationMix
     if (!this._podeComprar(CUSTOS.protecao)) return this._avisar("ODRITE.Evolucao.Aviso.SemExperiencia");
     const campo = this._protecaoTipo === "armadura" ? "armaduras" : "escudos";
     const rotuloCompleto = this._protecaoTipo === "armadura" ? "Todas" : "Todos";
-    const atual = parseProtecao(this.actor.system.proficiencias[campo]);
+    const atual = parseProtecao(this.actor.system.proficiencias[campo], this._protecaoTipo);
     if (atual.completo || atual.lista.includes(tier)) return;
     const novaLista = [...atual.lista, tier];
     await this._gastarExperiencia(CUSTOS.protecao, {
-      [`system.proficiencias.${campo}`]: formatarProtecao(novaLista, rotuloCompleto)
+      [`system.proficiencias.${campo}`]: formatarProtecao(novaLista, this._protecaoTipo, rotuloCompleto)
     });
     this.render();
   }

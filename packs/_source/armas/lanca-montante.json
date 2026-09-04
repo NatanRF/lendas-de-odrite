@@ -14,8 +14,8 @@
     "alcance": "Até 4 metros",
     "maos": "2 mãos",
     "durabilidade": {
-      "value": 6,
-      "max": 6
+      "value": 7,
+      "max": 7
     }
   },
   "effects": [],

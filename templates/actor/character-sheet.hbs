@@ -25,11 +25,42 @@
       <label>{{localize "ODRITE.Manobras"}}<input type="number" name="system.manobrasPorRodada" value="{{system.manobrasPorRodada}}"></label>
       <label>{{localize "ODRITE.Experiencia"}}<input type="number" name="system.detalhes.experiencia" value="{{system.detalhes.experiencia}}"></label>
       <button type="button" class="botao-evolucao" data-action="abrirEvolucao">{{localize "ODRITE.Evolucao.Titulo"}}</button>
+      <button type="button" class="botao-evolucao" data-action="descansar">{{localize "ODRITE.Descanso.Titulo"}}</button>
+      <button type="button" class="botao-evolucao" data-action="fadigaViagem">{{localize "ODRITE.Viagem.Titulo"}}</button>
     </div>
+    {{#if acoesLivres}}
+    <div class="linha-ecos">
+      <span class="rotulo-ecos">{{localize "ODRITE.AcaoLivre.Titulo"}}:</span>
+      {{#each acoesLivres as |acao|}}
+      <span class="tag">{{acao.label}} {{acao.restantes}}/{{acao.total}}</span>
+      {{/each}}
+    </div>
+    {{/if}}
+    {{#if system.morto}}
+    <div class="aviso-morte">
+      <span class="tag falha">{{localize "ODRITE.Morte.Tag"}}</span>
+    </div>
+    {{else if system.inconsciente}}
+    <div class="aviso-morte">
+      <span class="tag falha">{{localize "ODRITE.Morte.InconscienteTag"}}</span>
+    </div>
+    {{/if}}
     {{#if sangrando}}
     <div class="aviso-sangramento">
-      <span class="tag falha">{{localize "ODRITE.Combate.Sangrando"}}</span>
+      <span class="tag falha">{{localize "ODRITE.Combate.Sangrando"}} ({{sangrando.intensidade}}/turno)</span>
       <button type="button" data-action="estancarSangramento">{{localize "ODRITE.Combate.EstancarSangramento"}}</button>
+    </div>
+    {{/if}}
+    {{#if caido}}
+    <div class="aviso-sangramento">
+      <span class="tag falha">{{localize "ODRITE.Condicao.Nomeada.Caido"}}</span>
+      <button type="button" data-action="levantarSe">{{localize "ODRITE.Condicao.Levantar"}}</button>
+    </div>
+    {{/if}}
+    {{#if imobilizado}}
+    <div class="aviso-sangramento">
+      <span class="tag falha">{{localize "ODRITE.Condicao.Nomeada.Imobilizado"}}</span>
+      <button type="button" data-action="libertarSe">{{localize "ODRITE.Condicao.Libertar"}}</button>
     </div>
     {{/if}}
     {{#if system.transformadoMaldicao}}
@@ -37,10 +68,21 @@
       <span class="tag falha">{{localize "ODRITE.Conjuracao.TransformadoMaldicaoTag"}}</span>
     </div>
     {{/if}}
+    {{#if ecosAtivos}}
+    <div class="linha-ecos">
+      <span class="rotulo-ecos">{{localize "ODRITE.Ecos.Titulo"}}:</span>
+      {{#each ecosAtivos as |eco|}}
+      <span class="tag falha">
+        {{eco.label}}{{#if eco.dias}} · {{eco.dias}}d{{/if}}
+        <a data-action="limparEco" data-chave="{{eco.chave}}" data-caminho="{{eco.caminho}}" title="{{localize 'ODRITE.Ecos.Limpar'}}">✕</a>
+      </span>
+      {{/each}}
+    </div>
+    {{/if}}
     <div class="linha-condicoes">
       {{#each condicoes as |condicao|}}
       <span class="tag condicao {{#if condicao.negativa}}negativa{{else}}positiva{{/if}}" data-item-id="{{condicao.id}}">
-        {{condicao.nome}} ({{condicao.valorFormatado}}){{#unless condicao.permanente}} · {{condicao.duracaoRodadas}}r{{/unless}}
+        {{condicao.nome}}{{#if condicao.valor}} ({{condicao.valorFormatado}}){{/if}}{{#unless condicao.permanente}} · {{condicao.duracaoRodadas}}r{{/unless}}
         <a data-action="itemEdit" title="{{localize 'ODRITE.Editar'}}">✎</a>
         <a data-action="itemDelete" title="{{localize 'ODRITE.Remover'}}">✕</a>
       </span>
@@ -285,6 +327,9 @@
         <button type="button" class="rolar-magia" data-action="rollMagia">{{magia.name}}</button>
         {{#if (includes ../manutencaoAtivaIds magia.id)}}
         <span class="tag tag-manutencao">{{localize "ODRITE.Conjuracao.ManutencaoAtiva"}}</span>
+        {{/if}}
+        {{#if (includes ../rodadaAtivaIds magia.id)}}
+        <span class="tag tag-manutencao">{{localize "ODRITE.Conjuracao.RodadaAtiva"}}</span>
         {{/if}}
         <a data-action="itemEdit">✎</a>
         <a data-action="itemDelete">✕</a>

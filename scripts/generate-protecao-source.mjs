@@ -24,9 +24,9 @@ const ARMADURAS = [
 ];
 
 const ESCUDOS = [
-  { nome: "Escudo Leve", durabilidade: 6, preco: 30, forcaMinima: 4, penalidade: 0 },
+  { nome: "Escudo Pequeno", durabilidade: 6, preco: 30, forcaMinima: 4, penalidade: 0 },
   { nome: "Escudo Médio", durabilidade: 10, preco: 120, forcaMinima: 6, penalidade: 2 },
-  { nome: "Escudo Pesado", durabilidade: 12, preco: 300, forcaMinima: 8, penalidade: 4 }
+  { nome: "Escudo Grande", durabilidade: 12, preco: 300, forcaMinima: 8, penalidade: 4 }
 ];
 
 fs.mkdirSync(OUT_DIR, { recursive: true });

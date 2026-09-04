@@ -1,0 +1,34 @@
+{
+  "_id": "OdrCondImobilizad",
+  "_key": "!items!OdrCondImobilizad",
+  "name": "Imobilizado",
+  "type": "condicao",
+  "img": "icons/svg/net.svg",
+  "system": {
+    "valor": 0,
+    "escopo": "qualquer",
+    "atributoEspecifico": "",
+    "duracaoRodadas": 1,
+    "permanente": true,
+    "chave": "imobilizado",
+    "intensidade": 1,
+    "atributoEscape": "forca",
+    "removeAoSofrerDano": false,
+    "descricao": "<p>O indivíduo não pode usar Manobras de Combate exceto para tentar se livrar dessa condição. Ataques adjacentes contra o alvo acertam automaticamente, e ataques à distância são considerados Fáceis (+2). Por padrão, um alvo imobilizado por conjuração perde a condição ao receber qualquer dano.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.3.0",
+    "coreVersion": "14",
+    "createdTime": 1788485105481,
+    "modifiedTime": 1788485105481,
+    "lastModifiedBy": null
+  }
+}

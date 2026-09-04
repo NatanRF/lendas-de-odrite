@@ -1,0 +1,31 @@
+{
+  "_id": "OdrKitReparo0001",
+  "_key": "!items!OdrKitReparo0001",
+  "name": "Kit de Reparo",
+  "type": "item",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "quantidade": 1,
+    "preco": 5,
+    "funcao": "kitReparo",
+    "potencia": 0,
+    "slotEspecial": "",
+    "capacidade": 0,
+    "descricao": "<p>Permite remendar um equipamento durante um Descanso Completo, recuperando d4 de Durabilidade. Só é possível realizar 1 reparo por descanso.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.1.0",
+    "coreVersion": "14",
+    "createdTime": 1785946955659,
+    "modifiedTime": 1785946955659,
+    "lastModifiedBy": null
+  }
+}

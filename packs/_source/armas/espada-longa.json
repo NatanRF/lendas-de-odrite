@@ -14,8 +14,8 @@
     "alcance": "Adjacente",
     "maos": "2 mãos",
     "durabilidade": {
-      "value": 6,
-      "max": 6
+      "value": 8,
+      "max": 8
     }
   },
   "effects": [],

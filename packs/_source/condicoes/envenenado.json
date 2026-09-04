@@ -1,0 +1,34 @@
+{
+  "_id": "OdrCondEnvenenado",
+  "_key": "!items!OdrCondEnvenenado",
+  "name": "Envenenado",
+  "type": "condicao",
+  "img": "icons/svg/poison.svg",
+  "system": {
+    "valor": 0,
+    "escopo": "qualquer",
+    "atributoEspecifico": "",
+    "duracaoRodadas": 1,
+    "permanente": true,
+    "chave": "envenenado",
+    "intensidade": 1,
+    "atributoEscape": "",
+    "removeAoSofrerDano": false,
+    "descricao": "<p>Ao final de cada um de seus turnos, o indivíduo faz um teste de Resistência. Em caso de falha, recebe 1 Ponto de Fadiga. O alvo pode usar a manobra Usar Consumíveis para ingerir um antídoto e encerrar o efeito.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "odrite",
+    "systemVersion": "0.3.0",
+    "coreVersion": "14",
+    "createdTime": 1788485105481,
+    "modifiedTime": 1788485105481,
+    "lastModifiedBy": null
+  }
+}

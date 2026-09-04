@@ -7,10 +7,17 @@ import {
   processarAcertoFatal,
   processarFalhaAbsoluta,
   registrarUsoManobra,
-  concederIsencaoProximoAtaque
+  concederIsencaoProximoAtaque,
+  escolherBeneficioTreinamento,
+  perguntarRefazerAtaque,
+  podeUsarManobra
 } from "../helpers/combate.mjs";
 import { resolverConjuracao } from "../helpers/conjuracao.mjs";
-import { aplicarCondicao } from "../helpers/condicoes.mjs";
+import {
+  aplicarCondicao,
+  acertoAutomaticoContra,
+  modificadoresContraAlvo
+} from "../helpers/condicoes.mjs";
 
 export default class OdriteActor extends Actor {
   /** @override */
@@ -18,11 +25,90 @@ export default class OdriteActor extends Actor {
     const result = await super._preUpdate(changes, options, user);
     if (result === false) return false;
 
+    // Precisa vir antes de tudo: um campo numérico esvaziado chega aqui como
+    // null e envenenaria as regras abaixo.
+    if (this._descartarNumerosVazios(changes)) {
+      // A escrita descartada pode deixar o update vazio, e aí o Foundry não
+      // redesenha — o campo continuaria em branco na tela, divergindo do
+      // valor guardado. O render devolve o número anterior ao campo.
+      this.render(false);
+    }
+
     const novaFadiga = changes.system?.fadiga?.value;
     const limite = this.system.fadiga?.limite ?? 12;
     if (novaFadiga >= limite) {
       foundry.utils.setProperty(changes, "system.vitalidade.value", 0);
     }
+
+    if (this.type === "character") await this._verificarMorteAtributo(changes);
+  }
+
+  /**
+   * Descarta mudanças que esvaziariam um campo numérico.
+   *
+   * Os NumberField do sistema são nullable, e um `<input type="number">`
+   * limpo na ficha envia string vazia, que o DataModel converte em null antes
+   * de chegar aqui. Gravar esse null é pior do que ignorar a edição: um
+   * atributo null faz `d20 <= null` ser sempre falso, então todo teste
+   * daquele atributo passaria a falhar sem nenhum erro visível.
+   *
+   * Não dá para resolver com `nullable: false` — o campo vazio viraria 0, e
+   * 0 num atributo mata o personagem pela regra geral. Aqui a edição
+   * inválida simplesmente não acontece e o valor anterior permanece.
+   *
+   * @param {object} changes Dados da atualização, já limpos pelo DataModel.
+   * @returns {boolean} Se alguma mudança foi descartada.
+   */
+  _descartarNumerosVazios(changes) {
+    if (!changes.system) return false;
+    let descartou = false;
+
+    const limpar = (novos, atuais) => {
+      for (const [chave, valor] of Object.entries(novos)) {
+        const atual = atuais?.[chave];
+
+        if (valor && typeof valor === "object" && !Array.isArray(valor)) {
+          limpar(valor, atual);
+          if (!Object.keys(valor).length) delete novos[chave];
+        } else if (typeof atual === "number" && !Number.isFinite(valor)) {
+          delete novos[chave];
+          descartou = true;
+        }
+      }
+    };
+
+    limpar(changes.system, this.system);
+    if (!Object.keys(changes.system).length) delete changes.system;
+    return descartou;
+  }
+
+  /**
+   * Qualquer atributo reduzido a 0, por qualquer meio, mata o personagem.
+   * Roda dentro do _preUpdate para que a morte entre na mesma escrita que
+   * zerou o atributo.
+   * @param {object} changes
+   */
+  async _verificarMorteAtributo(changes) {
+    const atributos = changes.system?.atributos;
+    if (!atributos || this.system.morto) return;
+
+    // Number.isFinite evita que um campo limpo na ficha (null/NaN, que o JS
+    // compararia como 0) mate o personagem por acidente.
+    const zerado = Object.entries(atributos).find(
+      ([, dados]) => Number.isFinite(dados?.value) && dados.value <= 0
+    );
+    if (!zerado) return;
+
+    foundry.utils.setProperty(changes, "system.morto", true);
+    foundry.utils.setProperty(changes, "system.vitalidade.value", 0);
+
+    ChatMessage.create({
+      content: `<p>${game.i18n.format("ODRITE.Morte.AtributoZerado", {
+        nome: this.name,
+        atributo: game.i18n.localize(ODRITE.atributos[zerado[0]] ?? zerado[0])
+      })}</p>`,
+      speaker: ChatMessage.getSpeaker({ actor: this })
+    });
   }
 
   /**
@@ -71,8 +157,12 @@ export default class OdriteActor extends Actor {
    * de acerto, aplica dano automaticamente (ou abre o prompt de defesa).
    * @param {string} itemId
    * @param {Actor} [alvoExplicito]
+   * @param {object} [opcoes]
+   * @param {boolean} [opcoes.semManobra] Não consome Manobra de Combate nem
+   *   contabiliza Fadiga por repetição — usado pelo contra-ataque do Aparar
+   *   e por habilidades que concedem ataques livres.
    */
-  async rollAtaque(itemId, alvoExplicito = null) {
+  async rollAtaque(itemId, alvoExplicito = null, { semManobra = false } = {}) {
     const item = this.items.get(itemId);
     if (!item || item.type !== "arma") return ui.notifications.error("Arma não encontrada.");
 
@@ -84,10 +174,14 @@ export default class OdriteActor extends Actor {
       return ui.notifications.warn(game.i18n.format("ODRITE.Aviso.ArmaDescarregada", { arma: item.name }));
     }
 
+    // Um alvo Imobilizado só pode gastar Manobras tentando se libertar; um
+    // ataque livre (contra-ataque do Aparar) não passa por essa restrição.
+    if (!semManobra && !podeUsarManobra(this)) return;
+
     const alvo = alvoExplicito ?? obterAlvo();
     if (!alvo) return;
 
-    await registrarUsoManobra(this, "atacar", item.system.categoria);
+    if (!semManobra) await registrarUsoManobra(this, "atacar", item.system.categoria);
 
     if (item.system.usaMunicao) {
       await this.update({ "system.recursos.municao.value": this.system.recursos.municao.value - 1 });
@@ -97,21 +191,53 @@ export default class OdriteActor extends Actor {
       await item.update({ "system.carregada": false });
     }
 
+    return this._resolverTesteAtaque(item, alvo, "ataque");
+  }
+
+  /**
+   * Rola o teste de acerto de uma arma ou manobra e resolve o resultado,
+   * incluindo os efeitos do Dado de Treinamento. Separado de rollAtaque para
+   * que uma rerrolagem concedida pelo Dado de Treinamento não volte a
+   * consumir Manobra, munição ou carga da arma.
+   * @param {Item} item
+   * @param {Actor} alvo
+   * @param {"ataque"|"manobra"} tipoTeste
+   */
+  async _resolverTesteAtaque(item, alvo, tipoTeste) {
     const atributoChave = item.system.atributo;
     const atributo = this.system.atributos?.[atributoChave];
     const label = game.i18n.localize(ODRITE.atributos[atributoChave] ?? atributoChave);
+    const ehArma = item.type === "arma";
+    const dano = item.system.dano;
+    const tipoAtaque = item.system.tipoAtaque;
 
-    const modificadores = [];
-    if (this.system.fadiga.penalidade) {
-      modificadores.push({ label: game.i18n.localize("ODRITE.Fadiga"), valor: this.system.fadiga.penalidade });
+    // Ataque adjacente contra alvo Imobilizado acerta sem teste de Acerto —
+    // sem rolagem não há Acerto/Falha Absoluta nem Dado de Treinamento.
+    if (acertoAutomaticoContra(alvo, tipoAtaque)) {
+      await ChatMessage.create({
+        content: `<p>${game.i18n.format("ODRITE.Condicao.AcertoAutomatico", { atacante: this.name, alvo: alvo.name })}</p>`,
+        speaker: ChatMessage.getSpeaker({ actor: this })
+      });
+      return processarAcerto({ atacante: this, alvo, dano, tipoAtaque });
     }
 
+    const modificadores = ehArma
+      ? (this.system.fadiga.penalidade
+          ? [{ label: game.i18n.localize("ODRITE.Fadiga"), valor: this.system.fadiga.penalidade }]
+          : [])
+      : this._modificadoresBase(atributoChave);
+
+    modificadores.push(...modificadoresContraAlvo(alvo, tipoAtaque));
+
     const resultado = await rolarTesteRollUnder({
-      titulo: game.i18n.format("ODRITE.Rolagem.TesteAtaque", { arma: item.name }),
+      titulo: game.i18n.format(
+        ehArma ? "ODRITE.Rolagem.TesteAtaque" : "ODRITE.Rolagem.TesteManobra",
+        ehArma ? { arma: item.name } : { manobra: item.name }
+      ),
       alvo: atributo.value,
       atributoLabel: label,
       modificadores,
-      tipoTeste: "ataque",
+      tipoTeste,
       atributoChave,
       dadoSecundarioFaces: this.system.dadoTreinamento,
       dadoSecundarioLabel: game.i18n.localize("ODRITE.Rolagem.DadoTreinamento"),
@@ -123,20 +249,35 @@ export default class OdriteActor extends Actor {
       return processarAcertoFatal({ atacante: this, alvo });
     }
     if (resultado.acertoAbsoluto) {
-      await concederIsencaoProximoAtaque(this);
-      return processarAcertoAbsoluto({
-        atacante: this,
-        alvo,
-        item,
-        dano: item.system.dano,
-        tipoAtaque: item.system.tipoAtaque
-      });
+      if (ehArma) await concederIsencaoProximoAtaque(this);
+      return processarAcertoAbsoluto({ atacante: this, alvo, item, dano, tipoAtaque });
     }
     if (resultado.falhaAbsoluta) {
       return processarFalhaAbsoluta(this);
     }
+
+    // Dado de Treinamento 1: refaz a rolagem na falha, ou concede um
+    // benefício à escolha do atacante no acerto.
+    if (resultado.resultadoSecundario === 1) {
+      if (!resultado.acertou) {
+        if (await perguntarRefazerAtaque()) return this._resolverTesteAtaque(item, alvo, tipoTeste);
+        return;
+      }
+
+      const escolha = await escolherBeneficioTreinamento(item);
+      return processarAcerto({
+        atacante: this,
+        alvo,
+        item,
+        dano,
+        tipoAtaque,
+        aplicarPropriedadeArma: escolha === "propriedade",
+        negarDefesa: escolha === "negarDefesa"
+      });
+    }
+
     if (resultado.acertou) {
-      await processarAcerto({ atacante: this, alvo, dano: item.system.dano, tipoAtaque: item.system.tipoAtaque });
+      await processarAcerto({ atacante: this, alvo, dano, tipoAtaque });
     }
   }
 
@@ -156,8 +297,11 @@ export default class OdriteActor extends Actor {
   /**
    * Rola o teste de ativação de uma habilidade: d20 contra Habilidade
    * (tipo ativa) ou Conjuração (tipo conjuração). Habilidades passivas
-   * não possuem teste de ativação. Se a habilidade conceder uma Condição,
-   * ela é aplicada ao próprio personagem após a rolagem.
+   * não possuem teste de ativação.
+   *
+   * Custo de Fadiga: 1 no sucesso ou falha comum, 2 na Falha Absoluta e
+   * nenhum no Sucesso Absoluto. O efeito (e a Condição concedida) só se
+   * aplica quando o teste ativa a habilidade.
    * @param {string} itemId
    */
   async rollHabilidade(itemId) {
@@ -177,10 +321,20 @@ export default class OdriteActor extends Actor {
       modificadores: this._modificadoresBase(atributoChave),
       tipoTeste: "atributo",
       atributoChave,
+      testeDeAcerto: true,
       actor: this
     });
 
-    if (item.system.concedeCondicao) {
+    const custoFadiga = resultado.acertoAbsoluto ? 0 : resultado.falhaAbsoluta ? 2 : 1;
+    if (custoFadiga) {
+      await this.update({ "system.fadiga.value": this.system.fadiga.value + custoFadiga });
+      ChatMessage.create({
+        content: `<p>${game.i18n.format("ODRITE.Combate.FadigaHabilidade", { nome: this.name, fadiga: custoFadiga })}</p>`,
+        speaker: ChatMessage.getSpeaker({ actor: this })
+      });
+    }
+
+    if (resultado.acertou && item.system.concedeCondicao) {
       await aplicarCondicao(this, {
         nome: item.system.condicaoNome || item.name,
         valor: item.system.condicaoValor,
@@ -206,44 +360,11 @@ export default class OdriteActor extends Actor {
     const item = this.items.get(itemId);
     if (!item || item.type !== "manobra") return ui.notifications.error("Manobra não encontrada.");
     if (!item.system.ofensiva) return;
+    if (!podeUsarManobra(this)) return;
 
     const alvo = alvoExplicito ?? obterAlvo();
     if (!alvo) return;
 
-    const atributoChave = item.system.atributo;
-    const atributo = this.system.atributos?.[atributoChave];
-    const label = game.i18n.localize(ODRITE.atributos[atributoChave] ?? atributoChave);
-
-    const resultado = await rolarTesteRollUnder({
-      titulo: game.i18n.format("ODRITE.Rolagem.TesteManobra", { manobra: item.name }),
-      alvo: atributo.value,
-      atributoLabel: label,
-      modificadores: this._modificadoresBase(atributoChave),
-      tipoTeste: "manobra",
-      atributoChave,
-      dadoSecundarioFaces: this.system.dadoTreinamento,
-      dadoSecundarioLabel: game.i18n.localize("ODRITE.Rolagem.DadoTreinamento"),
-      testeDeAcerto: true,
-      actor: this
-    });
-
-    if (resultado.acertoAbsoluto && resultado.resultadoSecundario === 1) {
-      return processarAcertoFatal({ atacante: this, alvo });
-    }
-    if (resultado.acertoAbsoluto) {
-      return processarAcertoAbsoluto({
-        atacante: this,
-        alvo,
-        item,
-        dano: item.system.dano,
-        tipoAtaque: item.system.tipoAtaque
-      });
-    }
-    if (resultado.falhaAbsoluta) {
-      return processarFalhaAbsoluta(this);
-    }
-    if (resultado.acertou) {
-      await processarAcerto({ atacante: this, alvo, dano: item.system.dano, tipoAtaque: item.system.tipoAtaque });
-    }
+    return this._resolverTesteAtaque(item, alvo, "manobra");
   }
 }

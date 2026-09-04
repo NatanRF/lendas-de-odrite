@@ -27,12 +27,36 @@ ODRITE.dadoRefinamentoMagia = 6;
 
 ODRITE.duracoesMagia = {
   instantaneo: "ODRITE.Magia.DuracaoInstantaneo",
+  rodada: "ODRITE.Magia.DuracaoRodada",
   manutencao: "ODRITE.Magia.DuracaoManutencao"
 };
 
 ODRITE.tiposAtaque = {
   corpoACorpo: "ODRITE.TipoAtaque.CorpoACorpo",
   distancia: "ODRITE.TipoAtaque.Distancia"
+};
+
+// Manobras que uma habilidade pode conceder "sem contabilizar em suas
+// Manobras de Combate". "qualquer" cobre qualquer manobra.
+ODRITE.acoesLivres = {
+  qualquer: "ODRITE.AcaoLivre.qualquer",
+  atacar: "ODRITE.AcaoLivre.atacar",
+  conjurar: "ODRITE.AcaoLivre.conjurar",
+  esquivar: "ODRITE.AcaoLivre.esquivar",
+  aparar: "ODRITE.AcaoLivre.aparar",
+  bloquear: "ODRITE.AcaoLivre.bloquear",
+  mitigar: "ODRITE.AcaoLivre.mitigar",
+  recarregar: "ODRITE.AcaoLivre.recarregar",
+  movimentar: "ODRITE.AcaoLivre.movimentar"
+};
+
+// Condições do livro que têm efeito mecânico próprio, além do modificador
+// numérico comum a qualquer Condição.
+ODRITE.condicoesNomeadas = {
+  sangrando: "ODRITE.Condicao.Nomeada.Sangrando",
+  caido: "ODRITE.Condicao.Nomeada.Caido",
+  envenenado: "ODRITE.Condicao.Nomeada.Envenenado",
+  imobilizado: "ODRITE.Condicao.Nomeada.Imobilizado"
 };
 
 ODRITE.atributoPorTipoAtaque = {
@@ -114,13 +138,14 @@ ODRITE.dadosRacas = {
 
 /**
  * Dados mecânicos por classe, usados pelo assistente de criação de personagem.
- * armaduras/escudos: "todas"/"todos" ou lista de tiers (Leve/Média/Pesada).
+ * armaduras: "todas" ou lista de tiers (Leve/Média/Pesada).
+ * escudos: "todos" ou lista de tiers (Pequeno/Médio/Grande).
  */
 ODRITE.dadosClasses = {
   Guerreiro: { conjuradora: false, vitalidade: 6, categoriasArma: 3, armaduras: "todas", escudos: "todos", atributoPrincipal: ["forca", "resistencia"] },
   "Caçador": { conjuradora: false, vitalidade: 5, categoriasArma: 3, armaduras: ["Leve", "Média"], escudos: [], atributoPrincipal: ["agilidade", "sentidos"] },
-  Assassino: { conjuradora: false, vitalidade: 4, categoriasArma: 3, armaduras: ["Leve"], escudos: ["Leve"], atributoPrincipal: ["agilidade", "influencia"] },
-  Canalizador: { conjuradora: true, vitalidade: 3, categoriasArma: 1, armaduras: ["Leve"], escudos: ["Leve"], atributoPrincipal: ["conjuracao", "mente"] },
+  Assassino: { conjuradora: false, vitalidade: 4, categoriasArma: 3, armaduras: ["Leve"], escudos: ["Pequeno"], atributoPrincipal: ["agilidade", "influencia"] },
+  Canalizador: { conjuradora: true, vitalidade: 3, categoriasArma: 1, armaduras: ["Leve"], escudos: ["Pequeno"], atributoPrincipal: ["conjuracao", "mente"] },
   "Combatente Sagrado": { conjuradora: true, vitalidade: 7, categoriasArma: 2, armaduras: "todas", escudos: "todos", fonteArcanaFixa: "Bênção Divina", atributoPrincipal: ["conjuracao", "resistencia"] }
 };
 

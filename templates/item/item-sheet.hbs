@@ -100,7 +100,7 @@
   {{#if (eq tipo "escudo")}}
   <div class="campo">
     <label>{{localize "ODRITE.Tipo"}}</label>
-    <input type="text" name="system.tipo" value="{{system.tipo}}" placeholder="Escudo Leve / Médio / Pesado">
+    <input type="text" name="system.tipo" value="{{system.tipo}}" placeholder="Escudo Pequeno / Médio / Grande">
   </div>
   <div class="campo">
     <label>{{localize "ODRITE.Preco"}}</label>
@@ -245,6 +245,24 @@
     </select>
   </div>
   <div class="campo">
+    <label>{{localize "ODRITE.AcaoLivre.Concede"}}</label>
+    <input type="checkbox" name="system.concedeAcaoLivre" {{#if system.concedeAcaoLivre}}checked{{/if}}>
+  </div>
+  {{#if system.concedeAcaoLivre}}
+  <div class="campo">
+    <label>{{localize "ODRITE.AcaoLivre.Tipo"}}</label>
+    <select name="system.acaoLivreTipo">
+      {{#each acoesLivres as |acao|}}
+      <option value="{{acao.chave}}" {{#if (eq ../system.acaoLivreTipo acao.chave)}}selected{{/if}}>{{acao.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.AcaoLivre.PorRodada"}}</label>
+    <input type="number" name="system.acaoLivrePorRodada" value="{{system.acaoLivrePorRodada}}" min="1">
+  </div>
+  {{/if}}
+  <div class="campo">
     <label>{{localize "ODRITE.Condicao.Concede"}}</label>
     <input type="checkbox" name="system.concedeCondicao" {{#if system.concedeCondicao}}checked{{/if}}>
   </div>
@@ -319,6 +337,20 @@
     <input type="number" name="system.capacidade" value="{{system.capacidade}}">
   </div>
   {{/if}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Kit.Funcao"}}</label>
+    <select name="system.funcao">
+      <option value="" {{#if (eq system.funcao "")}}selected{{/if}}>{{localize "ODRITE.Kit.Nenhuma"}}</option>
+      <option value="kitMedicinal" {{#if (eq system.funcao "kitMedicinal")}}selected{{/if}}>{{localize "ODRITE.Kit.Medicinal"}}</option>
+      <option value="kitReparo" {{#if (eq system.funcao "kitReparo")}}selected{{/if}}>{{localize "ODRITE.Kit.Reparo"}}</option>
+    </select>
+  </div>
+  {{#if (eq system.funcao "kitMedicinal")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Kit.Potencia"}}</label>
+    <input type="number" name="system.potencia" value="{{system.potencia}}" min="0">
+  </div>
+  {{/if}}
   <div class="campo campo-descricao">
     <label>{{localize "ODRITE.Descricao"}}</label>
     <textarea name="system.descricao">{{system.descricao}}</textarea>
@@ -369,6 +401,36 @@
   {{/if}}
 
   {{#if (eq tipo "condicao")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Chave"}}</label>
+    <select name="system.chave">
+      <option value="">{{localize "ODRITE.Condicao.ChaveNenhuma"}}</option>
+      {{#each condicoesNomeadas as |cond|}}
+      <option value="{{cond.chave}}" {{#if (eq ../system.chave cond.chave)}}selected{{/if}}>{{cond.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+  {{#if (eq system.chave "sangrando")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.Intensidade"}}</label>
+    <input type="number" name="system.intensidade" value="{{system.intensidade}}" min="1" max="5">
+  </div>
+  {{/if}}
+  {{#if (eq system.chave "imobilizado")}}
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.AtributoEscape"}}</label>
+    <select name="system.atributoEscape">
+      <option value="">—</option>
+      {{#each atributosChaves as |atrib|}}
+      <option value="{{atrib.chave}}" {{#if (eq ../system.atributoEscape atrib.chave)}}selected{{/if}}>{{atrib.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Condicao.RemoveAoSofrerDano"}}</label>
+    <input type="checkbox" name="system.removeAoSofrerDano" {{#if system.removeAoSofrerDano}}checked{{/if}}>
+  </div>
+  {{/if}}
   <div class="campo">
     <label>{{localize "ODRITE.Condicao.Valor"}}</label>
     <input type="number" name="system.valor" value="{{system.valor}}">
