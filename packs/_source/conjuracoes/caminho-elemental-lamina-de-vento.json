@@ -6,9 +6,11 @@
   "img": "icons/svg/wingfoot.svg",
   "system": {
     "caminho": "Caminho Elemental",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "20 Metros",
-    "descricao": "Você dispara uma rajada de vento de alta pressão que se torna cortante. O alvo sofre 2 de dano e fica Caído."
+    "descricao": "Você dispara uma rajada de vento de alta pressão que se torna cortante. O alvo sofre 2 de dano e fica Caído.",
+    "dano": 2,
+    "cura": 0
   },
   "effects": [],
   "folder": "8iWl7uUQo2rNqpJO",

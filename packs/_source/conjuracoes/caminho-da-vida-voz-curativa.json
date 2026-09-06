@@ -6,9 +6,11 @@
   "img": "icons/svg/heal.svg",
   "system": {
     "caminho": "Caminho da Vida",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "10 metros",
-    "descricao": "Você pode restaurar em 2 os Pontos de Vitalidade do alvo."
+    "descricao": "Você pode restaurar em 2 os Pontos de Vitalidade do alvo.",
+    "dano": 0,
+    "cura": 2
   },
   "effects": [],
   "folder": "hz3tLW8bVOOaofQX",

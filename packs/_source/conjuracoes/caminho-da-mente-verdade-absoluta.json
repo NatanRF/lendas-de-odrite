@@ -6,9 +6,11 @@
   "img": "icons/svg/eye.svg",
   "system": {
     "caminho": "Caminho da Mente",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "Adjacente",
-    "descricao": "Você toca uma criatura inibindo sua capacidade de mentir sobre qualquer assunto. O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, durante 5 minutos ele só consegue falar a verdade."
+    "descricao": "Você toca uma criatura inibindo sua capacidade de mentir sobre qualquer assunto. O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, durante 5 minutos ele só consegue falar a verdade.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "Haf764WEalUR6Ird",

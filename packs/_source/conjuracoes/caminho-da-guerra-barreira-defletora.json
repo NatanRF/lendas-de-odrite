@@ -6,9 +6,11 @@
   "img": "icons/svg/fire-shield.svg",
   "system": {
     "caminho": "Caminho da Guerra",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "Pessoal",
-    "descricao": "Ao receber dano de um ataque corpo a corpo, você anula d4 pontos de dano e devolve esse dano ao agressor."
+    "descricao": "Ao receber dano de um ataque corpo a corpo, você anula d4 pontos de dano e devolve esse dano ao agressor.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "xjwxZw3U7f99g88k",

@@ -6,9 +6,11 @@
   "img": "icons/svg/wingfoot.svg",
   "system": {
     "caminho": "Caminho Elemental",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "Pessoal",
-    "descricao": "Uma rajada de vento forte empurra criaturas adjacentes. Cada alvo sofre 1 de dano e é empurrado 4 metros."
+    "descricao": "Uma rajada de vento forte empurra criaturas adjacentes. Cada alvo sofre 1 de dano e é empurrado 4 metros.",
+    "dano": 1,
+    "cura": 0
   },
   "effects": [],
   "folder": "8iWl7uUQo2rNqpJO",

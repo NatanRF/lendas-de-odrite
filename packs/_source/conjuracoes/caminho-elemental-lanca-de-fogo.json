@@ -6,9 +6,11 @@
   "img": "icons/svg/fire.svg",
   "system": {
     "caminho": "Caminho Elemental",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "20 Metros",
-    "descricao": "Você arremessa uma lança de fogo contra um inimigo. O alvo sofre d4 de dano de fogo."
+    "descricao": "Você arremessa uma lança de fogo contra um inimigo. O alvo sofre d4 de dano de fogo.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "8iWl7uUQo2rNqpJO",

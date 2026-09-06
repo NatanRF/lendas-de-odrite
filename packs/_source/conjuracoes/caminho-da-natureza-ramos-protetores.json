@@ -6,9 +6,11 @@
   "img": "icons/svg/oak.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "6 Metros",
-    "descricao": "Escolha como alvo você ou uma criatura aliada. Ramos envolvem o alvo. Ataques contra o alvo são Difíceis (-2) enquanto a conjuração for mantida."
+    "descricao": "Escolha como alvo você ou uma criatura aliada. Ramos envolvem o alvo. Ataques contra o alvo são Difíceis (-2) enquanto a conjuração for mantida.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

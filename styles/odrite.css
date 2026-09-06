@@ -1776,3 +1776,158 @@ textarea[name="system.descricao"] {
   color: var(--odrite-text-dim);
   font-style: italic;
 }
+
+/* Pontos de Mácula: marcadores que só avançam, nunca voltam */
+.odrite .linha-macula {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.odrite .macula-pips {
+  display: flex;
+  gap: 4px;
+}
+
+.odrite .macula-pip {
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--odrite-border-strong);
+  background: var(--odrite-panel);
+  cursor: pointer;
+}
+
+.odrite .macula-pip.marcado {
+  background: radial-gradient(circle at 35% 30%, #6b2d6b 0%, #2a0d2a 100%);
+  box-shadow: 0 0 6px rgba(120, 40, 120, 0.7);
+}
+
+/* Seção de Mácula: ocupa a largura toda para a escada dos 5 níveis caber
+   lado a lado, em vez de empilhar num cartão estreito. */
+.odrite .secao-macula {
+  background: var(--odrite-panel);
+  border: 1px solid var(--odrite-border);
+  border-radius: 6px;
+  padding: 8px 12px 10px;
+  margin-bottom: 12px;
+}
+
+.odrite .secao-macula.contaminado {
+  border-color: #7a3a7a;
+  background:
+    linear-gradient(180deg, rgba(80, 25, 80, 0.18) 0%, transparent 60%),
+    var(--odrite-panel);
+}
+
+.odrite .secao-macula > h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--odrite-font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--odrite-gold);
+  border-bottom: 1px solid rgba(200, 162, 74, 0.3);
+  padding-bottom: 5px;
+  margin: 0 0 8px;
+}
+
+.odrite .secao-macula .macula-pips {
+  display: flex;
+  gap: 5px;
+}
+
+.odrite .macula-pip {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--odrite-border-strong);
+  background: var(--odrite-panel);
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.odrite .macula-pip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px rgba(163, 91, 163, 0.7);
+}
+
+.odrite .macula-pip.marcado {
+  background: radial-gradient(circle at 35% 30%, #8a3a8a 0%, #2a0d2a 100%);
+  border-color: #a35ba3;
+  box-shadow: 0 0 6px rgba(140, 50, 140, 0.8);
+}
+
+.odrite .macula-contador {
+  font-size: 0.8rem;
+  color: var(--odrite-text-dim);
+}
+
+.odrite .secao-macula.contaminado .macula-contador {
+  color: #c98ac9;
+}
+
+.odrite .macula-aviso {
+  margin-left: auto;
+  font-family: "Signika", sans-serif;
+  font-size: 0.62rem;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--odrite-text-dim);
+  opacity: 0.7;
+}
+
+/* Os 5 níveis lado a lado; reflui em telas estreitas. */
+.odrite .macula-escada {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 6px;
+}
+
+.odrite .macula-escada li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 5px 7px;
+  border: 1px solid rgba(200, 162, 74, 0.18);
+  border-radius: 4px;
+  font-size: 0.66rem;
+  line-height: 1.3;
+  color: var(--odrite-text-dim);
+  opacity: 0.45;
+}
+
+.odrite .macula-escada li.ativo {
+  opacity: 1;
+  color: var(--odrite-text);
+  border-color: #7a3a7a;
+  background: rgba(80, 25, 80, 0.22);
+}
+
+.odrite .macula-nivel {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--odrite-border);
+  font-size: 0.62rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 14px;
+}
+
+.odrite .macula-escada li.ativo .macula-nivel {
+  border-color: #a35ba3;
+  background: rgba(140, 50, 140, 0.4);
+  color: #e6c4e6;
+}

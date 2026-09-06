@@ -6,9 +6,11 @@
   "img": "icons/svg/upgrade.svg",
   "system": {
     "caminho": "Caminho da Vida",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "Pessoal",
-    "descricao": "Enquanto esta conjuração estiver ativa, você pode curar 1 ponto de vitalidade adicional em todas as suas conjurações de cura."
+    "descricao": "Enquanto esta conjuração estiver ativa, você pode curar 1 ponto de vitalidade adicional em todas as suas conjurações de cura.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "hz3tLW8bVOOaofQX",

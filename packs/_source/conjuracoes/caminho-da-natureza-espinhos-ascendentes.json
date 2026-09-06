@@ -6,9 +6,11 @@
   "img": "icons/svg/trap.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "10 Metros",
-    "descricao": "Você faz espinhos crescerem do solo em uma área de 8x8 metros. Criaturas que se moverem na área sofrem 1 de dano a cada 2 metros percorridos na área."
+    "descricao": "Você faz espinhos crescerem do solo em uma área de 8x8 metros. Criaturas que se moverem na área sofrem 1 de dano a cada 2 metros percorridos na área.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

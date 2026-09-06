@@ -131,6 +131,7 @@
     <label>{{localize "ODRITE.Magia.Duracao"}}</label>
     <select name="system.duracao">
       <option value="instantaneo" {{#if (eq system.duracao "instantaneo")}}selected{{/if}}>{{localize "ODRITE.Magia.DuracaoInstantaneo"}}</option>
+      <option value="rodada" {{#if (eq system.duracao "rodada")}}selected{{/if}}>{{localize "ODRITE.Magia.DuracaoRodada"}}</option>
       <option value="manutencao" {{#if (eq system.duracao "manutencao")}}selected{{/if}}>{{localize "ODRITE.Magia.DuracaoManutencao"}}</option>
     </select>
   </div>
@@ -141,6 +142,10 @@
   <div class="campo">
     <label>{{localize "ODRITE.Dano"}}</label>
     <input type="number" name="system.dano" value="{{system.dano}}">
+  </div>
+  <div class="campo">
+    <label>{{localize "ODRITE.Magia.Cura"}}</label>
+    <input type="number" name="system.cura" value="{{system.cura}}" min="0">
   </div>
   <div class="campo">
     <label>{{localize "ODRITE.Condicao.Concede"}}</label>

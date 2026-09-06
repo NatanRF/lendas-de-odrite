@@ -110,7 +110,8 @@
       "DuracaoInstantaneo": "Instantâneo",
       "DuracaoManutencao": "Manutenção",
       "Alcance": "Alcance",
-      "DuracaoRodada": "Rodada"
+      "DuracaoRodada": "Rodada",
+      "Cura": "Cura"
     },
     "Proficiencias": {
       "Titulo": "Proficiências",
@@ -247,7 +248,6 @@
       "MorteBencao": "{nome} não resiste ao castigo divino: o corpo mortal não suporta a Essência e {nome} morre no processo.",
       "TesteMentePacto": "Mente (Falha Absoluta — Pacto Amaldiçoado)",
       "MenteSucessoPacto": "{nome} resiste ao preço do Pacto, mas perde {perda} Pontos de Vitalidade.",
-      "TransformaMaldicao": "{nome} perde totalmente o controle e se transforma em uma Maldição!",
       "BonusDanoPacto": "O Pacto Amaldiçoado concede +{dano} de dano à conjuração.",
       "ManutencaoAtivada": "{magia} de {nome} entra em Manutenção.",
       "ManutencaoFalhou": "{nome} falha no Teste de Manutenção de {magia}, que deixa de estar ativa.",
@@ -262,7 +262,8 @@
       "TesteManutencao": "Manutenção: {magia}",
       "RodadaAtiva": "Rodada",
       "RodadaAtivada": "{nome} ativa {magia}; o efeito dura até o fim desta rodada.",
-      "RodadaEncerrada": "Os efeitos de duração Rodada de {nome} se encerram: {magias}."
+      "RodadaEncerrada": "Os efeitos de duração Rodada de {nome} se encerram: {magias}.",
+      "CuraAplicada": "{alvo} recupera {cura} Pontos de Vitalidade ({atual}/{teto})."
     },
     "Ressonancia": {
       "1": "Você tem um sucesso garantido, sem necessidade de rolagem, em seu próximo teste de Conjuração.",
@@ -556,6 +557,34 @@
       "Medicinal": "Kit Medicinal",
       "Reparo": "Kit de Reparo",
       "Potencia": "Vitalidade adicional no descanso"
+    },
+    "Devocao": {
+      "Titulo": "Devoção",
+      "BonusKaerys": "Devoção a Kaerys",
+      "CuraVimera": "A bênção de Vimera de {nome} restaura 1 Ponto de Vitalidade adicional.",
+      "Beneficio": {
+        "Vimera": "Conjurações de cura restauram 1 Vitalidade adicional. Caminho da Vida.",
+        "Zerlios": "Proficiência com todas as categorias de armas. Caminho da Guerra.",
+        "Kaerys": "+1 no valor alvo de todos os testes de Conjuração. 1 Caminho à sua escolha."
+      }
+    },
+    "Macula": {
+      "Titulo": "Mácula",
+      "Modificador": "Mácula ({nivel})",
+      "NaoRemovivel": "Pontos de Mácula não podem ser removidos.",
+      "Recebido": "{nome} recebe 1 Ponto de Mácula ({motivo}). Total: {total}.",
+      "Consumido": "O hospedeiro é consumido: {nome} perde totalmente o controle e se transforma em uma Maldição.",
+      "MotivoAmaldicoar": "atingido por um ataque que amaldiçoa",
+      "MotivoPacto": "falha no Teste de Mente após uma Falha Absoluta do Pacto",
+      "DescansoRebaixado": "Os pesadelos da Mácula rebaixam o descanso de {de} para {para}.",
+      "Efeito": {
+        "1": "Marcas escuras na pele. Testes de Influência são Difíceis (−2).",
+        "2": "Pesadelos. Todo Descanso Completo conta uma categoria abaixo.",
+        "3": "A voz não silencia. Testes de Mente são Muito Difíceis (−4).",
+        "4": "Corpo debilitado. Todos os testes são Difíceis (−2).",
+        "5": "O hospedeiro é consumido e se transforma em uma Maldição."
+      },
+      "PipTitulo": "{nivel}: {efeito}"
     }
   },
   "TYPES": {

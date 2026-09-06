@@ -6,9 +6,11 @@
   "img": "icons/svg/anchor.svg",
   "system": {
     "caminho": "Caminho da Vida",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "Toque",
-    "descricao": "Conecte sua Essência com a de um aliado. Se ele sofreria dano, você sofre no lugar. E se você cura outro individuo, ele também recebe o mesmo valor de cura."
+    "descricao": "Conecte sua Essência com a de um aliado. Se ele sofreria dano, você sofre no lugar. E se você cura outro individuo, ele também recebe o mesmo valor de cura.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "hz3tLW8bVOOaofQX",

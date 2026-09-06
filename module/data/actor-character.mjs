@@ -22,6 +22,8 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
         experiencia: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
         deslocamento: new NumberField({ required: true, integer: true, min: 0, initial: 10 }),
         tamanho: new StringField({ initial: "" }),
+        // Só o Combatente Sagrado tem Devoção; nas demais classes fica vazia.
+        devocao: new StringField({ initial: "", blank: true, choices: ["", ...Object.keys(ODRITE.devocoes)] }),
         biografia: new HTMLField()
       }),
 
@@ -51,6 +53,9 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
       mutilacoes: new ArrayField(new StringField()),
       transformadoMaldicao: new BooleanField({ initial: false }),
       morto: new BooleanField({ initial: false }),
+      // Pontos de Mácula nunca são removidos; ao chegar em 5 o personagem é
+      // consumido e se transforma numa Maldição.
+      macula: new NumberField({ required: true, integer: true, min: 0, max: 5, initial: 0 }),
 
       fonteArcana: new StringField({ initial: "", blank: true, choices: ["", ...ODRITE.fontesArcanas] }),
 
@@ -113,6 +118,9 @@ export default class OdriteCharacterData extends foundry.abstract.TypeDataModel 
       .reduce((total, item) => total + (item.system.penalidade ?? 0), 0);
 
     this.dadoTreinamento = ODRITE.dadoTreinamentoPorNivel[this.nivelTreinamento] ?? 12;
+
+    // Benefício concedido pelo deus escolhido na Devoção.
+    this.beneficioDevocao = ODRITE.devocoes[this.detalhes.devocao]?.beneficio ?? "";
 
     this.capacidadeCarga = Math.max(this.atributos.forca.value, 10);
     if (this.mutilacoes?.includes("traumaColuna")) {

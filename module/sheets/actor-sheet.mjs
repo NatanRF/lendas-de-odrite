@@ -8,6 +8,7 @@ import {
   recarregarArma
 } from "../helpers/combate.mjs";
 import { condicaoNomeada } from "../helpers/condicoes.mjs";
+import { MACULA_MAXIMA } from "../helpers/macula.mjs";
 import { abrirDescansoCompleto, abrirFadigaDeViagem } from "../helpers/descanso.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -38,6 +39,7 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
       itemEdit: OdriteCharacterSheet.#itemEdit,
       itemDelete: OdriteCharacterSheet.#itemDelete,
       toggleFadiga: OdriteCharacterSheet.#toggleFadiga,
+      marcarMacula: OdriteCharacterSheet.#marcarMacula,
       setNivelTreinamento: OdriteCharacterSheet.#setNivelTreinamento,
       abrirEvolucao: OdriteCharacterSheet.#abrirEvolucao,
       estancarSangramento: OdriteCharacterSheet.#estancarSangramento,
@@ -63,6 +65,7 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
     context.tabAtiva = this._tabAtiva;
     context.racas = ODRITE.racas;
     context.classes = ODRITE.classes;
+    context.devocoes = Object.keys(ODRITE.devocoes);
     context.fontesArcanas = ODRITE.fontesArcanas;
     context.caminhosConjuracao = ODRITE.caminhosConjuracao;
     context.listaAtributos = Object.entries(ODRITE.atributos).map(([chave, label]) => ({
@@ -80,6 +83,23 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
     context.nivelTreinamentoPips = Array.fromRange(5, 1).map((indice) => ({
       indice,
       marcado: indice <= this.actor.system.nivelTreinamento
+    }));
+
+    // A escada inteira fica visível: os níveis já alcançados acesos e os
+    // próximos apagados, para o jogador ver o que ainda vem pela frente.
+    const macula = this.actor.system.macula ?? 0;
+    context.maculaPips = Array.fromRange(MACULA_MAXIMA, 1).map((indice) => ({
+      indice,
+      marcado: indice <= macula,
+      titulo: game.i18n.format("ODRITE.Macula.PipTitulo", {
+        nivel: indice,
+        efeito: game.i18n.localize(`ODRITE.Macula.Efeito.${indice}`)
+      })
+    }));
+    context.maculaNiveis = Array.fromRange(MACULA_MAXIMA, 1).map((nivel) => ({
+      nivel,
+      ativo: nivel <= macula,
+      efeito: game.i18n.localize(`ODRITE.Macula.Efeito.${nivel}`)
     }));
 
     context.armas = this.actor.items.filter((i) => i.type === "arma");
@@ -230,6 +250,18 @@ export default class OdriteCharacterSheet extends HandlebarsApplicationMixin(Act
     const atual = this.actor.system.fadiga.value;
     const novoValor = indice === atual ? indice - 1 : indice;
     return this.actor.update({ "system.fadiga.value": novoValor });
+  }
+
+  /**
+   * Pontos de Mácula não podem ser removidos, então os marcadores só avançam.
+   * Correções ficam a cargo do mestre pelo console.
+   */
+  static #marcarMacula(event, target) {
+    const indice = Number(target.dataset.indice);
+    if (indice <= (this.actor.system.macula ?? 0)) {
+      return ui.notifications.warn(game.i18n.localize("ODRITE.Macula.NaoRemovivel"));
+    }
+    return this.actor.update({ "system.macula": indice });
   }
 
   static #setNivelTreinamento(event, target) {

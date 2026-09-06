@@ -6,9 +6,11 @@
   "img": "icons/svg/combat.svg",
   "system": {
     "caminho": "Caminho da Guerra",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "10 Metros",
-    "descricao": "Você incita um alvo. No próximo turno ele será obrigado a desferir seus ataques contra você. Se não for possível lhe atacar, o alvo não pode usar uma manobra de combate para atacar outro personagem."
+    "descricao": "Você incita um alvo. No próximo turno ele será obrigado a desferir seus ataques contra você. Se não for possível lhe atacar, o alvo não pode usar uma manobra de combate para atacar outro personagem.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "xjwxZw3U7f99g88k",

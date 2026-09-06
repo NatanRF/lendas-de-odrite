@@ -6,9 +6,11 @@
   "img": "icons/svg/terror.svg",
   "system": {
     "caminho": "Caminho da Guerra",
-    "duracao": "Rodada",
+    "duracao": "rodada",
     "alcance": "4 metros",
-    "descricao": "Solte um rugido poderoso. Os ataques de criaturas inimigas dentro do alcance contra você são considerados Muito Difíceis (-4) até o fim dessa rodada."
+    "descricao": "Solte um rugido poderoso. Os ataques de criaturas inimigas dentro do alcance contra você são considerados Muito Difíceis (-4) até o fim dessa rodada.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "xjwxZw3U7f99g88k",

@@ -6,9 +6,11 @@
   "img": "icons/svg/lightning.svg",
   "system": {
     "caminho": "Caminho Elemental",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "10 Metros",
-    "descricao": "Você invoca relâmpagos em um ponto dentro do alcance. Todas as criaturas adjacentes ao ponto sofrem 1d4 de dano."
+    "descricao": "Você invoca relâmpagos em um ponto dentro do alcance. Todas as criaturas adjacentes ao ponto sofrem 1d4 de dano.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "8iWl7uUQo2rNqpJO",

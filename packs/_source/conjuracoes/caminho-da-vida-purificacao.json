@@ -6,9 +6,11 @@
   "img": "icons/svg/poison.svg",
   "system": {
     "caminho": "Caminho da Vida",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "Toque",
-    "descricao": "Toque em uma criatura para remover um efeito de veneno."
+    "descricao": "Toque em uma criatura para remover um efeito de veneno.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "hz3tLW8bVOOaofQX",

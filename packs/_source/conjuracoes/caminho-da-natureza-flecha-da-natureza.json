@@ -6,9 +6,11 @@
   "img": "icons/svg/target.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Instantânea",
+    "duracao": "instantaneo",
     "alcance": "Pessoal",
-    "descricao": "Você pode envolver um projetil com energia natural. Ao atingir um inimigo, causa 1d4 de dano adicional."
+    "descricao": "Você pode envolver um projetil com energia natural. Ao atingir um inimigo, causa 1d4 de dano adicional.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

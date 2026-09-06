@@ -6,9 +6,11 @@
   "img": "icons/svg/mystery-man.svg",
   "system": {
     "caminho": "Caminho da Mente",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "4 metros",
-    "descricao": "Você tenta controlar a mente de uma criatura inimiga, forçando-a a agir de acordo com a sua vontade. O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, ele ficará submisso e controlado por você durante essa rodada, realizando as manobras Atacar e Movimentar conforme sua vontade."
+    "descricao": "Você tenta controlar a mente de uma criatura inimiga, forçando-a a agir de acordo com a sua vontade. O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, ele ficará submisso e controlado por você durante essa rodada, realizando as manobras Atacar e Movimentar conforme sua vontade.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "Haf764WEalUR6Ird",

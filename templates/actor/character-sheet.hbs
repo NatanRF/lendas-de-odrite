@@ -20,6 +20,16 @@
         </select>
       </label>
       <label>{{localize "ODRITE.Deslocamento"}}<input type="number" name="system.detalhes.deslocamento" value="{{system.detalhes.deslocamento}}"> m</label>
+      {{#if (eq system.detalhes.classe "Combatente Sagrado")}}
+      <label>{{localize "ODRITE.Devocao.Titulo"}}
+        <select name="system.detalhes.devocao">
+          <option value="">—</option>
+          {{#each devocoes as |deus|}}
+          <option value="{{deus}}" {{#if (eq ../system.detalhes.devocao deus)}}selected{{/if}}>{{deus}}</option>
+          {{/each}}
+        </select>
+      </label>
+      {{/if}}
     </div>
     <div class="detalhes-linha">
       <label>{{localize "ODRITE.Manobras"}}<input type="number" name="system.manobrasPorRodada" value="{{system.manobrasPorRodada}}"></label>
@@ -160,6 +170,29 @@
           </span>
         </label>
       </div>
+    </div>
+
+    <div class="secao-macula {{#if system.macula}}contaminado{{/if}}">
+      <h3>
+        {{localize "ODRITE.Macula.Titulo"}}
+        <div class="macula-pips">
+          {{#each maculaPips as |pip|}}
+          <button type="button" class="macula-pip {{#if pip.marcado}}marcado{{/if}}" data-action="marcarMacula"
+                  data-indice="{{pip.indice}}" title="{{pip.titulo}}"></button>
+          {{/each}}
+        </div>
+        <span class="macula-contador">{{system.macula}}/5</span>
+        <span class="macula-aviso">{{localize "ODRITE.Macula.NaoRemovivel"}}</span>
+      </h3>
+
+      <ol class="macula-escada">
+        {{#each maculaNiveis as |nivel|}}
+        <li class="{{#if nivel.ativo}}ativo{{/if}}">
+          <span class="macula-nivel">{{nivel.nivel}}</span>
+          <span class="macula-efeito">{{nivel.efeito}}</span>
+        </li>
+        {{/each}}
+      </ol>
     </div>
 
     <div class="secao-equipamento">

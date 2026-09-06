@@ -6,9 +6,11 @@
   "img": "icons/svg/mage-shield.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "Pessoal",
-    "descricao": "Você conjura um escudo feito de raízes magicas com o qual você se torna proficiente e pode ser usado mesmo que empunhado armas de 2 mãos. O escudo possui 4 de Durabilidade."
+    "descricao": "Você conjura um escudo feito de raízes magicas com o qual você se torna proficiente e pode ser usado mesmo que empunhado armas de 2 mãos. O escudo possui 4 de Durabilidade.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

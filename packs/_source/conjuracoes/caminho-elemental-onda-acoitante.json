@@ -6,9 +6,11 @@
   "img": "icons/svg/waterfall.svg",
   "system": {
     "caminho": "Caminho Elemental",
-    "duracao": "Instantânea",
+    "duracao": "instantaneo",
     "alcance": "Adjacente",
-    "descricao": "Uma onda surge de suas mãos, atingindo todas as criaturas em uma area de 4x4m imediatamente a sua frente. Cada alvo será empurrado 6 metros e sofrerá 2 de dano."
+    "descricao": "Uma onda surge de suas mãos, atingindo todas as criaturas em uma area de 4x4m imediatamente a sua frente. Cada alvo será empurrado 6 metros e sofrerá 2 de dano.",
+    "dano": 2,
+    "cura": 0
   },
   "effects": [],
   "folder": "8iWl7uUQo2rNqpJO",

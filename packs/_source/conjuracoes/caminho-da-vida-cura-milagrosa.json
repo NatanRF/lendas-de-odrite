@@ -6,9 +6,11 @@
   "img": "icons/svg/heal.svg",
   "system": {
     "caminho": "Caminho da Vida",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "Toque",
-    "descricao": "Você pode restaurar os d4 Pontos de Vitalidade do alvo."
+    "descricao": "Você pode restaurar os d4 Pontos de Vitalidade do alvo.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "hz3tLW8bVOOaofQX",

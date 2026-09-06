@@ -150,11 +150,17 @@ ODRITE.dadosClasses = {
 };
 
 /**
- * Devoção do Combatente Sagrado: cada deus determina o(s) Caminho(s) de
- * Conjuração disponíveis. null = jogador escolhe 1 caminho livremente.
+ * Devoção do Combatente Sagrado, que só conjura pela Bênção Divina. Cada deus
+ * determina o(s) Caminho(s) de Conjuração disponíveis (`caminhos: null` deixa
+ * o jogador escolher 1 livremente) e concede um benefício próprio.
  */
 ODRITE.devocoes = {
-  Vimera: ["Caminho da Vida"],
-  Zerlios: ["Caminho da Guerra"],
-  Kaerys: null
+  Vimera: { caminhos: ["Caminho da Vida"], beneficio: "curaAdicional" },
+  Zerlios: { caminhos: ["Caminho da Guerra"], beneficio: "todasCategoriasArma" },
+  Kaerys: { caminhos: null, beneficio: "bonusTesteConjuracao" }
 };
+
+/** Devoções agrupadas pelo benefício, para consulta rápida nas regras. */
+ODRITE.devocaoPorBeneficio = Object.fromEntries(
+  Object.entries(ODRITE.devocoes).map(([deus, dados]) => [dados.beneficio, deus])
+);

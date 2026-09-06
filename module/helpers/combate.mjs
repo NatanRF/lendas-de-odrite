@@ -6,6 +6,7 @@ import {
   removerCondicaoNomeada,
   temCondicao
 } from "./condicoes.mjs";
+import { ganharPontoMacula } from "./macula.mjs";
 
 const CATEGORIAS_ARMAS_LEVES = ["Adagas", "Bastões", "Arcos", "Bestas"];
 const DEFESA_TEMPLATE = "systems/odrite/templates/chat/defesa-prompt.hbs";
@@ -615,13 +616,20 @@ async function aplicarAtrasar({ alvo }) {
   return { danoExtra: 0 };
 }
 
+async function aplicarAmaldicoar({ alvo }) {
+  // Só personagens acumulam Mácula; inimigos já são criaturas da Mácula.
+  await ganharPontoMacula(alvo, game.i18n.localize("ODRITE.Macula.MotivoAmaldicoar"));
+  return { danoExtra: 0 };
+}
+
 const PROPRIEDADES = {
   sangrar: aplicarSangrar,
   mutilar: aplicarMutilar,
   derrubar: aplicarDerrubar,
   quebrar: aplicarQuebrar,
   debilitar: aplicarDebilitar,
-  atrasar: aplicarAtrasar
+  atrasar: aplicarAtrasar,
+  amaldicoar: aplicarAmaldicoar
 };
 
 async function aplicarPropriedade({ atacante, alvo, item, dano, tipoAtaque }) {

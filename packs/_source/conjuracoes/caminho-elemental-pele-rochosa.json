@@ -6,9 +6,11 @@
   "img": "icons/svg/statue.svg",
   "system": {
     "caminho": "Caminho Elemental",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "Pessoal",
-    "descricao": "Você invoca uma barreira de pedra ao seu redor. Reduza todo dano sofrido em 1."
+    "descricao": "Você invoca uma barreira de pedra ao seu redor. Reduza todo dano sofrido em 1.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "8iWl7uUQo2rNqpJO",

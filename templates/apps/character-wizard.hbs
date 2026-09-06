@@ -145,7 +145,10 @@
         <label>{{localize "ODRITE.Assistente.Devocao"}}</label>
         <div class="opcoes-devocao">
           {{#each devocoes as |deus|}}
-          <button type="button" class="opcao-devocao {{#if (eq ../dados.devocao deus)}}selecionado{{/if}}" data-action="escolherDevocao" data-devocao="{{deus}}">{{deus}}</button>
+          <button type="button" class="opcao-devocao {{#if (eq ../dados.devocao deus)}}selecionado{{/if}}" data-action="escolherDevocao" data-devocao="{{deus}}">
+            <strong>{{deus}}</strong>
+            <span class="beneficio-devocao">{{localize (concat "ODRITE.Devocao.Beneficio." deus)}}</span>
+          </button>
           {{/each}}
         </div>
         {{#if (eq dados.devocao "Kaerys")}}

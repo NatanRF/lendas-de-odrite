@@ -6,9 +6,11 @@
   "img": "icons/svg/downgrade.svg",
   "system": {
     "caminho": "Caminho da Mente",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "9 metros",
-    "descricao": "Se um alvo que você possa ver dentro do alcance iria realizar um teste de atributo, você pode força-lo a fazer um teste de Mente ao invés do atributo original que era exigido no teste em questão."
+    "descricao": "Se um alvo que você possa ver dentro do alcance iria realizar um teste de atributo, você pode força-lo a fazer um teste de Mente ao invés do atributo original que era exigido no teste em questão.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "Haf764WEalUR6Ird",

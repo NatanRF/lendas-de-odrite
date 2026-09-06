@@ -2,6 +2,7 @@ import { ODRITE } from "../config.mjs";
 import { rolarTesteRollUnder } from "./dice.mjs";
 import { obterAlvo, registrarUsoManobra, processarAcerto, podeUsarManobra } from "./combate.mjs";
 import { aplicarCondicao, aplicarCondicaoNomeada } from "./condicoes.mjs";
+import { ganharPontoMacula } from "./macula.mjs";
 
 const REFAZER_TEMPLATE = "systems/odrite/templates/chat/refazer-prompt.hbs";
 const MANUTENCAO_TEMPLATE = "systems/odrite/templates/chat/manutencao-prompt.hbs";
@@ -583,18 +584,25 @@ async function processarFalhaCriticaPacto(actor) {
     });
   }
 
-  // Falha: perde totalmente o controle e se transforma em uma Maldição.
-  await actor.update({ "system.transformadoMaldicao": true });
-  return ChatMessage.create({
-    content: `<p>${game.i18n.format("ODRITE.Conjuracao.TransformaMaldicao", { nome: actor.name })}</p>`,
-    speaker: ChatMessage.getSpeaker({ actor })
-  });
+  // Falha: a Mácula avança mais um passo. A transformação em Maldição não é
+  // mais imediata — acontece ao acumular o quinto Ponto de Mácula, tratado
+  // pelo _preUpdate do ator.
+  return ganharPontoMacula(actor, game.i18n.localize("ODRITE.Macula.MotivoPacto"));
 }
 
 async function finalizarConjuracaoSucesso(
   actor, item, alvo, { dobrarEfeito = false, inverterEfeito = false } = {}
 ) {
   let dano = item.system.dano ?? 0;
+  let cura = item.system.cura ?? 0;
+
+  // Devoção a Vimera: toda conjuração de cura restaura 1 ponto a mais.
+  if (cura > 0 && actor.system.beneficioDevocao === "curaAdicional") {
+    cura += 1;
+    ChatMessage.create({
+      content: `<p>${game.i18n.format("ODRITE.Devocao.CuraVimera", { nome: actor.name })}</p>`
+    });
+  }
 
   if (dano > 0 && actor.system.fonteArcana === "Pacto Amaldiçoado") {
     const bonus = await new Roll("1d4").evaluate();
@@ -604,26 +612,27 @@ async function finalizarConjuracaoSucesso(
     });
   }
 
-  // Ressonância 3 dobra o efeito numérico já somado ao bônus do Pacto.
-  if (dobrarEfeito && dano > 0) {
+  // Ressonância 3 dobra o efeito numérico — dano ou cura — já somado aos
+  // bônus anteriores.
+  if (dobrarEfeito && (dano > 0 || cura > 0)) {
     dano *= 2;
+    cura *= 2;
     ChatMessage.create({
-      content: `<p>${game.i18n.format("ODRITE.Ressonancia.DanoDobrado", { dano })}</p>`
+      content: `<p>${game.i18n.format("ODRITE.Ressonancia.DanoDobrado", { dano: dano || cura })}</p>`
     });
   }
 
-  if (dano > 0 && inverterEfeito) {
-    // Eco 6: o efeito se aplica ao contrário no mesmo valor — o dano vira
-    // cura no alvo, sem passar pelo fluxo de defesa.
-    const teto = alvo.system.vitalidade.maxEfetivo ?? alvo.system.vitalidade.max;
-    await alvo.update({ "system.vitalidade.value": Math.min(teto, alvo.system.vitalidade.value + dano) });
+  // Eco 6: o efeito se aplica ao contrário, no mesmo valor.
+  if (inverterEfeito && (dano > 0 || cura > 0)) {
+    [dano, cura] = [cura, dano];
     ChatMessage.create({
-      content: `<p>${game.i18n.format("ODRITE.Ecos.EfeitoInvertidoAplicado", { alvo: alvo.name, valor: dano })}</p>`,
+      content: `<p>${game.i18n.format("ODRITE.Ecos.EfeitoInvertidoAplicado", { alvo: alvo.name, valor: dano || cura })}</p>`,
       speaker: ChatMessage.getSpeaker({ actor })
     });
-  } else if (dano > 0) {
-    await processarAcerto({ atacante: actor, alvo, dano, tipoAtaque: "distancia" });
   }
+
+  if (cura > 0) await curarAlvo(actor, alvo, cura);
+  if (dano > 0) await processarAcerto({ atacante: actor, alvo, dano, tipoAtaque: "distancia" });
 
   if (item.system.duracao === "manutencao") {
     await ativarManutencao(actor, item);
@@ -642,6 +651,27 @@ async function finalizarConjuracaoSucesso(
       permanente: item.system.condicaoPermanente
     });
   }
+}
+
+/**
+ * Restaura Vitalidade no alvo, respeitando o teto efetivo. Cura não passa
+ * pelo fluxo de defesa — não há o que defender.
+ * @param {Actor} conjurador
+ * @param {Actor} alvo
+ * @param {number} cura
+ */
+async function curarAlvo(conjurador, alvo, cura) {
+  const teto = alvo.system.vitalidade.maxEfetivo ?? alvo.system.vitalidade.max;
+  const antes = alvo.system.vitalidade.value;
+  const depois = Math.min(teto, antes + cura);
+  await alvo.update({ "system.vitalidade.value": depois });
+
+  return ChatMessage.create({
+    content: `<p>${game.i18n.format("ODRITE.Conjuracao.CuraAplicada", {
+      alvo: alvo.name, cura: depois - antes, atual: depois, teto
+    })}</p>`,
+    speaker: ChatMessage.getSpeaker({ actor: conjurador })
+  });
 }
 
 /**

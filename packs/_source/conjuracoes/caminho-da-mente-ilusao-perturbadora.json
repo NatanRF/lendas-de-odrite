@@ -6,9 +6,11 @@
   "img": "icons/svg/blind.svg",
   "system": {
     "caminho": "Caminho da Mente",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "4 metros",
-    "descricao": "Você cria uma ilusão perturbadora na mente do inimigo. O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, todas as rolagens do alvo são Difíceis até o fim da rodada."
+    "descricao": "Você cria uma ilusão perturbadora na mente do inimigo. O alvo deve ser bem sucedido em um teste de Mente. Em caso de falha, todas as rolagens do alvo são Difíceis até o fim da rodada.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "Haf764WEalUR6Ird",

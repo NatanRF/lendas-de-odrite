@@ -6,9 +6,11 @@
   "img": "icons/svg/sword.svg",
   "system": {
     "caminho": "Caminho da Guerra",
-    "duracao": "Rodada",
+    "duracao": "rodada",
     "alcance": "Pessoal",
-    "descricao": "Até o final da rodada, aplique a propriedade da sua arma ao acertar qualquer um de seus ataques."
+    "descricao": "Até o final da rodada, aplique a propriedade da sua arma ao acertar qualquer um de seus ataques.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "xjwxZw3U7f99g88k",

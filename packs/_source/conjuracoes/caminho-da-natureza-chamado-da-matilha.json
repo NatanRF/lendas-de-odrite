@@ -6,9 +6,11 @@
   "img": "icons/svg/pawprint.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "Pessoal",
-    "descricao": "Você invoca espíritos de lobos que atacam qualquer alvo que inicie seu turno adjacente a você. O alvo sofre d4 de dano automaticamente."
+    "descricao": "Você invoca espíritos de lobos que atacam qualquer alvo que inicie seu turno adjacente a você. O alvo sofre d4 de dano automaticamente.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

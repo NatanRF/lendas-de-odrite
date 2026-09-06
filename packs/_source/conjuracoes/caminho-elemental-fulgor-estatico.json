@@ -6,9 +6,11 @@
   "img": "icons/svg/lightning.svg",
   "system": {
     "caminho": "Caminho Elemental",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "Pessoal",
-    "descricao": "Você descarrega energia elétrica em todas as criaturas adjacentes. Cada uma sofre 2 de dano e perde 1 manobra de combate nessa rodada."
+    "descricao": "Você descarrega energia elétrica em todas as criaturas adjacentes. Cada uma sofre 2 de dano e perde 1 manobra de combate nessa rodada.",
+    "dano": 2,
+    "cura": 0
   },
   "effects": [],
   "folder": "8iWl7uUQo2rNqpJO",

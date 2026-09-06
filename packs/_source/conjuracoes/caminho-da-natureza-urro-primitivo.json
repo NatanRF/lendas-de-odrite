@@ -6,9 +6,11 @@
   "img": "icons/svg/terror.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Rodada",
+    "duracao": "rodada",
     "alcance": "6 Metros",
-    "descricao": "Você invoca um urro de uma fera ancestral. Todas as criaturas inimigas em alcance não podem se aproximar de você voluntariamente até o fim dessa rodada."
+    "descricao": "Você invoca um urro de uma fera ancestral. Todas as criaturas inimigas em alcance não podem se aproximar de você voluntariamente até o fim dessa rodada.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

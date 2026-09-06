@@ -18,6 +18,7 @@ import {
   acertoAutomaticoContra,
   modificadoresContraAlvo
 } from "../helpers/condicoes.mjs";
+import { MACULA_MAXIMA, modificadoresMacula } from "../helpers/macula.mjs";
 
 export default class OdriteActor extends Actor {
   /** @override */
@@ -40,7 +41,29 @@ export default class OdriteActor extends Actor {
       foundry.utils.setProperty(changes, "system.vitalidade.value", 0);
     }
 
-    if (this.type === "character") await this._verificarMorteAtributo(changes);
+    if (this.type === "character") {
+      await this._verificarMorteAtributo(changes);
+      this._verificarConsumoPelaMacula(changes);
+    }
+  }
+
+  /**
+   * O quinto Ponto de Mácula consome o hospedeiro: o personagem perde o
+   * controle e se transforma numa Maldição. Entra na mesma escrita que
+   * registrou o ponto.
+   * @param {object} changes
+   */
+  _verificarConsumoPelaMacula(changes) {
+    const nova = changes.system?.macula;
+    if (!Number.isFinite(nova) || nova < MACULA_MAXIMA) return;
+    if (this.system.transformadoMaldicao) return;
+
+    foundry.utils.setProperty(changes, "system.transformadoMaldicao", true);
+
+    ChatMessage.create({
+      content: `<p>${game.i18n.format("ODRITE.Macula.Consumido", { nome: this.name })}</p>`,
+      speaker: ChatMessage.getSpeaker({ actor: this })
+    });
   }
 
   /**
@@ -112,19 +135,29 @@ export default class OdriteActor extends Actor {
   }
 
   /**
-   * Modificadores base de d20 para um atributo: fadiga sempre conta, e a
-   * penalidade de armadura/escudo conta apenas para testes de Agilidade.
+   * Modificadores base de d20 para um atributo: Fadiga e Mácula valem para
+   * qualquer teste; a penalidade de armadura/escudo conta apenas em testes de
+   * Agilidade, e ataques com arma a dispensam.
    * @param {string} chave
+   * @param {object} [opcoes]
+   * @param {boolean} [opcoes.incluirPenalidadeArmadura]
    * @returns {{label: string, valor: number}[]}
    */
-  _modificadoresBase(chave) {
+  _modificadoresBase(chave, { incluirPenalidadeArmadura = true } = {}) {
     const modificadores = [];
     const fadiga = this.system.fadiga?.penalidade ?? 0;
     if (fadiga) modificadores.push({ label: game.i18n.localize("ODRITE.Fadiga"), valor: fadiga });
 
-    if (chave === "agilidade") {
+    modificadores.push(...modificadoresMacula(this, chave));
+
+    if (incluirPenalidadeArmadura && chave === "agilidade") {
       const armadura = this.system.penalidadeAgilidade ?? 0;
       if (armadura) modificadores.push({ label: game.i18n.localize("ODRITE.PenalidadeArmadura"), valor: -armadura });
+    }
+
+    // Devoção a Kaerys: +1 no valor alvo de todo teste de Conjuração.
+    if (chave === "conjuracao" && this.system.beneficioDevocao === "bonusTesteConjuracao") {
+      modificadores.push({ label: game.i18n.localize("ODRITE.Devocao.BonusKaerys"), valor: 1 });
     }
 
     return modificadores;
@@ -221,11 +254,9 @@ export default class OdriteActor extends Actor {
       return processarAcerto({ atacante: this, alvo, dano, tipoAtaque });
     }
 
-    const modificadores = ehArma
-      ? (this.system.fadiga.penalidade
-          ? [{ label: game.i18n.localize("ODRITE.Fadiga"), valor: this.system.fadiga.penalidade }]
-          : [])
-      : this._modificadoresBase(atributoChave);
+    // Ataque com arma não sofre a penalidade de armadura, mas sofre Fadiga e
+    // Mácula como qualquer outro teste.
+    const modificadores = this._modificadoresBase(atributoChave, { incluirPenalidadeArmadura: !ehArma });
 
     modificadores.push(...modificadoresContraAlvo(alvo, tipoAtaque));
 

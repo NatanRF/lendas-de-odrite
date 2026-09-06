@@ -6,9 +6,11 @@
   "img": "icons/svg/heal.svg",
   "system": {
     "caminho": "Caminho da Vida",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "Pessoal",
-    "descricao": "Você emana energia vital. Aliados em um raio de 3 metros ao redor de você podem usar uma Manobra de Combate para recuperar 2 pontos de vitalidade."
+    "descricao": "Você emana energia vital. Aliados em um raio de 3 metros ao redor de você podem usar uma Manobra de Combate para recuperar 2 pontos de vitalidade.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "hz3tLW8bVOOaofQX",

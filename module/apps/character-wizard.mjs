@@ -398,7 +398,7 @@ export default class OdriteCharacterWizard extends HandlebarsApplicationMixin(Ap
     const d = this._dados;
     d.devocao = devocao;
     d.conjuracoesPorCaminho = {};
-    const caminhoFixo = ODRITE.devocoes[devocao];
+    const caminhoFixo = ODRITE.devocoes[devocao]?.caminhos;
     d.caminhosEscolhidos = caminhoFixo ? [...caminhoFixo] : [];
     this.render();
   }
@@ -582,7 +582,12 @@ export default class OdriteCharacterWizard extends HandlebarsApplicationMixin(Ap
       "system.vitalidade.value": vitalidadeTotal,
       "system.nivelTreinamento": racaData?.nivelTreinamentoInicial ?? 1,
       "system.proficiencias.idiomas": racaData ? formatarIdiomas(racaData, atributosFinais.mente ?? 0) : "",
-      "system.proficiencias.armas": d.categoriasArmaEscolhidas.join(", "),
+      // Devoção a Zerlios concede proficiência com todas as categorias de
+      // armas, no lugar das escolhidas na etapa de perícias.
+      "system.proficiencias.armas": ODRITE.devocoes[d.devocao]?.beneficio === "todasCategoriasArma"
+        ? ODRITE.categoriasArma.join(", ")
+        : d.categoriasArmaEscolhidas.join(", "),
+      "system.detalhes.devocao": d.devocao ?? "",
       "system.proficiencias.armaduras": classeData ? textoProficiencia(classeData.armaduras) : "",
       "system.proficiencias.escudos": classeData ? textoProficiencia(classeData.escudos) : "",
       "system.recursos.drakeons": drakeonsRestantes

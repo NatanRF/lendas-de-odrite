@@ -6,9 +6,11 @@
   "img": "icons/svg/regen.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "6 Metros",
-    "descricao": "Raízes emergem de um ponto no solo para restaurar 2 pontos de vitalidade a todas as criaturas aliadas adjacentes ao ponto."
+    "descricao": "Raízes emergem de um ponto no solo para restaurar 2 pontos de vitalidade a todas as criaturas aliadas adjacentes ao ponto.",
+    "dano": 0,
+    "cura": 2
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

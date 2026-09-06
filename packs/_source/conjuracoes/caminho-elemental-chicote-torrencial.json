@@ -6,9 +6,11 @@
   "img": "icons/svg/waterfall.svg",
   "system": {
     "caminho": "Caminho Elemental",
-    "duracao": "Instantânea",
+    "duracao": "instantaneo",
     "alcance": "6 Metros",
-    "descricao": "Ataque com um chicote feito de água em alta pressão. Cause 1d4 de dano e puxe o alvo 4 metros em sua direção."
+    "descricao": "Ataque com um chicote feito de água em alta pressão. Cause 1d4 de dano e puxe o alvo 4 metros em sua direção.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "8iWl7uUQo2rNqpJO",

@@ -6,9 +6,11 @@
   "img": "icons/svg/tower-flag.svg",
   "system": {
     "caminho": "Caminho da Guerra",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "6 Metros",
-    "descricao": "Você invoca uma bandeira espiritual que fortalece aliados ao redor dela. Criaturas aliadas dentro de uma área de 4x4m a partir do ponto em que a bandeira foi hasteada, recebem +2 em testes de acerto e testes de Resistência enquanto a conjuração for mantida."
+    "descricao": "Você invoca uma bandeira espiritual que fortalece aliados ao redor dela. Criaturas aliadas dentro de uma área de 4x4m a partir do ponto em que a bandeira foi hasteada, recebem +2 em testes de acerto e testes de Resistência enquanto a conjuração for mantida.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "xjwxZw3U7f99g88k",

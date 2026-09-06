@@ -6,9 +6,11 @@
   "img": "icons/svg/fire.svg",
   "system": {
     "caminho": "Caminho Elemental",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "10 Metros",
-    "descricao": "Escolha um alvo em alcance. Ele sofre 2 de dano no início de cada um de seus turnos. O alvo pode usar 1 manobra de combate para tentar passar em um teste de Resistência e interromper o efeito."
+    "descricao": "Escolha um alvo em alcance. Ele sofre 2 de dano no início de cada um de seus turnos. O alvo pode usar 1 manobra de combate para tentar passar em um teste de Resistência e interromper o efeito.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "8iWl7uUQo2rNqpJO",

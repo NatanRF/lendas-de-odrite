@@ -6,9 +6,11 @@
   "img": "icons/svg/aura.svg",
   "system": {
     "caminho": "Caminho da Vida",
-    "duracao": "Manutenção",
+    "duracao": "manutencao",
     "alcance": "Pessoal",
-    "descricao": "Seu corpo é envolto por uma aura de vitalidade. Um aliado que iniciar o turno adjacente a você recupera 1 Ponto de Vitalidade."
+    "descricao": "Seu corpo é envolto por uma aura de vitalidade. Um aliado que iniciar o turno adjacente a você recupera 1 Ponto de Vitalidade.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "hz3tLW8bVOOaofQX",

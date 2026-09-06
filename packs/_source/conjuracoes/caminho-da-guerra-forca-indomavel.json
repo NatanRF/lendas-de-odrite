@@ -6,9 +6,11 @@
   "img": "icons/svg/upgrade.svg",
   "system": {
     "caminho": "Caminho da Guerra",
-    "duracao": "Rodada",
+    "duracao": "rodada",
     "alcance": "Pessoal",
-    "descricao": "Adicione +2 no valor alvo de seus testes de acerto e no dano até o fim da rodada."
+    "descricao": "Adicione +2 no valor alvo de seus testes de acerto e no dano até o fim da rodada.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "xjwxZw3U7f99g88k",

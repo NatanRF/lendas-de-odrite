@@ -6,9 +6,11 @@
   "img": "icons/svg/heal.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "Toque",
-    "descricao": "Você invoca a energia vital da natureza para curar uma criatura. Restaure 3 pontos de vitalidade."
+    "descricao": "Você invoca a energia vital da natureza para curar uma criatura. Restaure 3 pontos de vitalidade.",
+    "dano": 0,
+    "cura": 3
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

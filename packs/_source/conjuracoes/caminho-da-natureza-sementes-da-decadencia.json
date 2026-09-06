@@ -6,9 +6,11 @@
   "img": "icons/svg/poison.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "6 Metros",
-    "descricao": "Escolha uma criatura. Esporos venenosos a envolvem. Cause 2 de dano e o alvo tem todas as suas rolagens consideradas Difíceis até o final dessa rodada."
+    "descricao": "Escolha uma criatura. Esporos venenosos a envolvem. Cause 2 de dano e o alvo tem todas as suas rolagens consideradas Difíceis até o final dessa rodada.",
+    "dano": 2,
+    "cura": 0
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

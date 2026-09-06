@@ -6,9 +6,11 @@
   "img": "icons/svg/net.svg",
   "system": {
     "caminho": "Caminho da Natureza",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "10 Metros",
-    "descricao": "Uma vinha surge e prende uma criatura. O alvo fica Imobilizado. O alvo pode, no seu respectivo turno, usar 1 manobra de combate para realizar um teste de Força para tentar sair da condição."
+    "descricao": "Uma vinha surge e prende uma criatura. O alvo fica Imobilizado. O alvo pode, no seu respectivo turno, usar 1 manobra de combate para realizar um teste de Força para tentar sair da condição.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "IRn6yKpkqRN8IQj8",

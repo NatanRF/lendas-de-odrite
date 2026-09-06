@@ -6,9 +6,11 @@
   "img": "icons/svg/fire.svg",
   "system": {
     "caminho": "Caminho da Vida",
-    "duracao": "Instantâneo",
+    "duracao": "instantaneo",
     "alcance": "20 metros",
-    "descricao": "Libere uma energia vital em forma de chamas contra um alvo. O alvo sofre 3 de dano e todos os aliados adjacentes ao alvo atingido recebem 1 de cura em sua vitalidade."
+    "descricao": "Libere uma energia vital em forma de chamas contra um alvo. O alvo sofre 3 de dano e todos os aliados adjacentes ao alvo atingido recebem 1 de cura em sua vitalidade.",
+    "dano": 3,
+    "cura": 0
   },
   "effects": [],
   "folder": "hz3tLW8bVOOaofQX",

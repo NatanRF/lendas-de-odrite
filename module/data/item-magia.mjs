@@ -13,6 +13,9 @@ export default class OdriteMagiaData extends foundry.abstract.TypeDataModel {
       }),
       alcance: new StringField({ initial: "" }),
       dano: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
+      // Vitalidade restaurada no alvo. Uma conjuração com cura > 0 conta como
+      // "conjuração de cura" para o benefício da Devoção a Vimera.
+      cura: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
       descricao: new HTMLField(),
 
       concedeCondicao: new BooleanField({ initial: false }),

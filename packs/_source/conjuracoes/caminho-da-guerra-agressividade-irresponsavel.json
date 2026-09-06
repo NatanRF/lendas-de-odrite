@@ -6,9 +6,11 @@
   "img": "icons/svg/thrust.svg",
   "system": {
     "caminho": "Caminho da Guerra",
-    "duracao": "Rodada",
+    "duracao": "rodada",
     "alcance": "Pessoal",
-    "descricao": "Você não recebe Pontos de Fadiga por Atacar múltiplas vezes. Todos os ataques contra você até o fim da rodada são considerados Fáceis (+2)."
+    "descricao": "Você não recebe Pontos de Fadiga por Atacar múltiplas vezes. Todos os ataques contra você até o fim da rodada são considerados Fáceis (+2).",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "xjwxZw3U7f99g88k",

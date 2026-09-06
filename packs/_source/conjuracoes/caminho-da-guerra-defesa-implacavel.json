@@ -6,9 +6,11 @@
   "img": "icons/svg/shield.svg",
   "system": {
     "caminho": "Caminho da Guerra",
-    "duracao": "Rodada",
+    "duracao": "rodada",
     "alcance": "Pessoal",
-    "descricao": "Até o final da rodada, se for atingido por um ataque, reduza pela metade todo o dano recebido arredondado para baixo."
+    "descricao": "Até o final da rodada, se for atingido por um ataque, reduza pela metade todo o dano recebido arredondado para baixo.",
+    "dano": 0,
+    "cura": 0
   },
   "effects": [],
   "folder": "xjwxZw3U7f99g88k",

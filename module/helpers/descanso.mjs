@@ -1,3 +1,5 @@
+import { rebaixarConforto } from "./macula.mjs";
+
 const { DialogV2 } = foundry.applications.api;
 
 /**
@@ -108,8 +110,21 @@ export async function abrirDescansoCompleto(actor) {
 }
 
 async function aplicarDescanso(actor, { conforto, usarKit, kitId, reparar, equipamentoId }) {
-  const tabela = CONFORTOS[conforto] ?? CONFORTOS.desconfortavel;
   const partes = [];
+
+  // 2 Pontos de Mácula: os pesadelos rebaixam todo descanso uma categoria.
+  const escolhido = conforto;
+  if ((actor.system.macula ?? 0) >= 2) {
+    conforto = rebaixarConforto(conforto);
+    if (conforto !== escolhido) {
+      partes.push(game.i18n.format("ODRITE.Macula.DescansoRebaixado", {
+        de: game.i18n.localize(`ODRITE.Descanso.${escolhido}`),
+        para: game.i18n.localize(`ODRITE.Descanso.${conforto}`)
+      }));
+    }
+  }
+
+  const tabela = CONFORTOS[conforto] ?? CONFORTOS.desconfortavel;
 
   let ganhoVitalidade = tabela.vitalidade;
   const kit = usarKit ? actor.items.get(kitId) : null;
